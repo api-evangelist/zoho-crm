@@ -1,0 +1,64 @@
+aid: zoho-crm
+name: Zoho CRM
+description: >-
+  Zoho CRM is an AI-powered sales and customer relationship management
+  platform from Zoho that helps businesses manage leads, contacts, accounts,
+  deals, and customer engagement across multiple channels. The Zoho CRM REST
+  API (currently at v8) uses OAuth 2.0 authorization-code flow and provides
+  programmatic access to records, modules, users, workflows, analytics, and
+  bulk data operations, with an OpenAPI specification published for the API.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+  - CRM
+  - Sales
+  - Customer Relationship Management
+  - Marketing Automation
+  - Lead Management
+  - Customer Engagement
+url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/apis.yml
+created: '2026-05-11'
+modified: '2026-05-11'
+specificationVersion: '0.19'
+apis:
+  - aid: zoho-crm:rest-api-v8
+    name: Zoho CRM REST API v8
+    description: >-
+      OAuth 2.0 protected REST API for managing CRM records, modules,
+      users, workflows, notes, attachments, tags, and bulk data
+      operations across the Zoho CRM platform.
+    humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+    baseURL: https://www.zohoapis.com/crm/v8
+    tags:
+      - CRM
+      - REST
+      - OAuth 2.0
+      - Records
+      - Modules
+    properties:
+      - type: Documentation
+        url: https://www.zoho.com/crm/developer/docs/api/v8/
+      - type: OAuth Overview
+        url: https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html
+      - type: List of APIs
+        url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+      - type: OpenAPI
+        url: https://www.zoho.com/crm/developer/docs/api/v8/openapi-specification.html
+      - type: Scopes
+        url: https://www.zoho.com/crm/developer/docs/api/v8/scopes.html
+common:
+  - type: Website
+    url: https://www.zoho.com/crm/
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: Developer Portal
+    url: https://www.zoho.com/crm/developer/
+  - type: Sign Up
+    url: https://www.zoho.com/crm/signup.html
+  - type: Pricing
+    url: https://www.zoho.com/crm/zohocrm-pricing.html
+  - type: Postman Workspace
+    url: https://www.postman.com/zohocrmdevelopers/zoho-crm-developers/overview
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
