@@ -47,6 +47,10 @@ apis:
       - type: Scopes
         url: https://www.zoho.com/crm/developer/docs/api/v8/scopes.html
 common:
+  - type: GitHubOrganization
+    url: https://github.com/zoho
+  - type: LinkedIn
+    url: https://www.linkedin.com/showcase/zohocrm
   - type: Website
     url: https://www.zoho.com/crm/
   - type: Documentation
