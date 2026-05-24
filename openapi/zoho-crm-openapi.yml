@@ -1,0 +1,101 @@
+openapi: 3.1.0
+info:
+  title: Zoho CRM API
+  description: Zoho CRM REST API v8, covering modules metadata and CRUD operations on module records.
+  version: v8
+servers:
+  - url: https://www.zohoapis.com/crm/v8
+    description: Production (US data center; regional domains include .eu, .in, .com.au, .jp, .ca, .com.cn, .sa)
+security:
+  - ZohoOAuth: []
+paths:
+  /settings/modules:
+    get:
+      summary: List modules
+      operationId: listModules
+      description: Retrieve the list of all modules available in the Zoho CRM account.
+      responses:
+        '200':
+          description: OK
+  /settings/modules/{module}:
+    get:
+      summary: Get module metadata
+      operationId: getModuleMetadata
+      parameters:
+        - name: module
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+  /{module_api_name}:
+    parameters:
+      - name: module_api_name
+        in: path
+        required: true
+        schema:
+          type: string
+        description: API name of the module (e.g., Leads, Contacts, Deals, Accounts).
+    get:
+      summary: List records in a module
+      operationId: listRecords
+      responses:
+        '200':
+          description: OK
+    post:
+      summary: Insert records into a module
+      operationId: insertRecords
+      responses:
+        '201':
+          description: Created
+    put:
+      summary: Update records in a module
+      operationId: updateRecords
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: Delete records from a module
+      operationId: deleteRecords
+      responses:
+        '200':
+          description: OK
+  /{module_api_name}/{record_id}:
+    parameters:
+      - name: module_api_name
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: record_id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get a single record
+      operationId: getRecord
+      responses:
+        '200':
+          description: OK
+    put:
+      summary: Update a single record
+      operationId: updateRecord
+      responses:
+        '200':
+          description: OK
+    delete:
+      summary: Delete a single record
+      operationId: deleteRecord
+      responses:
+        '200':
+          description: OK
+components:
+  securitySchemes:
+    ZohoOAuth:
+      type: apiKey
+      in: header
+      name: Authorization
+      description: OAuth 2.0 access token sent as 'Authorization: Zoho-oauthtoken {access_token}'.
