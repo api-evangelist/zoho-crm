@@ -1,0 +1,424 @@
+asyncapi: '2.6.0'
+id: 'urn:com:zoho:crm:notifications'
+info:
+  title: Zoho CRM Notifications API
+  version: 'v2'
+  description: |
+    AsyncAPI 2.6 specification for the Zoho CRM Notifications (Instant Notifications)
+    API surface. Subscribers register a notify_url (channel) with Zoho CRM via the
+    REST "actions/watch" endpoint and receive HTTP POST callbacks when documented
+    module operations (create, edit, delete, all) occur on records in supported
+    CRM modules such as Leads, Contacts, Accounts, Deals, and others.
+
+    This document models the documented subscribe/callback surface only. The REST
+    subscription management endpoint is referenced via an external binding for
+    completeness; the AsyncAPI channels themselves represent the per-module
+    callback events delivered to the subscriber's notify_url.
+  contact:
+    name: Zoho CRM Developer
+    url: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
+  license:
+    name: Zoho CRM Developer Terms
+    url: https://www.zoho.com/crm/developer/
+  tags:
+    - name: notifications
+    - name: webhooks
+    - name: crm
+
+defaultContentType: application/json
+
+servers:
+  subscription:
+    url: www.zohoapis.com/crm/v2
+    protocol: https
+    description: |
+      Zoho CRM REST API host used to enable (POST /actions/watch), retrieve,
+      update, and disable notification channels. Subscriptions are managed via
+      this REST surface; the resulting events are delivered as HTTP POST
+      callbacks to the subscriber's notify_url.
+    security:
+      - zohoOAuth: []
+
+channels:
+  Leads:
+    description: |
+      Notifications for the Leads module. Zoho CRM POSTs to the subscribed
+      notify_url when a Lead record is created, edited, or deleted (depending
+      on the events subscribed via /actions/watch, e.g. "Leads.create",
+      "Leads.edit", "Leads.delete", or "Leads.all").
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onLeadsNotification
+      summary: Receive Leads module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Contacts:
+    description: |
+      Notifications for the Contacts module triggered by create, edit, delete,
+      or all operations on Contact records.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onContactsNotification
+      summary: Receive Contacts module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Accounts:
+    description: |
+      Notifications for the Accounts module triggered by create, edit, delete,
+      or all operations on Account records.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onAccountsNotification
+      summary: Receive Accounts module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Deals:
+    description: |
+      Notifications for the Deals module triggered by create, edit, delete,
+      or all operations on Deal records.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onDealsNotification
+      summary: Receive Deals module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Campaigns:
+    description: Notifications for the Campaigns module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onCampaignsNotification
+      summary: Receive Campaigns module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Tasks:
+    description: Notifications for the Tasks module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onTasksNotification
+      summary: Receive Tasks module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Cases:
+    description: Notifications for the Cases module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onCasesNotification
+      summary: Receive Cases module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Meetings:
+    description: Notifications for the Meetings module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onMeetingsNotification
+      summary: Receive Meetings module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Calls:
+    description: Notifications for the Calls module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onCallsNotification
+      summary: Receive Calls module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Solutions:
+    description: Notifications for the Solutions module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onSolutionsNotification
+      summary: Receive Solutions module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Products:
+    description: Notifications for the Products module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onProductsNotification
+      summary: Receive Products module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Vendors:
+    description: Notifications for the Vendors module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onVendorsNotification
+      summary: Receive Vendors module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Price_Books:
+    description: Notifications for the Price Books module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onPriceBooksNotification
+      summary: Receive Price Books module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Quotes:
+    description: Notifications for the Quotes module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onQuotesNotification
+      summary: Receive Quotes module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Sales_Orders:
+    description: Notifications for the Sales Orders module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onSalesOrdersNotification
+      summary: Receive Sales Orders module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Purchase_Orders:
+    description: Notifications for the Purchase Orders module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onPurchaseOrdersNotification
+      summary: Receive Purchase Orders module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Invoices:
+    description: Notifications for the Invoices module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onInvoicesNotification
+      summary: Receive Invoices module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Appointments:
+    description: Notifications for the Appointments module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onAppointmentsNotification
+      summary: Receive Appointments module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Services:
+    description: Notifications for the Services module.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onServicesNotification
+      summary: Receive Services module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+  Custom:
+    description: |
+      Notifications for any Custom module subscribed via /actions/watch. The
+      module path parameter carries the API name of the custom module as
+      configured in the Zoho CRM org.
+    parameters:
+      module:
+        $ref: '#/components/parameters/module'
+    subscribe:
+      operationId: onCustomModuleNotification
+      summary: Receive Custom module notifications
+      message:
+        $ref: '#/components/messages/NotificationCallback'
+
+components:
+  parameters:
+    module:
+      description: |
+        API name of the Zoho CRM module the notification pertains to (for
+        example Leads, Contacts, Accounts, Deals, or a custom module API name).
+      schema:
+        type: string
+
+  securitySchemes:
+    zohoOAuth:
+      type: oauth2
+      description: |
+        Zoho OAuth 2.0. Notification scopes documented as
+        ZohoCRM.notifications.ALL, ZohoCRM.notifications.WRITE, and
+        ZohoCRM.notifications.CREATE.
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+          tokenUrl: https://accounts.zoho.com/oauth/v2/token
+          refreshUrl: https://accounts.zoho.com/oauth/v2/token
+          scopes:
+            ZohoCRM.notifications.ALL: Full access to notifications APIs
+            ZohoCRM.notifications.WRITE: Write access to notifications APIs
+            ZohoCRM.notifications.CREATE: Create access to notifications APIs
+
+  messages:
+    NotificationCallback:
+      name: NotificationCallback
+      title: Zoho CRM Notification Callback
+      summary: |
+        HTTP POST callback dispatched by Zoho CRM to the subscriber's
+        notify_url when a subscribed module operation occurs.
+      contentType: application/json
+      payload:
+        $ref: '#/components/schemas/NotificationCallback'
+
+  schemas:
+    NotificationCallback:
+      type: object
+      description: |
+        Payload posted by Zoho CRM to a subscriber's notify_url when a watched
+        module operation (create, edit, delete, all) fires.
+      properties:
+        server_time:
+          type: integer
+          format: int64
+          description: Millisecond timestamp at which the notification was dispatched.
+        module:
+          type: string
+          description: API name of the module on which the action occurred.
+        operation:
+          type: string
+          description: Operation that triggered the notification.
+          enum:
+            - create
+            - edit
+            - delete
+            - all
+        channel_id:
+          type: integer
+          format: int64
+          description: Identifier of the subscribed channel.
+        token:
+          type: string
+          description: |
+            Value supplied at subscription time and echoed back in the
+            callback so the subscriber can verify the notification originated
+            from Zoho CRM.
+        resource_uri:
+          type: string
+          description: Module's REST API endpoint URI.
+        ids:
+          type: array
+          description: IDs of the records affected by the operation.
+          items:
+            type: string
+        affected_fields:
+          type: array
+          description: |
+            Names of fields modified on each affected record. Present when the
+            channel was subscribed with return_affected_field_values true and
+            the operation is an edit.
+          items:
+            type: object
+            additionalProperties: true
+        affected_values:
+          type: array
+          description: |
+            Changed field values per affected record. Present when the channel
+            was subscribed with return_affected_field_values true.
+          items:
+            type: object
+            additionalProperties: true
+        query_params:
+          type: object
+          description: Custom query parameters appended to the notify_url at subscription time.
+          additionalProperties: true
+      required:
+        - server_time
+        - module
+        - operation
+        - channel_id
+        - token
+        - resource_uri
+        - ids
+
+    EnableNotificationsRequest:
+      type: object
+      description: |
+        Request body for POST /crm/v2/actions/watch used to enable
+        notifications for one or more module/operation pairs.
+      properties:
+        watch:
+          type: array
+          items:
+            type: object
+            properties:
+              channel_id:
+                type: integer
+                format: int64
+                description: Unique identifier for the notification channel.
+              notify_url:
+                type: string
+                description: HTTPS URL that will receive POST callbacks.
+              events:
+                type: array
+                description: |
+                  Module and operation pairs, e.g. "Leads.create",
+                  "Deals.edit", "Contacts.all".
+                items:
+                  type: string
+              token:
+                type: string
+                maxLength: 50
+                description: Verification token echoed back in each callback.
+              channel_expiry:
+                type: string
+                format: date-time
+                description: ISO datetime at which the channel expires (default 1 hour, max 1 day).
+              return_affected_field_values:
+                type: boolean
+                description: Whether to include modified field values in notifications.
+            required:
+              - channel_id
+              - notify_url
+              - events
+      required:
+        - watch

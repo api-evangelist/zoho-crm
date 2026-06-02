@@ -18,7 +18,7 @@ tags:
   - Customer Engagement
 url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-05-11'
+modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
   - aid: zoho-crm:rest-api-v8
@@ -46,6 +46,28 @@ apis:
         url: https://www.zoho.com/crm/developer/docs/api/v8/openapi-specification.html
       - type: Scopes
         url: https://www.zoho.com/crm/developer/docs/api/v8/scopes.html
+  - aid: zoho-crm:notifications-api-v2
+    name: Zoho CRM Notifications API v2
+    description: >-
+      Instant Notifications API for Zoho CRM. Subscribers register a channel
+      via POST /crm/v2/actions/watch with a notify_url and a list of
+      module/operation events (for example Leads.create, Contacts.edit,
+      Deals.delete, Accounts.all). Zoho CRM then POSTs JSON callbacks to the
+      notify_url whenever the subscribed create, edit, delete, or all
+      operations occur on records in the subscribed module.
+    humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
+    baseURL: https://www.zohoapis.com/crm/v2
+    tags:
+      - CRM
+      - Notifications
+      - Webhooks
+      - Events
+      - AsyncAPI
+    properties:
+      - type: Documentation
+        url: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
+      - type: AsyncAPI
+        url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/asyncapi/zoho-crm-notifications-asyncapi.yml
 common:
   - type: GitHubOrganization
     url: https://github.com/zoho
