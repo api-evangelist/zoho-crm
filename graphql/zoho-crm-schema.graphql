@@ -1,0 +1,1554 @@
+"""
+Zoho CRM GraphQL Schema
+Conceptual schema derived from the Zoho CRM REST API v8.
+Covers leads, contacts, accounts, deals, activities, pipelines, modules,
+automation, analytics, security, and organizational settings.
+"""
+
+scalar DateTime
+scalar JSON
+scalar Upload
+
+# ─────────────────────────────────────────────
+# Core CRM Records
+# ─────────────────────────────────────────────
+
+type Lead {
+  id: ID!
+  firstName: String
+  lastName: String!
+  email: String
+  phone: String
+  mobile: String
+  company: String
+  title: String
+  leadSource: String
+  leadStatus: String
+  industry: String
+  annualRevenue: Float
+  numberOfEmployees: Int
+  rating: String
+  website: String
+  description: String
+  convertedToContact: Contact
+  convertedToAccount: Account
+  convertedToDeal: Deal
+  isConverted: Boolean
+  convertedDate: DateTime
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  tags: [String]
+  customFields: JSON
+  activities: [Activity]
+  notes: [Note]
+  attachments: [Attachment]
+  emails: [Email]
+  campaigns: [CampaignMember]
+}
+
+type Contact {
+  id: ID!
+  firstName: String
+  lastName: String!
+  email: String
+  phone: String
+  mobile: String
+  title: String
+  department: String
+  account: Account
+  reportingTo: Contact
+  leadSource: String
+  description: String
+  mailingStreet: String
+  mailingCity: String
+  mailingState: String
+  mailingZip: String
+  mailingCountry: String
+  otherStreet: String
+  otherCity: String
+  otherState: String
+  otherZip: String
+  otherCountry: String
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  tags: [String]
+  customFields: JSON
+  deals: [Deal]
+  activities: [Activity]
+  notes: [Note]
+  attachments: [Attachment]
+  emails: [Email]
+  campaigns: [CampaignMember]
+  cases: [Case]
+  socialMedia: [SocialMedia]
+}
+
+type Account {
+  id: ID!
+  name: String!
+  website: String
+  phone: String
+  fax: String
+  industry: String
+  type: String
+  annualRevenue: Float
+  numberOfEmployees: Int
+  billingStreet: String
+  billingCity: String
+  billingState: String
+  billingZip: String
+  billingCountry: String
+  shippingStreet: String
+  shippingCity: String
+  shippingState: String
+  shippingZip: String
+  shippingCountry: String
+  parentAccount: Account
+  description: String
+  rating: String
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  tags: [String]
+  customFields: JSON
+  contacts: [Contact]
+  deals: [Deal]
+  activities: [Activity]
+  notes: [Note]
+  attachments: [Attachment]
+  emails: [Email]
+  cases: [Case]
+  territories: [Territory]
+}
+
+type Deal {
+  id: ID!
+  dealName: String!
+  amount: Float
+  closingDate: DateTime
+  stage: Stage
+  pipeline: Pipeline
+  probability: Float
+  expectedRevenue: Float
+  type: String
+  leadSource: String
+  description: String
+  account: Account
+  contact: Contact
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  tags: [String]
+  customFields: JSON
+  activities: [Activity]
+  notes: [Note]
+  attachments: [Attachment]
+  emails: [Email]
+  products: [Product]
+  quotes: [Quote]
+}
+
+# ─────────────────────────────────────────────
+# Pipeline and Stages
+# ─────────────────────────────────────────────
+
+type Stage {
+  id: ID!
+  name: String!
+  probability: Float
+  forecastCategory: String
+  pipeline: Pipeline
+  position: Int
+  isDefault: Boolean
+}
+
+type Pipeline {
+  id: ID!
+  name: String!
+  stages: [Stage]
+  isDefault: Boolean
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+# ─────────────────────────────────────────────
+# Activities
+# ─────────────────────────────────────────────
+
+type Activity {
+  id: ID!
+  type: ActivityType!
+  subject: String!
+  status: String
+  dueDate: DateTime
+  completedAt: DateTime
+  owner: User
+  relatedTo: ActivityRelatable
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+enum ActivityType {
+  TASK
+  EVENT
+  CALL
+  EMAIL
+}
+
+union ActivityRelatable = Lead | Contact | Account | Deal | Case
+
+type Task {
+  id: ID!
+  subject: String!
+  status: String
+  priority: String
+  dueDate: DateTime
+  closedTime: DateTime
+  description: String
+  owner: User
+  contact: Contact
+  lead: Lead
+  account: Account
+  deal: Deal
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  tags: [String]
+  customFields: JSON
+  reminder: Notification
+}
+
+type Event {
+  id: ID!
+  subject: String!
+  startDateTime: DateTime
+  endDateTime: DateTime
+  location: String
+  description: String
+  allDay: Boolean
+  status: String
+  owner: User
+  contact: Contact
+  lead: Lead
+  account: Account
+  deal: Deal
+  participants: [EventParticipant]
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  customFields: JSON
+  reminder: Notification
+}
+
+type EventParticipant {
+  id: ID!
+  name: String
+  email: String
+  type: String
+  status: String
+}
+
+type Call {
+  id: ID!
+  subject: String!
+  callType: String
+  callStartTime: DateTime
+  callDuration: Int
+  callResult: String
+  description: String
+  owner: User
+  contact: Contact
+  lead: Lead
+  account: Account
+  deal: Deal
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  customFields: JSON
+}
+
+type Note {
+  id: ID!
+  noteTitle: String
+  noteContent: String!
+  relatedTo: NoteRelatable
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  attachments: [Attachment]
+}
+
+union NoteRelatable = Lead | Contact | Account | Deal | Case | Task | Event | Call
+
+# ─────────────────────────────────────────────
+# Modules and Fields
+# ─────────────────────────────────────────────
+
+type Module {
+  id: ID!
+  apiName: String!
+  moduleName: String!
+  singularLabel: String
+  pluralLabel: String
+  isCustomModule: Boolean
+  isEditable: Boolean
+  isDeletable: Boolean
+  fields: [ModuleField]
+  customViews: [CustomView]
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+type ModuleField {
+  id: ID!
+  apiName: String!
+  fieldLabel: String!
+  dataType: String!
+  isRequired: Boolean
+  isCustomField: Boolean
+  isEditable: Boolean
+  isVisible: Boolean
+  maxLength: Int
+  decimalPlaces: Int
+  pickListValues: [PickListValue]
+  defaultValue: String
+  module: Module
+}
+
+type PickListValue {
+  id: ID!
+  displayValue: String!
+  actualValue: String
+  sequenceNumber: Int
+  maps: [PickListValueMap]
+}
+
+type PickListValueMap {
+  id: ID!
+  displayValue: String!
+  actualValue: String
+  module: Module
+}
+
+# ─────────────────────────────────────────────
+# Segmentation and Campaigns
+# ─────────────────────────────────────────────
+
+type Segment {
+  id: ID!
+  name: String!
+  description: String
+  criteria: JSON
+  recordCount: Int
+  module: Module
+  createdBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+type Campaign {
+  id: ID!
+  campaignName: String!
+  type: String
+  status: String
+  startDate: DateTime
+  endDate: DateTime
+  expectedRevenue: Float
+  budgetedCost: Float
+  actualCost: Float
+  expectedROI: Float
+  actualROI: Float
+  numbersSent: Int
+  description: String
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  members: [CampaignMember]
+  tags: [String]
+  customFields: JSON
+}
+
+type CampaignMember {
+  id: ID!
+  campaign: Campaign!
+  lead: Lead
+  contact: Contact
+  memberStatus: String
+  addedAt: DateTime
+}
+
+# ─────────────────────────────────────────────
+# Email and Templates
+# ─────────────────────────────────────────────
+
+type Email {
+  id: ID!
+  subject: String
+  fromAddress: String
+  toAddress: String
+  ccAddress: String
+  bccAddress: String
+  content: String
+  sentAt: DateTime
+  status: String
+  openCount: Int
+  clickCount: Int
+  relatedTo: EmailRelatable
+  template: EmailTemplate
+  attachments: [Attachment]
+  createdAt: DateTime
+}
+
+union EmailRelatable = Lead | Contact | Account | Deal | Case
+
+type EmailTemplate {
+  id: ID!
+  name: String!
+  subject: String
+  content: String
+  htmlContent: String
+  type: String
+  category: String
+  module: Module
+  isAttachmentsEnabled: Boolean
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  attachments: [Attachment]
+}
+
+# ─────────────────────────────────────────────
+# Social Media
+# ─────────────────────────────────────────────
+
+type SocialMedia {
+  id: ID!
+  type: SocialMediaType!
+  url: String
+  handle: String
+  contact: Contact
+  lead: Lead
+}
+
+enum SocialMediaType {
+  TWITTER
+  FACEBOOK
+  LINKEDIN
+  INSTAGRAM
+  YOUTUBE
+  OTHER
+}
+
+# ─────────────────────────────────────────────
+# Documents and Attachments
+# ─────────────────────────────────────────────
+
+type Document {
+  id: ID!
+  name: String!
+  description: String
+  type: String
+  size: Int
+  url: String
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  attachments: [Attachment]
+}
+
+type Attachment {
+  id: ID!
+  fileName: String!
+  fileType: String
+  fileSize: Int
+  downloadUrl: String
+  relatedTo: AttachmentRelatable
+  createdBy: User
+  createdAt: DateTime
+}
+
+union AttachmentRelatable = Lead | Contact | Account | Deal | Case | Note | Email | Document
+
+# ─────────────────────────────────────────────
+# Products, Pricing, and Commerce
+# ─────────────────────────────────────────────
+
+type Product {
+  id: ID!
+  productName: String!
+  productCode: String
+  vendor: Vendor
+  category: String
+  unitPrice: Float
+  commission: Float
+  tax: Tax
+  currency: CurrencyList
+  quantityInStock: Int
+  quantityInDemand: Int
+  description: String
+  isActive: Boolean
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  customFields: JSON
+}
+
+type Price {
+  id: ID!
+  product: Product!
+  currency: CurrencyList
+  unitPrice: Float
+  discount: Float
+  total: Float
+  priceBook: PriceBook
+}
+
+type PriceBook {
+  id: ID!
+  name: String!
+  description: String
+  currency: CurrencyList
+  prices: [Price]
+  isActive: Boolean
+  createdBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+type Tax {
+  id: ID!
+  name: String!
+  displayLabel: String
+  percentage: Float
+  isActive: Boolean
+}
+
+type Invoice {
+  id: ID!
+  subject: String!
+  invoiceDate: DateTime
+  dueDate: DateTime
+  status: String
+  account: Account
+  contact: Contact
+  deal: Deal
+  billingStreet: String
+  billingCity: String
+  billingState: String
+  billingZip: String
+  billingCountry: String
+  shippingStreet: String
+  shippingCity: String
+  shippingState: String
+  shippingZip: String
+  shippingCountry: String
+  subTotal: Float
+  discount: Float
+  tax: Float
+  adjustment: Float
+  grandTotal: Float
+  termsAndConditions: String
+  description: String
+  currency: CurrencyList
+  lineItems: [LineItem]
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  customFields: JSON
+}
+
+type LineItem {
+  id: ID!
+  product: Product
+  quantity: Float
+  unitPrice: Float
+  discount: Float
+  total: Float
+  description: String
+  tax: [Tax]
+}
+
+type SalesOrder {
+  id: ID!
+  subject: String!
+  status: String
+  purchaseOrder: String
+  account: Account
+  contact: Contact
+  deal: Deal
+  quote: Quote
+  dueDate: DateTime
+  billingStreet: String
+  billingCity: String
+  billingState: String
+  billingZip: String
+  billingCountry: String
+  shippingStreet: String
+  shippingCity: String
+  shippingState: String
+  shippingZip: String
+  shippingCountry: String
+  subTotal: Float
+  discount: Float
+  tax: Float
+  adjustment: Float
+  grandTotal: Float
+  termsAndConditions: String
+  description: String
+  currency: CurrencyList
+  lineItems: [LineItem]
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  customFields: JSON
+}
+
+type PurchaseOrder {
+  id: ID!
+  subject: String!
+  status: String
+  vendor: Vendor
+  contact: Contact
+  requisitionNumber: String
+  trackingNumber: String
+  dueDate: DateTime
+  carrier: String
+  billingStreet: String
+  billingCity: String
+  billingState: String
+  billingZip: String
+  billingCountry: String
+  shippingStreet: String
+  shippingCity: String
+  shippingState: String
+  shippingZip: String
+  shippingCountry: String
+  subTotal: Float
+  discount: Float
+  tax: Float
+  adjustment: Float
+  grandTotal: Float
+  termsAndConditions: String
+  description: String
+  currency: CurrencyList
+  lineItems: [LineItem]
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  customFields: JSON
+}
+
+type Quote {
+  id: ID!
+  subject: String!
+  quoteStage: String
+  validTill: DateTime
+  account: Account
+  contact: Contact
+  deal: Deal
+  billingStreet: String
+  billingCity: String
+  billingState: String
+  billingZip: String
+  billingCountry: String
+  shippingStreet: String
+  shippingCity: String
+  shippingState: String
+  shippingZip: String
+  shippingCountry: String
+  subTotal: Float
+  discount: Float
+  tax: Float
+  adjustment: Float
+  grandTotal: Float
+  termsAndConditions: String
+  description: String
+  currency: CurrencyList
+  lineItems: [LineItem]
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  customFields: JSON
+}
+
+type Template {
+  id: ID!
+  name: String!
+  type: TemplateType!
+  module: Module
+  content: String
+  htmlContent: String
+  subject: String
+  isActive: Boolean
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+enum TemplateType {
+  EMAIL
+  INVENTORY
+  MAIL_MERGE
+}
+
+type Vendor {
+  id: ID!
+  vendorName: String!
+  email: String
+  phone: String
+  mobile: String
+  website: String
+  street: String
+  city: String
+  state: String
+  zip: String
+  country: String
+  description: String
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  customFields: JSON
+  purchaseOrders: [PurchaseOrder]
+  products: [Product]
+}
+
+# ─────────────────────────────────────────────
+# Support
+# ─────────────────────────────────────────────
+
+type Case {
+  id: ID!
+  caseNumber: String
+  subject: String!
+  status: String
+  priority: String
+  type: String
+  origin: String
+  reason: String
+  description: String
+  solution: String
+  internalComments: String
+  account: Account
+  contact: Contact
+  product: Product
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  tags: [String]
+  customFields: JSON
+  solutions: [Solution]
+  notes: [Note]
+  attachments: [Attachment]
+  emails: [Email]
+}
+
+type Solution {
+  id: ID!
+  solutionTitle: String!
+  answer: String
+  status: String
+  commentCount: Int
+  product: Product
+  owner: User
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+  tags: [String]
+  customFields: JSON
+}
+
+type PortalInvite {
+  id: ID!
+  email: String!
+  status: String
+  contact: Contact
+  role: Role
+  invitedBy: User
+  invitedAt: DateTime
+  acceptedAt: DateTime
+}
+
+# ─────────────────────────────────────────────
+# Users, Roles, and Security
+# ─────────────────────────────────────────────
+
+type User {
+  id: ID!
+  firstName: String
+  lastName: String!
+  email: String!
+  phone: String
+  mobile: String
+  status: String
+  role: Role
+  profile: Profile
+  territories: [Territory]
+  groups: [Group]
+  reportingTo: User
+  currency: CurrencyList
+  language: String
+  locale: String
+  timeZone: String
+  dateFormat: String
+  timeFormat: String
+  isAdmin: Boolean
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+type Role {
+  id: ID!
+  name: String!
+  displayLabel: String
+  description: String
+  parentRole: Role
+  shareDataWithPeers: Boolean
+  forecastManager: User
+  adminUser: User
+  users: [User]
+}
+
+type UserRole {
+  id: ID!
+  user: User!
+  role: Role!
+  assignedAt: DateTime
+  assignedBy: User
+}
+
+type Profile {
+  id: ID!
+  name: String!
+  description: String
+  isDefaultProfile: Boolean
+  permissions: [Permission]
+  users: [User]
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+type Permission {
+  id: ID!
+  name: String!
+  displayLabel: String
+  module: Module
+  action: PermissionAction!
+  enabled: Boolean
+}
+
+enum PermissionAction {
+  CREATE
+  READ
+  UPDATE
+  DELETE
+  IMPORT
+  EXPORT
+  APPROVE
+  CONVERT
+  SHARE
+  PRINT
+}
+
+type Group {
+  id: ID!
+  name: String!
+  description: String
+  type: GroupType
+  members: [GroupMember]
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+enum GroupType {
+  STATIC
+  DYNAMIC
+  TERRITORY
+}
+
+type GroupMember {
+  id: ID!
+  group: Group!
+  user: User
+  role: Role
+  type: String
+}
+
+# ─────────────────────────────────────────────
+# Territories
+# ─────────────────────────────────────────────
+
+type Territory {
+  id: ID!
+  name: String!
+  description: String
+  parentTerritory: Territory
+  accountAssignmentRules: [Rule]
+  forecastManager: TerritoryManager
+  managers: [TerritoryManager]
+  users: [User]
+  accounts: [Account]
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+type TerritoryManager {
+  id: ID!
+  territory: Territory!
+  user: User!
+  role: TerritoryManagerRole
+  assignedAt: DateTime
+}
+
+enum TerritoryManagerRole {
+  MANAGER
+  SUBORDINATE_MANAGER
+  MEMBER
+}
+
+# ─────────────────────────────────────────────
+# Automation
+# ─────────────────────────────────────────────
+
+type Rule {
+  id: ID!
+  name: String!
+  description: String
+  module: Module
+  trigger: String
+  criteria: JSON
+  actions: [RuleAction]
+  isActive: Boolean
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+type RuleAction {
+  id: ID!
+  type: RuleActionType!
+  parameters: JSON
+}
+
+enum RuleActionType {
+  SEND_EMAIL
+  CREATE_TASK
+  UPDATE_FIELD
+  NOTIFY_USER
+  WEBHOOK
+  FUNCTION
+  TAG_RECORD
+}
+
+type AutomationRule {
+  id: ID!
+  name: String!
+  description: String
+  module: Module
+  trigger: AutomationTrigger!
+  criteria: JSON
+  executionTime: String
+  actions: [RuleAction]
+  isActive: Boolean
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+enum AutomationTrigger {
+  RECORD_CREATED
+  RECORD_EDITED
+  RECORD_DELETED
+  FIELD_MODIFIED
+  DATE_TIME
+}
+
+type BlueprintProcess {
+  id: ID!
+  name: String!
+  description: String
+  module: Module
+  stages: [BlueprintStage]
+  isActive: Boolean
+  createdBy: User
+  modifiedBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+type BlueprintStage {
+  id: ID!
+  name: String!
+  color: String
+  position: Int
+  transitions: [BlueprintTransition]
+}
+
+type BlueprintTransition {
+  id: ID!
+  name: String!
+  criteria: JSON
+  actions: [RuleAction]
+  fromStage: BlueprintStage
+  toStage: BlueprintStage!
+  requiredFields: [ModuleField]
+}
+
+type Approval {
+  id: ID!
+  module: Module
+  record: JSON
+  status: ApprovalStatus!
+  requestedBy: User
+  approver: User
+  requestedAt: DateTime
+  processedAt: DateTime
+  comments: String
+}
+
+enum ApprovalStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  DELEGATED
+}
+
+# ─────────────────────────────────────────────
+# Settings and Configuration
+# ─────────────────────────────────────────────
+
+type OrganizationSettings {
+  id: ID!
+  orgName: String
+  alias: String
+  street: String
+  city: String
+  state: String
+  zip: String
+  country: String
+  phone: String
+  fax: String
+  website: String
+  email: String
+  primaryCurrency: CurrencyList
+  timeZone: String
+  dateFormat: String
+  timeFormat: String
+  language: String
+  fiscalYear: String
+  logoUrl: String
+}
+
+type CurrencyList {
+  id: ID!
+  isoCode: String!
+  symbol: String
+  name: String
+  exchangeRate: Float
+  isActive: Boolean
+  isPrimary: Boolean
+  format: String
+  decimalSeparator: String
+  thousandsSeparator: String
+}
+
+type OAuthToken {
+  id: ID!
+  clientId: String
+  grantType: String
+  scope: [String]
+  expiryTime: DateTime
+  module: String
+  userId: User
+  createdAt: DateTime
+}
+
+type APIKey {
+  id: ID!
+  name: String!
+  keyValue: String
+  scope: [String]
+  isActive: Boolean
+  expiryDate: DateTime
+  createdBy: User
+  createdAt: DateTime
+}
+
+type AccountSettings {
+  id: ID!
+  user: User!
+  currency: CurrencyList
+  language: String
+  locale: String
+  dateFormat: String
+  timeFormat: String
+  timeZone: String
+  theme: String
+  notificationPreferences: JSON
+}
+
+type Variable {
+  id: ID!
+  name: String!
+  apiName: String!
+  type: VariableType!
+  value: String
+  description: String
+  module: Module
+  createdBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+enum VariableType {
+  TEXT
+  NUMBER
+  DATE
+  BOOLEAN
+  JSON
+}
+
+type CustomView {
+  id: ID!
+  name: String!
+  displayValue: String
+  module: Module!
+  criteria: JSON
+  sortField: ModuleField
+  sortOrder: SortOrder
+  fields: [ModuleField]
+  isDefault: Boolean
+  isSystemDefined: Boolean
+  sharedType: String
+  sharedDetails: [User]
+  createdBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+enum SortOrder {
+  ASC
+  DESC
+}
+
+# ─────────────────────────────────────────────
+# Analytics
+# ─────────────────────────────────────────────
+
+type AnalyticsReport {
+  id: ID!
+  name: String!
+  reportType: ReportType
+  module: Module
+  description: String
+  fields: [ReportField]
+  groupBy: [ReportField]
+  criteria: JSON
+  orderBy: JSON
+  isShared: Boolean
+  sharedWith: [User]
+  owner: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+enum ReportType {
+  TABULAR
+  SUMMARY
+  MATRIX
+  CHART
+}
+
+type ReportField {
+  id: ID!
+  field: ModuleField!
+  aggregateFunction: AggregateFunction
+  label: String
+  position: Int
+}
+
+enum AggregateFunction {
+  SUM
+  AVG
+  COUNT
+  MIN
+  MAX
+}
+
+type DashboardWidget {
+  id: ID!
+  name: String!
+  type: WidgetType!
+  report: AnalyticsReport
+  refreshInterval: Int
+  position: JSON
+  configuration: JSON
+  dashboard: Dashboard
+}
+
+type Dashboard {
+  id: ID!
+  name: String!
+  description: String
+  widgets: [DashboardWidget]
+  isDefault: Boolean
+  isShared: Boolean
+  sharedWith: [User]
+  owner: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+enum WidgetType {
+  BAR_CHART
+  LINE_CHART
+  PIE_CHART
+  DONUT_CHART
+  FUNNEL
+  SCORECARD
+  TABLE
+  HEAT_MAP
+}
+
+# ─────────────────────────────────────────────
+# Webhooks and Notifications
+# ─────────────────────────────────────────────
+
+type Webhook {
+  id: ID!
+  name: String!
+  url: String!
+  method: HTTPMethod
+  module: Module
+  events: [WebhookEvent]
+  headers: JSON
+  parameters: JSON
+  token: String
+  isActive: Boolean
+  createdBy: User
+  createdAt: DateTime
+  modifiedAt: DateTime
+}
+
+enum HTTPMethod {
+  GET
+  POST
+  PUT
+  PATCH
+  DELETE
+}
+
+type WebhookEvent {
+  id: ID!
+  webhook: Webhook!
+  eventType: WebhookEventType!
+  module: Module
+}
+
+enum WebhookEventType {
+  CREATE
+  EDIT
+  DELETE
+  ALL
+}
+
+type Notification {
+  id: ID!
+  type: NotificationType!
+  title: String
+  content: String
+  relatedTo: JSON
+  isRead: Boolean
+  owner: User
+  createdAt: DateTime
+}
+
+enum NotificationType {
+  TASK_REMINDER
+  EVENT_REMINDER
+  APPROVAL_REQUEST
+  APPROVAL_DECISION
+  RECORD_ASSIGNMENT
+  MENTION
+  SYSTEM
+}
+
+# ─────────────────────────────────────────────
+# Root Operations
+# ─────────────────────────────────────────────
+
+type Query {
+  # Leads
+  lead(id: ID!): Lead
+  leads(filter: JSON, sort: JSON, limit: Int, offset: Int): [Lead]
+
+  # Contacts
+  contact(id: ID!): Contact
+  contacts(filter: JSON, sort: JSON, limit: Int, offset: Int): [Contact]
+
+  # Accounts
+  account(id: ID!): Account
+  accounts(filter: JSON, sort: JSON, limit: Int, offset: Int): [Account]
+
+  # Deals
+  deal(id: ID!): Deal
+  deals(filter: JSON, sort: JSON, limit: Int, offset: Int): [Deal]
+
+  # Pipeline
+  stage(id: ID!): Stage
+  stages: [Stage]
+  pipeline(id: ID!): Pipeline
+  pipelines: [Pipeline]
+
+  # Activities
+  task(id: ID!): Task
+  tasks(filter: JSON, sort: JSON, limit: Int, offset: Int): [Task]
+  event(id: ID!): Event
+  events(filter: JSON, sort: JSON, limit: Int, offset: Int): [Event]
+  call(id: ID!): Call
+  calls(filter: JSON, sort: JSON, limit: Int, offset: Int): [Call]
+  note(id: ID!): Note
+  notes(filter: JSON, sort: JSON, limit: Int, offset: Int): [Note]
+
+  # Modules
+  module(apiName: String!): Module
+  modules: [Module]
+  moduleField(id: ID!): ModuleField
+  moduleFields(moduleApiName: String!): [ModuleField]
+
+  # Campaigns
+  campaign(id: ID!): Campaign
+  campaigns(filter: JSON, limit: Int, offset: Int): [Campaign]
+
+  # Email
+  emailTemplate(id: ID!): EmailTemplate
+  emailTemplates(filter: JSON, limit: Int, offset: Int): [EmailTemplate]
+
+  # Commerce
+  product(id: ID!): Product
+  products(filter: JSON, limit: Int, offset: Int): [Product]
+  vendor(id: ID!): Vendor
+  vendors(filter: JSON, limit: Int, offset: Int): [Vendor]
+  invoice(id: ID!): Invoice
+  invoices(filter: JSON, limit: Int, offset: Int): [Invoice]
+  salesOrder(id: ID!): SalesOrder
+  salesOrders(filter: JSON, limit: Int, offset: Int): [SalesOrder]
+  purchaseOrder(id: ID!): PurchaseOrder
+  purchaseOrders(filter: JSON, limit: Int, offset: Int): [PurchaseOrder]
+  quote(id: ID!): Quote
+  quotes(filter: JSON, limit: Int, offset: Int): [Quote]
+
+  # Support
+  case(id: ID!): Case
+  cases(filter: JSON, limit: Int, offset: Int): [Case]
+  solution(id: ID!): Solution
+  solutions(filter: JSON, limit: Int, offset: Int): [Solution]
+
+  # Users and Security
+  user(id: ID!): User
+  users(filter: JSON, limit: Int, offset: Int): [User]
+  role(id: ID!): Role
+  roles: [Role]
+  profile(id: ID!): Profile
+  profiles: [Profile]
+  group(id: ID!): Group
+  groups: [Group]
+
+  # Territories
+  territory(id: ID!): Territory
+  territories: [Territory]
+
+  # Automation
+  rule(id: ID!): Rule
+  rules(module: String): [Rule]
+  automationRule(id: ID!): AutomationRule
+  automationRules(module: String): [AutomationRule]
+  blueprintProcess(id: ID!): BlueprintProcess
+  blueprintProcesses(module: String): [BlueprintProcess]
+  approval(id: ID!): Approval
+  approvals(status: ApprovalStatus, limit: Int, offset: Int): [Approval]
+
+  # Settings
+  organizationSettings: OrganizationSettings
+  currencies: [CurrencyList]
+  accountSettings: AccountSettings
+  variables: [Variable]
+  customView(id: ID!): CustomView
+  customViews(module: String): [CustomView]
+
+  # Analytics
+  analyticsReport(id: ID!): AnalyticsReport
+  analyticsReports(filter: JSON, limit: Int, offset: Int): [AnalyticsReport]
+  dashboard(id: ID!): Dashboard
+  dashboards: [Dashboard]
+
+  # Webhooks
+  webhook(id: ID!): Webhook
+  webhooks: [Webhook]
+  notifications(isRead: Boolean, limit: Int, offset: Int): [Notification]
+}
+
+type Mutation {
+  # Lead operations
+  createLead(input: JSON!): Lead
+  updateLead(id: ID!, input: JSON!): Lead
+  deleteLead(id: ID!): Boolean
+  convertLead(id: ID!, contactId: ID, accountId: ID, dealInput: JSON): Deal
+
+  # Contact operations
+  createContact(input: JSON!): Contact
+  updateContact(id: ID!, input: JSON!): Contact
+  deleteContact(id: ID!): Boolean
+
+  # Account operations
+  createAccount(input: JSON!): Account
+  updateAccount(id: ID!, input: JSON!): Account
+  deleteAccount(id: ID!): Boolean
+
+  # Deal operations
+  createDeal(input: JSON!): Deal
+  updateDeal(id: ID!, input: JSON!): Deal
+  deleteDeal(id: ID!): Boolean
+
+  # Task operations
+  createTask(input: JSON!): Task
+  updateTask(id: ID!, input: JSON!): Task
+  deleteTask(id: ID!): Boolean
+
+  # Event operations
+  createEvent(input: JSON!): Event
+  updateEvent(id: ID!, input: JSON!): Event
+  deleteEvent(id: ID!): Boolean
+
+  # Call operations
+  createCall(input: JSON!): Call
+  updateCall(id: ID!, input: JSON!): Call
+  deleteCall(id: ID!): Boolean
+
+  # Note operations
+  createNote(input: JSON!): Note
+  updateNote(id: ID!, input: JSON!): Note
+  deleteNote(id: ID!): Boolean
+
+  # Campaign operations
+  createCampaign(input: JSON!): Campaign
+  updateCampaign(id: ID!, input: JSON!): Campaign
+  deleteCampaign(id: ID!): Boolean
+  addCampaignMember(campaignId: ID!, leadId: ID, contactId: ID, status: String): CampaignMember
+
+  # Email operations
+  sendEmail(input: JSON!): Email
+  createEmailTemplate(input: JSON!): EmailTemplate
+  updateEmailTemplate(id: ID!, input: JSON!): EmailTemplate
+  deleteEmailTemplate(id: ID!): Boolean
+
+  # Commerce operations
+  createProduct(input: JSON!): Product
+  updateProduct(id: ID!, input: JSON!): Product
+  deleteProduct(id: ID!): Boolean
+  createInvoice(input: JSON!): Invoice
+  updateInvoice(id: ID!, input: JSON!): Invoice
+  createSalesOrder(input: JSON!): SalesOrder
+  updateSalesOrder(id: ID!, input: JSON!): SalesOrder
+  createPurchaseOrder(input: JSON!): PurchaseOrder
+  updatePurchaseOrder(id: ID!, input: JSON!): PurchaseOrder
+  createQuote(input: JSON!): Quote
+  updateQuote(id: ID!, input: JSON!): Quote
+
+  # Support operations
+  createCase(input: JSON!): Case
+  updateCase(id: ID!, input: JSON!): Case
+  deleteCase(id: ID!): Boolean
+  createSolution(input: JSON!): Solution
+  updateSolution(id: ID!, input: JSON!): Solution
+  deleteSolution(id: ID!): Boolean
+
+  # Automation operations
+  createRule(input: JSON!): Rule
+  updateRule(id: ID!, input: JSON!): Rule
+  deleteRule(id: ID!): Boolean
+  createAutomationRule(input: JSON!): AutomationRule
+  updateAutomationRule(id: ID!, input: JSON!): AutomationRule
+  deleteAutomationRule(id: ID!): Boolean
+  approveRecord(approvalId: ID!, comments: String): Approval
+  rejectRecord(approvalId: ID!, comments: String): Approval
+
+  # Webhook operations
+  createWebhook(input: JSON!): Webhook
+  updateWebhook(id: ID!, input: JSON!): Webhook
+  deleteWebhook(id: ID!): Boolean
+
+  # User operations
+  createUser(input: JSON!): User
+  updateUser(id: ID!, input: JSON!): User
+  deactivateUser(id: ID!): Boolean
+  assignRole(userId: ID!, roleId: ID!): UserRole
+  addGroupMember(groupId: ID!, userId: ID): GroupMember
+
+  # Settings operations
+  updateOrganizationSettings(input: JSON!): OrganizationSettings
+  updateAccountSettings(input: JSON!): AccountSettings
+  createVariable(input: JSON!): Variable
+  updateVariable(id: ID!, input: JSON!): Variable
+  deleteVariable(id: ID!): Boolean
+  createCustomView(input: JSON!): CustomView
+  updateCustomView(id: ID!, input: JSON!): CustomView
+  deleteCustomView(id: ID!): Boolean
+  markNotificationRead(id: ID!): Notification
+  markAllNotificationsRead: Boolean
+}
+
+type Subscription {
+  leadCreated: Lead
+  leadUpdated(id: ID): Lead
+  contactCreated: Contact
+  contactUpdated(id: ID): Contact
+  accountCreated: Account
+  accountUpdated(id: ID): Account
+  dealCreated: Deal
+  dealUpdated(id: ID): Deal
+  dealStageChanged(dealId: ID): Deal
+  taskCreated(assignedTo: ID): Task
+  taskCompleted(assignedTo: ID): Task
+  eventStarting(minutesBefore: Int): Event
+  approvalRequested: Approval
+  notificationReceived: Notification
+}
