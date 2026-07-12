@@ -67,6 +67,10 @@ apis:
   - type: AsyncAPI
     url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/asyncapi/zoho-crm-notifications-asyncapi.yml
 common:
+- type: VulnerabilityDisclosure
+  url: security/zoho-crm-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/zoho-crm-domain-security.yml
 - type: GitHubOrganization
   url: https://github.com/zoho
 - type: LinkedIn
@@ -83,6 +87,8 @@ common:
   url: https://www.zoho.com/crm/zohocrm-pricing.html
 - type: PostmanWorkspace
   url: https://www.postman.com/zohocrmdevelopers/zoho-crm-developers/overview
+- url: https://www.zoho.com/crm/blog/feed/
+  type: Blog
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
