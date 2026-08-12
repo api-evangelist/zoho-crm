@@ -31,39 +31,13 @@ created: '2026-05-11'
 modified: '2026-05-30'
 specificationVersion: '0.19'
 apis:
-- aid: zoho-crm:rest-api-v8
-  name: Zoho CRM REST API v8
-  description: OAuth 2.0 protected REST API for managing CRM records, modules, users,
-    workflows, notes, attachments, tags, and bulk data operations across the Zoho
-    CRM platform.
-  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
-  baseURL: https://www.zohoapis.com/crm/v8
-  tags:
-  - CRM
-  - REST
-  - OAuth 2.0
-  - Records
-  - Modules
-  properties:
-  - type: Documentation
-    url: https://www.zoho.com/crm/developer/docs/api/v8/
-  - type: OAuth Overview
-    url: https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html
-  - type: List of APIs
-    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
-  - type: OpenAPI
-    url: https://www.zoho.com/crm/developer/docs/api/v8/openapi-specification.html
-  - type: Scopes
-    url: https://www.zoho.com/crm/developer/docs/api/v8/scopes.html
-  - url: graphql/zoho-crm-graphql.md
-    type: GraphQL
 - aid: zoho-crm:notifications-api-v2
   name: Zoho CRM Notifications API v2
-  description: Instant Notifications API for Zoho CRM. Subscribers register a channel
-    via POST /crm/v2/actions/watch with a notify_url and a list of module/operation
-    events (for example Leads.create, Contacts.edit, Deals.delete, Accounts.all).
-    Zoho CRM then POSTs JSON callbacks to the notify_url whenever the subscribed create,
-    edit, delete, or all operations occur on records in the subscribed module.
+  description: >-
+    Instant Notifications API for Zoho CRM. Subscribers register a channel via POST /crm/v2/actions/watch
+    with a notify_url and a list of module/operation events (for example Leads.create, Contacts.edit,
+    Deals.delete, Accounts.all). Zoho CRM then POSTs JSON callbacks to the notify_url whenever the subscribed
+    create, edit, delete, or all operations occur on records in the subscribed module.
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
   tags:
@@ -76,7 +50,48 @@ apis:
   - type: Documentation
     url: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   - type: AsyncAPI
-    url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/asyncapi/zoho-crm-notifications-asyncapi.yml
+    url: >-
+      https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/asyncapi/zoho-crm-notifications-asyncapi.yml
+- aid: zoho-crm:zoho-crm-settings-api
+  name: Zoho CRM Settings API
+  description: The Settings API from Zoho CRM — 2 operation(s) for settings.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - Settings
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-settings-api-openapi.yml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: OAuth Overview
+    url: https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html
+  - type: List of APIs
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: Scopes
+    url: https://www.zoho.com/crm/developer/docs/api/v8/scopes.html
+  - type: GraphQL
+    url: graphql/zoho-crm-graphql.md
+- aid: zoho-crm:zoho-crm-zoho-crm-api-api
+  name: Zoho CRM Zoho CRM API API
+  description: The Zoho CRM API API from Zoho CRM — 2 operation(s) for zoho crm api.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - Zoho CRM API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-zoho-crm-api-api-openapi.yml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: OAuth Overview
+    url: https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html
+  - type: List of APIs
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: Scopes
+    url: https://www.zoho.com/crm/developer/docs/api/v8/scopes.html
+  - type: GraphQL
+    url: graphql/zoho-crm-graphql.md
 common:
 - type: VulnerabilityDisclosure
   url: security/zoho-crm-vulnerability-disclosure.yml
