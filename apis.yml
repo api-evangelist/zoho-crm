@@ -1,23 +1,32 @@
 aid: zoho-crm
 name: Zoho CRM
-description: Zoho CRM is an AI-powered sales and customer relationship management
-  platform from Zoho that helps businesses manage leads, contacts, accounts, deals,
-  and customer engagement across multiple channels. The Zoho CRM REST API (currently
-  at v8) uses OAuth 2.0 authorization-code flow and provides programmatic access to
-  records, modules, users, workflows, analytics, and bulk data operations, with an
-  OpenAPI specification published for the API.
+description: Zoho CRM is Zoho Corporation's AI-powered sales and customer relationship management platform, used
+  to manage leads, contacts, accounts, deals, activities and customer engagement across channels. Its REST API is
+  currently at v8 and is published as first-party OpenAPI 3.1.0 — 105 specification files covering 405 operations,
+  hosted by Zoho at github.com/zoho/crm-oas and linked from the developer documentation. Authentication is OAuth
+  2.0 authorization-code against accounts.zoho.com with 458 distinct scopes, and every specification templates both
+  the data centre and the API version into the server URL (https://zohoapis.{dc}/crm/{version}, dc one of com, eu,
+  in, cn, au). Usage is metered in API credits on a rolling 24-hour window rather than in requests, alongside an
+  org-level concurrency cap. Zoho additionally ships server-side SDKs for Node.js, TypeScript, Python, PHP, C#,
+  Java, Ruby and Scala, a widget/extension CLI (ZET), a documented webhook surface (Instant Notifications), and
+  a hosted MCP product that names Zoho CRM as a supported app.
 type: Index
 accessModel:
-  pricing: unknown
-  onboarding: unknown
-  trial: false
-  try_now: false
-  public: false
-  label: Unknown
-  confidence: low
-  source: []
-  generated: '2026-07-22'
-  method: derived
+  pricing: freemium
+  onboarding: self-service
+  trial: true
+  try_now: true
+  public: true
+  label: Freemium, self-service
+  confidence: high
+  source:
+  - https://www.zoho.com/crm/zohocrm-pricing.html
+  - https://www.zoho.com/crm/signup.html
+  - https://api-console.zoho.com/
+  generated: '2026-08-13'
+  method: searched
+  note: Free edition for up to 3 users with a 5,000 API-credit daily budget; every paid edition CTA is a free trial;
+    OAuth clients are self-service in the Zoho API Console.
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zoho-crm.png
 tags:
 - CRM
@@ -26,18 +35,24 @@ tags:
 - Marketing Automation
 - Lead Management
 - Customer Engagement
+- Sales Automation
+- Contact Management
+- Pipeline Management
+- SaaS
+- OpenAPI
+- OAuth
 url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/apis.yml
 created: '2026-05-11'
-modified: '2026-05-30'
+modified: '2026-08-13'
 specificationVersion: '0.19'
 apis:
 - aid: zoho-crm:notifications-api-v2
   name: Zoho CRM Notifications API v2
-  description: >-
-    Instant Notifications API for Zoho CRM. Subscribers register a channel via POST /crm/v2/actions/watch
-    with a notify_url and a list of module/operation events (for example Leads.create, Contacts.edit,
-    Deals.delete, Accounts.all). Zoho CRM then POSTs JSON callbacks to the notify_url whenever the subscribed
-    create, edit, delete, or all operations occur on records in the subscribed module.
+  description: Instant Notifications API for Zoho CRM. Subscribers register a channel via POST /crm/v2/actions/watch
+    with a notify_url and a list of module/operation events (for example Leads.create, Contacts.edit, Deals.delete,
+    Accounts.all). Zoho CRM then POSTs JSON callbacks to the notify_url whenever the subscribed create, edit, delete
+    or all operations occur on records in the subscribed module. Zoho also publishes a v8 OpenAPI for the same surface
+    at openapi/zoho-crm-notifications-openapi.json.
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
   tags:
@@ -50,71 +65,2354 @@ apis:
   - type: Documentation
     url: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   - type: AsyncAPI
-    url: >-
-      https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/asyncapi/zoho-crm-notifications-asyncapi.yml
-- aid: zoho-crm:zoho-crm-settings-api
-  name: Zoho CRM Settings API
-  description: The Settings API from Zoho CRM — 2 operation(s) for settings.
+    url: asyncapi/zoho-crm-notifications-asyncapi.yml
+  - type: Webhooks
+    url: asyncapi/zoho-crm-notifications-asyncapi.yml
+  - type: OpenAPI
+    url: openapi/zoho-crm-notifications-openapi.json
+- aid: zoho-crm:apis
+  name: Zoho CRM Available Apis
+  description: API to list all available REST APIs in Zoho CRM v8 for the current user and org.
   humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
   baseURL: https://www.zohoapis.com/crm/v8
   tags:
-  - Settings
+  - CRM
+  - Zoho CRM API v8
+  - Available Apis
   properties:
   - type: OpenAPI
-    url: openapi/zoho-crm-settings-api-openapi.yml
+    url: openapi/zoho-crm-apis-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-apis-overlay.yaml
   - type: Documentation
     url: https://www.zoho.com/crm/developer/docs/api/v8/
-  - type: OAuth Overview
-    url: https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html
-  - type: List of APIs
+  - type: APIReference
     url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
-  - type: Scopes
-    url: https://www.zoho.com/crm/developer/docs/api/v8/scopes.html
-  - type: GraphQL
-    url: graphql/zoho-crm-graphql.md
-- aid: zoho-crm:zoho-crm-zoho-crm-api-api
-  name: Zoho CRM Zoho CRM API API
-  description: The Zoho CRM API API from Zoho CRM — 2 operation(s) for zoho crm api.
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/apis.json
+- aid: zoho-crm:appointment-preference
+  name: Zoho CRM Appointment Preference
+  description: API for fetching and updating appointment preferences in Zoho CRM. These preferences define how appointments
+    behave, including job sheet visibility, deal creation, and booking constraints.
   humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
   baseURL: https://www.zohoapis.com/crm/v8
   tags:
-  - Zoho CRM API
+  - CRM
+  - Zoho CRM API v8
+  - Appointment Preference
   properties:
   - type: OpenAPI
-    url: openapi/zoho-crm-zoho-crm-api-api-openapi.yml
+    url: openapi/zoho-crm-appointment-preference-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-appointment-preference-overlay.yaml
   - type: Documentation
     url: https://www.zoho.com/crm/developer/docs/api/v8/
-  - type: OAuth Overview
-    url: https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html
-  - type: List of APIs
+  - type: APIReference
     url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
-  - type: Scopes
-    url: https://www.zoho.com/crm/developer/docs/api/v8/scopes.html
-  - type: GraphQL
-    url: graphql/zoho-crm-graphql.md
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/appointment_preference.json
+- aid: zoho-crm:appointments
+  name: Zoho CRM Appointments API
+  description: appointments module api. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    7 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Appointments API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-appointments-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-appointments-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/appointments.json
+- aid: zoho-crm:assignment-rules
+  name: Zoho CRM Assignment rules
+  description: Assignment rule apis. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    2 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Assignment rules
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-assignment-rules-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-assignment-rules-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/assignment_rules.json
+- aid: zoho-crm:associate-email
+  name: Zoho CRM Associate Email API
+  description: Associates emails to CRM records and checks availability. Published by Zoho in its first-party OpenAPI
+    3.1.0 repository github.com/zoho/crm-oas; 1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Zoho CRM Associate Email API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-associate-email-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-associate-email-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/associate_email.json
+- aid: zoho-crm:attachments
+  name: Zoho CRM Attachments
+  description: Attachments. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    4 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Attachments
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-attachments-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-attachments-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/attachments.json
+- aid: zoho-crm:audit-log-export
+  name: Zoho CRM Audit Log Export
+  description: Bulk Read. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    3 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Audit Log Export
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-audit-log-export-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-audit-log-export-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/audit_log_export.json
+- aid: zoho-crm:available-currencies
+  name: Zoho CRM Available Currencies
+  description: Retrieve the list of currencies supported in CRM. Published by Zoho in its first-party OpenAPI 3.1.0
+    repository github.com/zoho/crm-oas; 0 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Available Currencies
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-available-currencies-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-available-currencies-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/available_currencies.json
+- aid: zoho-crm:bulk-read
+  name: Zoho CRM Bulk Read
+  description: Bulk Read. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    3 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Bulk Read
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-bulk-read-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-bulk-read-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/bulk_read.json
+- aid: zoho-crm:bulk-write
+  name: Zoho CRM Bulk Write
+  description: Bulk Write API allows you to insert, update, or upsert a large set of data. Published by Zoho in
+    its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 2 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Bulk Write
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-bulk-write-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-bulk-write-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/bulk_write.json
+- aid: zoho-crm:business-hours
+  name: Zoho CRM Business Hours
+  description: Manage organization-wide business hours configuration for Zoho CRM. Published by Zoho in its first-party
+    OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 3 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Business Hours
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-business-hours-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-business-hours-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/business_hours.json
+- aid: zoho-crm:cadences-execution
+  name: Zoho CRM Cadence Execution
+  description: Unenroll cadence for record. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    2 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Cadence Execution
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-cadences-execution-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-cadences-execution-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/cadences_execution.json
+- aid: zoho-crm:cadences
+  name: Zoho CRM Cadences
+  description: Cadences v8 OAS. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Cadences
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-cadences-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-cadences-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/cadences.json
+- aid: zoho-crm:call-preferences
+  name: Zoho CRM Call Preferences
+  description: Preference to show From Number / To Number fields in CRM User can enable the respective preference
+    in order to have the field in CRM. i.e. If user needs From Number field, show_fromnumber preference is send
+    as true in API If the account has any active telephony integration, the user is not allowed to disable any of
+    the preference. If the account has active calendar booking for calls, user is not allowed to disable show_to_number
+    preference.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Call Preferences
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-call-preferences-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-call-preferences-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/call_preferences.json
+- aid: zoho-crm:cancel-meetings
+  name: Zoho CRM Cancel Meetings
+  description: To cancel a meeting and to send an email regarding the meeting cancellation to the participants.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Cancel Meetings
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-cancel-meetings-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-cancel-meetings-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/cancel_meetings.json
+- aid: zoho-crm:change-owner
+  name: Zoho CRM Change Owner
+  description: API for changing the owner of records in CRM modules. Published by Zoho in its first-party OpenAPI
+    3.1.0 repository github.com/zoho/crm-oas; 2 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Change Owner
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-change-owner-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-change-owner-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/change_owner.json
+- aid: zoho-crm:composite-requests
+  name: Zoho CRM Composite Requests
+  description: Composite API. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Composite Requests
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-composite-requests-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-composite-requests-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/composite_requests.json
+- aid: zoho-crm:contact-roles
+  name: Zoho CRM Contact Roles
+  description: Contact role API. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    7 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Contact Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-contact-roles-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-contact-roles-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/contact_roles.json
+- aid: zoho-crm:conversion-option
+  name: Zoho CRM Lead Conversion Options API
+  description: API endpoint for retrieving lead conversion options including matching contacts, accounts, field
+    mappings, and layout preferences. Helps determine available conversion paths before performing actual lead conversion.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Zoho CRM Lead Conversion Options API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-conversion-option-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-conversion-option-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/conversion_option.json
+- aid: zoho-crm:convert
+  name: Zoho CRM Lead Conversion API
+  description: API endpoint for converting Leads into Contacts, Accounts, and Deals within Zoho CRM. Supports configurable
+    conversion options including owner assignment, notification preferences, and tag carryover.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Zoho CRM Lead Conversion API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-convert-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-convert-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/convert.json
+- aid: zoho-crm:coql
+  name: Zoho CRM Coql
+  description: COQL APIs to fetch records data based on queries. Published by Zoho in its first-party OpenAPI 3.1.0
+    repository github.com/zoho/crm-oas; 1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Coql
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-coql-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-coql-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/coql.json
+- aid: zoho-crm:currencies
+  name: Zoho CRM Currencies
+  description: APIs for currencies management in CRM. Published by Zoho in its first-party OpenAPI 3.1.0 repository
+    github.com/zoho/crm-oas; 7 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Currencies
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-currencies-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-currencies-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/currencies.json
+- aid: zoho-crm:custom-views
+  name: Zoho CRM Custom Views
+  description: To apply CRUD operations of customviews, to pin field and to sort fields of customviews
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Custom Views
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-custom-views-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-custom-views-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/custom_views.json
+- aid: zoho-crm:data-sharing
+  name: Zoho CRM Data Sharing
+  description: Data Sharing. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    2 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Data Sharing
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-data-sharing-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-data-sharing-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/data_sharing.json
+- aid: zoho-crm:deal-contact-roles
+  name: Zoho CRM Deal Contact Roles
+  description: API for managing contact roles in Deal records. Track and manage which contacts are associated with
+    deals and their specific roles (e.g., Decision Maker, Influencer). Supports full CRUD operations to maintain
+    accurate relationship data between contacts and deal opportunities.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Deal Contact Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-deal-contact-roles-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-deal-contact-roles-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/deal_contact_roles.json
+- aid: zoho-crm:deal-link-emails
+  name: Zoho CRM Deal Link Emails
+  description: Record Actions. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    4 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Deal Link Emails
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-deal-link-emails-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-deal-link-emails-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/deal_link_emails.json
+- aid: zoho-crm:download-attachments
+  name: Zoho CRM Download Email Attachments
+  description: Download attachments associated with emails in Zoho CRM. Published by Zoho in its first-party OpenAPI
+    3.1.0 repository github.com/zoho/crm-oas; 1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Download Email Attachments
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-download-attachments-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-download-attachments-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/download_attachments.json
+- aid: zoho-crm:download-inline-images
+  name: Zoho CRM Download Inline Images
+  description: Download Inline Images of an Email. Published by Zoho in its first-party OpenAPI 3.1.0 repository
+    github.com/zoho/crm-oas; 1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Download Inline Images
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-download-inline-images-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-download-inline-images-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/download_inline_images.json
+- aid: zoho-crm:duplicate-check-preference
+  name: Zoho CRM Duplicate Check Preference
+  description: duplicate check preference api. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    4 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Duplicate Check Preference
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-duplicate-check-preference-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-duplicate-check-preference-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/duplicate_check_preference.json
+- aid: zoho-crm:email-drafts
+  name: Zoho CRM Email Drafts
+  description: Bad Request. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    5 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Email Drafts
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-email-drafts-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-email-drafts-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/email_drafts.json
+- aid: zoho-crm:email-templates
+  name: Zoho CRM Email Templates
+  description: OpenAPI definition for managing Email Templates APIs. Published by Zoho in its first-party OpenAPI
+    3.1.0 repository github.com/zoho/crm-oas; 1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Email Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-email-templates-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-email-templates-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/email_templates.json
+- aid: zoho-crm:emails-sharing-details
+  name: Zoho CRM Get Email Shared Details
+  description: To get the details of the users and the type with whom you can share the record's emails.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Get Email Shared Details
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-emails-sharing-details-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-emails-sharing-details-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/emails_sharing_details.json
+- aid: zoho-crm:features
+  name: Zoho CRM Features
+  description: Details about the Features. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    2 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Features
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-features-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-features-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/features.json
+- aid: zoho-crm:fetch-full-data
+  name: Zoho CRM Fetch Full Data
+  description: Rich Text Fields allow users to input formatted text of up to 50,000 characters, including HTML elements.
+    These fields are ideal for entries that require styling and organization, such as product descriptions or client
+    communications. The 'fetch_full_data' API retrieves the complete content of rich text fields for a specific
+    record or multiple records.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Fetch Full Data
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-fetch-full-data-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-fetch-full-data-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/fetch_full_data.json
+- aid: zoho-crm:field-updates
+  name: Zoho CRM Field Updates
+  description: FieldUpdate v8 OAS. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    6 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Field Updates
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-field-updates-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-field-updates-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/field_updates.json
+- aid: zoho-crm:fields
+  name: Zoho CRM Fields API
+  description: To get the field metadata for the specified module including standard module, custom module, subform
+    module, and linking module in you Zoho CRM account. The fields displayed are from all layouts for the module.
+    The response does not contain layout-specific fields like mandatory fields or picklist values.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Fields API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-fields-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-fields-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/fields.json
+- aid: zoho-crm:files
+  name: Zoho CRM Files
+  description: Zoho CRM Files API — endpoints to upload and retrieve files. POST /crm/v8/files accepts multipart/form-data
+    with a required 'file' field (binary) and returns upload metadata (id, name, status). GET /crm/v8/files?id={id}
+    returns the binary content for the specified file.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Files
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-files-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-files-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/files.json
+- aid: zoho-crm:find-and-merge
+  name: Zoho CRM Find And Merge
+  description: API endpoints for finding and merging duplicate records in Zoho CRM modules. Supports querying merge
+    job status and performing record merge operations with field mapping and validation.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Find And Merge
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-find-and-merge-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-find-and-merge-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/find_and_merge.json
+- aid: zoho-crm:fiscal-year
+  name: Zoho CRM Fiscal Year
+  description: API specification for Fiscal Year. Published by Zoho in its first-party OpenAPI 3.1.0 repository
+    github.com/zoho/crm-oas; 2 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Fiscal Year
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-fiscal-year-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-fiscal-year-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/fiscal_year.json
+- aid: zoho-crm:from-addresses
+  name: Zoho CRM From Addresses
+  description: To get the list of email addresses that you can send emails from. Published by Zoho in its first-party
+    OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - From Addresses
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-from-addresses-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-from-addresses-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/from_addresses.json
+- aid: zoho-crm:get-related-records-count
+  name: Zoho CRM Related Records Count
+  description: Get related records count. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Related Records Count
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-get-related-records-count-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-get-related-records-count-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/get_related_records_count.json
+- aid: zoho-crm:global-picklists
+  name: Zoho CRM Global Picklists
+  description: Global sets are collections of picklist values that can be associated with multiple picklists across
+    modules. Example use cases include maintaining a consistent set of status values or priority levels across different
+    modules in a CRM system. By using global sets, administrators can ensure uniformity and simplify the management
+    of picklist values, as any updates to the global set automatically reflect in all associated picklists. This
+    feature enhances data integrity and reduces redundancy, making it easier to manage and analyze data across various
+    modules.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Global Picklists
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-global-picklists-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-global-picklists-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/global_picklists.json
+- aid: zoho-crm:holidays
+  name: Zoho CRM Holidays API
+  description: Manage business and shift holidays in Zoho CRM. This API allows you to create, retrieve, update,
+    and delete holidays that affect business hours and shift schedules. Business holidays apply to all users while
+    shift holidays apply to specific shift configurations.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Zoho CRM Holidays API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-holidays-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-holidays-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/holidays.json
+- aid: zoho-crm:inventory-convert
+  name: Zoho CRM Inventory Convert
+  description: Converts a Quote or Sales Order into Sales Orders or Invoices as applicable. Quotes can be converted
+    into Sales Orders or Invoices.Sales Orders can be converted only into Invoices.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Inventory Convert
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-inventory-convert-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-inventory-convert-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/inventory_convert.json
+- aid: zoho-crm:inventory-templates
+  name: Zoho CRM Inventory Templates
+  description: OpenAPI definition for managing Inventory Templates APIs. Published by Zoho in its first-party OpenAPI
+    3.1.0 repository github.com/zoho/crm-oas; 1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Inventory Templates
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-inventory-templates-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-inventory-templates-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/inventory_templates.json
+- aid: zoho-crm:layouts-activate-deactivate
+  name: Zoho CRM Layout Activate and Deactivate API
+  description: API for layout activation and deactivation in Zoho CRM. Supports activating inactive layouts with
+    profile association management and deactivating active layouts with configuration transfer to another layout.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Layout Activate and Deactivate API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-layouts-activate-deactivate-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-layouts-activate-deactivate-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/layouts_activate_deactivate.json
+- aid: zoho-crm:layouts
+  name: Zoho CRM Layouts API
+  description: CRUD operations on Layout customization for modules in Zoho CRM. Supports getting the details of
+    all layouts or a specific layout of a module, updating a layout, deactivating/activating a layout, and deleting
+    a layout.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Layouts API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-layouts-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-layouts-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/layouts.json
+- aid: zoho-crm:locking-informations
+  name: Zoho CRM Locking Information
+  description: Record Locking Information APIs allows you to lock records, unlock records, view locking information
+    of locked records and edit locking information of locked records.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Locking Information
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-locking-informations-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-locking-informations-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/locking_informations.json
+- aid: zoho-crm:mail-merge
+  name: Zoho CRM Mail Merge
+  description: API specification for MailMerge. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    3 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Mail Merge
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-mail-merge-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-mail-merge-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mail_merge.json
+- aid: zoho-crm:map-dependency
+  name: Zoho CRM Map Dependency
+  description: The 'map_dependency' API allows users to manage dependencies between picklist fields in a module
+    layout. It supports operations to retrieve, create, update, and delete field dependencies. These dependencies
+    are used to define relationships between parent and child fields, ensuring that the values in the child field
+    are dynamically filtered based on the selected value in the parent field.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Map Dependency
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-map-dependency-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-map-dependency-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/map_dependency.json
+- aid: zoho-crm:mass-change-owner
+  name: Zoho CRM Mass Change Owner
+  description: API for mass changing the owner of records in a module based on a custom view. Published by Zoho
+    in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 2 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Mass Change Owner
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-mass-change-owner-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-mass-change-owner-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_change_owner.json
+- aid: zoho-crm:mass-convert
+  name: Zoho CRM Mass Convert
+  description: Mass convert leads into other CRM modules (Deals/Contacts/Accounts) with options for attachments,
+    tags and related modules.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Mass Convert
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-mass-convert-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-mass-convert-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_convert.json
+- aid: zoho-crm:mass-delete-cvid
+  name: Zoho CRM Mass Delete Api
+  description: Mass delete records with record ids and custom view id. Published by Zoho in its first-party OpenAPI
+    3.1.0 repository github.com/zoho/crm-oas; 2 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Mass Delete Api
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-mass-delete-cvid-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-mass-delete-cvid-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_delete_cvid.json
+- aid: zoho-crm:mass-delete-tags
+  name: Zoho CRM Mass Delete Tags
+  description: API for mass deletion of tags in Zoho CRM. This endpoint allows administrators to delete multiple
+    tags across modules in bulk.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Mass Delete Tags
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-mass-delete-tags-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-mass-delete-tags-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_delete_tags.json
+- aid: zoho-crm:mass-update
+  name: Zoho CRM Mass Update API
+  description: Enables users to update a specific field value across multiple records within a CRM module.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Mass Update API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-mass-update-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-mass-update-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_update.json
+- aid: zoho-crm:module-search
+  name: Zoho CRM Search Records
+  description: To retrieve records that match your search criteria within a single module. Published by Zoho in
+    its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Search Records
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-module-search-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-module-search-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/module_search.json
+- aid: zoho-crm:modules
+  name: Zoho CRM Modules
+  description: Modules. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 5
+    operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Modules
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-modules-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-modules-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/modules.json
+- aid: zoho-crm:notes
+  name: Zoho CRM Notes
+  description: Notes. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 7 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Notes
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-notes-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-notes-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/notes.json
+- aid: zoho-crm:notifications
+  name: Zoho CRM Notifications
+  description: Notifications management API for subscribing, listing and creating CRM notification channels.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Notifications
+  - Webhooks
+  - Events
+  - Notifications
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-notifications-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-notifications-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/notifications.json
+  - type: AsyncAPI
+    url: asyncapi/zoho-crm-notifications-asyncapi.yml
+  - type: Webhooks
+    url: asyncapi/zoho-crm-notifications-asyncapi.yml
+- aid: zoho-crm:org
+  name: Zoho CRM Org
+  description: Organization Details. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Org
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-org-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-org-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/org.json
+- aid: zoho-crm:org-photo
+  name: Zoho CRM Org Photo
+  description: org_photo. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    3 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Org Photo
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-org-photo-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-org-photo-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/org_photo.json
+- aid: zoho-crm:ownership-history
+  name: Zoho CRM Ownership History API
+  description: Retrieves the ownership change history for CRM records, tracking how record ownership transferred
+    from one user to another over time.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Zoho CRM Ownership History API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-ownership-history-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-ownership-history-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/ownership_history.json
+- aid: zoho-crm:pick-list-values
+  name: Zoho CRM Pick List Values
+  description: Returns the available pick list values for a specified field in a module. Published by Zoho in its
+    first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Pick List Values
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-pick-list-values-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-pick-list-values-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/pick_list_values.json
+- aid: zoho-crm:pipeline
+  name: Zoho CRM Pipeline
+  description: API for Managing Pipelines. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    8 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Pipeline
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-pipeline-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-pipeline-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/pipeline.json
+- aid: zoho-crm:portal-user-type
+  name: Zoho CRM Portal User Type
+  description: Portal User Type API is used to create, read, update and delete user group for a portal in ZOHO CRM.
+    A portal user type defines a set of permissions and access levels for users associated with that portal. This
+    API allows administrators to manage user types, assign specific permissions to different modules, and control
+    the access rights of portal users effectively. It helps in organizing and securing data by ensuring that users
+    have appropriate access based on their roles within the portal.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Portal User Type
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-portal-user-type-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-portal-user-type-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/portal_user_type.json
+- aid: zoho-crm:portal-users
+  name: Zoho CRM Portal Users
+  description: API for managing portal users. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    8 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Portal Users
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-portal-users-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-portal-users-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/portal_users.json
+- aid: zoho-crm:portals
+  name: Zoho CRM Portals
+  description: Portals settings API. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    5 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Portals
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-portals-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-portals-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/portals.json
+- aid: zoho-crm:profiles
+  name: Zoho CRM Profiles API
+  description: crud operations on CRM profiles. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    5 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Profiles API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-profiles-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-profiles-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/profiles.json
+- aid: zoho-crm:record-count
+  name: Zoho CRM Module Record Count
+  description: Records Count. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Module Record Count
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-record-count-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-record-count-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_count.json
+- aid: zoho-crm:record-locking-configurations
+  name: Zoho CRM Record Locking Configuration
+  description: Record locking configuration allows you to set up the configuration needed to lock the records in
+    modules manually or automatically when certain conditions are met.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Record Locking Configuration
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-record-locking-configurations-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-record-locking-configurations-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_locking_configurations.json
+- aid: zoho-crm:record
+  name: Zoho CRM Records
+  description: The Zoho CRM Records API allows you to perform CRUD (Create, Read, Update, Delete) operations on
+    records across all modules in your CRM. Use this API to retrieve, create, update, delete, upsert, and clone
+    records.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Records
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-record-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-record-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record.json
+- aid: zoho-crm:record-photo
+  name: Zoho CRM Record Photo
+  description: Record. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 3
+    operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Record Photo
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-record-photo-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-record-photo-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_photo.json
+- aid: zoho-crm:record-share-email
+  name: Zoho CRM Record Level Sharing Of Emails
+  description: API To share emails at record-level for a specific record or multiple records with other users in
+    your Zoho CRM organization through API.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Record Level Sharing Of Emails
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-record-share-email-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-record-share-email-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_share_email.json
+- aid: zoho-crm:recycle-bin
+  name: Zoho CRM Recycle Bin
+  description: To get, restore and delete Recycle Bin records. Published by Zoho in its first-party OpenAPI 3.1.0
+    repository github.com/zoho/crm-oas; 8 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Recycle Bin
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-recycle-bin-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-recycle-bin-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/recycle_bin.json
+- aid: zoho-crm:related-lists
+  name: Zoho CRM Related Lists
+  description: Manage the Related List Meta operations in Zoho CRM including retrieving, updating, and customizing
+    related lists for different modules and layouts.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Related Lists
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-related-lists-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-related-lists-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/related_lists.json
+- aid: zoho-crm:related-notes
+  name: Zoho CRM Related Notes
+  description: Notes API allows you to manage additional information attached to CRM records. Notes provide context
+    and details about contacts, accounts, deals, tasks, and other modules. Use this API to create, retrieve, update,
+    or delete notes associated with parent records. Supports both single and bulk operations for efficient note
+    management across your CRM data.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Related Notes
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-related-notes-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-related-notes-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/related_notes.json
+- aid: zoho-crm:related-records
+  name: Zoho CRM Related Records API
+  description: RESTful API for managing relationships between CRM records across different modules. Provides comprehensive
+    operations for retrieving, updating, and delinking related records with support for bulk operations, field filtering,
+    and pagination. Supports all standard CRM modules including Contacts, Leads, Deals, Accounts, Products, and
+    custom modules.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Zoho CRM Related Records API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-related-records-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-related-records-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/related_records.json
+- aid: zoho-crm:roles
+  name: Zoho CRM Roles
+  description: Retrieve Roles in the CRM - Manage user roles and permissions within the Zoho CRM system
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Roles
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-roles-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-roles-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/roles.json
+- aid: zoho-crm:scoring-rules
+  name: Zoho CRM Scoring Rules
+  description: Scoring Rules configuration APIs. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    10 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Scoring Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-scoring-rules-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-scoring-rules-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/scoring_rules.json
+- aid: zoho-crm:send-mail
+  name: Zoho CRM Send Mail
+  description: API to send emails to a record's email ID through Zoho CRM. Published by Zoho in its first-party
+    OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Send Mail
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-send-mail-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-send-mail-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/send_mail.json
+- aid: zoho-crm:service-preference
+  name: Zoho CRM Service Preference
+  description: Service Preference. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    2 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Service Preference
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-service-preference-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-service-preference-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/service_preference.json
+- aid: zoho-crm:services
+  name: Zoho CRM Services API
+  description: API specification for Services API. Published by Zoho in its first-party OpenAPI 3.1.0 repository
+    github.com/zoho/crm-oas; 7 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Services API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-services-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-services-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/services.json
+- aid: zoho-crm:share-records
+  name: Zoho CRM Share Records
+  description: Share Records. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    4 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Share Records
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-share-records-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-share-records-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/share_records.json
+- aid: zoho-crm:shift-hours
+  name: Zoho CRM Shift Hours
+  description: Manage shift hours configuration for Zoho CRM business hours, including shift timing, break schedules,
+    user assignments, and holiday definitions.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Shift Hours
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-shift-hours-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-shift-hours-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/shift_hours.json
+- aid: zoho-crm:tags-actions
+  name: Zoho CRM Tag Actions API
+  description: This file contains tag actions endpoints. Published by Zoho in its first-party OpenAPI 3.1.0 repository
+    github.com/zoho/crm-oas; 6 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Tag Actions API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-tags-actions-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-tags-actions-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/tags_actions.json
+- aid: zoho-crm:tags
+  name: Zoho CRM Tags CRUD API
+  description: This file contains tags CRUD apis. Published by Zoho in its first-party OpenAPI 3.1.0 repository
+    github.com/zoho/crm-oas; 5 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Tags CRUD API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-tags-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-tags-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/tags.json
+- aid: zoho-crm:territories
+  name: Zoho CRM Territories
+  description: Territories. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    15 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Territories
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-territories-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-territories-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/territories.json
+- aid: zoho-crm:territory-users
+  name: Zoho CRM Territory Users
+  description: Manage users assigned to territories. Published by Zoho in its first-party OpenAPI 3.1.0 repository
+    github.com/zoho/crm-oas; 6 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Territory Users
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-territory-users-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-territory-users-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/territory_users.json
+- aid: zoho-crm:timelines
+  name: Zoho CRM Timelines
+  description: timelines. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Timelines
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-timelines-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-timelines-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/timelines.json
+- aid: zoho-crm:unblock-email
+  name: Zoho CRM Unblock Email
+  description: Unblock Email. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    2 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Unblock Email
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-unblock-email-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-unblock-email-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/unblock_email.json
+- aid: zoho-crm:unsubscribe-links
+  name: Zoho CRM unsubscribe_links
+  description: API specification for unsubscribe_links_oas_v8. Published by Zoho in its first-party OpenAPI 3.1.0
+    repository github.com/zoho/crm-oas; 7 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - unsubscribe_links
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-unsubscribe-links-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-unsubscribe-links-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/unsubscribe_links.json
+- aid: zoho-crm:upload
+  name: Zoho CRM Upload
+  description: Upload file. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Upload
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-upload-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-upload-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/upload.json
+- aid: zoho-crm:user-groups
+  name: Zoho CRM User Groups
+  description: In Zoho CRM, you can create user groups (set of users) to manage a set of common records. Every group
+    can consist of members that are grouped based on the users, roles (with/without subordinates), territories (with/
+    without sub-territories) and groups. These combinations allow you to share common records through data sharing
+    rules.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - User Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-user-groups-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-user-groups-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/user_groups.json
+- aid: zoho-crm:users
+  name: Zoho CRM Users API
+  description: Users CRUD operations. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    6 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Users API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-users-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-users-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/users.json
+- aid: zoho-crm:users-territories
+  name: Zoho CRM Users Territories
+  description: API for managing user territories in Zoho CRM. Published by Zoho in its first-party OpenAPI 3.1.0
+    repository github.com/zoho/crm-oas; 5 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Users Territories
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-users-territories-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-users-territories-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/users_territories.json
+- aid: zoho-crm:users-transfer
+  name: Zoho CRM Users Transfer
+  description: API for transferring user data and deleting users in Zoho CRM. Published by Zoho in its first-party
+    OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 6 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Users Transfer
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-users-transfer-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-users-transfer-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/users_transfer.json
+- aid: zoho-crm:variable-groups
+  name: Zoho CRM Variable Groups
+  description: API specification for variable_groups. Published by Zoho in its first-party OpenAPI 3.1.0 repository
+    github.com/zoho/crm-oas; 4 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Variable Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-variable-groups-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-variable-groups-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/variable_groups.json
+- aid: zoho-crm:variables
+  name: Zoho CRM Variables
+  description: API specification for Variables_OAS_v8. Published by Zoho in its first-party OpenAPI 3.1.0 repository
+    github.com/zoho/crm-oas; 7 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Variables
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-variables-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-variables-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/variables.json
+- aid: zoho-crm:webhooks
+  name: Zoho CRM Webhooks
+  description: OpenAPI specification for Zoho CRM Webhooks (settings/automation) — endpoints to create, list, update,
+    delete webhooks, inspect failures and usage reports. Targets CRM v8 automation workflows and integrations.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Webhooks
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-webhooks-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-webhooks-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/webhooks.json
+- aid: zoho-crm:wizards
+  name: Zoho CRM Wizards
+  description: Wizards API. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Wizards
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-wizards-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-wizards-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/wizards.json
+- aid: zoho-crm:workflow-configurations
+  name: Zoho CRM Workflow Configurations
+  description: Workflow Configuration v8 OAS. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Workflow Configurations
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-workflow-configurations-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-workflow-configurations-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/workflow_configurations.json
+- aid: zoho-crm:workflow-rules
+  name: Zoho CRM Workflow Rules
+  description: WorkflowRule v8 OAS. Published by Zoho in its first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas;
+    12 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Workflow Rules
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-workflow-rules-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-workflow-rules-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/workflow_rules.json
+- aid: zoho-crm:workflow-tasks
+  name: Zoho CRM Automation Task
+  description: Manage Workflow task (Create, edit,delete and view). Published by Zoho in its first-party OpenAPI
+    3.1.0 repository github.com/zoho/crm-oas; 6 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Automation Task
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-workflow-tasks-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-workflow-tasks-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/workflow_tasks.json
+- aid: zoho-crm:zia-enrichment
+  name: Zoho CRM Zia Enrichment Configuration API
+  description: Zia enrichment configurations in CRM modules. Published by Zoho in its first-party OpenAPI 3.1.0
+    repository github.com/zoho/crm-oas; 1 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - Zia Enrichment Configuration API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-zia-enrichment-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-zia-enrichment-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/zia_enrichment.json
+- aid: zoho-crm:zia-org-enrichment
+  name: Zoho CRM ZIA Organization Enrichment API
+  description: Triggers the ZIA organization enrichment process for a given CRM record. Published by Zoho in its
+    first-party OpenAPI 3.1.0 repository github.com/zoho/crm-oas; 3 operation(s).
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
+  baseURL: https://www.zohoapis.com/crm/v8
+  tags:
+  - CRM
+  - Zoho CRM API v8
+  - ZIA Organization Enrichment API
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-zia-org-enrichment-openapi.json
+  - type: Overlay
+    url: overlays/zoho-crm-zia-org-enrichment-overlay.yaml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/zia_org_enrichment.json
 common:
-- type: VulnerabilityDisclosure
-  url: security/zoho-crm-vulnerability-disclosure.yml
-- type: DomainSecurity
-  url: security/zoho-crm-domain-security.yml
-- type: GitHubOrganization
-  url: https://github.com/zoho
-- type: LinkedIn
-  url: https://www.linkedin.com/showcase/zohocrm
 - type: Website
   url: https://www.zoho.com/crm/
-- type: Documentation
-  url: https://www.zoho.com/crm/developer/docs/api/v8/
 - type: DeveloperPortal
   url: https://www.zoho.com/crm/developer/
-- type: Signup
-  url: https://www.zoho.com/crm/signup.html
+- type: Documentation
+  url: https://www.zoho.com/crm/developer/docs/api/v8/
+- type: APIReference
+  url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+- type: GettingStarted
+  url: https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html
+- type: Support
+  url: https://help.zoho.com/portal/en/community/zoho-crm
+- type: Blog
+  url: https://www.zoho.com/crm/blog/feed/
+- type: GitHubOrganization
+  url: https://github.com/zoho
+- type: SourceCode
+  url: https://github.com/zoho/crm-oas
+- type: LinkedIn
+  url: https://www.linkedin.com/showcase/zohocrm
 - type: Pricing
   url: https://www.zoho.com/crm/zohocrm-pricing.html
+- type: SignUp
+  url: https://www.zoho.com/crm/signup.html
+- type: TermsOfService
+  url: https://www.zoho.com/terms.html
+- type: PrivacyPolicy
+  url: https://www.zoho.com/privacy.html
+- type: Postman
+  url: https://www.postman.com/zohocrmdevelopers/zoho-crm-developers/overview
 - type: PostmanWorkspace
   url: https://www.postman.com/zohocrmdevelopers/zoho-crm-developers/overview
-- url: https://www.zoho.com/crm/blog/feed/
-  type: Blog
+- type: Console
+  url: https://api-console.zoho.com/
+- type: Authentication
+  url: authentication/zoho-crm-authentication.yml
+- type: OAuthScopes
+  url: scopes/zoho-crm-scopes.yml
+- type: Conventions
+  url: conventions/zoho-crm-conventions.yml
+- type: ErrorCatalog
+  url: errors/zoho-crm-problem-types.yml
+- type: RateLimits
+  url: rate-limits/zoho-crm-rate-limits.yml
+- type: Plans
+  url: plans/zoho-crm-plans-pricing.yml
+- type: Lifecycle
+  url: lifecycle/zoho-crm-lifecycle.yml
+- type: StatusPage
+  url: https://status.zoho.com/
+- type: ChangeLog
+  url: changelog/zoho-crm-changelog.yml
+- type: DataModel
+  url: data-model/zoho-crm-data-model.yml
+- type: Packages
+  url: packages/zoho-crm-packages.yml
+- type: SDKs
+  url: packages/zoho-crm-packages.yml
+- type: CLI
+  url: cli/zoho-crm-cli.yml
+- type: Components
+  url: components/zoho-crm-components.yml
+- type: Sandbox
+  url: sandbox/zoho-crm-sandbox.yml
+- type: WellKnown
+  url: well-known/zoho-crm-well-known.yml
+- type: SecurityTxt
+  url: well-known/zoho-crm-security.txt
+- type: VulnerabilityDisclosure
+  url: security/zoho-crm-vulnerability-disclosure.yml
+- type: Security
+  url: https://bugbounty.zohocorp.com/bb/info
+- type: DomainSecurity
+  url: security/zoho-crm-domain-security.yml
+- type: TrustCenter
+  url: security/zoho-crm-trust-center.yml
+- type: Compliance
+  url: https://www.zoho.com/compliance.html
+- type: Conformance
+  url: conformance/zoho-crm-conformance.yml
+- type: MCPServer
+  url: mcp/zoho-crm-mcp.yml
+- type: ToolCrosswalk
+  url: mcp/zoho-crm-tool-crosswalk.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: AgenticAccess
+  url: agentic-access/zoho-crm-agentic-access.yml
+- type: LLMsTxt
+  url: llms/zoho-crm-llms.txt
+- type: AsyncAPI
+  url: asyncapi/zoho-crm-notifications-asyncapi.yml
+- type: Webhooks
+  url: asyncapi/zoho-crm-notifications-asyncapi.yml
+- type: GraphQL
+  url: graphql/zoho-crm-graphql.md
+- type: Rules
+  url: rules/zoho-crm-asyncapi-spectral-rules.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-08-13'
+  status: enriched
+  artifacts_added: 239
+  artifacts_updated: 3
+  pass: local-v1
+  note: >-
+    Zoho publishes first-party OpenAPI 3.1.0 for the whole Zoho CRM v8 surface at
+    github.com/zoho/crm-oas, linked from
+    zoho.com/crm/developer/docs/api/v8/openapi-specification.html. 105 specs / 405
+    operations / 458 OAuth scopes were harvested verbatim, replacing three
+    hand-scaffolded 2-operation specs and the two Postman collections derived from
+    them. No agent card is served on any host; no idempotency key and no deprecation
+    policy are published, so those pointers are deliberately absent.
