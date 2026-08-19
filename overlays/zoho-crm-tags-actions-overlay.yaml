@@ -1,0 +1,21 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Zoho CRM Tag Actions API
+  version: 1.0.0
+extends: openapi/zoho-crm-tags-actions-openapi.json
+x-provenance:
+  generated: '2026-08-13'
+  method: generated
+  source: openapi/zoho-crm-tags-actions-openapi.json
+actions:
+- target: $.info
+  update:
+    x-apievangelist-provider: zoho-crm
+    x-apievangelist-source: https://github.com/zoho/crm-oas
+    x-apievangelist-artifacts:
+      authentication: authentication/zoho-crm-authentication.yml
+      scopes: scopes/zoho-crm-scopes.yml
+      conventions: conventions/zoho-crm-conventions.yml
+      errors: errors/zoho-crm-problem-types.yml
+      rate_limits: rate-limits/zoho-crm-rate-limits.yml
+      lifecycle: lifecycle/zoho-crm-lifecycle.yml

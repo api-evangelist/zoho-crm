@@ -1,0 +1,35 @@
+generated: '2026-08-13'
+method: generated
+source: >-
+  openapi/ (105 first-party Zoho CRM OAS 3.1.0 files from github.com/zoho/crm-oas)
+  + conventions/zoho-crm-conventions.yml + errors/zoho-crm-problem-types.yml
+  + rate-limits/zoho-crm-rate-limits.yml
+note: >-
+  Zoho publishes no AGENTS.md and no skill files of its own; these are API Evangelist
+  packaged operating instructions. Every operationId referenced below was grepped out
+  of the published specs and exists verbatim.
+skills:
+- file: zoho-crm-discover-modules-and-fields.md
+  name: Discover Zoho CRM modules and fields before writing
+  api: openapi/zoho-crm-modules-openapi.json
+  operations: [getModules, getModuleByApiName, getFields, getFieldsWithID]
+- file: zoho-crm-create-and-update-records-safely.md
+  name: Create and update Zoho CRM records without creating duplicates
+  api: openapi/zoho-crm-record-openapi.json
+  operations: [createRecords, upsertRecords, getRecords, getRecord, updateRecord, updateRecords, deleteRecord, getDeletedRecords, cloneRecord]
+- file: zoho-crm-query-and-search.md
+  name: Query and search Zoho CRM with COQL
+  api: openapi/zoho-crm-coql-openapi.json
+  operations: [executeCOQLQuery, searchRecords, getCount]
+- file: zoho-crm-bulk-export-and-import.md
+  name: Export and import Zoho CRM data in bulk
+  api: openapi/zoho-crm-bulk-read-openapi.json
+  operations: [createBulkReadJob, getBulkReadJobDetails, downloadResult, createBulkWriteJob, getJobDetails, uploadFile]
+- file: zoho-crm-subscribe-to-record-notifications.md
+  name: Subscribe to Zoho CRM record change notifications
+  api: openapi/zoho-crm-notifications-openapi.json
+  operations: [createNotifications, getNotifications, updateNotificationDetails, updateNotificationInfo, disableNotifications]
+- file: zoho-crm-convert-a-lead.md
+  name: Convert a Zoho CRM lead into an account, contact and deal
+  api: openapi/zoho-crm-convert-openapi.json
+  operations: [convertLead, getLeadConversionOptions, getRecord]

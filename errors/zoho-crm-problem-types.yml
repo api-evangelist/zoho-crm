@@ -1,0 +1,144 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.zoho.com/crm/developer/docs/api/v8/status-codes.html
+derived_from: openapi/ (105 first-party Zoho CRM OAS 3.1.0 files, 1069 declared JSON responses)
+format: vendor-json
+format_note: >-
+  NOT RFC 9457. No operation in any of the 105 published specs declares
+  application/problem+json — every error body is application/json carrying Zoho's
+  own envelope. An agent cannot rely on `type`/`title`/`detail`/`instance`.
+envelope:
+  media_type: application/json
+  fields:
+  - name: code
+    description: Machine-readable error keyword, e.g. INVALID_DATA, MANDATORY_NOT_FOUND, ALREADY_ACTIVATED, TOO_MANY_REQUESTS.
+  - name: status
+    description: '"error" or "success" — present per-record in multi-record responses.'
+  - name: message
+    description: Human-readable message.
+  - name: details
+    description: Object carrying the offending field/resource; frequently empty {}.
+  partial_success:
+    http_status: 207
+    description: >-
+      Multi-Status. Batch write operations return a data[] array where each element
+      carries its own code/status/message, so a 2xx does NOT mean every record
+      succeeded. This is the single most important error-handling rule on this API
+      and the one most likely to be missed by an agent that only checks the HTTP
+      status.
+observed_response_codes:
+  '200': 359
+  '400': 355
+  '403': 197
+  '500': 104
+  '204': 104
+  '404': 70
+  '401': 61
+  '207': 40
+  '201': 36
+  '202': 14
+  '429': 10
+  '503': 4
+  '412': 3
+  '413': 2
+  '415': 2
+  '405': 1
+  '502': 1
+problems:
+- status: 400
+  code: INVALID_DATA
+  title: Bad Request
+  description: Request or authentication parameters are invalid; also returned when a supplied ID is invalid.
+  remediation: Validate field API names against the modules/fields metadata APIs before writing.
+  source: status-codes.html
+- status: 401
+  code: AUTHENTICATION_FAILURE
+  title: Authorization Error
+  description: Invalid or expired OAuth access token.
+  remediation: Refresh the access token at https://accounts.zoho.com/oauth/v2/token; access tokens live one hour.
+  source: status-codes.html
+- status: 403
+  code: OAUTH_SCOPE_MISMATCH / NO_PERMISSION
+  title: Forbidden
+  description: No permission to perform the operation, or the token was not granted the scope the operation requires.
+  remediation: >-
+    Re-authorize with the scope declared on the operation in the OAS file; module
+    scopes carry a {module_API_name} placeholder that must be substituted
+    (ZohoCRM.modules.Leads.READ, not ZohoCRM.modules.{module_API_name}.READ).
+  source: status-codes.html + openapi security[] requirements
+- status: 404
+  code: INVALID_URL_PATTERN
+  title: Not Found
+  description: Invalid request path.
+  source: status-codes.html
+- status: 405
+  code: METHOD_NOT_ALLOWED
+  title: Method Not Allowed
+  description: The specified HTTP method is not allowed on this resource.
+  source: openapi/zoho-crm-layouts-openapi.json (ErrorResponse schema) + status-codes.html
+- status: 412
+  code: RECORD_MODIFIED
+  title: Precondition Failed
+  description: >-
+    "The record was modified after the time specified." Zoho's optimistic-concurrency
+    signal, paired with the If-Modified-Since request header.
+  remediation: Re-read the record, re-apply the change, retry.
+  source: openapi/zoho-crm-record-openapi.json
+- status: 413
+  code: REQUEST_ENTITY_TOO_LARGE
+  title: Request Entity Too Large
+  description: File upload exceeded the allowed size.
+  source: status-codes.html
+- status: 415
+  code: UNSUPPORTED_MEDIA_TYPE
+  title: Unsupported Media Type
+  description: >-
+    Media/file type not supported, or a file exceeded the 20 MB per-file limit — in
+    which case the ENTIRE upload is rejected even if other files were within the limit.
+  source: openapi/zoho-crm-files-openapi.json + status-codes.html
+- status: 429
+  code: TOO_MANY_REQUESTS
+  title: Too Many Requests
+  description: >-
+    24-hour API credit budget exhausted, OR the org/app concurrency limit exceeded.
+    The two causes are not distinguished by the status code.
+  remediation: >-
+    Back off. No Retry-After is returned; the only signal is X-API-CREDITS-REMAINING,
+    which only appears once usage is already at or above 50%.
+  source: status-codes.html + api-limits.html
+- status: 500
+  code: INTERNAL_ERROR
+  title: Internal Server Error
+  description: Generic unexpected server error.
+  source: status-codes.html
+- status: 502
+  code: BAD_GATEWAY
+  title: Bad Gateway
+  description: Temporary service dependency failure. The request should be retried.
+  source: openapi/ (declared on one operation)
+- status: 503
+  code: SERVICE_UNAVAILABLE
+  title: Service Unavailable
+  description: Declared on four operations across the published specs.
+  source: openapi/
+- status: 207
+  code: MULTI_STATUS
+  title: Multi-Status
+  description: >-
+    "The API is partially successful. It shows the record added (for successful
+    insertions) and the error message for unsuccessful insertions."
+  remediation: Iterate data[] and check each element's own code/status.
+  source: status-codes.html
+- status: 304
+  code: NOT_MODIFIED
+  title: Not Modified
+  description: The resource has not changed since the If-Modified-Since timestamp.
+  source: status-codes.html
+success_codes:
+  '200': The API request is successful.
+  '201': Record added.
+  '202': Accepted; processed asynchronously.
+  '204': No content available for the request.
+related:
+- conventions/zoho-crm-conventions.yml
+- rate-limits/zoho-crm-rate-limits.yml

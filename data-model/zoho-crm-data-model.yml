@@ -1,0 +1,1795 @@
+generated: '2026-08-13'
+method: derived
+source: openapi/ (105 first-party Zoho CRM OAS 3.1.0 files from github.com/zoho/crm-oas)
+note: 'Derived mechanically from $ref links between component schemas across all 105 published specs. Zoho CRM''s
+  real data core is dynamic: the record APIs are templated on {module} and the field set of any module is defined
+  at runtime by the Fields/Layouts metadata APIs, so the strongest ''entities'' in the static contract are the metadata
+  objects (fields, layouts, modules, profiles, roles, territories), not the business records. An agent must call
+  getModules and getFields before it can construct a valid record body. Business modules (Leads, Contacts, Accounts,
+  Deals, Tasks, Calls, Events, Products, Quotes, Invoices, ...) are addressed by API name through the {module} path
+  parameter and are enumerated in the OAuth scope list, not as distinct schemas.'
+runtime_module_discovery:
+  list_modules: getModules (openapi/zoho-crm-modules-openapi.json)
+  module_fields: getFields (openapi/zoho-crm-fields-openapi.json)
+  layouts: openapi/zoho-crm-layouts-openapi.json
+  record_crud: openapi/zoho-crm-record-openapi.json — /{module}, /{module}/{recordID}, /{module}/upsert, /{module}/deleted,
+    /{module}/{recordID}/actions/clone
+counts:
+  component_schemas_total: 523
+  entities_recorded: 158
+  relationships: 229
+entities:
+- entity: CoqlFieldSchema
+  spec: openapi/zoho-crm-coql-openapi.json
+  fields: 74
+  description: Schema representing a field in the module.
+- entity: FieldSchema
+  spec: openapi/zoho-crm-fields-openapi.json
+  fields: 72
+  description: Schema representing a field in the module.
+- entity: UserDetails
+  spec: openapi/zoho-crm-users-openapi.json
+  fields: 54
+  description: User details
+- entity: User
+  spec: openapi/zoho-crm-territory-users-openapi.json
+  fields: 46
+  description: Schema representing a user in Zoho CRM.
+- entity: DataNested
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 42
+  description: data array contains post request body
+- entity: GETDataNested
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 41
+  description: Nested schema for data
+- entity: OrgDetails
+  spec: openapi/zoho-crm-org-openapi.json
+  fields: 37
+  description: Company details
+- entity: CustomViewGetItem
+  spec: openapi/zoho-crm-custom-views-openapi.json
+  fields: 25
+  description: Custom View GET Item
+- entity: FieldUpdatesNested
+  spec: openapi/zoho-crm-field-updates-openapi.json
+  fields: 22
+  description: Contains the data to create a field update action.
+- entity: DataNestedBase
+  spec: openapi/zoho-crm-services-openapi.json
+  fields: 22
+  description: Base schema for array items
+- entity: AutomationWebhooksResponse
+  spec: openapi/zoho-crm-webhooks-openapi.json
+  fields: 22
+  description: Comprehensive details of a webhook related to automation, including creation/modification details,
+    editable status, associated modules, and more.
+- entity: RelatedList
+  spec: openapi/zoho-crm-related-lists-openapi.json
+  fields: 21
+  description: Configuration metadata for a related list.
+- entity: MultiEmailTemplateItem
+  spec: openapi/zoho-crm-email-templates-openapi.json
+  fields: 18
+  description: Email template item in list view with summary information
+- entity: WorkflowRuleSingleGetSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 18
+  description: Comprehensive workflow rule entity for automation settings, including metadata, execution timing,
+    module, ownership, lock status, conditions, and activation state.
+- entity: AttachmentObject
+  spec: openapi/zoho-crm-attachments-openapi.json
+  fields: 17
+  description: Individual attachment metadata
+- entity: TaskDetails
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+  fields: 16
+  description: Describes tasks within the system, including metadata, status, fields, and associated entities.
+- entity: ScoringRuleListGET
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 14
+  description: Root element for defining a scoring rule, including layout, fields, custom fields, and scoring configurations.
+- entity: ScoringRuleGET
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 14
+  description: Root element for defining a scoring rule, including layout, fields, custom fields, and scoring configurations.
+- entity: TerritoryGETSchema
+  spec: openapi/zoho-crm-territories-openapi.json
+  fields: 14
+  description: The `items` field of type `object`.
+- entity: DealConversion
+  spec: openapi/zoho-crm-convert-openapi.json
+  fields: 13
+  description: Deal record configuration for lead conversion
+- entity: InventoryTemplateItem
+  spec: openapi/zoho-crm-inventory-templates-openapi.json
+  fields: 12
+  description: Inventory template summary object returned in lists.
+- entity: UnsubscribeLinkSummaryRecord
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+  fields: 12
+  description: Summarized unsubscribe link configuration with timestamps, page settings, submission behavior, and
+    creator/modifier references as returned by the listing endpoint.
+- entity: UnsubscribeLinkDetailRecord
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+  fields: 12
+  description: Full unsubscribe link configuration with display messages, submission behavior, and audit information.
+- entity: AssignmentRuleResponseObjectWithRuleEntries
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+  fields: 11
+  description: Details of the assignment rule
+- entity: EmailObject
+  spec: openapi/zoho-crm-associate-email-openapi.json
+  fields: 11
+  description: Detailed email metadata object.
+- entity: AssignmentRuleResponseObject
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+  fields: 10
+  description: Details of the assignment rule
+- entity: VariableListItem
+  spec: openapi/zoho-crm-variables-openapi.json
+  fields: 10
+  description: Representation of a variable within collection responses, including readOnly, apiName, name, description,
+    id, source, type, value, and group brief.
+- entity: GETFiscalYearNested
+  spec: openapi/zoho-crm-fiscal-year-openapi.json
+  fields: 9
+  description: Nested schema for fiscal_year
+- entity: SendMailMergeNested
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+  fields: 9
+  description: Request payload for sending mail merge emails.
+- entity: GETRulesNested
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 9
+  description: Nested schema for rules
+- entity: VariableResource
+  spec: openapi/zoho-crm-variables-openapi.json
+  fields: 9
+  description: Full read model for a variable, including apiName, name, description, id, source, type, value, and
+    its variable group summary.
+- entity: EmailEngagementMetricsSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 9
+  description: Metrics related to email-based actions, including sent, delivered, opened, clicked, bounced, unsent,
+    unopened counts, and sent percentage. Used in workflow action usage.
+- entity: SectionUpdateObject
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 8
+  description: Section object for creating, updating, or deleting sections. For creating a new section, provide
+    name, display_label, sequence_number, tab_traversal, and column_count. For updating
+- entity: GETRulesNested1
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 8
+  description: Nested schema for rules
+- entity: WorkflowRulePutNestedSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 8
+  description: The request body must contain a workflow_rules array. You can include only one object in this array
+    per request.
+- entity: AssignOwnerDetailsSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 8
+  description: Contains details about the trigger.
+- entity: ConvertDetailsSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 8
+  description: Specify the details of the action
+- entity: QueuedActionUsageMetricsSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 8
+  description: Usage metrics for an action, including queue count, success and failure counts, related email engagement
+    metrics (if applicable), and action identifiers.
+- entity: ConversionRequest
+  spec: openapi/zoho-crm-convert-openapi.json
+  fields: 7
+  description: Configuration for converting a single lead
+- entity: FiscalYearNested
+  spec: openapi/zoho-crm-fiscal-year-openapi.json
+  fields: 7
+  description: Root key of the API
+- entity: ErrorDetails
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 7
+  description: Additional context-specific error details. Properties vary based on error type.
+- entity: ScoringRulePUT
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 7
+  description: Root element for defining a scoring rule, including layout, fields, custom fields, and scoring configurations.
+- entity: GETRulesNested2
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 7
+  description: Nested schema for rules
+- entity: GETTagsNested
+  spec: openapi/zoho-crm-tags-openapi.json
+  fields: 7
+  description: Nested schema for tags
+- entity: VariableGroupSummary
+  spec: openapi/zoho-crm-variable-groups-openapi.json
+  fields: 7
+  description: Key attributes of a variable group as returned by the settings resource, including display label,
+    API name, name, description, id, source, and rid.
+- entity: ActionsNested
+  spec: openapi/zoho-crm-workflow-configurations-openapi.json
+  fields: 7
+  description: Nested schema for actions
+- entity: DetailsNestedForDatetimeSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 7
+  description: Contains details about the trigger.
+- entity: RuleEntryResponseObject
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+  fields: 6
+  description: Defines entries with matching and assignment logic for record processing.
+- entity: MergeModule
+  spec: openapi/zoho-crm-email-templates-openapi.json
+  fields: 6
+  description: A module with available merge fields for email templates
+- entity: ProfileReference
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 6
+  description: Profile associated with a layout
+- entity: FieldUpdateObject
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 6
+  description: Field object for adding, updating, creating, or removing fields from a section. For adding an existing
+    field, provide only id. For updating field position, provide id and sequence_
+- entity: RelatedListRecordOperations
+  spec: openapi/zoho-crm-related-lists-openapi.json
+  fields: 6
+  description: Flags indicating the record operations allowed on the related list.
+- entity: ScoringRulePOSTCommon
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 6
+  description: Root element for defining a scoring rule, including layout, fields, custom fields, and scoring configurations.
+- entity: PostaddtagsResponse200
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 6
+  description: success response when tags associated successfully to records
+- entity: DetailsNested2
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 6
+  description: Nested schema for details
+- entity: VariableCreationItem
+  spec: openapi/zoho-crm-variables-openapi.json
+  fields: 6
+  description: Represents a variable to create, including api_name, name, optional description, data type (text,
+    integer, boolean, date, float), initial value, and the target variable_group refer
+- entity: WorkflowRulePostNestedSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 6
+  description: Root Element of the workflow rule
+- entity: MeetingOrCallActionSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 6
+  description: Specify the details of the action
+- entity: DetailsNested
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 5
+  description: Nested schema for details
+- entity: ModuleNested
+  spec: openapi/zoho-crm-field-updates-openapi.json
+  fields: 5
+  description: Specify the module details where the field update should be applied.
+- entity: CountParameters
+  spec: openapi/zoho-crm-get-related-records-count-openapi.json
+  fields: 5
+  description: Optional filtering and selection parameters to apply before counting records.
+- entity: UpdateLayoutErrorResponse
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 5
+  description: Error response for layout update operation.
+- entity: LayoutUpdateErrorDetails
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 5
+  description: Error details specific to layout update operations.
+- entity: TriggersNested
+  spec: openapi/zoho-crm-workflow-configurations-openapi.json
+  fields: 5
+  description: Nested schema for triggers
+- entity: ConditionsNestedSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 5
+  description: An array of condition objects that define the criteria for executing the actions.
+- entity: AssociateActionsNestedSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 5
+  description: An array of action objects
+- entity: NonAssociateActionsNestedSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 5
+  description: An array of action objects
+- entity: RelatedModuleDetails
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+  fields: 5
+  description: Describes a related module, with details about its labels, API name, and ID.
+- entity: ModuleDetails
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+  fields: 5
+  description: Contains information about a module, including labels and API names.
+- entity: DataNested1
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 4
+  description: Nested schema for data
+- entity: Post207multistatusResponse207
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 4
+  description: Generated schema for dataSuccess
+- entity: DefaultAssigneeResponseObject
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+  fields: 4
+  description: Details of the fallback user for record assignment in cases where the owner cannot be assigned through
+    rule entries.
+- entity: ResourceResponseObject
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+  fields: 4
+  description: Resource details
+- entity: SuccessDataNested
+  spec: openapi/zoho-crm-cadences-execution-openapi.json
+  fields: 4
+  description: Nested schema for data
+- entity: InvalidDataSort
+  spec: openapi/zoho-crm-custom-views-openapi.json
+  fields: 4
+  description: Invalid data error details for sort field or order
+- entity: MandatoryNotFoundForSort
+  spec: openapi/zoho-crm-custom-views-openapi.json
+  fields: 4
+  description: Mandatory field not found error details for sort field or order
+- entity: MergeField
+  spec: openapi/zoho-crm-email-templates-openapi.json
+  fields: 4
+  description: A field available for merge in email templates
+- entity: InfoBlock
+  spec: openapi/zoho-crm-email-templates-openapi.json
+  fields: 4
+  description: Pagination information for the response
+- entity: FieldUpdatesNested1
+  spec: openapi/zoho-crm-field-updates-openapi.json
+  fields: 4
+  description: Nested schema for field_updates
+- entity: FiscalYearNested1
+  spec: openapi/zoho-crm-fiscal-year-openapi.json
+  fields: 4
+  description: Nested schema for fiscal_year
+- entity: ConvertMappingTargetModuleWithFields
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 4
+  description: Target layout configuration for a module during record conversion, including required fields that
+    must be populated.
+- entity: LayoutErrorDetails
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 4
+  description: Error details specific to layout operations. Properties vary based on error type.
+- entity: DeleteLayoutResult
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 4
+  description: Result of a single layout deletion operation.
+- entity: LayoutUpdateObject
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 4
+  description: Layout object containing the fields to update. At least one property must be provided. Maximum 5
+    sections and 5 fields (total across all sections) can be modified per request.
+- entity: LayoutUpdateErrorResult
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 4
+  description: Error result for a layout update.
+- entity: SignMailMergeNested1
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+  fields: 4
+  description: Response payload for sign mail merge operation.
+- entity: SignMailMergeNested
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+  fields: 4
+  description: Request payload for sending documents for signature.
+- entity: SendMailMergeNested1
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+  fields: 4
+  description: Response payload for send mail merge operation.
+- entity: PicklistMappingRead
+  spec: openapi/zoho-crm-map-dependency-openapi.json
+  fields: 4
+  description: Parent picklist value with complete mapped child values for read operations
+- entity: ScoringRuleResponseDetails
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 4
+  description: Response details for scoring rule operations, including status, code, and associated messages.
+- entity: CustomFieldConfiguration
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 4
+  description: Configuration for custom fields associated with scoring rules, including referred scores.
+- entity: TagsNested2
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 4
+  description: Nested schema for tags
+- entity: TagsNested
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 4
+  description: root key
+- entity: UnsubscribeLinkActionStatus
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+  fields: 4
+  description: Status of an unsubscribe link operation, including outcome code, message, and the affected entity
+    reference.
+- entity: VariableGroupOperationStatus
+  spec: openapi/zoho-crm-variable-groups-openapi.json
+  fields: 4
+  description: Per-item result for a variable group operation, including code, message, status, and contextual details.
+- entity: VariableOperationResult
+  spec: openapi/zoho-crm-variables-openapi.json
+  fields: 4
+  description: Per-item outcome for a variable operation, including code, message, status, and details such as the
+    resulting variable id.
+- entity: VariableResultDetails
+  spec: openapi/zoho-crm-variables-openapi.json
+  fields: 4
+  description: Details of an individual variable operation result, including the id of the affected variable.
+- entity: WebhookStatusResponse
+  spec: openapi/zoho-crm-webhooks-openapi.json
+  fields: 4
+  description: Represents the status information of a webhook including operational code, message, and status details.
+- entity: GeneratedSchema17
+  spec: openapi/zoho-crm-webhooks-openapi.json
+  fields: 4
+  description: Nested schema for data_usage
+- entity: WebhookRequestBody
+  spec: openapi/zoho-crm-webhooks-openapi.json
+  fields: 4
+  description: Defines the structure of the request body for a webhook, including data format and content to be
+    sent during POST and PUT operations.
+- entity: RelatedTriggersDetailsNested
+  spec: openapi/zoho-crm-workflow-configurations-openapi.json
+  fields: 4
+  description: Nested schema for related_triggers_details
+- entity: SuccessResponseNestedSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 4
+  description: Nested schema for workflow_rules
+- entity: DetailsNestedForEmailSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 4
+  description: Contains details about the trigger.
+- entity: DetailsNestedWithRepeatMatchAllSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 4
+  description: Contains details about the trigger.
+- entity: SingleCriteriaSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 4
+  description: A leaf condition comparing a field to a value.
+- entity: FieldMappingsNestedSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 4
+  description: Specify the list of fields and values to be set in the new record
+- entity: WorkflowConditionUsageSummarySchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 4
+  description: Summarizes usage for a workflow condition, combining instant action usage, scheduled action usage
+    groups, total usage count, and condition ID.
+- entity: WorkflowConditionUsageWithTaggedInstantActionsSchema
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  fields: 4
+  description: Condition-level usage summary where instant actions include tag details; also includes scheduled
+    actions (if any), usage count, and condition ID.
+- entity: GeneratedSchema9
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+  fields: 4
+  description: Nested schema for tasks
+- entity: FieldMappings
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+  fields: 4
+  description: Defines mappings of fields, including display values, types, and associated fields.
+- entity: AppointmentForNested
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 3
+  description: Contains the name, ID and the module's API name of the customer for whom you are creating the appointment.
+- entity: GETCreatedByNested
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 3
+  description: Nested schema for Created_By
+- entity: GETAppointmentForNested
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 3
+  description: Nested schema for Appointment_For
+- entity: GETOwnerNested
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 3
+  description: Nested schema for Owner
+- entity: CreatedByNested
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 3
+  description: appointment created by
+- entity: GETModifiedByNested
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 3
+  description: Nested schema for Modified_By
+- entity: ModifiedByNested
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 3
+  description: modified by
+- entity: OwnerNested
+  spec: openapi/zoho-crm-appointments-openapi.json
+  fields: 3
+  description: Represents the ID of the service member who will provide the service for this appointment.
+- entity: EmailTemplatesSuccessResponse
+  spec: openapi/zoho-crm-email-templates-openapi.json
+  fields: 3
+  description: Successful response for email templates retrieval
+- entity: FieldNested
+  spec: openapi/zoho-crm-field-updates-openapi.json
+  fields: 3
+  description: Specify the API name and the unique ID of the field to be updated.
+- entity: SurplusWeekNested
+  spec: openapi/zoho-crm-fiscal-year-openapi.json
+  fields: 3
+  description: In Custom Fiscal Year, a surplus week is an extra week added to keep the fiscal calendar aligned
+    with the actual calendar year.
+- entity: GETSurplusWeekNested
+  spec: openapi/zoho-crm-fiscal-year-openapi.json
+  fields: 3
+  description: Nested schema for surplus_week
+- entity: FilterCriteria
+  spec: openapi/zoho-crm-get-related-records-count-openapi.json
+  fields: 3
+  description: Field-based filter criteria to apply before counting records.
+- entity: ConvertMappingTargetModule
+  spec: openapi/zoho-crm-layouts-openapi.json
+  fields: 3
+  description: Target layout configuration for a module during record conversion.
+- entity: DownloadMailMergeNested
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+  fields: 3
+  description: Request payload for downloading mail merge documents.
+- entity: SignersNested
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+  fields: 3
+  description: The details of the users you want to sign the document.
+- entity: PicklistOption
+  spec: openapi/zoho-crm-map-dependency-openapi.json
+  fields: 3
+  description: Picklist option details
+- entity: LayoutDetails
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 3
+  description: Information about layout configuration, including display label, API name, and ID.
+- entity: FieldScoreConfiguration
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 3
+  description: Defines the score configuration for module fields based on specific criteria.
+- entity: GeneratedSchema14
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 3
+  description: Nested schema for modified_by
+- entity: GeneratedSchema10
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 3
+  description: Nested schema for created_by
+- entity: ZiaScoringRule
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 3
+  description: Defines the scoring rule configuration used by Zia for predictive scoring. Includes main scoring
+    criteria, training data, favourable and unfavourable conditions, and relational cro
+- entity: ManualScoringRule
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  fields: 3
+  description: includes field_rules and touch_point_rules of manual scoring rules
+- entity: MembersNested
+  spec: openapi/zoho-crm-services-openapi.json
+  fields: 3
+  description: contains member details
+- entity: OwnerBase
+  spec: openapi/zoho-crm-services-openapi.json
+  fields: 3
+  description: Base schema for Owner
+- entity: GETRemovetagsNested1
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 3
+  description: Nested schema for RemoveTags
+- entity: GETRemovetagsNested
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 3
+  description: Nested schema for RemoveTags
+- entity: GETRemovetagsNested2
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 3
+  description: Nested schema for RemoveTags
+- entity: PostaddtagsRequest
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 3
+  description: Request body schema
+- entity: GETAddtagsNested
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 3
+  description: Nested schema for AddTags
+- entity: GETAddtagsNested1
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 3
+  description: Nested schema for AddTags
+- entity: GETAddtagsNested2
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 3
+  description: Nested schema for AddTags
+- entity: GETWorkflowTagactionrecordsNested
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  fields: 3
+  description: Nested schema for workflow_tagActionRecords
+- entity: UnsubscribeLinkAssociatedPlace
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+  fields: 3
+  description: A place where the unsubscribe link is associated, including the linked resource, details, and type.
+- entity: VariableGroupFieldPathDetails
+  spec: openapi/zoho-crm-variable-groups-openapi.json
+  fields: 3
+  description: Details identifying the field (api_name) and its json_path within the payload for context in per-item
+    results.
+- entity: VariableGroupBrief
+  spec: openapi/zoho-crm-variables-openapi.json
+  fields: 3
+  description: Brief reference to a variable group included in list responses, containing id and apiName.
+- entity: GeneratedSchema16
+  spec: openapi/zoho-crm-webhooks-openapi.json
+  fields: 3
+  description: Nested schema for form_data_content
+- entity: GeneratedSchema12
+  spec: openapi/zoho-crm-webhooks-openapi.json
+  fields: 3
+  description: Nested schema for entity_details
+- entity: GeneratedSchema5
+  spec: openapi/zoho-crm-webhooks-openapi.json
+  fields: 3
+  description: Nested schema for date_time_format
+- entity: WorkflowConfigurationsNested
+  spec: openapi/zoho-crm-workflow-configurations-openapi.json
+  fields: 3
+  description: Nested schema for workflow_configurations
+relationships:
+- from: GETDataNested
+  kind: has_one
+  to: GETOwnerNested
+  via: Owner
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: GETDataNested
+  kind: has_one
+  to: GETAppointmentForNested
+  via: Appointment_For
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: GETDataNested
+  kind: has_one
+  to: GETModifiedByNested
+  via: Modified_By
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: GETDataNested
+  kind: has_one
+  to: GETServiceNameNested
+  via: Service_Name
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: GETDataNested
+  kind: has_one
+  to: GETCreatedByNested
+  via: Created_By
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: AppointmentForNested
+  kind: has_one
+  to: ModuleNested
+  via: module
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: DataNested1
+  kind: has_one
+  to: DetailsNested
+  via: details
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: GETAppointmentForNested
+  kind: has_one
+  to: GETModuleNested
+  via: module
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: DetailsNested
+  kind: has_one
+  to: ModifiedByNested
+  via: Modified_By
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: DetailsNested
+  kind: has_one
+  to: CreatedByNested
+  via: Created_By
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: Post207multistatusResponse207
+  kind: has_one
+  to: DetailsNested
+  via: details
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: DataNested
+  kind: has_one
+  to: OwnerNested
+  via: Owner
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: DataNested
+  kind: has_one
+  to: AppointmentForNested
+  via: Appointment_For
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: DataNested
+  kind: has_one
+  to: ModifiedByNested
+  via: Modified_By
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: DataNested
+  kind: has_one
+  to: ServiceNameNested
+  via: Service_Name
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: DataNested
+  kind: has_one
+  to: CreatedByNested
+  via: Created_By
+  spec: openapi/zoho-crm-appointments-openapi.json
+- from: ResourceResponseObject
+  kind: has_one
+  to: IdSchema
+  via: id
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: ResourceResponseObject
+  kind: has_one
+  to: DetailsSchema
+  via: _details
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: AssignmentRuleResponseObject
+  kind: has_one
+  to: IdSchema
+  via: id
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: AssignmentRuleResponseObject
+  kind: has_one
+  to: ResourceResponseObject
+  via: module
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: AssignmentRuleResponseObject
+  kind: has_one
+  to: ResourceResponseObject
+  via: created_by
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: AssignmentRuleResponseObject
+  kind: has_one
+  to: ResourceResponseObject
+  via: modified_by
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: AssignmentRuleResponseObject
+  kind: has_one
+  to: DefaultAssigneeResponseObject
+  via: default_assignee
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: AssignmentRuleResponseObjectWithRuleEntries
+  kind: has_one
+  to: IdSchema
+  via: id
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: AssignmentRuleResponseObjectWithRuleEntries
+  kind: has_one
+  to: ResourceResponseObject
+  via: module
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: AssignmentRuleResponseObjectWithRuleEntries
+  kind: has_one
+  to: ResourceResponseObject
+  via: created_by
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: AssignmentRuleResponseObjectWithRuleEntries
+  kind: has_one
+  to: ResourceResponseObject
+  via: modified_by
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: AssignmentRuleResponseObjectWithRuleEntries
+  kind: has_one
+  to: DefaultAssigneeResponseObject
+  via: default_assignee
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: AssignmentRuleResponseObjectWithRuleEntries
+  kind: has_many
+  to: RuleEntryResponseObject
+  via: rule_entries
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: RuleEntryResponseObject
+  kind: has_one
+  to: IdSchema
+  via: id
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: RuleEntryResponseObject
+  kind: has_one
+  to: AssignToResponseObject
+  via: assign_to
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+- from: EmailObject
+  kind: has_one
+  to: EmailAddress
+  via: from
+  spec: openapi/zoho-crm-associate-email-openapi.json
+- from: EmailObject
+  kind: has_many
+  to: EmailAddress
+  via: to
+  spec: openapi/zoho-crm-associate-email-openapi.json
+- from: EmailObject
+  kind: has_many
+  to: EmailAddress
+  via: cc
+  spec: openapi/zoho-crm-associate-email-openapi.json
+- from: EmailObject
+  kind: has_many
+  to: EmailAddress
+  via: bcc
+  spec: openapi/zoho-crm-associate-email-openapi.json
+- from: EmailObject
+  kind: has_many
+  to: AttachmentRef
+  via: attachments
+  spec: openapi/zoho-crm-associate-email-openapi.json
+- from: SuccessDataNested
+  kind: has_one
+  to: DetailsNested
+  via: details
+  spec: openapi/zoho-crm-cadences-execution-openapi.json
+- from: ConversionRequest
+  kind: has_one
+  to: DealConversion
+  via: Deals
+  spec: openapi/zoho-crm-convert-openapi.json
+- from: CoqlFieldSchema
+  kind: has_one
+  to: Id
+  via: id
+  spec: openapi/zoho-crm-coql-openapi.json
+- from: CoqlFieldSchema
+  kind: has_one
+  to: ApiName
+  via: api_name
+  spec: openapi/zoho-crm-coql-openapi.json
+- from: CustomViewGetItem
+  kind: has_one
+  to: FilterCriterionResponse
+  via: criteria
+  spec: openapi/zoho-crm-custom-views-openapi.json
+- from: CustomViewGetItem
+  kind: has_one
+  to: SharedTo
+  via: shared_to
+  spec: openapi/zoho-crm-custom-views-openapi.json
+- from: CustomViewGetItem
+  kind: has_one
+  to: ModuleReference
+  via: module
+  spec: openapi/zoho-crm-custom-views-openapi.json
+- from: CustomViewGetItem
+  kind: has_one
+  to: UserReference
+  via: modified_by
+  spec: openapi/zoho-crm-custom-views-openapi.json
+- from: CustomViewGetItem
+  kind: has_one
+  to: UserReference
+  via: created_by
+  spec: openapi/zoho-crm-custom-views-openapi.json
+- from: CustomViewGetItem
+  kind: has_one
+  to: CustomViewField
+  via: fields
+  spec: openapi/zoho-crm-custom-views-openapi.json
+- from: InvalidDataSort
+  kind: has_one
+  to: SimpleFieldError
+  via: details
+  spec: openapi/zoho-crm-custom-views-openapi.json
+- from: MandatoryNotFoundForSort
+  kind: has_one
+  to: SimpleFieldError
+  via: details
+  spec: openapi/zoho-crm-custom-views-openapi.json
+- from: MergeModule
+  kind: has_many
+  to: MergeField
+  via: fields
+  spec: openapi/zoho-crm-email-templates-openapi.json
+- from: MultiEmailTemplateItem
+  kind: has_one
+  to: FolderRef
+  via: folder
+  spec: openapi/zoho-crm-email-templates-openapi.json
+- from: MultiEmailTemplateItem
+  kind: has_one
+  to: ModuleRef
+  via: module
+  spec: openapi/zoho-crm-email-templates-openapi.json
+- from: MultiEmailTemplateItem
+  kind: has_one
+  to: UserRef
+  via: created_by
+  spec: openapi/zoho-crm-email-templates-openapi.json
+- from: MultiEmailTemplateItem
+  kind: has_one
+  to: UserRef
+  via: modified_by
+  spec: openapi/zoho-crm-email-templates-openapi.json
+- from: EmailTemplatesSuccessResponse
+  kind: has_one
+  to: MergeFieldsMetadata
+  via: merge_fields_metadata
+  spec: openapi/zoho-crm-email-templates-openapi.json
+- from: EmailTemplatesSuccessResponse
+  kind: has_many
+  to: MultiEmailTemplateItem
+  via: email_templates
+  spec: openapi/zoho-crm-email-templates-openapi.json
+- from: EmailTemplatesSuccessResponse
+  kind: has_one
+  to: InfoBlock
+  via: info
+  spec: openapi/zoho-crm-email-templates-openapi.json
+- from: FieldUpdatesNested1
+  kind: has_one
+  to: DetailsNested
+  via: details
+  spec: openapi/zoho-crm-field-updates-openapi.json
+- from: FieldUpdatesNested
+  kind: has_one
+  to: LockStatusNested
+  via: lock_status
+  spec: openapi/zoho-crm-field-updates-openapi.json
+- from: FieldUpdatesNested
+  kind: has_one
+  to: ModuleNested
+  via: module
+  spec: openapi/zoho-crm-field-updates-openapi.json
+- from: FieldUpdatesNested
+  kind: has_one
+  to: CreatedByNested
+  via: created_by
+  spec: openapi/zoho-crm-field-updates-openapi.json
+- from: FieldUpdatesNested
+  kind: has_one
+  to: FieldNested
+  via: field
+  spec: openapi/zoho-crm-field-updates-openapi.json
+- from: FieldUpdatesNested
+  kind: has_many
+  to: DependentFieldsNested
+  via: dependent_fields
+  spec: openapi/zoho-crm-field-updates-openapi.json
+- from: FieldUpdatesNested
+  kind: has_one
+  to: ModifiedByNested
+  via: modified_by
+  spec: openapi/zoho-crm-field-updates-openapi.json
+- from: FieldSchema
+  kind: has_one
+  to: Id
+  via: id
+  spec: openapi/zoho-crm-fields-openapi.json
+- from: FieldSchema
+  kind: has_one
+  to: ApiName
+  via: api_name
+  spec: openapi/zoho-crm-fields-openapi.json
+- from: GETFiscalYearNested
+  kind: has_one
+  to: GETSurplusWeekNested
+  via: surplus_week
+  spec: openapi/zoho-crm-fiscal-year-openapi.json
+- from: FiscalYearNested
+  kind: has_one
+  to: SurplusWeekNested
+  via: surplus_week
+  spec: openapi/zoho-crm-fiscal-year-openapi.json
+- from: FiscalYearNested1
+  kind: has_one
+  to: DetailsNested
+  via: details
+  spec: openapi/zoho-crm-fiscal-year-openapi.json
+- from: FilterCriteria
+  kind: has_one
+  to: FilterField
+  via: field
+  spec: openapi/zoho-crm-get-related-records-count-openapi.json
+- from: CountParameters
+  kind: has_one
+  to: FilterCriteria
+  via: filters
+  spec: openapi/zoho-crm-get-related-records-count-openapi.json
+- from: InventoryTemplateItem
+  kind: has_one
+  to: FolderRef
+  via: folder
+  spec: openapi/zoho-crm-inventory-templates-openapi.json
+- from: InventoryTemplateItem
+  kind: has_one
+  to: ModuleRef
+  via: module
+  spec: openapi/zoho-crm-inventory-templates-openapi.json
+- from: InventoryTemplateItem
+  kind: has_one
+  to: UserRef
+  via: created_by
+  spec: openapi/zoho-crm-inventory-templates-openapi.json
+- from: InventoryTemplateItem
+  kind: has_one
+  to: UserRef
+  via: modified_by
+  spec: openapi/zoho-crm-inventory-templates-openapi.json
+- from: ProfileReference
+  kind: has_one
+  to: Id
+  via: id
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: ConvertMappingTargetModule
+  kind: has_one
+  to: Id
+  via: id
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: ConvertMappingTargetModuleWithFields
+  kind: has_one
+  to: Id
+  via: id
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: ErrorDetails
+  kind: has_one
+  to: Id
+  via: id
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: LayoutErrorDetails
+  kind: has_one
+  to: Id
+  via: id
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: DeleteLayoutResult
+  kind: has_one
+  to: DeleteLayoutDetails
+  via: details
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: LayoutUpdateObject
+  kind: has_many
+  to: ProfileUpdateObject
+  via: profiles
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: LayoutUpdateObject
+  kind: has_many
+  to: SectionUpdateObject
+  via: sections
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: SectionUpdateObject
+  kind: has_one
+  to: Id
+  via: id
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: SectionUpdateObject
+  kind: has_many
+  to: FieldUpdateObject
+  via: fields
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: SectionUpdateObject
+  kind: has_one
+  to: DeleteObject
+  via: _delete
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: FieldUpdateObject
+  kind: has_one
+  to: Id
+  via: id
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: FieldUpdateObject
+  kind: has_one
+  to: DeleteObject
+  via: _delete
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: UpdateLayoutErrorResponse
+  kind: has_many
+  to: LayoutUpdateErrorResult
+  via: layouts
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: UpdateLayoutErrorResponse
+  kind: has_one
+  to: ErrorDetails
+  via: details
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: LayoutUpdateErrorResult
+  kind: has_one
+  to: LayoutUpdateErrorDetails
+  via: details
+  spec: openapi/zoho-crm-layouts-openapi.json
+- from: SignMailMergeNested1
+  kind: has_one
+  to: DetailsNested1
+  via: details
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+- from: SendMailMergeNested
+  kind: has_many
+  to: BccEmailNested
+  via: bcc_email
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+- from: SendMailMergeNested
+  kind: has_one
+  to: MailMergeTemplateNested
+  via: mail_merge_template
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+- from: SendMailMergeNested
+  kind: has_many
+  to: CcEmailNested
+  via: cc_email
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+- from: SendMailMergeNested
+  kind: has_many
+  to: ToAddressNested
+  via: to_address
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+- from: SendMailMergeNested
+  kind: has_one
+  to: FromAddressNested
+  via: from_address
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+- from: DownloadMailMergeNested
+  kind: has_one
+  to: MailMergeTemplateNested
+  via: mail_merge_template
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+- from: SignMailMergeNested
+  kind: has_many
+  to: SignersNested
+  via: signers
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+- from: SignMailMergeNested
+  kind: has_one
+  to: MailMergeTemplateNested
+  via: mail_merge_template
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+- from: SendMailMergeNested1
+  kind: has_one
+  to: DetailsNested
+  via: details
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+- from: SignersNested
+  kind: has_one
+  to: RecipientNested
+  via: recipient
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+- from: PicklistMappingRead
+  kind: has_many
+  to: PicklistOption
+  via: maps
+  spec: openapi/zoho-crm-map-dependency-openapi.json
+- from: RelatedList
+  kind: has_one
+  to: RelatedListRecordOperations
+  via: record_operations
+  spec: openapi/zoho-crm-related-lists-openapi.json
+- from: ScoringRuleResponseDetails
+  kind: has_one
+  to: SuccessResponseDetails
+  via: details
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRulePOSTCommon
+  kind: has_one
+  to: ModuleDetails
+  via: module
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRulePOSTCommon
+  kind: has_one
+  to: LayoutDetails
+  via: layout
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRulePUT
+  kind: has_one
+  to: ManualScoringRule
+  via: manual_scoring_rule
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRulePUT
+  kind: has_one
+  to: ZiaScoringRule
+  via: zia_scoring_rule
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ManualScoringRule
+  kind: has_many
+  to: FieldScoreConfiguration
+  via: field_rules
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ManualScoringRule
+  kind: has_many
+  to: TouchPointScoreConfiguration
+  via: touch_point_rules
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleListGET
+  kind: has_one
+  to: ModuleDetails
+  via: module
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleListGET
+  kind: has_one
+  to: GeneratedSchema10
+  via: created_by
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleListGET
+  kind: has_one
+  to: LayoutDetails
+  via: layout
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleListGET
+  kind: has_one
+  to: GeneratedSchema14
+  via: modified_by
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleListGET
+  kind: has_one
+  to: ScoringType
+  via: scoring_type
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleGET
+  kind: has_one
+  to: ModuleDetails
+  via: module
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleGET
+  kind: has_one
+  to: GeneratedSchema10
+  via: created_by
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleGET
+  kind: has_one
+  to: LayoutDetails
+  via: layout
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleGET
+  kind: has_one
+  to: GeneratedSchema14
+  via: modified_by
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleGET
+  kind: has_one
+  to: ScoringType
+  via: scoring_type
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleGET
+  kind: has_one
+  to: ManualScoringRule
+  via: manual_scoring_rule
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: ScoringRuleGET
+  kind: has_one
+  to: ZiaScoringRule
+  via: zia_scoring_rule
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: CustomFieldConfiguration
+  kind: has_one
+  to: ReferencedScoreField
+  via: reference_field
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+- from: DataNestedBase
+  kind: has_one
+  to: OwnerBase
+  via: Owner
+  spec: openapi/zoho-crm-services-openapi.json
+- from: MembersNested
+  kind: has_one
+  to: MembersNested
+  via: Members
+  spec: openapi/zoho-crm-services-openapi.json
+- from: GETRemovetagsNested1
+  kind: has_many
+  to: GETRulesNested1
+  via: rules
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: GETRemovetagsNested
+  kind: has_many
+  to: GETRulesNested
+  via: rules
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: GETRemovetagsNested2
+  kind: has_many
+  to: GETRulesNested2
+  via: rules
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: PostaddtagsRequest
+  kind: has_many
+  to: TagsNested
+  via: tags
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: GETAddtagsNested
+  kind: has_many
+  to: GETRulesNested
+  via: rules
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: PostaddtagsResponse200
+  kind: has_many
+  to: DataNested
+  via: data
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: GETAddtagsNested1
+  kind: has_many
+  to: GETRulesNested1
+  via: rules
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: DetailsNested2
+  kind: has_one
+  to: ModifiedByNested
+  via: modified_by
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: DetailsNested2
+  kind: has_one
+  to: CreatedByNested
+  via: created_by
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: GETAddtagsNested2
+  kind: has_many
+  to: GETRulesNested2
+  via: rules
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: GETWorkflowTagactionrecordsNested
+  kind: has_one
+  to: GETOrchestrationNested
+  via: Orchestration
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: GETWorkflowTagactionrecordsNested
+  kind: has_one
+  to: GETBlueprintNested
+  via: Blueprint
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: GETWorkflowTagactionrecordsNested
+  kind: has_one
+  to: GETWorkflowNested
+  via: Workflow
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: TagsNested2
+  kind: has_one
+  to: DetailsNested2
+  via: details
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+- from: GETTagsNested
+  kind: has_one
+  to: GETModifiedByNested
+  via: modified_by
+  spec: openapi/zoho-crm-tags-openapi.json
+- from: GETTagsNested
+  kind: has_one
+  to: GETCreatedByNested
+  via: created_by
+  spec: openapi/zoho-crm-tags-openapi.json
+- from: UnsubscribeLinkSummaryRecord
+  kind: has_one
+  to: UnsubscribeLinkModifiedByUser
+  via: modified_by
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+- from: UnsubscribeLinkSummaryRecord
+  kind: has_one
+  to: UnsubscribeLinkCreatedByUser
+  via: created_by
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+- from: UnsubscribeLinkDetailRecord
+  kind: has_one
+  to: UnsubscribeLinkModifiedByUserDetail
+  via: modified_by
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+- from: UnsubscribeLinkDetailRecord
+  kind: has_one
+  to: UnsubscribeLinkCreatedByUserDetail
+  via: created_by
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+- from: UnsubscribeLinkAssociatedPlace
+  kind: has_one
+  to: UnsubscribeLinkAssociationResource
+  via: resource
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+- from: UnsubscribeLinkAssociatedPlace
+  kind: has_one
+  to: UnsubscribeLinkAssociationDetails
+  via: details
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+- from: UnsubscribeLinkActionStatus
+  kind: has_one
+  to: ActionEntityReference
+  via: details
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+- from: VariableGroupOperationStatus
+  kind: has_one
+  to: VariableGroupFieldPathDetails
+  via: details
+  spec: openapi/zoho-crm-variable-groups-openapi.json
+- from: VariableListItem
+  kind: has_one
+  to: VariableGroupBrief
+  via: variable_group
+  spec: openapi/zoho-crm-variables-openapi.json
+- from: VariableOperationResult
+  kind: has_one
+  to: VariableResultDetails
+  via: details
+  spec: openapi/zoho-crm-variables-openapi.json
+- from: VariableCreationItem
+  kind: has_one
+  to: VariableGroupIdentifierInput
+  via: variable_group
+  spec: openapi/zoho-crm-variables-openapi.json
+- from: VariableResource
+  kind: has_one
+  to: VariableGroupSummary
+  via: variable_group
+  spec: openapi/zoho-crm-variables-openapi.json
+- from: WebhookStatusResponse
+  kind: has_one
+  to: WebhookDetailsResponse
+  via: details
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: GeneratedSchema16
+  kind: has_many
+  to: WebhookModuleParameters
+  via: module_parameters
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: GeneratedSchema16
+  kind: has_one
+  to: GeneratedSchema14
+  via: user_defined_parameter
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: GeneratedSchema16
+  kind: has_many
+  to: WebhookCustomParameters
+  via: custom_parameters
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: GeneratedSchema17
+  kind: has_one
+  to: GeneratedSchema10
+  via: resource
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: GeneratedSchema12
+  kind: has_one
+  to: AutomationModuleDetailsResponse
+  via: module
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: WebhookRequestBody
+  kind: has_one
+  to: GeneratedSchema16
+  via: form_data_content
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: AutomationWebhooksResponse
+  kind: has_one
+  to: WebhookHeaders
+  via: headers
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: AutomationWebhooksResponse
+  kind: has_one
+  to: AutomationLockStatusResponse
+  via: lock_status
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: AutomationWebhooksResponse
+  kind: has_one
+  to: AutomationModuleDetailsResponse
+  via: module
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: AutomationWebhooksResponse
+  kind: has_one
+  to: GeneratedSchema9
+  via: related_module
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: AutomationWebhooksResponse
+  kind: has_one
+  to: GeneratedSchema19
+  via: url_parameters
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: AutomationWebhooksResponse
+  kind: has_one
+  to: WebhookRequestBody
+  via: body
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: AutomationWebhooksResponse
+  kind: has_one
+  to: AutomationCreatedByResponse
+  via: created_by
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: AutomationWebhooksResponse
+  kind: has_one
+  to: AutomationModifiedByResponse
+  via: modified_by
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: AutomationWebhooksResponse
+  kind: has_one
+  to: GeneratedSchema5
+  via: date_time_format
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: AutomationWebhooksResponse
+  kind: has_one
+  to: WebhookAuthenticationDetails
+  via: authentication
+  spec: openapi/zoho-crm-webhooks-openapi.json
+- from: RelatedTriggersDetailsNested
+  kind: has_one
+  to: ModuleNested
+  via: module
+  spec: openapi/zoho-crm-workflow-configurations-openapi.json
+- from: RelatedTriggersDetailsNested
+  kind: has_many
+  to: TriggersNested
+  via: triggers
+  spec: openapi/zoho-crm-workflow-configurations-openapi.json
+- from: WorkflowConfigurationsNested
+  kind: has_many
+  to: RelatedTriggersDetailsNested
+  via: related_triggers_details
+  spec: openapi/zoho-crm-workflow-configurations-openapi.json
+- from: WorkflowConfigurationsNested
+  kind: has_many
+  to: TriggersNested
+  via: triggers
+  spec: openapi/zoho-crm-workflow-configurations-openapi.json
+- from: WorkflowConfigurationsNested
+  kind: has_many
+  to: ActionsNested
+  via: actions
+  spec: openapi/zoho-crm-workflow-configurations-openapi.json
+- from: SuccessResponseNestedSchema
+  kind: has_one
+  to: SuccessResponseDetailsSchema
+  via: details
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRulePostNestedSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRulePostNestedSchema
+  kind: has_one
+  to: ExecuteWhenNestedSchema
+  via: execute_when
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRulePostNestedSchema
+  kind: has_many
+  to: ConditionsNestedSchema
+  via: conditions
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRulePutNestedSchema
+  kind: has_one
+  to: ExecuteWhenNestedSchema
+  via: execute_when
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRulePutNestedSchema
+  kind: has_many
+  to: ConditionsNestedSchema
+  via: conditions
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRulePutNestedSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRuleSingleGetSchema
+  kind: has_one
+  to: ExecuteWhenNestedSchema
+  via: execute_when
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRuleSingleGetSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRuleSingleGetSchema
+  kind: has_one
+  to: CreatedModifiedByObjectSchema
+  via: created_by
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRuleSingleGetSchema
+  kind: has_one
+  to: TimeObjectSchema
+  via: modified_time
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRuleSingleGetSchema
+  kind: has_one
+  to: CreatedModifiedByObjectSchema
+  via: modified_by
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRuleSingleGetSchema
+  kind: has_one
+  to: LockStatusSchema
+  via: lock
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRuleSingleGetSchema
+  kind: has_many
+  to: ConditionsNestedSchema
+  via: conditions
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowRuleSingleGetSchema
+  kind: has_one
+  to: ActivationStatusSchema
+  via: status
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: DetailsNestedForDatetimeSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: trigger_module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: DetailsNestedForSectionUpdateSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: trigger_module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: DetailsNestedForSelectiveScoringSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: trigger_module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: DetailsNestedForAppointmentSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: trigger_module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: DetailsNestedForEmailSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: trigger_module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: DetailsNestedForEmailSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: field
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: DetailsNestedForRecommendationSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: trigger_module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: DetailsNestedWithRepeatMatchAllSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: trigger_module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: ConditionsNestedSchema
+  kind: has_one
+  to: InstantActionsNestedSchema
+  via: instant_actions
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: ConditionsNestedSchema
+  kind: has_one
+  to: ScheduledActionsNestedSchema
+  via: scheduled_actions
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: ConditionsNestedSchema
+  kind: has_one
+  to: CriteriaDetailsNestedSchema
+  via: criteria_details
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: SingleCriteriaSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: field
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: AssociateActionsNestedSchema
+  kind: has_one
+  to: RelatedDetailsNestedSchema
+  via: related_details
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: NonAssociateActionsNestedSchema
+  kind: has_one
+  to: RelatedDetailsNestedSchema
+  via: related_details
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: AssignOwnerDetailsSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: AssignOwnerDetailsSchema
+  kind: has_many
+  to: AssignToNestedSchema
+  via: assign_to
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: AssignOwnerDetailsSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: lookup_field
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: MeetingOrCallActionSchema
+  kind: has_one
+  to: LayoutNestedSchema
+  via: layout
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: MeetingOrCallActionSchema
+  kind: has_many
+  to: FieldMappingsNestedSchema
+  via: field_mappings
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: MeetingOrCallActionSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: MeetingOrCallActionSchema
+  kind: has_one
+  to: MeetingDurationNestedSchema
+  via: meeting_duration
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: MeetingOrCallActionSchema
+  kind: has_one
+  to: HostUnavailableNestedSchema
+  via: host_unavailable
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: TagActionSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: ConvertDetailsSchema
+  kind: has_many
+  to: FieldMappingsNestedSchema
+  via: field_mappings
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: FieldMappingsNestedSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: field
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: ModuleSpecificActionsCountSchema
+  kind: has_one
+  to: ModuleOrFieldNestedSchema
+  via: module
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowConditionUsageSummarySchema
+  kind: has_one
+  to: InstantActionsUsageListSchema
+  via: instant_actions
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowConditionUsageSummarySchema
+  kind: has_many
+  to: ScheduledActionsUsageGroupSchema
+  via: scheduled_actions
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowConditionUsageWithTaggedInstantActionsSchema
+  kind: has_one
+  to: InstantActionsUsageWithTagsSchema
+  via: instant_actions
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: WorkflowConditionUsageWithTaggedInstantActionsSchema
+  kind: has_one
+  to: ScheduledActionsForWorkflowUsageSchema
+  via: scheduled_actions
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: QueuedActionUsageMetricsSchema
+  kind: has_one
+  to: EmailEngagementMetricsSchema
+  via: related_details
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+- from: GeneratedSchema9
+  kind: has_one
+  to: GeneratedSchema4
+  via: details
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+- from: FieldMappings
+  kind: has_one
+  to: FieldAttributes
+  via: field
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+- from: TaskDetails
+  kind: has_one
+  to: LockStatus
+  via: lock_status
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+- from: TaskDetails
+  kind: has_one
+  to: ModuleDetails
+  via: module
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+- from: TaskDetails
+  kind: has_one
+  to: RelatedModuleDetails
+  via: related_module
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+- from: TaskDetails
+  kind: has_one
+  to: CreatorDetails
+  via: created_by
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+- from: TaskDetails
+  kind: has_many
+  to: FieldMappings
+  via: field_mappings
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+- from: TaskDetails
+  kind: has_one
+  to: ModifierDetails
+  via: modified_by
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+render: null
+related:
+- conventions/zoho-crm-conventions.yml
+- scopes/zoho-crm-scopes.yml
+- graphql/zoho-crm-schema.graphql

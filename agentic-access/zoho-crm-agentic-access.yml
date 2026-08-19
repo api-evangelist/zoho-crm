@@ -1,0 +1,7115 @@
+generated: '2026-08-13'
+method: generated
+source: openapi/zoho-crm-apis-openapi.json, openapi/zoho-crm-appointment-preference-openapi.json,
+  openapi/zoho-crm-appointments-openapi.json, openapi/zoho-crm-assignment-rules-openapi.json,
+  openapi/zoho-crm-associate-email-openapi.json, openapi/zoho-crm-attachments-openapi.json,
+  openapi/zoho-crm-audit-log-export-openapi.json, openapi/zoho-crm-bulk-read-openapi.json, openapi/zoho-crm-bulk-write-openapi.json,
+  openapi/zoho-crm-business-hours-openapi.json, openapi/zoho-crm-cadences-execution-openapi.json,
+  openapi/zoho-crm-cadences-openapi.json, openapi/zoho-crm-call-preferences-openapi.json, openapi/zoho-crm-cancel-meetings-openapi.json,
+  openapi/zoho-crm-change-owner-openapi.json, openapi/zoho-crm-composite-requests-openapi.json,
+  openapi/zoho-crm-contact-roles-openapi.json, openapi/zoho-crm-conversion-option-openapi.json,
+  openapi/zoho-crm-convert-openapi.json, openapi/zoho-crm-coql-openapi.json, openapi/zoho-crm-currencies-openapi.json,
+  openapi/zoho-crm-custom-views-openapi.json, openapi/zoho-crm-data-sharing-openapi.json, openapi/zoho-crm-deal-contact-roles-openapi.json,
+  openapi/zoho-crm-deal-link-emails-openapi.json, openapi/zoho-crm-download-attachments-openapi.json,
+  openapi/zoho-crm-download-inline-images-openapi.json, openapi/zoho-crm-duplicate-check-preference-openapi.json,
+  openapi/zoho-crm-email-drafts-openapi.json, openapi/zoho-crm-email-templates-openapi.json,
+  openapi/zoho-crm-emails-sharing-details-openapi.json, openapi/zoho-crm-features-openapi.json,
+  openapi/zoho-crm-fetch-full-data-openapi.json, openapi/zoho-crm-field-updates-openapi.json,
+  openapi/zoho-crm-fields-openapi.json, openapi/zoho-crm-files-openapi.json, openapi/zoho-crm-find-and-merge-openapi.json,
+  openapi/zoho-crm-fiscal-year-openapi.json, openapi/zoho-crm-from-addresses-openapi.json, openapi/zoho-crm-get-related-records-count-openapi.json,
+  openapi/zoho-crm-global-picklists-openapi.json, openapi/zoho-crm-holidays-openapi.json, openapi/zoho-crm-inventory-convert-openapi.json,
+  openapi/zoho-crm-inventory-templates-openapi.json, openapi/zoho-crm-layouts-activate-deactivate-openapi.json,
+  openapi/zoho-crm-layouts-openapi.json, openapi/zoho-crm-locking-informations-openapi.json,
+  openapi/zoho-crm-mail-merge-openapi.json, openapi/zoho-crm-map-dependency-openapi.json, openapi/zoho-crm-mass-change-owner-openapi.json,
+  openapi/zoho-crm-mass-convert-openapi.json, openapi/zoho-crm-mass-delete-cvid-openapi.json,
+  openapi/zoho-crm-mass-delete-tags-openapi.json, openapi/zoho-crm-mass-update-openapi.json,
+  openapi/zoho-crm-module-search-openapi.json, openapi/zoho-crm-modules-openapi.json, openapi/zoho-crm-notes-openapi.json,
+  openapi/zoho-crm-notifications-openapi.json, openapi/zoho-crm-org-openapi.json, openapi/zoho-crm-org-photo-openapi.json,
+  openapi/zoho-crm-pick-list-values-openapi.json, openapi/zoho-crm-pipeline-openapi.json, openapi/zoho-crm-portal-user-type-openapi.json,
+  openapi/zoho-crm-portal-users-openapi.json, openapi/zoho-crm-portals-openapi.json, openapi/zoho-crm-profiles-openapi.json,
+  openapi/zoho-crm-record-count-openapi.json, openapi/zoho-crm-record-locking-configurations-openapi.json,
+  openapi/zoho-crm-record-openapi.json, openapi/zoho-crm-record-photo-openapi.json, openapi/zoho-crm-record-share-email-openapi.json,
+  openapi/zoho-crm-recycle-bin-openapi.json, openapi/zoho-crm-related-lists-openapi.json, openapi/zoho-crm-related-notes-openapi.json,
+  openapi/zoho-crm-related-records-openapi.json, openapi/zoho-crm-roles-openapi.json, openapi/zoho-crm-scoring-rules-openapi.json,
+  openapi/zoho-crm-send-mail-openapi.json, openapi/zoho-crm-service-preference-openapi.json,
+  openapi/zoho-crm-services-openapi.json, openapi/zoho-crm-share-records-openapi.json, openapi/zoho-crm-shift-hours-openapi.json,
+  openapi/zoho-crm-tags-actions-openapi.json, openapi/zoho-crm-tags-openapi.json, openapi/zoho-crm-territories-openapi.json,
+  openapi/zoho-crm-territory-users-openapi.json, openapi/zoho-crm-timelines-openapi.json, openapi/zoho-crm-unblock-email-openapi.json,
+  openapi/zoho-crm-unsubscribe-links-openapi.json, openapi/zoho-crm-upload-openapi.json, openapi/zoho-crm-user-groups-openapi.json,
+  openapi/zoho-crm-users-openapi.json, openapi/zoho-crm-users-territories-openapi.json, openapi/zoho-crm-users-transfer-openapi.json,
+  openapi/zoho-crm-variable-groups-openapi.json, openapi/zoho-crm-variables-openapi.json, openapi/zoho-crm-webhooks-openapi.json,
+  openapi/zoho-crm-wizards-openapi.json, openapi/zoho-crm-workflow-configurations-openapi.json,
+  openapi/zoho-crm-workflow-rules-openapi.json, openapi/zoho-crm-workflow-tasks-openapi.json,
+  openapi/zoho-crm-zia-enrichment-openapi.json, openapi/zoho-crm-zia-org-enrichment-openapi.json
+description: Recommended x-agentic-access execution contracts, classified heuristically from
+  the OpenAPI. A governance starting point for exposing this API to AI agents — review and bind
+  audience per deployment. See research/curity/agentic-governance/.
+summary:
+  operations: 405
+  by_action_class:
+    connected: 156
+    acting: 249
+  by_consequence:
+    read: 156
+    write: 235
+    physical: 13
+    safety-critical: 1
+  human_in_the_loop_required: 1
+operations:
+- path: /__apis
+  method: get
+  operationId: getAvailableApis
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.apis.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/appointment_preferences
+  method: get
+  operationId: getAppointmentPreference
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.org.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/appointment_preferences
+  method: put
+  operationId: updateAppointmentPreference
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.org.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Appointments__s
+  method: get
+  operationId: getAppointmentsS
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.appointments.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /Appointments__s
+  method: put
+  operationId: putAppointmentsS
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.appointments.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Appointments__s
+  method: post
+  operationId: postAppointmentsS
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.appointments.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Appointments__s
+  method: delete
+  operationId: deleteAppointmentsS
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.appointments.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Appointments__s/{appointmentId}
+  method: get
+  operationId: getAppointmentById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.appointments.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /Appointments__s/{appointmentId}
+  method: put
+  operationId: updateAppointmentById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.appointments.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Appointments__s/{appointmentId}
+  method: delete
+  operationId: deleteId
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.appointments.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/assignment_rules
+  method: get
+  operationId: getAssignmentRules
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.assignment_rules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/assignment_rules/{id}
+  method: get
+  operationId: getAssignmentRuleById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.assignment_rules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{recordId}/actions/associate_email
+  method: post
+  operationId: associateEmail
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.emails.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/{recordId}/Attachments/{id}
+  method: get
+  operationId: getAttachmentById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.attachments.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{moduleApiName}/{recordId}/Attachments/{id}
+  method: delete
+  operationId: deleteAttachment
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.attachments.ALL
+    - ZohoCRM.modules.attachments.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/{recordId}/Attachments
+  method: get
+  operationId: getAttachments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.attachments.ALL
+    - ZohoCRM.modules.attachments.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{moduleApiName}/{recordId}/Attachments
+  method: post
+  operationId: uploadAttachment
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.attachments.ALL
+    - ZohoCRM.modules.attachments.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/audit_log_export
+  method: post
+  operationId: createAuditLogExport
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.audit_logs.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/audit_log_export
+  method: get
+  operationId: getAuditLogExports
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.audit_logs.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/audit_log_export/{id}
+  method: get
+  operationId: getAuditLogExportsById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.audit_logs.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /read
+  method: post
+  operationId: createBulkReadJob
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.bulk.READ
+    - ZohoCRM.modules.ALL
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /read/{jobId}
+  method: get
+  operationId: getBulkReadJobDetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.bulk.READ
+    - ZohoCRM.modules.ALL
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /read/{jobId}/result
+  method: get
+  operationId: downloadResult
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.bulk.READ
+    - ZohoCRM.modules.ALL
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /write
+  method: post
+  operationId: createBulkWriteJob
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.bulk.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /write/{jobId}
+  method: get
+  operationId: getJobDetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.bulk.CREATE
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/business_hours
+  method: post
+  operationId: createBusinessHours
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.business_hours.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/business_hours
+  method: put
+  operationId: updateBusinessHours
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.business_hours.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/business_hours
+  method: get
+  operationId: getBusinessHours
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.business_hours.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/actions/unenrol_from_cadences
+  method: post
+  operationId: postUnenrolFromCadences
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.CREATE
+    - ZohoCRM.modules.Activities.CREATE
+    - ZohoCRM.modules.Attachments.CREATE
+    - ZohoCRM.modules.Calls.CREATE
+    - ZohoCRM.modules.Campaigns.CREATE
+    - ZohoCRM.modules.Cases.CREATE
+    - ZohoCRM.modules.Contacts.CREATE
+    - ZohoCRM.modules.Deals.CREATE
+    - ZohoCRM.modules.Events.CREATE
+    - ZohoCRM.modules.Forecasts.CREATE
+    - ZohoCRM.modules.Invoices.CREATE
+    - ZohoCRM.modules.Leads.CREATE
+    - ZohoCRM.modules.Notes.CREATE
+    - ZohoCRM.modules.Products.CREATE
+    - ZohoCRM.modules.Quotes.CREATE
+    - ZohoCRM.modules.Solutions.CREATE
+    - ZohoCRM.modules.Tasks.CREATE
+    - ZohoCRM.modules.Vendors.CREATE
+    - ZohoCRM.modules.custom.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/enrol_in_cadences
+  method: post
+  operationId: postEnrolInCadences
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.CREATE
+    - ZohoCRM.modules.Activities.CREATE
+    - ZohoCRM.modules.Attachments.CREATE
+    - ZohoCRM.modules.Calls.CREATE
+    - ZohoCRM.modules.Campaigns.CREATE
+    - ZohoCRM.modules.Cases.CREATE
+    - ZohoCRM.modules.Contacts.CREATE
+    - ZohoCRM.modules.Deals.CREATE
+    - ZohoCRM.modules.Events.CREATE
+    - ZohoCRM.modules.Forecasts.CREATE
+    - ZohoCRM.modules.Invoices.CREATE
+    - ZohoCRM.modules.Leads.CREATE
+    - ZohoCRM.modules.Notes.CREATE
+    - ZohoCRM.modules.Products.CREATE
+    - ZohoCRM.modules.Quotes.CREATE
+    - ZohoCRM.modules.Solutions.CREATE
+    - ZohoCRM.modules.Tasks.CREATE
+    - ZohoCRM.modules.Vendors.CREATE
+    - ZohoCRM.modules.custom.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/cadences
+  method: get
+  operationId: getCadences
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.cadences.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/call_preferences
+  method: get
+  operationId: getCallPreferences
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.modules.read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/call_preferences
+  method: put
+  operationId: updateCallPreferences
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.modules.update
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Events/{event}/actions/cancel
+  method: post
+  operationId: cancelMeetings
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.Modules.Events.update
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{record}/actions/change_owner
+  method: post
+  operationId: singleUpdate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.change_owner.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/change_owner
+  method: post
+  operationId: bulkChangeOwner
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.change_owner.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /__composite_requests
+  method: post
+  operationId: composite
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.composite_requests.CUSTOM
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /contacts/roles
+  method: get
+  operationId: getContactRoles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.contacts.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /contacts/roles
+  method: post
+  operationId: createRoles
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.contacts.WRITE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /contacts/roles
+  method: put
+  operationId: updateRoles
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.contacts.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /contacts/roles
+  method: delete
+  operationId: deleteRoles
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.contacts.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /contacts/roles/{role}
+  method: get
+  operationId: getRole
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.contacts.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /contacts/roles/{role}
+  method: put
+  operationId: updateRole
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.contacts.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /contacts/roles/{role}
+  method: delete
+  operationId: deleteRole
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.contacts.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Leads/{leadId}/__conversion_options
+  method: get
+  operationId: getLeadConversionOptions
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.leads.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /Leads/{leadId}/actions/convert
+  method: post
+  operationId: convertLead
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.leads.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /coql
+  method: post
+  operationId: executeCOQLQuery
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.coql.READ
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Custom.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Pricebooks.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Purchaseorders.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.READ
+    - ZohoCRM.modules.Salesorders.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.settings.fields.READ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /org/currencies
+  method: get
+  operationId: getCurrencies
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.currencies.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /org/currencies
+  method: post
+  operationId: createCurrencies
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.currencies.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /org/currencies
+  method: put
+  operationId: updateCurrencies
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.currencies.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /org/currencies/{currency}
+  method: get
+  operationId: getCurrencyById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.currencies.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /org/currencies/{currency}
+  method: put
+  operationId: updateCurrencyById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.currencies.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /org/currencies/actions/enable
+  method: post
+  operationId: enableCurrency
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.currencies.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /org/currencies/actions/enable
+  method: put
+  operationId: updateBaseCurrency
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.currencies.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/custom_views
+  method: get
+  operationId: getCustomViews
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.custom_views.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/custom_views/{id}
+  method: get
+  operationId: getCustomViewById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.custom_views.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/custom_views/actions/change_sort
+  method: put
+  operationId: changeSort
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.settings.custom_views.UPDATE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/custom_views/{id}/actions/change_sort
+  method: put
+  operationId: changeSortById
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.settings.custom_views.UPDATE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/data_sharing
+  method: get
+  operationId: getDataSharing
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.data_sharing.ALL
+    - ZohoCRM.settings.data_sharing.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/data_sharing
+  method: put
+  operationId: updateDataSharing
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.data_sharing.ALL
+    - ZohoCRM.settings.data_sharing.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{dealId}/Contact_Roles
+  method: get
+  operationId: getAssociatedContactRoles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.CONTACTS.VIEW
+    - ZohoCRM.modules.DEALS.VIEW
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{dealId}/Contact_Roles
+  method: put
+  operationId: upsertContactRoleRelations
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.CONTACTS.VIEW
+    - ZohoCRM.modules.DEALS.VIEW
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{dealId}/Contact_Roles
+  method: delete
+  operationId: deleteContactRoleRelations
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.CONTACTS.VIEW
+    - ZohoCRM.modules.DEALS.VIEW
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{dealId}/Contact_Roles/{contactId}
+  method: get
+  operationId: getDealContactRoleForContact
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.CONTACTS.VIEW
+    - ZohoCRM.modules.DEALS.VIEW
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{dealId}/Contact_Roles/{contactId}
+  method: put
+  operationId: associateContactRoleToDeal
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.CONTACTS.VIEW
+    - ZohoCRM.modules.DEALS.VIEW
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{dealId}/Contact_Roles/{contactId}
+  method: delete
+  operationId: deleteContactRoleRelation
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.CONTACTS.VIEW
+    - ZohoCRM.modules.DEALS.VIEW
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Contacts/{contactId}/Emails/actions/link_record
+  method: post
+  operationId: linkEmailsToDeals
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.contacts.CREATE
+    - ZohoCRM.modules.deals.CREATE
+    - ZohoCRM.modules.emails.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Contacts/{contactId}/Emails/actions/link_record
+  method: delete
+  operationId: getRecordActions
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.contacts.CREATE
+    - ZohoCRM.modules.deals.CREATE
+    - ZohoCRM.modules.emails.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Contacts/{contactId}/Emails/{messageId}/actions/link_record
+  method: post
+  operationId: getRecordActionsSingle
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.contacts.CREATE
+    - ZohoCRM.modules.deals.CREATE
+    - ZohoCRM.modules.emails.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Contacts/{contactId}/Emails/{messageId}/actions/link_record
+  method: delete
+  operationId: getRecordActions2Single
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.contacts.CREATE
+    - ZohoCRM.modules.deals.CREATE
+    - ZohoCRM.modules.emails.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{recordId}/Emails/actions/download_attachments
+  method: get
+  operationId: downloadEmailAttachments
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.emails.READ
+    - ZohoCRM.modules.leads.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{recordId}/Emails/actions/download_inline_images
+  method: get
+  operationId: getDownloadInlineImages
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.contacts.all
+    - ZohoCRM.modules.deals.all
+    - ZohoCRM.modules.emails.READ
+    - ZohoCRM.modules.leads.all
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/duplicate_check_preference
+  method: get
+  operationId: getDuplicateCheckPreference
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.duplicate_check_preference.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/duplicate_check_preference
+  method: post
+  operationId: createDuplicateCheckPreference
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.duplicate_check_preference.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/duplicate_check_preference
+  method: put
+  operationId: updateDuplicateCheckPreference
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.duplicate_check_preference.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/duplicate_check_preference
+  method: delete
+  operationId: deleteDuplicateCheckPreference
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.duplicate_check_preference.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{record}/__email_drafts
+  method: get
+  operationId: getEmailDrafts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.accounts.READ
+    - ZohoCRM.modules.cases.READ
+    - ZohoCRM.modules.contacts.READ
+    - ZohoCRM.modules.custom.READ
+    - ZohoCRM.modules.deals.READ
+    - ZohoCRM.modules.leads.READ
+    - ZohoCRM.modules.purchaseorders.READ
+    - ZohoCRM.modules.quotes.READ
+    - ZohoCRM.modules.salesorders.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{record}/__email_drafts
+  method: post
+  operationId: createEmailDrafts
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.accounts.CREATE
+    - ZohoCRM.modules.cases.CREATE
+    - ZohoCRM.modules.contacts.CREATE
+    - ZohoCRM.modules.custom.CREATE
+    - ZohoCRM.modules.deals.CREATE
+    - ZohoCRM.modules.leads.CREATE
+    - ZohoCRM.modules.purchaseorders.CREATE
+    - ZohoCRM.modules.quotes.CREATE
+    - ZohoCRM.modules.salesorders.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{record}/__email_drafts/{draft}
+  method: get
+  operationId: getEmailDraft
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.accounts.READ
+    - ZohoCRM.modules.cases.READ
+    - ZohoCRM.modules.contacts.READ
+    - ZohoCRM.modules.custom.READ
+    - ZohoCRM.modules.deals.READ
+    - ZohoCRM.modules.leads.READ
+    - ZohoCRM.modules.purchaseorders.READ
+    - ZohoCRM.modules.quotes.READ
+    - ZohoCRM.modules.salesorders.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{record}/__email_drafts/{draft}
+  method: put
+  operationId: updateEmailDrafts
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.accounts.UPDATE
+    - ZohoCRM.modules.cases.UPDATE
+    - ZohoCRM.modules.contacts.UPDATE
+    - ZohoCRM.modules.custom.UPDATE
+    - ZohoCRM.modules.deals.UPDATE
+    - ZohoCRM.modules.leads.UPDATE
+    - ZohoCRM.modules.purchaseorders.UPDATE
+    - ZohoCRM.modules.quotes.UPDATE
+    - ZohoCRM.modules.salesorders.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{record}/__email_drafts/{draft}
+  method: delete
+  operationId: deleteEmailDrafts
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.accounts.DELETE
+    - ZohoCRM.modules.cases.DELETE
+    - ZohoCRM.modules.contacts.DELETE
+    - ZohoCRM.modules.custom.DELETE
+    - ZohoCRM.modules.deals.DELETE
+    - ZohoCRM.modules.leads.DELETE
+    - ZohoCRM.modules.purchaseorders.DELETE
+    - ZohoCRM.modules.quotes.DELETE
+    - ZohoCRM.modules.salesorders.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/email_templates
+  method: get
+  operationId: getTemplates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.templates.email.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{moduleApiName}/{id}/__emails_sharing_details
+  method: get
+  operationId: getEmailSharingDetail
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.ALL
+    - ZohoCRM.modules.emails.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /__features
+  method: get
+  operationId: getFeatureDetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.features.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /__features/{feature}
+  method: get
+  operationId: getFeatureSepcificDetails
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.features.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{moduleApiName}/actions/fetch_full_data
+  method: get
+  operationId: fetchFullDataForMultipleRecords
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{moduleApiName}/{id}/actions/fetch_full_data
+  method: get
+  operationId: fetchFullDataForSingleRecord
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/field_updates
+  method: get
+  operationId: getFieldUpdates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.automation_actions.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/field_updates
+  method: post
+  operationId: postFieldUpdates
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/field_updates
+  method: delete
+  operationId: deleteFieldUpdates
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/field_updates/{id}
+  method: get
+  operationId: getFieldUpdateById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.automation_actions.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/field_updates/{id}
+  method: put
+  operationId: putFieldUpdateById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/field_updates/{id}
+  method: delete
+  operationId: deleteFieldUpdateById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/fields
+  method: get
+  operationId: getFields
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.fields.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/fields
+  method: post
+  operationId: postFields
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.fields.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/fields
+  method: patch
+  operationId: patchFields
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.fields.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/fields/{fieldId}
+  method: get
+  operationId: getFieldsWithID
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.fields.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/fields/{fieldId}
+  method: patch
+  operationId: putFieldsWithId
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.fields.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/fields/{fieldId}
+  method: delete
+  operationId: deleteCustomField
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.fields.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /files
+  method: post
+  operationId: uploadFiles
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.files.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /files
+  method: get
+  operationId: getFile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.files.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{masterRecordId}/actions/merge
+  method: get
+  operationId: getMergeJobStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{masterRecordId}/actions/merge
+  method: post
+  operationId: mergeRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/fiscal_year
+  method: get
+  operationId: getFiscalYear
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.fiscal_year.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/fiscal_year
+  method: put
+  operationId: updateFiscalYear
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.fiscal_year.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/emails/actions/from_addresses
+  method: get
+  operationId: getAddresses
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.emails.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{moduleApiName}/{recordId}/actions/get_related_records_count
+  method: post
+  operationId: getRelatedRecordsCount
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.READ
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/global_picklists
+  method: get
+  operationId: getBulkGlobalPicklists
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.global_picklist.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/global_picklists
+  method: post
+  operationId: createGlobalPicklist
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.global_picklist.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/global_picklists/{id}
+  method: get
+  operationId: getSingleGlobalPicklists
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.global_picklist.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/global_picklists/{id}
+  method: patch
+  operationId: updateGlobalPicklistById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.global_picklist.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/global_picklists/{id}
+  method: delete
+  operationId: deleteGlobalPicklist
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.global_picklist.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/global_picklists/{id}/actions/replace_picklist_values
+  method: post
+  operationId: replacePicklistValues
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.global_picklist.ALL
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/global_picklists/{id}/actions/replaced_values
+  method: get
+  operationId: getReplacedValues
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.global_picklist.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/global_picklists/{id}/actions/associations
+  method: get
+  operationId: getGlobalPickListFieldAssociations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.global_picklist.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/global_picklists/{id}/actions/pick_list_values_associations
+  method: get
+  operationId: getPickListValuesAssociations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.global_picklist.ALL
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/holidays
+  method: get
+  operationId: getHolidays
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.business_hours.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/holidays
+  method: post
+  operationId: createHolidays
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.business_hours.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/holidays
+  method: put
+  operationId: updateHolidays
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.business_hours.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/holidays/{holidayId}
+  method: put
+  operationId: updateHoliday
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.business_hours.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/holidays/{holidayId}
+  method: get
+  operationId: getHoliday
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.business_hours.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/holidays/{holidayId}
+  method: delete
+  operationId: deleteHoliday
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.business_hours.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/{id}/actions/convert
+  method: post
+  operationId: convertInventory
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Quotes.CREATE
+    - ZohoCRM.modules.SalesOrders.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/inventory_templates
+  method: get
+  operationId: getTemplates
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.templates.inventory.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/layouts/{id}/actions/activate
+  method: post
+  operationId: layoutActivate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.layouts.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/layouts/{id}/actions/activate
+  method: delete
+  operationId: layoutDeactivate
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.settings.layouts.DELETE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/layouts
+  method: get
+  operationId: getLayouts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.layouts.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/layouts/{id}
+  method: get
+  operationId: getLayoutById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.layouts.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/layouts/{id}
+  method: patch
+  operationId: updateLayout
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.layouts.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/layouts/{id}
+  method: delete
+  operationId: deleteLayout
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.layouts.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleName}/{recordId}/Locking_Information__s
+  method: get
+  operationId: getRecordLockingInformationOfTheRecord
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.modules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{moduleName}/{recordId}/Locking_Information__s
+  method: post
+  operationId: lockRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.modules.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleName}/{recordId}/Locking_Information__s/{lockId}
+  method: put
+  operationId: updateReasonofLockedRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.modules.ALL
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleName}/{recordId}/Locking_Information__s/{lockId}
+  method: delete
+  operationId: removeLockFromLockedRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.modules.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/{recordId}/actions/send_mail_merge
+  method: post
+  operationId: postSendMailMerge
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.settings.mailmerge.CREATE,ZohoWriter.documentEditor.ALL,ZohoWriter.merge.ALL,ZohoCRM.settings.emails.ALL
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/{recordId}/actions/sign_mail_merge
+  method: post
+  operationId: postSignMailMerge
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.mailmerge.CREATE,ZohoWriter.documentEditor.ALL,ZohoWriter.merge.ALL,ZohoSign.documents.ALL
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/{recordId}/actions/download_mail_merge
+  method: post
+  operationId: postDownloadMailMerge
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.mailmerge.CREATE,ZohoWriter.documentEditor.ALL,ZohoWriter.merge.ALL
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/layouts/{layoutId}/map_dependency
+  method: get
+  operationId: getMapDependency
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.map_dependency.read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/layouts/{layoutId}/map_dependency
+  method: post
+  operationId: createMapDependency
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.map_dependency.create
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/layouts/{layoutId}/map_dependency/{dependencyId}
+  method: get
+  operationId: getMapDependencyById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.map_dependency.read
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/layouts/{layoutId}/map_dependency/{dependencyId}
+  method: put
+  operationId: updateMapDependency
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.map_dependency.update
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/layouts/{layoutId}/map_dependency/{dependencyId}
+  method: delete
+  operationId: deleteMapDependency
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.map_dependency.delete
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/mass_change_owner
+  method: post
+  operationId: massChangeOwner
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.change_owner.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/mass_change_owner
+  method: get
+  operationId: checkStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.change_owner.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /Leads/actions/mass_convert
+  method: post
+  operationId: massConvert
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.mass_convert.leads.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Leads/actions/mass_convert
+  method: get
+  operationId: getJobStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.mass_convert.leads.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/actions/mass_delete
+  method: post
+  operationId: massDelete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.mass_delete.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/mass_delete
+  method: get
+  operationId: getMassDeleteJobStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.mass_delete.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/tags/actions/mass_delete
+  method: post
+  operationId: createMassDeleteTags
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.tags.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/tags/actions/mass_delete
+  method: get
+  operationId: getStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.tags.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/actions/mass_update
+  method: post
+  operationId: idsUpdate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.mass_update.Leads.UPDATE
+    - ZohoCRM.mass_update.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/mass_update
+  method: get
+  operationId: getMassUpdateStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.mass_update.Leads.READ
+    - ZohoCRM.mass_update.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/search
+  method: get
+  operationId: searchRecords
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.ALL
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Activities.READ
+    - ZohoCRM.modules.Attachments.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Forecasts.READ
+    - ZohoCRM.modules.Invoices.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Notes.READ
+    - ZohoCRM.modules.Pricebooks.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Purchaseorders.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.Salesorders.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.custom.READ
+    - ZohoCRM.users.ALL
+    - ZohoCRM.users.READ
+    - ZohoSearch.securesearch.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/modules
+  method: get
+  operationId: getModules
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.modules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/modules
+  method: post
+  operationId: createModules
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.modules.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/modules
+  method: put
+  operationId: updateModules
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.modules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/modules/{moduleIdentifier}
+  method: get
+  operationId: getModuleByApiName
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.modules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/modules/{moduleIdentifier}
+  method: put
+  operationId: updateModuleByApiName
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.modules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Notes
+  method: get
+  operationId: getNotesModule
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.notes.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /Notes
+  method: post
+  operationId: createNotesModule
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.notes.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Notes
+  method: put
+  operationId: updateNotesModule
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.notes.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Notes
+  method: delete
+  operationId: deleteNotesModule
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.notes.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Notes/{id}
+  method: get
+  operationId: getNoteById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.notes.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /Notes/{id}
+  method: put
+  operationId: updateNoteById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.notes.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Notes/{id}
+  method: delete
+  operationId: deleteNoteById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.notes.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /actions/watch
+  method: get
+  operationId: getNotifications
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.notifications.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /actions/watch
+  method: post
+  operationId: createNotifications
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.notifications.ALL
+    - ZohoCRM.notifications.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /actions/watch
+  method: put
+  operationId: updateNotificationDetails
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.notifications.ALL
+    - ZohoCRM.notifications.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /actions/watch
+  method: patch
+  operationId: updateNotificationInfo
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.notifications.ALL
+    - ZohoCRM.notifications.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /actions/watch
+  method: delete
+  operationId: disableNotifications
+  x-agentic-access:
+    action-class: acting
+    consequence: safety-critical
+    subject: required
+    scope:
+    - ZohoCRM.notifications.ALL
+    - ZohoCRM.notifications.DELETE
+    audience: null
+    token:
+      max-ttl: 120
+      exchange: true
+      purpose-required: true
+      proof-of-possession: true
+    escalation:
+      human-in-the-loop: required
+    audit: required
+- path: /org
+  method: get
+  operationId: getOrganization
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.org.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /org/photo
+  method: get
+  operationId: getOrgPhoto
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.org.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /org/photo
+  method: post
+  operationId: uploadOrganizationPhoto
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.org.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /org/photo
+  method: delete
+  operationId: delete
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.org.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/fields/{fieldId}/pick_list_values
+  method: get
+  operationId: getPickListValues
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.fields.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/pipeline
+  method: get
+  operationId: getPipelines
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.pipeline.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/pipeline
+  method: post
+  operationId: createPipeline
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.pipeline.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/pipeline
+  method: patch
+  operationId: updateOrDeletePipelinePatch
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.pipeline.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/pipeline
+  method: put
+  operationId: updateOrDeletePipelinePut
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.pipeline.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/pipeline/{id}
+  method: get
+  operationId: getPipeline
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.pipeline.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/pipeline/{id}
+  method: patch
+  operationId: updateOrDeletePipelinePatchURL
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.pipeline.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/pipeline/{id}
+  method: put
+  operationId: updateOrDeletePipelinePutURL
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.pipeline.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/pipeline/actions/transfer
+  method: post
+  operationId: transferAndDeletePipelines
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.settings.pipeline.CREATE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/portals/{portal}/user_type
+  method: get
+  operationId: getPortalUserTypes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.clientportal.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/portals/{portal}/user_type
+  method: post
+  operationId: createPortalUserType
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/portals/{portal}/user_type/{userTypeId}
+  method: get
+  operationId: getPortalUserType
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.clientportal.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/portals/{portal}/user_type/{userTypeId}
+  method: put
+  operationId: updatePortalUserType
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/portals/{portal}/user_type/{userTypeId}
+  method: delete
+  operationId: deletePortalUserType
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/portals/{portal}/user_type/{userType}/users
+  method: get
+  operationId: getPortalUsers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.clientportal.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/portals/{portal}/user_type/{userType}/users
+  method: delete
+  operationId: deletePortalUsers
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/portal_invite
+  method: post
+  operationId: inviteUsers
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/portal_invite
+  method: get
+  operationId: getScheduledInviteUsersInfo
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.clientportal.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{recordId}/actions/portal_invite
+  method: post
+  operationId: singleInviteUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/portals/{portal}/user_type/{userType}/users/action/transfer
+  method: post
+  operationId: transferPortalUsers
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.UPDATE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/portals/{portal}/user_type/{userType}/users/{recordId}/actions/change_status
+  method: post
+  operationId: changePortalUsersStatus
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/portals/{portal}/user_type/{userType}/users/actions/change_status
+  method: post
+  operationId: changePortalUsersStatusBulk
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/portals
+  method: get
+  operationId: getPortals
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.clientportal.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/portals
+  method: post
+  operationId: createPortal
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/portals/{portal}
+  method: get
+  operationId: getPortal
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.clientportal.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/portals/{portal}
+  method: put
+  operationId: updatePortal
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/portals/{portal}
+  method: delete
+  operationId: deletePortal
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.clientportal.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/profiles
+  method: get
+  operationId: getProfiles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.profiles.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/profiles/{id}/actions/clone
+  method: post
+  operationId: cloneProfile
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.profiles.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/profiles/{id}
+  method: put
+  operationId: updateProfile
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.profiles.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/profiles/{id}
+  method: get
+  operationId: getProfile
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.profiles.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/profiles/{id}
+  method: delete
+  operationId: deleteProfile
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.profiles.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/actions/count
+  method: get
+  operationId: getCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.ALL
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.pricebooks.READ
+    - ZohoCRM.modules.purchaseorders.READ
+    - ZohoCRM.modules.salesorders.READ
+    - ZohoSearch.securesearch.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/record_locking_configurations
+  method: post
+  operationId: createRecordLockingConfiguration
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.record_locking_configurations.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/record_locking_configurations
+  method: put
+  operationId: updateRecordLockingConfiguration
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.record_locking_configurations.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/record_locking_configurations
+  method: get
+  operationId: getRecordLockingConfiguration
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.record_locking_configurations.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/record_locking_configurations
+  method: delete
+  operationId: deleteRecordLockingConfiguration
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.record_locking_configurations.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/record_locking_configurations/{id}
+  method: put
+  operationId: updateRecordLockingConfigurationPassingIdInURL
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.record_locking_configurations.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/record_locking_configurations/{id}
+  method: get
+  operationId: getRecordLockingConfigurationPassingIdInURL
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.record_locking_configurations.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/record_locking_configurations/{id}
+  method: delete
+  operationId: deleteRecordLockingConfigurationPassingIdInURL
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.record_locking_configurations.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}
+  method: get
+  operationId: getRecords
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Activities.READ
+    - ZohoCRM.modules.Attachments.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Forecasts.READ
+    - ZohoCRM.modules.Invoices.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Notes.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.custom.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}
+  method: post
+  operationId: createRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.CREATE
+    - ZohoCRM.modules.Activities.CREATE
+    - ZohoCRM.modules.Attachments.CREATE
+    - ZohoCRM.modules.CREATE
+    - ZohoCRM.modules.Calls.CREATE
+    - ZohoCRM.modules.Campaigns.CREATE
+    - ZohoCRM.modules.Cases.CREATE
+    - ZohoCRM.modules.Contacts.CREATE
+    - ZohoCRM.modules.Deals.CREATE
+    - ZohoCRM.modules.Events.CREATE
+    - ZohoCRM.modules.Forecasts.CREATE
+    - ZohoCRM.modules.Invoices.CREATE
+    - ZohoCRM.modules.Leads.CREATE
+    - ZohoCRM.modules.Notes.CREATE
+    - ZohoCRM.modules.Products.CREATE
+    - ZohoCRM.modules.Quotes.CREATE
+    - ZohoCRM.modules.Solutions.CREATE
+    - ZohoCRM.modules.Tasks.CREATE
+    - ZohoCRM.modules.Vendors.CREATE
+    - ZohoCRM.modules.custom.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}
+  method: put
+  operationId: updateRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.UPDATE
+    - ZohoCRM.modules.Activities.UPDATE
+    - ZohoCRM.modules.Attachments.UPDATE
+    - ZohoCRM.modules.Calls.UPDATE
+    - ZohoCRM.modules.Campaigns.UPDATE
+    - ZohoCRM.modules.Cases.UPDATE
+    - ZohoCRM.modules.Contacts.UPDATE
+    - ZohoCRM.modules.Deals.UPDATE
+    - ZohoCRM.modules.Events.UPDATE
+    - ZohoCRM.modules.Forecasts.UPDATE
+    - ZohoCRM.modules.Invoices.UPDATE
+    - ZohoCRM.modules.Leads.UPDATE
+    - ZohoCRM.modules.Notes.UPDATE
+    - ZohoCRM.modules.Products.UPDATE
+    - ZohoCRM.modules.Quotes.UPDATE
+    - ZohoCRM.modules.Solutions.UPDATE
+    - ZohoCRM.modules.Tasks.UPDATE
+    - ZohoCRM.modules.UPDATE
+    - ZohoCRM.modules.Vendors.UPDATE
+    - ZohoCRM.modules.custom.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}
+  method: delete
+  operationId: deleteRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.DELETE
+    - ZohoCRM.modules.Activities.DELETE
+    - ZohoCRM.modules.Attachments.DELETE
+    - ZohoCRM.modules.Calls.DELETE
+    - ZohoCRM.modules.Campaigns.DELETE
+    - ZohoCRM.modules.Cases.DELETE
+    - ZohoCRM.modules.Contacts.DELETE
+    - ZohoCRM.modules.DELETE
+    - ZohoCRM.modules.Deals.DELETE
+    - ZohoCRM.modules.Events.DELETE
+    - ZohoCRM.modules.Forecasts.DELETE
+    - ZohoCRM.modules.Invoices.DELETE
+    - ZohoCRM.modules.Leads.DELETE
+    - ZohoCRM.modules.Notes.DELETE
+    - ZohoCRM.modules.Products.DELETE
+    - ZohoCRM.modules.Quotes.DELETE
+    - ZohoCRM.modules.Solutions.DELETE
+    - ZohoCRM.modules.Tasks.DELETE
+    - ZohoCRM.modules.Vendors.DELETE
+    - ZohoCRM.modules.custom.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{recordID}
+  method: get
+  operationId: getRecord
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Activities.READ
+    - ZohoCRM.modules.Attachments.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Forecasts.READ
+    - ZohoCRM.modules.Invoices.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Notes.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.custom.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{recordID}
+  method: put
+  operationId: updateRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.UPDATE
+    - ZohoCRM.modules.Activities.UPDATE
+    - ZohoCRM.modules.Attachments.UPDATE
+    - ZohoCRM.modules.Calls.UPDATE
+    - ZohoCRM.modules.Campaigns.UPDATE
+    - ZohoCRM.modules.Cases.UPDATE
+    - ZohoCRM.modules.Contacts.UPDATE
+    - ZohoCRM.modules.Deals.UPDATE
+    - ZohoCRM.modules.Events.UPDATE
+    - ZohoCRM.modules.Forecasts.UPDATE
+    - ZohoCRM.modules.Invoices.UPDATE
+    - ZohoCRM.modules.Leads.UPDATE
+    - ZohoCRM.modules.Notes.UPDATE
+    - ZohoCRM.modules.Products.UPDATE
+    - ZohoCRM.modules.Quotes.UPDATE
+    - ZohoCRM.modules.Solutions.UPDATE
+    - ZohoCRM.modules.Tasks.UPDATE
+    - ZohoCRM.modules.UPDATE
+    - ZohoCRM.modules.Vendors.UPDATE
+    - ZohoCRM.modules.custom.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{recordID}
+  method: delete
+  operationId: deleteRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.DELETE
+    - ZohoCRM.modules.Activities.DELETE
+    - ZohoCRM.modules.Attachments.DELETE
+    - ZohoCRM.modules.Calls.DELETE
+    - ZohoCRM.modules.Campaigns.DELETE
+    - ZohoCRM.modules.Cases.DELETE
+    - ZohoCRM.modules.Contacts.DELETE
+    - ZohoCRM.modules.DELETE
+    - ZohoCRM.modules.Deals.DELETE
+    - ZohoCRM.modules.Events.DELETE
+    - ZohoCRM.modules.Forecasts.DELETE
+    - ZohoCRM.modules.Invoices.DELETE
+    - ZohoCRM.modules.Leads.DELETE
+    - ZohoCRM.modules.Notes.DELETE
+    - ZohoCRM.modules.Products.DELETE
+    - ZohoCRM.modules.Quotes.DELETE
+    - ZohoCRM.modules.Solutions.DELETE
+    - ZohoCRM.modules.Tasks.DELETE
+    - ZohoCRM.modules.Vendors.DELETE
+    - ZohoCRM.modules.custom.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/upsert
+  method: post
+  operationId: upsertRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.CREATE
+    - ZohoCRM.modules.Activities.CREATE
+    - ZohoCRM.modules.Attachments.CREATE
+    - ZohoCRM.modules.CREATE
+    - ZohoCRM.modules.Calls.CREATE
+    - ZohoCRM.modules.Campaigns.CREATE
+    - ZohoCRM.modules.Cases.CREATE
+    - ZohoCRM.modules.Contacts.CREATE
+    - ZohoCRM.modules.Deals.CREATE
+    - ZohoCRM.modules.Events.CREATE
+    - ZohoCRM.modules.Forecasts.CREATE
+    - ZohoCRM.modules.Invoices.CREATE
+    - ZohoCRM.modules.Leads.CREATE
+    - ZohoCRM.modules.Notes.CREATE
+    - ZohoCRM.modules.Products.CREATE
+    - ZohoCRM.modules.Quotes.CREATE
+    - ZohoCRM.modules.Solutions.CREATE
+    - ZohoCRM.modules.Tasks.CREATE
+    - ZohoCRM.modules.Vendors.CREATE
+    - ZohoCRM.modules.custom.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/deleted
+  method: get
+  operationId: getDeletedRecords
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.ALL
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Activities.READ
+    - ZohoCRM.modules.Attachments.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Forecasts.READ
+    - ZohoCRM.modules.Invoices.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Notes.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.custom.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{recordID}/actions/clone
+  method: post
+  operationId: cloneRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.CREATE
+    - ZohoCRM.modules.Activities.CREATE
+    - ZohoCRM.modules.Attachments.CREATE
+    - ZohoCRM.modules.CREATE
+    - ZohoCRM.modules.Calls.CREATE
+    - ZohoCRM.modules.Campaigns.CREATE
+    - ZohoCRM.modules.Cases.CREATE
+    - ZohoCRM.modules.Contacts.CREATE
+    - ZohoCRM.modules.Deals.CREATE
+    - ZohoCRM.modules.Events.CREATE
+    - ZohoCRM.modules.Forecasts.CREATE
+    - ZohoCRM.modules.Invoices.CREATE
+    - ZohoCRM.modules.Leads.CREATE
+    - ZohoCRM.modules.Notes.CREATE
+    - ZohoCRM.modules.Products.CREATE
+    - ZohoCRM.modules.Quotes.CREATE
+    - ZohoCRM.modules.Solutions.CREATE
+    - ZohoCRM.modules.Tasks.CREATE
+    - ZohoCRM.modules.Vendors.CREATE
+    - ZohoCRM.modules.custom.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{record}/photo
+  method: get
+  operationId: getPhoto
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{record}/photo
+  method: post
+  operationId: uploadPhoto
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{record}/photo
+  method: delete
+  operationId: deletePhoto
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/{id}/actions/share_emails
+  method: post
+  operationId: shareEmails
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.CREATE
+    - ZohoCRM.modules.Activities.CREATE
+    - ZohoCRM.modules.Attachments.CREATE
+    - ZohoCRM.modules.CREATE
+    - ZohoCRM.modules.Calls.CREATE
+    - ZohoCRM.modules.Campaigns.CREATE
+    - ZohoCRM.modules.Cases.CREATE
+    - ZohoCRM.modules.Contacts.CREATE
+    - ZohoCRM.modules.Deals.CREATE
+    - ZohoCRM.modules.Events.CREATE
+    - ZohoCRM.modules.Forecasts.CREATE
+    - ZohoCRM.modules.Invoices.CREATE
+    - ZohoCRM.modules.Leads.CREATE
+    - ZohoCRM.modules.Notes.CREATE
+    - ZohoCRM.modules.Products.CREATE
+    - ZohoCRM.modules.Quotes.CREATE
+    - ZohoCRM.modules.Solutions.CREATE
+    - ZohoCRM.modules.Tasks.CREATE
+    - ZohoCRM.modules.Vendors.CREATE
+    - ZohoCRM.modules.custom.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/{id}/actions/unshare_emails
+  method: post
+  operationId: unshareEmails
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.DELETE
+    - ZohoCRM.modules.Activities.DELETE
+    - ZohoCRM.modules.Attachments.DELETE
+    - ZohoCRM.modules.Calls.DELETE
+    - ZohoCRM.modules.Campaigns.DELETE
+    - ZohoCRM.modules.Cases.DELETE
+    - ZohoCRM.modules.Contacts.DELETE
+    - ZohoCRM.modules.DELETE
+    - ZohoCRM.modules.Deals.DELETE
+    - ZohoCRM.modules.Events.DELETE
+    - ZohoCRM.modules.Forecasts.DELETE
+    - ZohoCRM.modules.Invoices.DELETE
+    - ZohoCRM.modules.Leads.DELETE
+    - ZohoCRM.modules.Notes.DELETE
+    - ZohoCRM.modules.Products.DELETE
+    - ZohoCRM.modules.Quotes.DELETE
+    - ZohoCRM.modules.Solutions.DELETE
+    - ZohoCRM.modules.Tasks.DELETE
+    - ZohoCRM.modules.Vendors.DELETE
+    - ZohoCRM.modules.custom.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/actions/share_emails
+  method: post
+  operationId: shareBulkEmails
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.CREATE
+    - ZohoCRM.modules.Activities.CREATE
+    - ZohoCRM.modules.Attachments.CREATE
+    - ZohoCRM.modules.CREATE
+    - ZohoCRM.modules.Calls.CREATE
+    - ZohoCRM.modules.Campaigns.CREATE
+    - ZohoCRM.modules.Cases.CREATE
+    - ZohoCRM.modules.Contacts.CREATE
+    - ZohoCRM.modules.Deals.CREATE
+    - ZohoCRM.modules.Events.CREATE
+    - ZohoCRM.modules.Forecasts.CREATE
+    - ZohoCRM.modules.Invoices.CREATE
+    - ZohoCRM.modules.Leads.CREATE
+    - ZohoCRM.modules.Notes.CREATE
+    - ZohoCRM.modules.Products.CREATE
+    - ZohoCRM.modules.Quotes.CREATE
+    - ZohoCRM.modules.Solutions.CREATE
+    - ZohoCRM.modules.Tasks.CREATE
+    - ZohoCRM.modules.Vendors.CREATE
+    - ZohoCRM.modules.custom.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/actions/unshare_emails
+  method: post
+  operationId: unshareBulkEmails
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.DELETE
+    - ZohoCRM.modules.Activities.DELETE
+    - ZohoCRM.modules.Attachments.DELETE
+    - ZohoCRM.modules.Calls.DELETE
+    - ZohoCRM.modules.Campaigns.DELETE
+    - ZohoCRM.modules.Cases.DELETE
+    - ZohoCRM.modules.Contacts.DELETE
+    - ZohoCRM.modules.DELETE
+    - ZohoCRM.modules.Deals.DELETE
+    - ZohoCRM.modules.Events.DELETE
+    - ZohoCRM.modules.Forecasts.DELETE
+    - ZohoCRM.modules.Invoices.DELETE
+    - ZohoCRM.modules.Leads.DELETE
+    - ZohoCRM.modules.Notes.DELETE
+    - ZohoCRM.modules.Products.DELETE
+    - ZohoCRM.modules.Quotes.DELETE
+    - ZohoCRM.modules.Solutions.DELETE
+    - ZohoCRM.modules.Tasks.DELETE
+    - ZohoCRM.modules.Vendors.DELETE
+    - ZohoCRM.modules.custom.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/recycle_bin
+  method: get
+  operationId: getRecycleBinRecords
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.recycle_bin.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/recycle_bin
+  method: delete
+  operationId: deleteRecycleBinRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.recycle_bin.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/recycle_bin/actions/restore
+  method: post
+  operationId: restoreRecycleBinRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.recycle_bin.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/recycle_bin/actions/count
+  method: get
+  operationId: getRecycleBinCounts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.recycle_bin.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/recycle_bin/actions/empty
+  method: post
+  operationId: emptyRecycleBin
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.recycle_bin.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/recycle_bin/{recordId}/actions/restore
+  method: post
+  operationId: restoreRecycleBinRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.recycle_bin.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/recycle_bin/{recordId}
+  method: get
+  operationId: getRecycleBinRecord
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.recycle_bin.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/recycle_bin/{recordId}
+  method: delete
+  operationId: deleteRecycleBinRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.recycle_bin.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/related_lists
+  method: get
+  operationId: getRelatedLists
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.related_lists.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{parentRecordModule}/{parentRecordId}/Notes
+  method: get
+  operationId: getNotes
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Custom.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Pricebooks.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Purchaseorders.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.Salesorders.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.notes.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{parentRecordModule}/{parentRecordId}/Notes
+  method: post
+  operationId: createNotes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Custom.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Pricebooks.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Purchaseorders.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.Salesorders.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.notes.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{parentRecordModule}/{parentRecordId}/Notes
+  method: put
+  operationId: updateBulkNotes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Custom.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Pricebooks.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Purchaseorders.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.Salesorders.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.notes.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{parentRecordModule}/{parentRecordId}/Notes
+  method: delete
+  operationId: deleteBulkNotes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Custom.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Pricebooks.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Purchaseorders.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.Salesorders.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.notes.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{parentRecordModule}/{parentRecordId}/Notes/{noteId}
+  method: get
+  operationId: getNotesById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Custom.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Pricebooks.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Purchaseorders.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.Salesorders.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.notes.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{parentRecordModule}/{parentRecordId}/Notes/{noteId}
+  method: put
+  operationId: updateNotes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Custom.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Pricebooks.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Purchaseorders.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.Salesorders.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.notes.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{parentRecordModule}/{parentRecordId}/Notes/{noteId}
+  method: delete
+  operationId: deleteNotes
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Custom.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Pricebooks.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Purchaseorders.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.Salesorders.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    - ZohoCRM.modules.notes.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{parentRecordModule}/{parentRecord}/{relatedList}
+  method: get
+  operationId: getRelatedRecords
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{parentRecordModule}/{parentRecord}/{relatedList}
+  method: put
+  operationId: updateRelatedRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{parentRecordModule}/{parentRecord}/{relatedList}
+  method: delete
+  operationId: delinkRelatedRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{parentRecordModule}/{parentRecord}/{relatedList}/{record}
+  method: get
+  operationId: getRelatedRecord
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{parentRecordModule}/{parentRecord}/{relatedList}/{record}
+  method: put
+  operationId: updateSpecificRelatedRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{parentRecordModule}/{parentRecord}/{relatedList}/{record}
+  method: delete
+  operationId: delinkSpecificRelatedRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{parentRecordModule}/deleted/{parentRecord}/{relatedList}
+  method: get
+  operationId: getDeletedRelatedRecord
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/roles
+  method: get
+  operationId: getRoles
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.roles.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/roles
+  method: post
+  operationId: createRoles
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.roles.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/roles
+  method: put
+  operationId: updateRoles
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.roles.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/roles/{role}
+  method: get
+  operationId: getRole
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.roles.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/roles/{role}
+  method: put
+  operationId: updateRole
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.roles.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/roles/{role}
+  method: delete
+  operationId: deleteRole
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.roles.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/scoring_rules
+  method: get
+  operationId: getScoringRules
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - settings.scoring_rules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/scoring_rules
+  method: put
+  operationId: putScoringRules
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - settings.scoring_rules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/scoring_rules
+  method: post
+  operationId: postScoringRules
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - settings.scoring_rules.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/scoring_rules
+  method: delete
+  operationId: deleteScoringRules
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - settings.scoring_rules.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/scoring_rules/{ruleId}
+  method: get
+  operationId: getScoringRuleById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - settings.scoring_rules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/scoring_rules/{ruleId}
+  method: put
+  operationId: putScoringRuleById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - settings.scoring_rules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/scoring_rules/{ruleId}
+  method: delete
+  operationId: deleteScoringRuleById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - settings.scoring_rules.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/scoring_rules/{ruleId}/actions/activate
+  method: put
+  operationId: putActivate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - settings.scoring_rules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/scoring_rules/{ruleId}/actions/activate
+  method: delete
+  operationId: deleteActivate
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - settings.scoring_rules.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/scoring_rules/{ruleId}/actions/clone
+  method: post
+  operationId: postClone
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - settings.scoring_rules.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleName}/{id}/actions/send_mail
+  method: post
+  operationId: sendMail
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.send_mail.all.CREATE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/service_preferences
+  method: get
+  operationId: getServicePreference
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.modules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/service_preferences
+  method: put
+  operationId: updateServicePreference
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.modules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Services__s
+  method: get
+  operationId: getServicesS
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.services.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /Services__s
+  method: put
+  operationId: putServicesS
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.services.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Services__s
+  method: post
+  operationId: postServicesS
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.services.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Services__s
+  method: delete
+  operationId: deleteServicesS
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.services.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Services__s/{id}
+  method: get
+  operationId: getServiceById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.services.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /Services__s/{id}
+  method: put
+  operationId: putServiceById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.services.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /Services__s/{id}
+  method: delete
+  operationId: deleteServiceById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.services.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/{recordId}/actions/share
+  method: get
+  operationId: getShareRecords
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.share.accounts.READ
+    - ZohoCRM.share.bundles.READ
+    - ZohoCRM.share.calls.READ
+    - ZohoCRM.share.campaigns.READ
+    - ZohoCRM.share.cases.READ
+    - ZohoCRM.share.contacts.READ
+    - ZohoCRM.share.cross_sellings.READ
+    - ZohoCRM.share.custom.READ
+    - ZohoCRM.share.deals.READ
+    - ZohoCRM.share.events.READ
+    - ZohoCRM.share.first_buys.READ
+    - ZohoCRM.share.invoices.READ
+    - ZohoCRM.share.leads.READ
+    - ZohoCRM.share.next_buys.READ
+    - ZohoCRM.share.pricebooks.READ
+    - ZohoCRM.share.products.READ
+    - ZohoCRM.share.purchaseorders.READ
+    - ZohoCRM.share.quotes.READ
+    - ZohoCRM.share.rebuys.READ
+    - ZohoCRM.share.salesorders.READ
+    - ZohoCRM.share.solutions.READ
+    - ZohoCRM.share.tasks.READ
+    - ZohoCRM.share.vendors.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{moduleApiName}/{recordId}/actions/share
+  method: post
+  operationId: createShareRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.share.accounts.CREATE
+    - ZohoCRM.share.bundles.CREATE
+    - ZohoCRM.share.calls.CREATE
+    - ZohoCRM.share.campaigns.CREATE
+    - ZohoCRM.share.cases.CREATE
+    - ZohoCRM.share.contacts.CREATE
+    - ZohoCRM.share.cross_sellings.CREATE
+    - ZohoCRM.share.custom.CREATE
+    - ZohoCRM.share.deals.CREATE
+    - ZohoCRM.share.events.CREATE
+    - ZohoCRM.share.first_buys.CREATE
+    - ZohoCRM.share.invoices.CREATE
+    - ZohoCRM.share.leads.CREATE
+    - ZohoCRM.share.next_buys.CREATE
+    - ZohoCRM.share.pricebooks.CREATE
+    - ZohoCRM.share.products.CREATE
+    - ZohoCRM.share.purchaseorders.CREATE
+    - ZohoCRM.share.quotes.CREATE
+    - ZohoCRM.share.rebuys.CREATE
+    - ZohoCRM.share.salesorders.CREATE
+    - ZohoCRM.share.solutions.CREATE
+    - ZohoCRM.share.tasks.CREATE
+    - ZohoCRM.share.vendors.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/{recordId}/actions/share
+  method: put
+  operationId: updateShareRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.share.accounts.UPDATE
+    - ZohoCRM.share.bundles.UPDATE
+    - ZohoCRM.share.calls.UPDATE
+    - ZohoCRM.share.campaigns.UPDATE
+    - ZohoCRM.share.cases.UPDATE
+    - ZohoCRM.share.contacts.UPDATE
+    - ZohoCRM.share.cross_sellings.UPDATE
+    - ZohoCRM.share.custom.UPDATE
+    - ZohoCRM.share.deals.UPDATE
+    - ZohoCRM.share.events.UPDATE
+    - ZohoCRM.share.first_buys.UPDATE
+    - ZohoCRM.share.invoices.UPDATE
+    - ZohoCRM.share.leads.UPDATE
+    - ZohoCRM.share.next_buys.UPDATE
+    - ZohoCRM.share.pricebooks.UPDATE
+    - ZohoCRM.share.products.UPDATE
+    - ZohoCRM.share.purchaseorders.UPDATE
+    - ZohoCRM.share.quotes.UPDATE
+    - ZohoCRM.share.rebuys.UPDATE
+    - ZohoCRM.share.salesorders.UPDATE
+    - ZohoCRM.share.solutions.UPDATE
+    - ZohoCRM.share.tasks.UPDATE
+    - ZohoCRM.share.vendors.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{moduleApiName}/{recordId}/actions/share
+  method: delete
+  operationId: deleteShareRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.share.accounts.DELETE
+    - ZohoCRM.share.bundles.DELETE
+    - ZohoCRM.share.calls.DELETE
+    - ZohoCRM.share.campaigns.DELETE
+    - ZohoCRM.share.cases.DELETE
+    - ZohoCRM.share.contacts.DELETE
+    - ZohoCRM.share.cross_sellings.DELETE
+    - ZohoCRM.share.custom.DELETE
+    - ZohoCRM.share.deals.DELETE
+    - ZohoCRM.share.events.DELETE
+    - ZohoCRM.share.first_buys.DELETE
+    - ZohoCRM.share.invoices.DELETE
+    - ZohoCRM.share.leads.DELETE
+    - ZohoCRM.share.next_buys.DELETE
+    - ZohoCRM.share.pricebooks.DELETE
+    - ZohoCRM.share.products.DELETE
+    - ZohoCRM.share.purchaseorders.DELETE
+    - ZohoCRM.share.quotes.DELETE
+    - ZohoCRM.share.rebuys.DELETE
+    - ZohoCRM.share.salesorders.DELETE
+    - ZohoCRM.share.solutions.DELETE
+    - ZohoCRM.share.tasks.DELETE
+    - ZohoCRM.share.vendors.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/business_hours/shift_hours
+  method: get
+  operationId: getShifts
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.business_hours.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/business_hours/shift_hours
+  method: post
+  operationId: createShifts
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.business_hours.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/business_hours/shift_hours
+  method: put
+  operationId: updateShiftHours
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.business_hours.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/business_hours/shift_hours/{shift}
+  method: get
+  operationId: getSingleShiftHour
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.business_hours.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/business_hours/shift_hours/{shift}
+  method: put
+  operationId: updateSingleShiftHour
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.business_hours.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/business_hours/shift_hours/{shift}
+  method: delete
+  operationId: deleteSingleShiftHour
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.business_hours.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/add_tags
+  method: post
+  operationId: postAddTags
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.tags.all
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/remove_tags
+  method: post
+  operationId: postRemoveTags
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.tags.all
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{id}/actions/add_tags
+  method: post
+  operationId: postAddTagsWithId
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.tags.all
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{id}/actions/remove_tags
+  method: post
+  operationId: postRemoveTagsWithId
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.tags.all
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/tags/{id}/actions/records_count
+  method: get
+  operationId: getRecordsCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.tags.all
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/tags/{id}/actions/merge
+  method: post
+  operationId: postMerge
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.tags.all
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/tags
+  method: get
+  operationId: getTags
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.tags.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/tags
+  method: put
+  operationId: putTags
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.tags.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/tags
+  method: post
+  operationId: postTags
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.tags.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/tags/{id}
+  method: put
+  operationId: putTagsWithId
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.tags.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/tags/{id}
+  method: delete
+  operationId: deleteTags
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.tags.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories
+  method: get
+  operationId: getAllTerritories
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.territories.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/territories
+  method: post
+  operationId: createTerritories
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories
+  method: put
+  operationId: updateTerritory
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories
+  method: delete
+  operationId: deleteTerritories
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories/{id}
+  method: get
+  operationId: getTerritory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.territories.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/territories/{id}
+  method: put
+  operationId: updateTerritoryById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories/{id}
+  method: delete
+  operationId: deleteTerritoryById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories/actions/transfer_and_delete
+  method: post
+  operationId: transferAndDeleteTerritories
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.DELETE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories/{id}/actions/transfer_and_delete
+  method: post
+  operationId: transferAndDeleteTerritoryById
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.DELETE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories/{id}/__child_territories
+  method: get
+  operationId: getChildTerritoriesById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.territories.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/territories/actions/associated_users_count
+  method: get
+  operationId: getAssociatedUsersCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.territories.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/{record}/actions/assign_territories
+  method: post
+  operationId: asssignTerritoriesToRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/assign_territories
+  method: post
+  operationId: asssignTerritoriesToRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{record}/actions/remove_territories
+  method: post
+  operationId: removeTerritoriesToRecord
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/actions/remove_territories
+  method: post
+  operationId: removeTerritoriesToRecords
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.modules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories/{territory}/users
+  method: get
+  operationId: getTerritoryUsers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.territories.ALL
+    - ZohoCRM.settings.territories.READ
+    - ZohoCRM.users.ALL
+    - ZohoCRM.users.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/territories/{territory}/users
+  method: put
+  operationId: associateUsersToTerritory
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.ALL
+    - ZohoCRM.users.ALL
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories/{territory}/users
+  method: delete
+  operationId: deassociateUsersFromTerritories
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.ALL
+    - ZohoCRM.users.ALL
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories/{territory}/users/{user}
+  method: get
+  operationId: getUserDetailsFromTerritory
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.territories.ALL
+    - ZohoCRM.settings.territories.READ
+    - ZohoCRM.users.ALL
+    - ZohoCRM.users.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/territories/{territory}/users/{user}
+  method: put
+  operationId: associateUserToSpecificTerritory
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.ALL
+    - ZohoCRM.users.ALL
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/territories/{territory}/users/{user}
+  method: delete
+  operationId: deassociateUserFromSpecificTerritory
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.ALL
+    - ZohoCRM.users.ALL
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{recordId}/__timeline
+  method: get
+  operationId: getTimelines
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.modules.Accounts.READ
+    - ZohoCRM.modules.Calls.READ
+    - ZohoCRM.modules.Campaigns.READ
+    - ZohoCRM.modules.Cases.READ
+    - ZohoCRM.modules.Contacts.READ
+    - ZohoCRM.modules.Custom.READ
+    - ZohoCRM.modules.Deals.READ
+    - ZohoCRM.modules.Events.READ
+    - ZohoCRM.modules.Leads.READ
+    - ZohoCRM.modules.Pricebooks.READ
+    - ZohoCRM.modules.Products.READ
+    - ZohoCRM.modules.Purchaseorders.READ
+    - ZohoCRM.modules.Quotes.READ
+    - ZohoCRM.modules.Salesorders.READ
+    - ZohoCRM.modules.Solutions.READ
+    - ZohoCRM.modules.Tasks.READ
+    - ZohoCRM.modules.Vendors.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /{module}/actions/unblock_email
+  method: post
+  operationId: unblockEmailByModule
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.emails.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /{module}/{id}/actions/unblock_email
+  method: post
+  operationId: unblockEmailById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.emails.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/unsubscribe_links
+  method: get
+  operationId: getUnsubscribeLinks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.unsubscribe.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/unsubscribe_links
+  method: put
+  operationId: putUnsubscribeLinks
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.unsubscribe.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/unsubscribe_links
+  method: post
+  operationId: postUnsubscribeLinks
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.unsubscribe.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/unsubscribe_links/{id}
+  method: get
+  operationId: get111111000000115718
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.unsubscribe.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/unsubscribe_links/{id}
+  method: put
+  operationId: put111111000000115722
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.unsubscribe.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/unsubscribe_links/{id}
+  method: delete
+  operationId: delete111111000000115722
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.unsubscribe.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/unsubscribe_link/actions/associations
+  method: get
+  operationId: getAssociations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.unsubscribe.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /upload
+  method: post
+  operationId: uploadFile
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoFiles.files.ALL
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/user_groups
+  method: get
+  operationId: getGroups
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.user_groups.ALL
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/user_groups
+  method: post
+  operationId: createGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.user_groups.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/user_groups/{group}
+  method: get
+  operationId: getGroup
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.user_groups.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/user_groups/{group}
+  method: put
+  operationId: updateGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.user_groups.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/user_groups/{group}
+  method: delete
+  operationId: deleteGroup
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.user_groups.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/user_groups/{group}/sources
+  method: get
+  operationId: getSources
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.user_groups.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/user_groups/{group}/actions/sources_count
+  method: get
+  operationId: getSourcesCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.user_groups.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/user_groups/actions/associated_users_count
+  method: get
+  operationId: getAssociatedUsersCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.user_groups.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /users/{user}/actions/associated_groups
+  method: get
+  operationId: getAssociatedGroupsForUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.user_groups.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/user_groups/{group}/actions/associations
+  method: get
+  operationId: getAssociations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.user_groups.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /users
+  method: get
+  operationId: getUsers
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.users.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /users
+  method: post
+  operationId: createUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.users.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users
+  method: put
+  operationId: updateUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.users.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/{user}
+  method: get
+  operationId: getSingleUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.users.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /users/{user}
+  method: put
+  operationId: updateSingleUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.users.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/{user}
+  method: delete
+  operationId: deleteUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.users.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/{user}/territories
+  method: get
+  operationId: getTerritoriesOfUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.territories.READ
+    - ZohoCRM.users.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /users/{user}/territories
+  method: put
+  operationId: associateTerritoriesToUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.UPDATE
+    - ZohoCRM.users.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/{user}/territories
+  method: delete
+  operationId: removeTerritoriesfromUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.DELETE
+    - ZohoCRM.users.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/{user}/territories/{territory}
+  method: get
+  operationId: getSpecificTerritoryOfUser
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.territories.READ
+    - ZohoCRM.users.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /users/{user}/territories/{territory}
+  method: delete
+  operationId: removeSpecificTerritoriesfromUser
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.territories.DELETE
+    - ZohoCRM.users.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/{userId}/actions/transfer_and_delete
+  method: post
+  operationId: userTransfer
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.users.CREATE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/actions/transfer_and_delete
+  method: post
+  operationId: userTransferWithoutId
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.users.CREATE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/actions/transfer_and_delete
+  method: get
+  operationId: getTransferStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.users.DELETE
+    - ZohoCRM.users.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /users/{userId}/actions/transfer
+  method: post
+  operationId: userTransferAPI
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.change_owner.CREATE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /users/actions/transfer
+  method: get
+  operationId: getTransferAPIStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.change_owner.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /users/{userId}/actions/validate_before_transfer
+  method: get
+  operationId: getValidateBeforeTransferStatus
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.change_owner.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/variable_groups
+  method: get
+  operationId: getVariableGroups
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.variable_groups.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/variable_groups
+  method: put
+  operationId: putVariableGroups
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.variable_groups.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/variable_groups/{id}
+  method: get
+  operationId: getVariableGroupById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.variable_groups.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/variable_groups/{id}
+  method: put
+  operationId: putVariableGroupById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.variable_groups.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/variables
+  method: get
+  operationId: getVariables
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.variables.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/variables
+  method: put
+  operationId: putVariables
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.variables.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/variables
+  method: post
+  operationId: postVariables
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.variables.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/variables
+  method: delete
+  operationId: deleteVariables
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.variables.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/variables/{id}
+  method: get
+  operationId: getVariableById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.variables.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/variables/{id}
+  method: put
+  operationId: putVariableById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.variables.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/variables/{id}
+  method: delete
+  operationId: deleteVariableById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.variables.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/webhooks
+  method: get
+  operationId: getWebhooks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.automation_actions.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/webhooks
+  method: put
+  operationId: putWebhooks
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/webhooks
+  method: post
+  operationId: postWebhooks
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/webhooks
+  method: delete
+  operationId: deleteWebhooks
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/webhooks/{webhookId}
+  method: get
+  operationId: getWebhookById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.automation_actions.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/webhooks/{webhookId}
+  method: put
+  operationId: putWebhooksById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/webhooks/{webhookId}
+  method: delete
+  operationId: deleteWebhooksById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/webhook_failures
+  method: get
+  operationId: getWebhookFailures
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.automation_actions.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/webhooks/actions/associated_modules
+  method: get
+  operationId: getAssociatedModules
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.automation_actions.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/webhooks/actions/usage_reports
+  method: get
+  operationId: getUsageReports
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.automation_actions.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/wizards
+  method: get
+  operationId: getAllWizards
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.wizards.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /workflow_configurations
+  method: get
+  operationId: getWorkflowConfigurations
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.workflow_rules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/workflow_rules
+  method: post
+  operationId: postWorkflowRule
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.workflow_rules.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/workflow_rules
+  method: put
+  operationId: updateWorkflowRule
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.workflow_rules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/workflow_rules
+  method: get
+  operationId: getWorkflowRules
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.workflow_rules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/workflow_rules
+  method: delete
+  operationId: deleteWorkflowRules
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.workflow_rules.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/workflow_rules/{id}
+  method: put
+  operationId: updateWorkflowRuleById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.workflow_rules.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/workflow_rules/{id}
+  method: get
+  operationId: getWorkflowRuleById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.workflow_rules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/workflow_rules/{id}
+  method: delete
+  operationId: deleteWorkflowRuleById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.workflow_rules.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/workflow_rules/actions/actions_count
+  method: get
+  operationId: getActionsCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.workflow_rules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/workflow_rules/actions/module_specific_count
+  method: get
+  operationId: getModuleSpecificActionsCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.workflow_rules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/workflow_rules/actions/rules_count
+  method: get
+  operationId: getRulesCount
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.workflow_rules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/workflow_rules/{workflowRuleId}/actions/usage
+  method: get
+  operationId: getUsage
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.workflow_rules.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/workflow_rules/actions/reorder
+  method: put
+  operationId: putReorder
+  x-agentic-access:
+    action-class: acting
+    consequence: physical
+    subject: required
+    scope:
+    - ZohoCRM.settings.workflow_rules.UPDATE
+    audience: null
+    token:
+      max-ttl: 300
+      exchange: true
+      purpose-required: true
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/tasks
+  method: get
+  operationId: getTasks
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.automation_actions.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/tasks
+  method: post
+  operationId: postTasks
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/tasks
+  method: delete
+  operationId: deleteTasks
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/tasks/{id}
+  method: get
+  operationId: getTaskById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.automation_actions.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /settings/automation/tasks/{id}
+  method: put
+  operationId: putTasksById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.UPDATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/automation/tasks/{id}
+  method: delete
+  operationId: deleteTaskById
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.automation_actions.DELETE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /settings/zia/data_enrichment
+  method: get
+  operationId: getZiaEnrichmentConfiguration
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.zia.enrichment
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /__zia_org_enrichment
+  method: post
+  operationId: submitOrgEnrichmentRequest
+  x-agentic-access:
+    action-class: acting
+    consequence: write
+    subject: required
+    scope:
+    - ZohoCRM.settings.intelligence.CREATE
+    audience: null
+    token:
+      max-ttl: 900
+    escalation:
+      human-in-the-loop: conditional
+      triggers:
+      - abnormal
+      - high-value
+    audit: required
+- path: /__zia_org_enrichment
+  method: get
+  operationId: getZiaOrgEnrichment
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.intelligence.READ
+    token:
+      max-ttl: 3600
+    audit: none
+- path: /__zia_org_enrichment/{id}
+  method: get
+  operationId: getOrgEnrichmentById
+  x-agentic-access:
+    action-class: connected
+    consequence: read
+    subject: optional
+    scope:
+    - ZohoCRM.settings.intelligence.READ
+    token:
+      max-ttl: 3600
+    audit: none

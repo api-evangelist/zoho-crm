@@ -1,0 +1,3780 @@
+generated: '2026-08-13'
+method: derived
+source: openapi/zoho-crm-apis-openapi.json, openapi/zoho-crm-appointment-preference-openapi.json,
+  openapi/zoho-crm-appointments-openapi.json, openapi/zoho-crm-assignment-rules-openapi.json,
+  openapi/zoho-crm-associate-email-openapi.json, openapi/zoho-crm-attachments-openapi.json,
+  openapi/zoho-crm-audit-log-export-openapi.json, openapi/zoho-crm-available-currencies-openapi.json,
+  openapi/zoho-crm-bulk-read-openapi.json, openapi/zoho-crm-bulk-write-openapi.json, openapi/zoho-crm-business-hours-openapi.json,
+  openapi/zoho-crm-cadences-execution-openapi.json, openapi/zoho-crm-cadences-openapi.json,
+  openapi/zoho-crm-call-preferences-openapi.json, openapi/zoho-crm-cancel-meetings-openapi.json,
+  openapi/zoho-crm-change-owner-openapi.json, openapi/zoho-crm-composite-requests-openapi.json,
+  openapi/zoho-crm-contact-roles-openapi.json, openapi/zoho-crm-conversion-option-openapi.json,
+  openapi/zoho-crm-convert-openapi.json, openapi/zoho-crm-coql-openapi.json, openapi/zoho-crm-currencies-openapi.json,
+  openapi/zoho-crm-custom-views-openapi.json, openapi/zoho-crm-data-sharing-openapi.json, openapi/zoho-crm-deal-contact-roles-openapi.json,
+  openapi/zoho-crm-deal-link-emails-openapi.json, openapi/zoho-crm-download-attachments-openapi.json,
+  openapi/zoho-crm-download-inline-images-openapi.json, openapi/zoho-crm-duplicate-check-preference-openapi.json,
+  openapi/zoho-crm-email-drafts-openapi.json, openapi/zoho-crm-email-templates-openapi.json,
+  openapi/zoho-crm-emails-sharing-details-openapi.json, openapi/zoho-crm-features-openapi.json,
+  openapi/zoho-crm-fetch-full-data-openapi.json, openapi/zoho-crm-field-updates-openapi.json,
+  openapi/zoho-crm-fields-openapi.json, openapi/zoho-crm-files-openapi.json, openapi/zoho-crm-find-and-merge-openapi.json,
+  openapi/zoho-crm-fiscal-year-openapi.json, openapi/zoho-crm-from-addresses-openapi.json, openapi/zoho-crm-get-related-records-count-openapi.json,
+  openapi/zoho-crm-global-picklists-openapi.json, openapi/zoho-crm-holidays-openapi.json, openapi/zoho-crm-inventory-convert-openapi.json,
+  openapi/zoho-crm-inventory-templates-openapi.json, openapi/zoho-crm-layouts-activate-deactivate-openapi.json,
+  openapi/zoho-crm-layouts-openapi.json, openapi/zoho-crm-locking-informations-openapi.json,
+  openapi/zoho-crm-mail-merge-openapi.json, openapi/zoho-crm-map-dependency-openapi.json, openapi/zoho-crm-mass-change-owner-openapi.json,
+  openapi/zoho-crm-mass-convert-openapi.json, openapi/zoho-crm-mass-delete-cvid-openapi.json,
+  openapi/zoho-crm-mass-delete-tags-openapi.json, openapi/zoho-crm-mass-update-openapi.json,
+  openapi/zoho-crm-module-search-openapi.json, openapi/zoho-crm-modules-openapi.json, openapi/zoho-crm-notes-openapi.json,
+  openapi/zoho-crm-notifications-openapi.json, openapi/zoho-crm-org-openapi.json, openapi/zoho-crm-org-photo-openapi.json,
+  openapi/zoho-crm-ownership-history-openapi.json, openapi/zoho-crm-pick-list-values-openapi.json,
+  openapi/zoho-crm-pipeline-openapi.json, openapi/zoho-crm-portal-user-type-openapi.json, openapi/zoho-crm-portal-users-openapi.json,
+  openapi/zoho-crm-portals-openapi.json, openapi/zoho-crm-profiles-openapi.json, openapi/zoho-crm-record-count-openapi.json,
+  openapi/zoho-crm-record-locking-configurations-openapi.json, openapi/zoho-crm-record-openapi.json,
+  openapi/zoho-crm-record-photo-openapi.json, openapi/zoho-crm-record-share-email-openapi.json,
+  openapi/zoho-crm-recycle-bin-openapi.json, openapi/zoho-crm-related-lists-openapi.json, openapi/zoho-crm-related-notes-openapi.json,
+  openapi/zoho-crm-related-records-openapi.json, openapi/zoho-crm-roles-openapi.json, openapi/zoho-crm-scoring-rules-openapi.json,
+  openapi/zoho-crm-send-mail-openapi.json, openapi/zoho-crm-service-preference-openapi.json,
+  openapi/zoho-crm-services-openapi.json, openapi/zoho-crm-share-records-openapi.json, openapi/zoho-crm-shift-hours-openapi.json,
+  openapi/zoho-crm-tags-actions-openapi.json, openapi/zoho-crm-tags-openapi.json, openapi/zoho-crm-territories-openapi.json,
+  openapi/zoho-crm-territory-users-openapi.json, openapi/zoho-crm-timelines-openapi.json, openapi/zoho-crm-unblock-email-openapi.json,
+  openapi/zoho-crm-unsubscribe-links-openapi.json, openapi/zoho-crm-upload-openapi.json, openapi/zoho-crm-user-groups-openapi.json,
+  openapi/zoho-crm-users-openapi.json, openapi/zoho-crm-users-territories-openapi.json, openapi/zoho-crm-users-transfer-openapi.json,
+  openapi/zoho-crm-variable-groups-openapi.json, openapi/zoho-crm-variables-openapi.json, openapi/zoho-crm-webhooks-openapi.json,
+  openapi/zoho-crm-wizards-openapi.json, openapi/zoho-crm-workflow-configurations-openapi.json,
+  openapi/zoho-crm-workflow-rules-openapi.json, openapi/zoho-crm-workflow-tasks-openapi.json,
+  openapi/zoho-crm-zia-enrichment-openapi.json, openapi/zoho-crm-zia-org-enrichment-openapi.json
+schemes:
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-apis-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-appointment-preference-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth 2.0 authorization using Zoho Accounts for secure API access.
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-appointments-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-assignment-rules-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-associate-email-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: Zoho CRM OAuth2 Authentication.
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-attachments-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-audit-log-export-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-available-currencies-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-bulk-read-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-bulk-write-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-business-hours-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-cadences-execution-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-cadences-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-call-preferences-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-cancel-meetings-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-change-owner-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-composite-requests-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-contact-roles-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-conversion-option-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-convert-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-coql-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-currencies-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-custom-views-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-data-sharing-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-deal-contact-roles-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-deal-link-emails-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-download-attachments-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: Zoho CRM OAuth2
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-download-inline-images-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: Zoho IAM OAuth2 Authentication
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-duplicate-check-preference-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-email-drafts-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-email-templates-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-emails-sharing-details-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-features-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-fetch-full-data-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-field-updates-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-fields-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-files-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-find-and-merge-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-fiscal-year-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-from-addresses-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-get-related-records-count-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-global-picklists-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-holidays-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-inventory-convert-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-inventory-templates-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-layouts-activate-deactivate-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth 2.0 authorization code flow for accessing Zoho CRM APIs. Requires appropriate
+    scopes for layout management operations.
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-layouts-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-locking-informations-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-mail-merge-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-map-dependency-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-mass-change-owner-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-mass-convert-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authorization used for CRM operations.
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-mass-delete-cvid-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-mass-delete-tags-openapi.json
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-mass-update-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-module-search-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-modules-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-notes-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-notifications-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-org-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-org-photo-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-ownership-history-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth 2.0 authorization code flow for Zoho CRM API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-pick-list-values-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-pipeline-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-portal-user-type-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-portal-users-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-portals-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-profiles-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-record-count-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-record-locking-configurations-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-record-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-record-photo-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-record-share-email-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-recycle-bin-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: Property value
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-related-lists-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-related-notes-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-related-records-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth 2.0 authentication for Zoho CRM APIs
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-roles-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-scoring-rules-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-send-mail-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: Zoho OAuth2
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-service-preference-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-services-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-share-records-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-shift-hours-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-tags-actions-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-tags-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-territories-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: The `iam-oauth2-schema` field of type `oauth2`.
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-territory-users-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: The `iam-oauth2-schema` field of type `oauth2`.
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-timelines-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-unblock-email-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-unsubscribe-links-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-upload-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-user-groups-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-users-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-users-territories-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-users-transfer-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-variable-groups-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-variables-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-webhooks-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-wizards-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication scheme using Zoho Accounts.
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-workflow-configurations-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-workflow-rules-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-workflow-tasks-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+  description: OAuth2 authentication for API access
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-zia-enrichment-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+- name: iam-oauth2-schema
+  source: openapi/zoho-crm-zia-org-enrichment-openapi.json
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://accounts.zoho.com/oauth/v2/auth
+    tokenUrl: https://accounts.zoho.com/oauth/v2/token
+scopes:
+- scope: ZOHOCRM.modules.Leads.READ
+  description: (legacy key) Read access to Leads
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.Modules.ALL
+  description: Full access to Meetings module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cancel-meetings-openapi.json
+- scope: ZohoCRM.Modules.Events.update
+  description: Update access to Meetings module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cancel-meetings-openapi.json
+- scope: ZohoCRM.apis.READ
+  description: Read access to available APIs
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-apis-openapi.json
+- scope: ZohoCRM.bulk.CREATE
+  description: Allows to perform CREATE operation in bulk over CRM data.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-bulk-write-openapi.json
+- scope: ZohoCRM.bulk.READ
+  description: Perform bulk read operations on CRM data
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-bulk-read-openapi.json
+- scope: ZohoCRM.change_owner.ALL
+  description: Full access to mass change owner operations in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mass-change-owner-openapi.json
+- scope: ZohoCRM.change_owner.CREATE
+  description: Permission to change owner of records
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-change-owner-openapi.json
+  - openapi/zoho-crm-mass-change-owner-openapi.json
+  - openapi/zoho-crm-users-transfer-openapi.json
+- scope: ZohoCRM.change_owner.READ
+  description: Read mass change owner job status in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mass-change-owner-openapi.json
+  - openapi/zoho-crm-users-transfer-openapi.json
+- scope: ZohoCRM.composite_requests.CUSTOM
+  description: Custom access to composite requests
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-composite-requests-openapi.json
+- scope: ZohoCRM.coql.READ
+  description: Execute COQL query
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+- scope: ZohoCRM.features.READ
+  description: READ feature access
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-features-openapi.json
+  - openapi/zoho-crm-org-photo-openapi.json
+- scope: ZohoCRM.files.CREATE
+  description: Create and upload files in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-business-hours-openapi.json
+  - openapi/zoho-crm-files-openapi.json
+- scope: ZohoCRM.files.READ
+  description: Read and download files from Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-files-openapi.json
+- scope: ZohoCRM.mass_convert.leads.CREATE
+  description: Permission to start a mass convert job for leads.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mass-convert-openapi.json
+- scope: ZohoCRM.mass_convert.leads.READ
+  description: Permission to read mass convert job status.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mass-convert-openapi.json
+- scope: ZohoCRM.mass_delete.DELETE
+  description: Permission to delete records in bulk across all modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mass-delete-cvid-openapi.json
+- scope: ZohoCRM.mass_delete.READ
+  description: Permission to retrieve mass delete job status across all modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mass-delete-cvid-openapi.json
+- scope: ZohoCRM.mass_update.Leads.READ
+  description: Permission to read mass update job status for a specific module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mass-update-openapi.json
+- scope: ZohoCRM.mass_update.Leads.UPDATE
+  description: Permission to update multiple records in a specific module via mass update
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mass-update-openapi.json
+- scope: ZohoCRM.mass_update.READ
+  description: Permission to read mass update job status
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mass-update-openapi.json
+- scope: ZohoCRM.mass_update.UPDATE
+  description: Permission to update multiple records in a module via mass update
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mass-update-openapi.json
+- scope: ZohoCRM.modules.ALL
+  description: Access all CRM modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-bulk-read-openapi.json
+  - openapi/zoho-crm-contact-roles-openapi.json
+  - openapi/zoho-crm-deal-contact-roles-openapi.json
+  - openapi/zoho-crm-emails-sharing-details-openapi.json
+  - openapi/zoho-crm-inventory-convert-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-photo-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+  - openapi/zoho-crm-territories-openapi.json
+- scope: ZohoCRM.modules.Accounts.CREATE
+  description: Create access to Accounts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Accounts.DELETE
+  description: Delete access to Accounts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Accounts.READ
+  description: Read access to Accounts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Accounts.UPDATE
+  description: Update access to Accounts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Activities.CREATE
+  description: Create access to Activities
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Activities.DELETE
+  description: Delete access to Activities
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Activities.READ
+  description: Read access to Activities module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+- scope: ZohoCRM.modules.Activities.UPDATE
+  description: Update access to Activities
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Attachments.CREATE
+  description: Create access to Attachments
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Attachments.DELETE
+  description: Delete access to Attachments
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Attachments.READ
+  description: Read access to Attachments module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+- scope: ZohoCRM.modules.Attachments.UPDATE
+  description: Update access to Attachments
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.CONTACTS.VIEW
+  description: View access to all Contacts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-deal-contact-roles-openapi.json
+- scope: ZohoCRM.modules.CREATE
+  description: Write access to CRM module records for merge operations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-find-and-merge-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-photo-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Calls.CREATE
+  description: Create access to Calls
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Calls.DELETE
+  description: Delete access to Calls
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Calls.READ
+  description: Read access to Calls module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Calls.UPDATE
+  description: Update access to Calls
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Campaigns.CREATE
+  description: Create access to Campaigns
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Campaigns.DELETE
+  description: Delete access to Campaigns
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Campaigns.READ
+  description: Read access to Campaigns module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Campaigns.UPDATE
+  description: Update access to Campaigns
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Cases.CREATE
+  description: Create access to Cases
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Cases.DELETE
+  description: Delete access to Cases
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Cases.READ
+  description: Read access to Cases module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Cases.UPDATE
+  description: Update access to Cases
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Contacts.CREATE
+  description: Create access to Contacts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Contacts.DELETE
+  description: Delete access to Contacts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Contacts.READ
+  description: Read access to Contacts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Contacts.UPDATE
+  description: Update access to Contacts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Custom.READ
+  description: Read access to Custom modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.DEALS.VIEW
+  description: View access to all Deals module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-deal-contact-roles-openapi.json
+- scope: ZohoCRM.modules.DELETE
+  description: Delete access for all modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-photo-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+  - openapi/zoho-crm-related-records-openapi.json
+- scope: ZohoCRM.modules.Deals.CREATE
+  description: Create access to Deals
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Deals.DELETE
+  description: Delete access to Deals
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Deals.READ
+  description: Read access to Deals module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Deals.UPDATE
+  description: Update access to Deals
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Events.CREATE
+  description: Create access to Events
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Events.DELETE
+  description: Delete access to Events
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Events.READ
+  description: Read access to Events module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Events.UPDATE
+  description: Update access to Events
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Forecasts.CREATE
+  description: Create access to Forecasts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Forecasts.DELETE
+  description: Delete access to Forecasts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Forecasts.READ
+  description: Read access to Forecasts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+- scope: ZohoCRM.modules.Forecasts.UPDATE
+  description: Update access to Forecasts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Invoices.CREATE
+  description: Create access to Invoices
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Invoices.DELETE
+  description: Delete access to Invoices
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Invoices.READ
+  description: Read access to Invoices module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+- scope: ZohoCRM.modules.Invoices.UPDATE
+  description: Update access to Invoices
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Leads.All
+  description: All permissions for Leads
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Leads.CREATE
+  description: Create access to Leads
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Leads.DELETE
+  description: Delete access to Leads
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Leads.READ
+  description: Read access to Leads module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Leads.UPDATE
+  description: Update access to Leads
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Leads.WRITE
+  description: Write access to Leads
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Notes.CREATE
+  description: Create access to Notes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Notes.DELETE
+  description: Delete access to Notes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Notes.READ
+  description: Read access to Notes module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+- scope: ZohoCRM.modules.Notes.UPDATE
+  description: Update access to Notes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Pricebooks.READ
+  description: Read access to Pricebooks module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Products.CREATE
+  description: Create access to Products
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Products.DELETE
+  description: Delete access to Products
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Products.READ
+  description: Read access to Products module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Products.UPDATE
+  description: Update access to Products
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Purchaseorders.READ
+  description: Read access to Purchaseorders module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Quotes.CREATE
+  description: Create access to Quotes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-inventory-convert-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Quotes.DELETE
+  description: Delete access to Quotes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Quotes.READ
+  description: Read access to Quotes module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Quotes.UPDATE
+  description: Update access to Quotes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.READ
+  description: Full access to all modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-fetch-full-data-openapi.json
+  - openapi/zoho-crm-get-related-records-count-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-photo-openapi.json
+  - openapi/zoho-crm-related-records-openapi.json
+  - openapi/zoho-crm-territories-openapi.json
+- scope: ZohoCRM.modules.SalesOrders.CREATE
+  description: Permission to convert SalesOrder module.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-inventory-convert-openapi.json
+- scope: ZohoCRM.modules.Salesorders.READ
+  description: Read access to Salesorders module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Solutions.CREATE
+  description: Create access to Solutions
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Solutions.DELETE
+  description: Delete access to Solutions
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Solutions.READ
+  description: Read access to Solutions module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Solutions.UPDATE
+  description: Update access to Solutions
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.Tasks.CREATE
+  description: Create access to Tasks
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Tasks.DELETE
+  description: Delete access to Tasks
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Tasks.READ
+  description: Read access to Tasks module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Tasks.UPDATE
+  description: Update access to Tasks
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.UPDATE
+  description: Update access for all modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-records-openapi.json
+  - openapi/zoho-crm-territories-openapi.json
+- scope: ZohoCRM.modules.Vendors.CREATE
+  description: Create access to Vendors
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Vendors.DELETE
+  description: Delete access to Vendors
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.Vendors.READ
+  description: Read access to Vendors module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-timelines-openapi.json
+- scope: ZohoCRM.modules.Vendors.UPDATE
+  description: Update access to Vendors
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.accounts.CREATE
+  description: Create access to Accounts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.accounts.DELETE
+  description: Delete access to Accounts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.accounts.READ
+  description: Read access to Accounts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.accounts.UPDATE
+  description: Update access to Accounts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.all
+  description: Full access to CRM modules for merge operations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-find-and-merge-openapi.json
+- scope: ZohoCRM.modules.appointments.CREATE
+  description: Access to ,ZohoCRM.modules.appointments.CREATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-appointments-openapi.json
+- scope: ZohoCRM.modules.appointments.DELETE
+  description: Access to ,ZohoCRM.modules.appointments.DELETE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-appointments-openapi.json
+- scope: ZohoCRM.modules.appointments.READ
+  description: Access to ,ZohoCRM.modules.appointments.READ scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-appointments-openapi.json
+- scope: ZohoCRM.modules.appointments.UPDATE
+  description: Access to ,ZohoCRM.modules.appointments.UPDATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-appointments-openapi.json
+- scope: ZohoCRM.modules.attachments.ALL
+  description: Full access to attachments
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-attachments-openapi.json
+- scope: ZohoCRM.modules.attachments.CREATE
+  description: Create access to attachments
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-attachments-openapi.json
+- scope: ZohoCRM.modules.attachments.DELETE
+  description: Delete access to attachments
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-attachments-openapi.json
+- scope: ZohoCRM.modules.attachments.READ
+  description: Read access to attachments
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-attachments-openapi.json
+- scope: ZohoCRM.modules.attachments.UPDATE
+  description: Update access to attachments
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-attachments-openapi.json
+- scope: ZohoCRM.modules.cases.CREATE
+  description: Create access to Activities module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.cases.DELETE
+  description: Delete access to Activities module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.cases.READ
+  description: Read access to Activities module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.cases.UPDATE
+  description: Update access to Activities module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.contacts.CREATE
+  description: Create contact roles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-contact-roles-openapi.json
+  - openapi/zoho-crm-deal-link-emails-openapi.json
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.contacts.DELETE
+  description: Delete contact roles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-contact-roles-openapi.json
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.contacts.READ
+  description: Read contact roles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-contact-roles-openapi.json
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.contacts.UPDATE
+  description: Update contact roles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-contact-roles-openapi.json
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.contacts.WRITE
+  description: Create and update contact roles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-contact-roles-openapi.json
+- scope: ZohoCRM.modules.contacts.all
+  description: All contact access
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-download-inline-images-openapi.json
+- scope: ZohoCRM.modules.custom.CREATE
+  description: Create access to custom modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-execution-openapi.json
+  - openapi/zoho-crm-email-drafts-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.custom.DELETE
+  description: Delete access to Forecasts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+  - openapi/zoho-crm-record-share-email-openapi.json
+- scope: ZohoCRM.modules.custom.READ
+  description: Read access to Custom modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-email-drafts-openapi.json
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-ownership-history-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.custom.UPDATE
+  description: Update access to Forecasts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+  - openapi/zoho-crm-record-openapi.json
+- scope: ZohoCRM.modules.deals.CREATE
+  description: create access for linking email of contacts to deals module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-deal-link-emails-openapi.json
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.deals.DELETE
+  description: Delete access to Deals module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.deals.READ
+  description: Read access to Deals module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.deals.UPDATE
+  description: Update access to Deals module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.deals.all
+  description: All deal access
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-download-inline-images-openapi.json
+- scope: ZohoCRM.modules.emails.ALL
+  description: Full access to emails
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-associate-email-openapi.json
+- scope: ZohoCRM.modules.emails.CREATE
+  description: Create email associations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-associate-email-openapi.json
+  - openapi/zoho-crm-deal-link-emails-openapi.json
+- scope: ZohoCRM.modules.emails.READ
+  description: Read email associations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-associate-email-openapi.json
+  - openapi/zoho-crm-download-attachments-openapi.json
+  - openapi/zoho-crm-download-inline-images-openapi.json
+  - openapi/zoho-crm-emails-sharing-details-openapi.json
+- scope: ZohoCRM.modules.invoices.CREATE
+  description: Create access to Invoices module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.invoices.DELETE
+  description: Delete access to Invoices module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.invoices.READ
+  description: Read access to Invoices module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.invoices.UPDATE
+  description: Update access to Invoices module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.leads.CREATE
+  description: Create Records in Leads module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-convert-openapi.json
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.leads.DELETE
+  description: Delete access to Leads module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.leads.READ
+  description: Read access to Leads module in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-conversion-option-openapi.json
+  - openapi/zoho-crm-convert-openapi.json
+  - openapi/zoho-crm-download-attachments-openapi.json
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.leads.UPDATE
+  description: Update access to Leads module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.leads.all
+  description: All lead access
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-download-inline-images-openapi.json
+- scope: ZohoCRM.modules.lockinginformation.ALL
+  description: Full access to Locking Information module APIs
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-locking-informations-openapi.json
+- scope: ZohoCRM.modules.notes.ALL
+  description: All access to Notes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-notes-openapi.json
+- scope: ZohoCRM.modules.notes.CREATE
+  description: Create access to Notes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-notes-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+- scope: ZohoCRM.modules.notes.DELETE
+  description: Delete access to Notes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-notes-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+- scope: ZohoCRM.modules.notes.READ
+  description: Read access to Notes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-notes-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+- scope: ZohoCRM.modules.notes.UPDATE
+  description: Update access to Notes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-notes-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+- scope: ZohoCRM.modules.pricebooks.READ
+  description: Read access to Price Books module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-count-openapi.json
+- scope: ZohoCRM.modules.purchaseorders.CREATE
+  description: Create access to Quotes module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.purchaseorders.DELETE
+  description: Delete access to Quotes module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.purchaseorders.READ
+  description: Read access to Quotes module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+- scope: ZohoCRM.modules.purchaseorders.UPDATE
+  description: Update access to Quotes module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.quotes.CREATE
+  description: Create access to Cases module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.quotes.DELETE
+  description: Delete access to Cases module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.quotes.READ
+  description: Read access to Cases module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.quotes.UPDATE
+  description: Update access to Cases module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.read
+  description: Read access to CRM module records for merge operations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-find-and-merge-openapi.json
+- scope: ZohoCRM.modules.salesorders.CREATE
+  description: Create access to Solutions module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.salesorders.DELETE
+  description: Delete access to Solutions module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.salesorders.READ
+  description: Read access to Solutions module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+- scope: ZohoCRM.modules.salesorders.UPDATE
+  description: Update access to Solutions module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-drafts-openapi.json
+- scope: ZohoCRM.modules.services.CREATE
+  description: Access to ZohoCRM.modules.services.CREATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-services-openapi.json
+- scope: ZohoCRM.modules.services.DELETE
+  description: Access to ZohoCRM.modules.services.DELETE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-services-openapi.json
+- scope: ZohoCRM.modules.services.READ
+  description: Access to ZohoCRM.modules.services.READ scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-services-openapi.json
+- scope: ZohoCRM.modules.services.UPDATE
+  description: Access to ZohoCRM.modules.services.UPDATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-services-openapi.json
+- scope: ZohoCRM.notifications.ALL
+  description: Full access to notifications operations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-notifications-openapi.json
+- scope: ZohoCRM.notifications.CREATE
+  description: Create access to notifications
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-notifications-openapi.json
+- scope: ZohoCRM.notifications.DELETE
+  description: Delete access to notifications
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-notifications-openapi.json
+- scope: ZohoCRM.notifications.READ
+  description: Read access to notifications
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-notifications-openapi.json
+- scope: ZohoCRM.notifications.UPDATE
+  description: Update access to notifications
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-notifications-openapi.json
+- scope: ZohoCRM.org.ALL
+  description: Full access to organization settings
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-org-photo-openapi.json
+- scope: ZohoCRM.org.CREATE
+  description: Create access to organization settings
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-org-photo-openapi.json
+- scope: ZohoCRM.org.DELETE
+  description: Delete access to organization settings
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-org-photo-openapi.json
+- scope: ZohoCRM.org.READ
+  description: Perform read operation for an appointment preference in org
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-appointment-preference-openapi.json
+  - openapi/zoho-crm-org-openapi.json
+  - openapi/zoho-crm-org-photo-openapi.json
+- scope: ZohoCRM.org.UPDATE
+  description: Perform update operation for an appointment preference in org
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-appointment-preference-openapi.json
+  - openapi/zoho-crm-org-openapi.json
+- scope: ZohoCRM.send_mail.all.CREATE
+  description: Send mail
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-send-mail-openapi.json
+- scope: ZohoCRM.settings.ALL
+  description: Access to all settings operations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-global-picklists-openapi.json
+  - openapi/zoho-crm-layouts-openapi.json
+  - openapi/zoho-crm-related-lists-openapi.json
+  - openapi/zoho-crm-webhooks-openapi.json
+- scope: ZohoCRM.settings.all
+  description: Allows all access to Zoho CRM settings
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-fields-openapi.json
+  - openapi/zoho-crm-find-and-merge-openapi.json
+- scope: ZohoCRM.settings.assignment_rules.ALL
+  description: Access to settings.assignment_rules scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-assignment-rules-openapi.json
+- scope: ZohoCRM.settings.assignment_rules.CREATE
+  description: Create access to settings.assignment_rules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-assignment-rules-openapi.json
+- scope: ZohoCRM.settings.assignment_rules.DELETE
+  description: Delete access to settings.assignment_rules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-assignment-rules-openapi.json
+- scope: ZohoCRM.settings.assignment_rules.READ
+  description: Read access to settings.assignment_rules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-assignment-rules-openapi.json
+- scope: ZohoCRM.settings.assignment_rules.UPDATE
+  description: Update access to settings.assignment_rules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-assignment-rules-openapi.json
+- scope: ZohoCRM.settings.audit_logs.CREATE
+  description: Create audit log exports
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-audit-log-export-openapi.json
+- scope: ZohoCRM.settings.audit_logs.READ
+  description: Read audit log exports
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-audit-log-export-openapi.json
+- scope: ZohoCRM.settings.automation_actions.ALL
+  description: Access to settings.automation_actions.ALL scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-field-updates-openapi.json
+  - openapi/zoho-crm-webhooks-openapi.json
+- scope: ZohoCRM.settings.automation_actions.CREATE
+  description: Access to settings.automation_actions.CREATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-field-updates-openapi.json
+  - openapi/zoho-crm-webhooks-openapi.json
+  - openapi/zoho-crm-workflow-tasks-openapi.json
+- scope: ZohoCRM.settings.automation_actions.DELETE
+  description: Access to settings.automation_actions.DELETE  scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-field-updates-openapi.json
+  - openapi/zoho-crm-webhooks-openapi.json
+  - openapi/zoho-crm-workflow-tasks-openapi.json
+- scope: ZohoCRM.settings.automation_actions.READ
+  description: Access to settings.automation_actions.READ scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-field-updates-openapi.json
+  - openapi/zoho-crm-webhooks-openapi.json
+  - openapi/zoho-crm-workflow-tasks-openapi.json
+- scope: ZohoCRM.settings.automation_actions.UPDATE
+  description: Access to settings.automation_actions.UPDATE  scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-field-updates-openapi.json
+  - openapi/zoho-crm-webhooks-openapi.json
+  - openapi/zoho-crm-workflow-tasks-openapi.json
+- scope: ZohoCRM.settings.business_hours.ALL
+  description: Full access to manage business hours settings including creation, modification,
+    and deletion
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-business-hours-openapi.json
+  - openapi/zoho-crm-shift-hours-openapi.json
+- scope: ZohoCRM.settings.business_hours.CREATE
+  description: Create access to manage business hours settings including creation, modification,
+    and deletion
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-business-hours-openapi.json
+  - openapi/zoho-crm-holidays-openapi.json
+  - openapi/zoho-crm-shift-hours-openapi.json
+- scope: ZohoCRM.settings.business_hours.DELETE
+  description: Delete access to manage business hours settings including creation, modification,
+    and deletion
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-business-hours-openapi.json
+  - openapi/zoho-crm-holidays-openapi.json
+  - openapi/zoho-crm-shift-hours-openapi.json
+- scope: ZohoCRM.settings.business_hours.READ
+  description: Get access to manage business hours settings including creation, modification,
+    and deletion
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-business-hours-openapi.json
+  - openapi/zoho-crm-holidays-openapi.json
+  - openapi/zoho-crm-shift-hours-openapi.json
+- scope: ZohoCRM.settings.business_hours.UPDATE
+  description: Update access to manage business hours settings including creation, modification,
+    and deletion
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-business-hours-openapi.json
+  - openapi/zoho-crm-holidays-openapi.json
+  - openapi/zoho-crm-shift-hours-openapi.json
+- scope: ZohoCRM.settings.cadences.ALL
+  description: Access to settings.cadences.ALL scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-openapi.json
+- scope: ZohoCRM.settings.cadences.CREATE
+  description: Access to settings.cadences.CREATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-openapi.json
+- scope: ZohoCRM.settings.cadences.DELETE
+  description: Access to settings.cadences.DELETE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-openapi.json
+- scope: ZohoCRM.settings.cadences.READ
+  description: Access to settings.cadences.READ scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-openapi.json
+- scope: ZohoCRM.settings.cadences.UPDATE
+  description: Access to settings.cadences.UPDATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-cadences-openapi.json
+- scope: ZohoCRM.settings.clientportal.ALL
+  description: Full access to Zoho CRM client portal settings
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-portal-user-type-openapi.json
+  - openapi/zoho-crm-portal-users-openapi.json
+  - openapi/zoho-crm-portals-openapi.json
+- scope: ZohoCRM.settings.clientportal.CREATE
+  description: Create portal user types in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-portal-user-type-openapi.json
+  - openapi/zoho-crm-portal-users-openapi.json
+  - openapi/zoho-crm-portals-openapi.json
+- scope: ZohoCRM.settings.clientportal.DELETE
+  description: Delete portal user types in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-portal-user-type-openapi.json
+  - openapi/zoho-crm-portal-users-openapi.json
+  - openapi/zoho-crm-portals-openapi.json
+- scope: ZohoCRM.settings.clientportal.READ
+  description: Read portal user types in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-portal-user-type-openapi.json
+  - openapi/zoho-crm-portal-users-openapi.json
+  - openapi/zoho-crm-portals-openapi.json
+- scope: ZohoCRM.settings.clientportal.UPDATE
+  description: Update portal user types in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-portal-user-type-openapi.json
+  - openapi/zoho-crm-portal-users-openapi.json
+  - openapi/zoho-crm-portals-openapi.json
+- scope: ZohoCRM.settings.convert_mapping.UPDATE
+  description: Update access to CRM layout convert mappings
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-layouts-openapi.json
+- scope: ZohoCRM.settings.currencies.CREATE
+  description: Create currencies
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-currencies-openapi.json
+- scope: ZohoCRM.settings.currencies.READ
+  description: Permission to retrieve currency details
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-available-currencies-openapi.json
+  - openapi/zoho-crm-currencies-openapi.json
+- scope: ZohoCRM.settings.currencies.UPDATE
+  description: Update currencies
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-currencies-openapi.json
+- scope: ZohoCRM.settings.custom_views.All
+  description: CRUD access for custom views
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-custom-views-openapi.json
+- scope: ZohoCRM.settings.custom_views.CREATE
+  description: Create custom views
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-custom-views-openapi.json
+- scope: ZohoCRM.settings.custom_views.DELETE
+  description: Delete custom views
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-custom-views-openapi.json
+- scope: ZohoCRM.settings.custom_views.READ
+  description: Read custom views
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-custom-views-openapi.json
+- scope: ZohoCRM.settings.custom_views.UPDATE
+  description: Update custom views
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-custom-views-openapi.json
+- scope: ZohoCRM.settings.data_sharing.ALL
+  description: Full access to Data Sharing settings
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-data-sharing-openapi.json
+- scope: ZohoCRM.settings.data_sharing.READ
+  description: Read access to Data Sharing settings
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-data-sharing-openapi.json
+- scope: ZohoCRM.settings.data_sharing.UPDATE
+  description: Update access to Data Sharing settings
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-data-sharing-openapi.json
+- scope: ZohoCRM.settings.duplicate_check_preference.ALL
+  description: Full access to Duplicate Check Preference
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-duplicate-check-preference-openapi.json
+- scope: ZohoCRM.settings.duplicate_check_preference.CREATE
+  description: Create access to Duplicate Check Preference
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-duplicate-check-preference-openapi.json
+- scope: ZohoCRM.settings.duplicate_check_preference.DELETE
+  description: Delete access to Duplicate Check Preference
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-duplicate-check-preference-openapi.json
+- scope: ZohoCRM.settings.duplicate_check_preference.READ
+  description: Read access to Duplicate Check Preference
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-duplicate-check-preference-openapi.json
+- scope: ZohoCRM.settings.duplicate_check_preference.UPDATE
+  description: Update access to Duplicate Check Preference
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-duplicate-check-preference-openapi.json
+- scope: ZohoCRM.settings.emails.ALL
+  description: Access emails settings in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-unblock-email-openapi.json
+- scope: ZohoCRM.settings.emails.CREATE
+  description: Access create emails settings in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-unblock-email-openapi.json
+- scope: ZohoCRM.settings.emails.DELETE
+  description: Access delete emails settings in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-unblock-email-openapi.json
+- scope: ZohoCRM.settings.emails.READ
+  description: to fetch the list of from addresses allowed to send mail from
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-from-addresses-openapi.json
+  - openapi/zoho-crm-unblock-email-openapi.json
+- scope: ZohoCRM.settings.emails.UPDATE
+  description: Access update emails settings in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-unblock-email-openapi.json
+- scope: ZohoCRM.settings.fields.ALL
+  description: Allows all access to fields in Zoho CRM settings
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-fields-openapi.json
+- scope: ZohoCRM.settings.fields.CREATE
+  description: Allows  To create a Custom Field
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-fields-openapi.json
+- scope: ZohoCRM.settings.fields.DELETE
+  description: Allows  To Delete a Custom Field
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-fields-openapi.json
+- scope: ZohoCRM.settings.fields.READ
+  description: Read access to Fields
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-coql-openapi.json
+  - openapi/zoho-crm-fields-openapi.json
+  - openapi/zoho-crm-pick-list-values-openapi.json
+- scope: ZohoCRM.settings.fields.UPDATE
+  description: Allows  To Update a Custom Field
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-fields-openapi.json
+- scope: ZohoCRM.settings.fiscal_year.READ
+  description: Access to ZohoCRM.settings.fiscal_year.READ scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-fiscal-year-openapi.json
+- scope: ZohoCRM.settings.fiscal_year.UPDATE
+  description: Access to ZohoCRM.settings.fiscal_year.UPDATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-fiscal-year-openapi.json
+- scope: ZohoCRM.settings.global_picklist.ALL
+  description: Access to all global picklist operations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-global-picklists-openapi.json
+- scope: ZohoCRM.settings.global_picklist.CREATE
+  description: Access to create global picklists
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-global-picklists-openapi.json
+- scope: ZohoCRM.settings.global_picklist.DELETE
+  description: Access to delete global picklists
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-global-picklists-openapi.json
+- scope: ZohoCRM.settings.global_picklist.READ
+  description: Access to read global picklist details
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-global-picklists-openapi.json
+- scope: ZohoCRM.settings.global_picklist.UPDATE
+  description: Access to update global picklists
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-global-picklists-openapi.json
+- scope: ZohoCRM.settings.intelligence.ALL
+  description: Full access to Zia Organization Enrichment
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-zia-org-enrichment-openapi.json
+- scope: ZohoCRM.settings.intelligence.CREATE
+  description: Create access to Zia Organization Enrichment
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-zia-org-enrichment-openapi.json
+- scope: ZohoCRM.settings.intelligence.DELETE
+  description: Delete access to Zia Organization Enrichment
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-zia-org-enrichment-openapi.json
+- scope: ZohoCRM.settings.intelligence.READ
+  description: Read Access to Zia Organization Enrichment settings
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-zia-org-enrichment-openapi.json
+- scope: ZohoCRM.settings.intelligence.UPDATE
+  description: Update access to Zia Organization Enrichment
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-zia-org-enrichment-openapi.json
+- scope: ZohoCRM.settings.layouts.ALL
+  description: All access to CRM layouts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-layouts-openapi.json
+- scope: ZohoCRM.settings.layouts.CREATE
+  description: Permission to activate layouts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-layouts-activate-deactivate-openapi.json
+- scope: ZohoCRM.settings.layouts.DELETE
+  description: Permission to deactivate layouts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-layouts-activate-deactivate-openapi.json
+  - openapi/zoho-crm-layouts-openapi.json
+- scope: ZohoCRM.settings.layouts.READ
+  description: Read access to CRM layouts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-layouts-openapi.json
+- scope: ZohoCRM.settings.layouts.UPDATE
+  description: Update access to CRM layouts
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-layouts-openapi.json
+- scope: ZohoCRM.settings.mailmerge.CREATE,ZohoWriter.documentEditor.ALL,ZohoWriter.merge.ALL
+  description: Access to ZohoCRM.settings.mailmerge.CREATE,ZohoWriter.documentEditor.ALL,ZohoWriter.merge.ALL
+    scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mail-merge-openapi.json
+- scope: ZohoCRM.settings.mailmerge.CREATE,ZohoWriter.documentEditor.ALL,ZohoWriter.merge.ALL,ZohoCRM.settings.emails.ALL
+  description: Access to ZohoCRM.settings.mailmerge.CREATE,ZohoWriter.documentEditor.ALL,ZohoWriter.merge.ALL,ZohoCRM.settings.emails.ALL
+    scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mail-merge-openapi.json
+- scope: ZohoCRM.settings.mailmerge.CREATE,ZohoWriter.documentEditor.ALL,ZohoWriter.merge.ALL,ZohoSign.documents.ALL
+  description: Access to ZohoCRM.settings.mailmerge.CREATE,ZohoWriter.documentEditor.ALL,ZohoWriter.merge.ALL,ZohoSign.documents.ALL
+    scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-mail-merge-openapi.json
+- scope: ZohoCRM.settings.map_dependency.all
+  description: All access to Map dependency
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-map-dependency-openapi.json
+- scope: ZohoCRM.settings.map_dependency.create
+  description: Create access to Map dependency
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-map-dependency-openapi.json
+- scope: ZohoCRM.settings.map_dependency.delete
+  description: Delete access to Map dependency
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-map-dependency-openapi.json
+- scope: ZohoCRM.settings.map_dependency.read
+  description: Read access to Map dependency
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-map-dependency-openapi.json
+- scope: ZohoCRM.settings.map_dependency.update
+  description: Update access to Map dependency
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-map-dependency-openapi.json
+- scope: ZohoCRM.settings.modules.ALL
+  description: Perform read, update operation for an appointment preference in org
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-appointment-preference-openapi.json
+  - openapi/zoho-crm-locking-informations-openapi.json
+  - openapi/zoho-crm-modules-openapi.json
+  - openapi/zoho-crm-service-preference-openapi.json
+- scope: ZohoCRM.settings.modules.CREATE
+  description: Create access to Modules settings APIs
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-locking-informations-openapi.json
+  - openapi/zoho-crm-modules-openapi.json
+- scope: ZohoCRM.settings.modules.DELETE
+  description: Delete access to Modules settings APIs
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-locking-informations-openapi.json
+- scope: ZohoCRM.settings.modules.READ
+  description: Read access to Modules settings APIs
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-locking-informations-openapi.json
+  - openapi/zoho-crm-modules-openapi.json
+  - openapi/zoho-crm-service-preference-openapi.json
+- scope: ZohoCRM.settings.modules.UPDATE
+  description: Update access to Modules settings APIs
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-locking-informations-openapi.json
+  - openapi/zoho-crm-modules-openapi.json
+  - openapi/zoho-crm-service-preference-openapi.json
+- scope: ZohoCRM.settings.modules.all
+  description: Full access to module settings for merge operations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-find-and-merge-openapi.json
+- scope: ZohoCRM.settings.modules.read
+  description: read call_preferences
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-call-preferences-openapi.json
+  - openapi/zoho-crm-find-and-merge-openapi.json
+- scope: ZohoCRM.settings.modules.update
+  description: update call_preferences
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-call-preferences-openapi.json
+- scope: ZohoCRM.settings.pipeline.ALL
+  description: Full access to pipeline settings in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-pipeline-openapi.json
+- scope: ZohoCRM.settings.pipeline.CREATE
+  description: Create and modify pipeline settings in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-pipeline-openapi.json
+- scope: ZohoCRM.settings.pipeline.READ
+  description: Read-only access to pipeline settings in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-pipeline-openapi.json
+- scope: ZohoCRM.settings.pipeline.UPDATE
+  description: Update pipeline settings in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-pipeline-openapi.json
+- scope: ZohoCRM.settings.profiles.CREATE
+  description: Create access to profiles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-profiles-openapi.json
+- scope: ZohoCRM.settings.profiles.DELETE
+  description: Delete access to profiles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-profiles-openapi.json
+- scope: ZohoCRM.settings.profiles.READ
+  description: Read access to profiles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-profiles-openapi.json
+- scope: ZohoCRM.settings.profiles.UPDATE
+  description: Update access to profiles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-profiles-openapi.json
+- scope: ZohoCRM.settings.record_locking_configurations.ALL
+  description: Full access to Record Locking Configurations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-locking-configurations-openapi.json
+- scope: ZohoCRM.settings.record_locking_configurations.CREATE
+  description: Create access to Record Locking Configurations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-locking-configurations-openapi.json
+- scope: ZohoCRM.settings.record_locking_configurations.DELETE
+  description: Delete access to Record Locking Configurations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-locking-configurations-openapi.json
+- scope: ZohoCRM.settings.record_locking_configurations.READ
+  description: Read access to Record Locking Configurations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-locking-configurations-openapi.json
+- scope: ZohoCRM.settings.record_locking_configurations.UPDATE
+  description: Update access to Record Locking Configurations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-record-locking-configurations-openapi.json
+- scope: ZohoCRM.settings.recycle_bin.DELETE
+  description: Delete recycle bin records
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-recycle-bin-openapi.json
+- scope: ZohoCRM.settings.recycle_bin.READ
+  description: Read recycle bin records
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-recycle-bin-openapi.json
+- scope: ZohoCRM.settings.recycle_bin.UPDATE
+  description: Restore recycle bin records
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-recycle-bin-openapi.json
+- scope: ZohoCRM.settings.related_lists.ALL
+  description: Full access to related lists configuration (read and write)
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-related-lists-openapi.json
+- scope: ZohoCRM.settings.related_lists.READ
+  description: Read-only access to related lists configuration
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-related-lists-openapi.json
+- scope: ZohoCRM.settings.related_lists.UPDATE
+  description: Update access to related lists configuration
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-related-lists-openapi.json
+- scope: ZohoCRM.settings.roles.ALL
+  description: Full access to CRM roles management
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-roles-openapi.json
+- scope: ZohoCRM.settings.roles.CREATE
+  description: To create user roles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-roles-openapi.json
+- scope: ZohoCRM.settings.roles.DELETE
+  description: To delete user roles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-roles-openapi.json
+- scope: ZohoCRM.settings.roles.READ
+  description: To get user roles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-roles-openapi.json
+- scope: ZohoCRM.settings.roles.UPDATE
+  description: To update user roles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-roles-openapi.json
+- scope: ZohoCRM.settings.tags.CREATE
+  description: Access to ZohoCRM.settings.tags.CREATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-tags-openapi.json
+- scope: ZohoCRM.settings.tags.DELETE
+  description: Delete access to tags
+  flows:
+  - authorizationCode
+  - clientCredentials
+  sources:
+  - openapi/zoho-crm-mass-delete-tags-openapi.json
+  - openapi/zoho-crm-tags-openapi.json
+- scope: ZohoCRM.settings.tags.READ
+  description: Read access to tags
+  flows:
+  - authorizationCode
+  - clientCredentials
+  sources:
+  - openapi/zoho-crm-mass-delete-tags-openapi.json
+  - openapi/zoho-crm-tags-openapi.json
+- scope: ZohoCRM.settings.tags.UPDATE
+  description: Access to ZohoCRM.settings.tags.UPDATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-tags-openapi.json
+- scope: ZohoCRM.settings.tags.all
+  description: Access to ZohoCRM.settings.tags.all scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-tags-actions-openapi.json
+- scope: ZohoCRM.settings.territories.ALL
+  description: Full access to territories settings (read/write) within Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-territories-openapi.json
+  - openapi/zoho-crm-territory-users-openapi.json
+  - openapi/zoho-crm-users-territories-openapi.json
+- scope: ZohoCRM.settings.territories.CREATE
+  description: Create access to territories settings within Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-territories-openapi.json
+- scope: ZohoCRM.settings.territories.DELETE
+  description: Delete access to territories settings within Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-territories-openapi.json
+  - openapi/zoho-crm-territory-users-openapi.json
+  - openapi/zoho-crm-users-territories-openapi.json
+- scope: ZohoCRM.settings.territories.READ
+  description: Read-only access to territories settings within Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-territories-openapi.json
+  - openapi/zoho-crm-territory-users-openapi.json
+  - openapi/zoho-crm-users-territories-openapi.json
+- scope: ZohoCRM.settings.territories.UPDATE
+  description: Update access to territories settings within Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-territories-openapi.json
+  - openapi/zoho-crm-territory-users-openapi.json
+  - openapi/zoho-crm-users-territories-openapi.json
+- scope: ZohoCRM.settings.unsubscribe.ALL
+  description: To allow all operations on Unsubscribe Link
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-unsubscribe-links-openapi.json
+- scope: ZohoCRM.settings.unsubscribe.CREATE
+  description: To create an Unsubscribe Link
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-unsubscribe-links-openapi.json
+- scope: ZohoCRM.settings.unsubscribe.DELETE
+  description: To delete the Unsubscribe Link
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-unsubscribe-links-openapi.json
+- scope: ZohoCRM.settings.unsubscribe.READ
+  description: To get the Unsubscribe Links
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-unsubscribe-links-openapi.json
+- scope: ZohoCRM.settings.unsubscribe.UPDATE
+  description: To update the Unsubscribe Link
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-unsubscribe-links-openapi.json
+- scope: ZohoCRM.settings.user_groups.ALL
+  description: Full access to CRM User Groups management
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-user-groups-openapi.json
+- scope: ZohoCRM.settings.user_groups.CREATE
+  description: Create CRM User Groups
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-user-groups-openapi.json
+- scope: ZohoCRM.settings.user_groups.DELETE
+  description: Delete CRM User Groups
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-user-groups-openapi.json
+- scope: ZohoCRM.settings.user_groups.READ
+  description: Get CRM User Groups
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-user-groups-openapi.json
+- scope: ZohoCRM.settings.user_groups.UPDATE
+  description: Update CRM User Groups
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-user-groups-openapi.json
+- scope: ZohoCRM.settings.variable_groups.CREATE
+  description: Access to ZohoCRM.settings.variable_groups.CREATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-variable-groups-openapi.json
+- scope: ZohoCRM.settings.variable_groups.READ
+  description: Access to ZohoCRM.settings.variable_groups.READ scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-variable-groups-openapi.json
+- scope: ZohoCRM.settings.variable_groups.UPDATE
+  description: Access to ZohoCRM.settings.variable_groups.UPDATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-variable-groups-openapi.json
+- scope: ZohoCRM.settings.variables.ALL
+  description: Access to all settings.variables  scopes
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-variables-openapi.json
+- scope: ZohoCRM.settings.variables.CREATE
+  description: Create access to settings.variables
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-variables-openapi.json
+- scope: ZohoCRM.settings.variables.DELETE
+  description: Delete access to settings.variables
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-variables-openapi.json
+- scope: ZohoCRM.settings.variables.READ
+  description: Read access to settings.variables
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-variables-openapi.json
+- scope: ZohoCRM.settings.variables.UPDATE
+  description: Update access to settings.variables
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-variables-openapi.json
+- scope: ZohoCRM.settings.wizards.ALL
+  description: Full access to CRM wizards management.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-wizards-openapi.json
+- scope: ZohoCRM.settings.wizards.CREATE
+  description: Create access to CRM wizards.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-wizards-openapi.json
+- scope: ZohoCRM.settings.wizards.DELETE
+  description: Delete access to CRM wizards.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-wizards-openapi.json
+- scope: ZohoCRM.settings.wizards.READ
+  description: Read access to CRM wizards.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-wizards-openapi.json
+- scope: ZohoCRM.settings.wizards.UPDATE
+  description: Update access to CRM wizards.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-wizards-openapi.json
+- scope: ZohoCRM.settings.workflow_rules.ALL
+  description: Access to ZohoCRM.settings.workflow_rules.ALL scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-workflow-rules-openapi.json
+- scope: ZohoCRM.settings.workflow_rules.CREATE
+  description: Access to ZohoCRM.settings.workflow_rules.CREATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-workflow-rules-openapi.json
+- scope: ZohoCRM.settings.workflow_rules.DELETE
+  description: Access to ZohoCRM.settings.workflow_rules.DELETE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-workflow-rules-openapi.json
+- scope: ZohoCRM.settings.workflow_rules.READ
+  description: To get the details of a workflow rule
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-workflow-configurations-openapi.json
+  - openapi/zoho-crm-workflow-rules-openapi.json
+- scope: ZohoCRM.settings.workflow_rules.UPDATE
+  description: Access to ZohoCRM.settings.workflow_rules.UPDATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-workflow-rules-openapi.json
+- scope: ZohoCRM.share.accounts.CREATE
+  description: Create access to Share Records in Accounts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.accounts.DELETE
+  description: Delete access to Share Records in Accounts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.accounts.READ
+  description: Read access to Share Records in Accounts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.accounts.UPDATE
+  description: Update access to Share Records in Accounts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.brunches.CREATE
+  description: Create access to Share Records in Brunches module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.brunches.DELETE
+  description: Delete access to Share Records in Brunches module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.brunches.READ
+  description: Read access to Share Records in Brunches module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.brunches.UPDATE
+  description: Update access to Share Records in Brunches module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.bundles.CREATE
+  description: Create access to Share Records in Bundles module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.bundles.DELETE
+  description: Delete access to Share Records in Bundles module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.bundles.READ
+  description: Read access to Share Records in Bundles module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.bundles.UPDATE
+  description: Update access to Share Records in Bundles module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.calls.CREATE
+  description: Create access to Share Records in Calls module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.calls.DELETE
+  description: Delete access to Share Records in Calls module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.calls.READ
+  description: Read access to Share Records in Calls module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.calls.UPDATE
+  description: Update access to Share Records in Calls module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.campaigns.CREATE
+  description: Create access to Share Records in Campaigns module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.campaigns.DELETE
+  description: Delete access to Share Records in Campaigns module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.campaigns.READ
+  description: Read access to Share Records in Campaigns module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.campaigns.UPDATE
+  description: Update access to Share   Records in Campaigns module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.cases.CREATE
+  description: Create access to Share Records in Cases module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.cases.DELETE
+  description: Delete access to Share Records in Cases module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.cases.READ
+  description: Read access to Share Records in Cases module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.cases.UPDATE
+  description: Update access to Share Records in Cases module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.contacts.CREATE
+  description: Create access to Share Records in Contacts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.contacts.DELETE
+  description: Delete access to Share Records in Contacts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.contacts.READ
+  description: Read access to Share Records in Leads module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.contacts.UPDATE
+  description: Update access to Share Records in Contacts module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.cross_sellings.CREATE
+  description: Create access to Share Records in Cross Sellings module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.cross_sellings.DELETE
+  description: Delete access to Share Records in Cross Sellings module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.cross_sellings.READ
+  description: Read access to Share Records in Cross Sellings module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.cross_sellings.UPDATE
+  description: Update access to Share Records in Cross Sellings module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.custom.CREATE
+  description: Create access to Share Records for custom modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.custom.DELETE
+  description: Delete access to Share Records for custom modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.custom.READ
+  description: Read access to Share Records for custom modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.custom.UPDATE
+  description: Update access to Share Records for custom modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.deals.CREATE
+  description: Create access to Share Records in Deals module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.deals.DELETE
+  description: Delete access to Share Records in Deals module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.deals.READ
+  description: Read access to Share Records in Deals module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.deals.UPDATE
+  description: Update access to Share Records in Deals module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.events.CREATE
+  description: Create access to Share Records in Events module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.events.DELETE
+  description: Delete access to Share Records in Events module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.events.READ
+  description: Read access to Share Records in Events module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.events.UPDATE
+  description: Update access to Share Records in Events module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.first_buys.CREATE
+  description: Create access to Share Records in First Buy module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.first_buys.DELETE
+  description: Delete access to Share Records in First Buy module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.first_buys.READ
+  description: Read access to Share Records in First Buy module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.first_buys.UPDATE
+  description: Update access to Share Records in First Buy module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.invoices.CREATE
+  description: Create access to Share Records in Invoices module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.invoices.DELETE
+  description: Delete access to Share Records in Invoices module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.invoices.READ
+  description: Read access to Share Records in Invoices module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.invoices.UPDATE
+  description: Update access to Share Records in Invoices module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.leads.CREATE
+  description: Create access to Share Records in Leads module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.leads.DELETE
+  description: Delete access to Share Records in Leads module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.leads.READ
+  description: Read access to Share Records in Leads module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.leads.UPDATE
+  description: Update access to Share Records in Leads module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.next_buys.CREATE
+  description: Create access to Share Records in Next Buy module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.next_buys.DELETE
+  description: Delete access to Share Records in Next Buy module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.next_buys.READ
+  description: Read access to Share Records in Next Buy module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.next_buys.UPDATE
+  description: Update access to Share Records in Next Buy module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.pricebooks.CREATE
+  description: Create access to Share Records in Price Books module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.pricebooks.DELETE
+  description: Delete access to Share Records in Price Books module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.pricebooks.READ
+  description: Read access to Share Records in Price Books module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.pricebooks.UPDATE
+  description: Update access to Share Records in Price Books module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.products.CREATE
+  description: Create access to Share Records in Products module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.products.DELETE
+  description: Delete access to Share Records in Products module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.products.READ
+  description: Read access to Share Records in Products module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.products.UPDATE
+  description: Update access to Share Records in Products module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.purchaseorders.CREATE
+  description: Create access to Share Records in Purchase Orders module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.purchaseorders.DELETE
+  description: Delete access to Share Records in Purchase Orders module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.purchaseorders.READ
+  description: Read access to Share Records in Purchase Orders module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.purchaseorders.UPDATE
+  description: Update access to Share Records in Purchase Orders module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.quotes.CREATE
+  description: Create access to Share Records in Quotes module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.quotes.DELETE
+  description: Delete access to Share Records in Quotes module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.quotes.READ
+  description: Read access to Share Records in Quotes module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.quotes.UPDATE
+  description: Update access to Share Records in Quotes module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.rebuys.CREATE
+  description: Create access to Share Records in Rebuys module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.rebuys.DELETE
+  description: Delete access to Share Records in Rebuys module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.rebuys.READ
+  description: Read access to Share Records in Rebuys module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.rebuys.UPDATE
+  description: Update access to Share Records in Rebuys module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.salesorders.CREATE
+  description: Create access to Share Records in Sales Orders module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.salesorders.DELETE
+  description: Delete access to Share Records in Sales Orders module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.salesorders.READ
+  description: Read access to Share Records in Sales Orders module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.salesorders.UPDATE
+  description: Update access to Share Records in Sales Orders module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.solutions.CREATE
+  description: Create access to Share Records in Solutions module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.solutions.DELETE
+  description: Delete access to Share Records in Solutions  module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.solutions.READ
+  description: Read access to Share Records in Solutions module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.solutions.UPDATE
+  description: Update access to Share Records in Solutions module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.tasks.CREATE
+  description: Create access to Share Records in Tasks module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.tasks.DELETE
+  description: Delete access to Share Records in Tasks module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.tasks.READ
+  description: Read access to Share Records in Tasks module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.tasks.UPDATE
+  description: Update access to Share Records in Tasks module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.vendors.CREATE
+  description: Create access to Share Records in Vendors module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.vendors.DELETE
+  description: Delete access to Share Records in Vendors module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.vendors.READ
+  description: Read access to Share Records in Vendors module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.share.vendors.UPDATE
+  description: Update access to Share Records in Vendors module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-share-records-openapi.json
+- scope: ZohoCRM.templates.email.CREATE
+  description: Create email templates.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-templates-openapi.json
+- scope: ZohoCRM.templates.email.DELETE
+  description: Delete email templates.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-templates-openapi.json
+- scope: ZohoCRM.templates.email.READ
+  description: Read email templates.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-templates-openapi.json
+- scope: ZohoCRM.templates.email.UPDATE
+  description: Update email templates.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-templates-openapi.json
+- scope: ZohoCRM.templates.email.send_test_mail.CREATE
+  description: Send test mail for email templates.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-email-templates-openapi.json
+- scope: ZohoCRM.templates.inventory.CREATE
+  description: Create inventory templates.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-inventory-templates-openapi.json
+- scope: ZohoCRM.templates.inventory.DELETE
+  description: Delete inventory templates.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-inventory-templates-openapi.json
+- scope: ZohoCRM.templates.inventory.READ
+  description: Read inventory templates.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-inventory-templates-openapi.json
+- scope: ZohoCRM.templates.inventory.UPDATE
+  description: Update inventory templates.
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-inventory-templates-openapi.json
+- scope: ZohoCRM.users.ALL
+  description: Full access to users module
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-territory-users-openapi.json
+  - openapi/zoho-crm-users-territories-openapi.json
+- scope: ZohoCRM.users.CREATE
+  description: Create users in Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-users-openapi.json
+  - openapi/zoho-crm-users-transfer-openapi.json
+- scope: ZohoCRM.users.DELETE
+  description: Delete access to user resources within Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-territory-users-openapi.json
+  - openapi/zoho-crm-users-openapi.json
+  - openapi/zoho-crm-users-territories-openapi.json
+  - openapi/zoho-crm-users-transfer-openapi.json
+- scope: ZohoCRM.users.READ
+  description: Read access to users modules
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+  - openapi/zoho-crm-related-notes-openapi.json
+  - openapi/zoho-crm-territory-users-openapi.json
+  - openapi/zoho-crm-users-openapi.json
+  - openapi/zoho-crm-users-territories-openapi.json
+  - openapi/zoho-crm-users-transfer-openapi.json
+- scope: ZohoCRM.users.UPDATE
+  description: Update access to user resources within Zoho CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-territory-users-openapi.json
+  - openapi/zoho-crm-users-openapi.json
+  - openapi/zoho-crm-users-territories-openapi.json
+  - openapi/zoho-crm-users-transfer-openapi.json
+- scope: ZohoCRM.zia.enrichment
+  description: Allows managing Zia data enrichment configurations in CRM
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-zia-enrichment-openapi.json
+- scope: ZohoCRM.{sub_request_scope}
+  description: Access to specific sub-request scopes in composite requests
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-composite-requests-openapi.json
+- scope: ZohoFiles.files.ALL
+  description: Allows access to all file operations in ZohoFiles
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-upload-openapi.json
+- scope: ZohoSearch.securesearch.READ
+  description: Read access for secure search operations
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-module-search-openapi.json
+  - openapi/zoho-crm-record-count-openapi.json
+- scope: settings.scoring_rules.ALL
+  description: Access to all scoring rule APIs
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-scoring-rules-openapi.json
+- scope: settings.scoring_rules.CREATE
+  description: Access to settings.scoring_rules.CREATE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-scoring-rules-openapi.json
+- scope: settings.scoring_rules.DELETE
+  description: Access to settings.scoring_rules.DELETE scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-scoring-rules-openapi.json
+- scope: settings.scoring_rules.READ
+  description: Access to settings.scoring_rules.READ scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-scoring-rules-openapi.json
+- scope: settings.scoring_rules.UPDATE
+  description: Access to settings.scoring_rules.UPDATE,settings.scoring_rules.ALL scope
+  flows:
+  - authorizationCode
+  sources:
+  - openapi/zoho-crm-scoring-rules-openapi.json

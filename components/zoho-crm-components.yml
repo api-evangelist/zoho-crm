@@ -1,0 +1,63 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://www.zoho.com/crm/developer/docs/widgets/,
+  https://www.zohocrm.dev/explore/widgets/v1.5/jssdk,
+  https://github.com/zoho/embeddedApp-js-sdk
+summary: >-
+  Zoho CRM's client-side surface is "widgets" — embeddable UI that runs INSIDE the
+  Zoho CRM interface at eight defined mount points — plus an embedded-app JS SDK for
+  putting Zoho CRM inside a third-party product. This is the inverse of the more
+  common pattern (a vendor's component embedded in the customer's app): most of what
+  Zoho ships embeds the CUSTOMER's UI in Zoho.
+availability:
+  editions: [Professional, Enterprise, Ultimate]
+  limit: 200 widgets per account
+families:
+- family: Widgets (in-CRM mount points)
+  direction: customer-UI-inside-Zoho-CRM
+  components:
+  - name: Dashboard widget
+  - name: Web tab widget
+  - name: Custom button widget
+  - name: Custom related list widget
+  - name: Wizard widget
+  - name: Signal widget
+  - name: Settings widget
+  - name: Blueprint widget
+  loader:
+    name: Zoho CRM JS SDK
+    version: v1.5
+    docs: https://www.zohocrm.dev/explore/widgets/v1.5/jssdk
+    global: ZOHO.CRM
+    registry: null
+    version_pinning: null
+    note: >-
+      Zoho documents the JS SDK by version path (v1.5) on zohocrm.dev but publishes
+      no npm package and no versioned CDN URL on the widgets overview page, so a
+      consumer cannot pin a build. The GitHub repo github.com/zoho/zcrm-js-sdk (last
+      pushed 2024-10-15) is the closest thing to a distributable.
+  supporting:
+  - name: ZRC
+    description: >-
+      Zoho's request client inside widgets — "seamless and consistent API calls using
+      unified syntax" for reaching Zoho and third-party APIs from widget code without
+      handling tokens directly.
+- family: Embedded App JS SDK
+  direction: Zoho-CRM-inside-customer-app
+  components:
+  - name: embeddedApp-js-sdk
+    repo: https://github.com/zoho/embeddedApp-js-sdk
+    description: JS SDK for embedding a Zoho app surface in an external application.
+    last_pushed: '2025-10-03'
+    registry: null
+    version: null
+    note: >-
+      Distributed from GitHub only; no npm package resolved under any of
+      @zohocrm/embedded-app-sdk, zohocrm-embedded-app-sdk or zcrmsdk-js, so there is
+      no registry metadata endpoint to read a version or date from.
+tooling:
+  cli: cli/zoho-crm-cli.yml
+  console: https://api-console.zoho.com/
+related:
+- packages/zoho-crm-packages.yml

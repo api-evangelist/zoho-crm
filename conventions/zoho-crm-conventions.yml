@@ -1,0 +1,126 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://www.zoho.com/crm/developer/docs/api/v8/get-records.html,
+  https://www.zoho.com/crm/developer/docs/api/v8/status-codes.html,
+  https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html,
+  https://www.zoho.com/crm/developer/docs/api/v8/multi-dc.html
+derived_from: openapi/ (105 first-party OAS 3.1.0 files from github.com/zoho/crm-oas)
+authentication:
+  style: oauth2-bearer-custom-prefix
+  header: 'Authorization: Zoho-oauthtoken {access_token}'
+  note: >-
+    NOT "Bearer". Zoho uses its own Zoho-oauthtoken prefix, which is the most common
+    first-call failure for generic OAuth clients and for agents that assume RFC 6750.
+  access_token_ttl: 1 hour
+  refresh_token_ttl: until revoked
+  authorization_server: https://accounts.zoho.com
+  detail: authentication/zoho-crm-authentication.yml
+  scopes: scopes/zoho-crm-scopes.yml
+idempotency:
+  supported: partial
+  idempotency_key_header: null
+  note: >-
+    Zoho CRM publishes NO idempotency-key header or parameter — there is no
+    Idempotency-Key, no client-supplied request id, and no dedupe token anywhere in
+    the 105 published specs. What it does offer instead:
+      * POST /{module}/upsert (upsertRecords) with duplicate_check_fields, which
+        makes a repeated write converge on one record rather than creating duplicates;
+      * PUT/PATCH semantics that the specs describe as idempotent in prose
+        (updateModules, patchModule, layoutActivate/layoutDeactivate);
+      * If-Modified-Since + HTTP 412 for optimistic concurrency on record updates.
+    A retried POST /{module} (createRecords) WILL create a duplicate record. Agents
+    must use upsert, not create, for any retryable write.
+  safe_retry_operations: [upsertRecords, updateRecord, updateRecords, patchModule]
+  unsafe_retry_operations: [createRecords, cloneRecord, convertLead]
+pagination:
+  style: page-number, with an opaque token beyond 2000 records
+  request_params:
+  - name: page
+    type: integer
+    default: 1
+    note: valid only for the first 2000 records
+  - name: per_page
+    type: integer
+    default: 200
+    max: 200
+  - name: page_token
+    type: string
+    note: >-
+      Required to read past 2000 records. User-specific and valid for 24 hours.
+      Cannot be combined with `page`.
+  - name: fields
+    type: csv
+    note: mandatory when fetching all records; maximum 50 field API names
+  - name: sort_by
+    enum: [id, Created_Time, Modified_Time]
+    default: id
+    note: mandatory in order to apply sorting
+  - name: sort_order
+    enum: [asc, desc]
+    default: desc
+  - name: cvid
+    note: custom-view id; cannot be combined with sort_by
+  response_fields:
+    container: info
+    fields: [per_page, count, page, sort_by, sort_order, more_records, next_page_token, previous_page_token, page_token_expiry]
+    terminator: info.more_records == false
+response_envelope:
+  success: '{ "data": [ ... ], "info": { ... } }'
+  error: '{ "code": "...", "details": {}, "message": "...", "status": "error" }'
+  partial: >-
+    HTTP 207 with a data[] array where each element carries its own code/status/
+    message. A 2xx does not imply every record in a batch succeeded.
+  detail: errors/zoho-crm-problem-types.yml
+field_selection:
+  supported: true
+  param: fields
+  max_fields: 50
+  note: >-
+    `fields` is not an optimisation on list reads — it is REQUIRED. Related detail is
+    pulled with `include` / `include_inner_details` on the operations that support it.
+conditional_requests:
+  header: If-Modified-Since
+  format: ISO 8601 with timezone, e.g. 2019-07-25T15:26:49+05:30
+  not_modified_status: 304
+  precondition_failed_status: 412
+request_tracing:
+  request_id_header: null
+  note: >-
+    No request-id or correlation-id header is documented on the request or the
+    response, and none appears in the published specs. An agent has no provider-side
+    handle to quote in a support ticket.
+versioning:
+  scheme: uri-path
+  current: v8
+  path_form: /crm/v8/...
+  server_template: 'https://zohoapis.{dc}/crm/{version}'
+  dc_enum: [com, eu, in, cn, au]
+  dc_note: >-
+    Every published spec templates BOTH the data centre and the version into the
+    server URL, so a client must resolve its org's data centre before the first call.
+    The docs additionally name jp, ca (zohocloud.ca) and sa accounts domains that the
+    spec `dc` enum does not list.
+  detail: lifecycle/zoho-crm-lifecycle.yml
+rate_limit_signaling:
+  model: credits, not requests
+  response_header: X-API-CREDITS-REMAINING
+  emitted_when: usage at or above 50% of the 24-hour budget
+  exhaustion_status: 429
+  retry_after: false
+  detail: rate-limits/zoho-crm-rate-limits.yml
+bulk:
+  read: openapi/zoho-crm-bulk-read-openapi.json
+  write: openapi/zoho-crm-bulk-write-openapi.json
+  composite: openapi/zoho-crm-composite-requests-openapi.json
+  query_language: COQL (openapi/zoho-crm-coql-openapi.json)
+  note: Bulk Write Initialize costs 500 API credits per call.
+webhooks:
+  supported: true
+  detail: asyncapi/zoho-crm-notifications-asyncapi.yml
+related:
+- authentication/zoho-crm-authentication.yml
+- scopes/zoho-crm-scopes.yml
+- errors/zoho-crm-problem-types.yml
+- lifecycle/zoho-crm-lifecycle.yml
+- rate-limits/zoho-crm-rate-limits.yml

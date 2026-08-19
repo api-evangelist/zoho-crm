@@ -1,0 +1,54 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.zoho.com/crm/developer/docs/api/v8/whats-new.html
+scheme: major-version
+current_version: v8
+dated: false
+dated_note: >-
+  Zoho does not publish a DATED API changelog. The only API-change surface is a
+  "What's New in V8" page organised by feature area with no release dates and no
+  breaking-change section, so entries below carry the version they belong to but no
+  date. Dated product-level notes appear on the Zoho CRM blog as quarterly "Zoho CRM
+  QN 20NN Update" posts (mirrored in blogs/), which are product releases rather than
+  API contract changes.
+entries:
+- version: v8
+  date: null
+  breaking: unstated
+  highlights:
+    additions:
+    - Get Related Records Count of a Record
+    - Rich Text Fields retrieval
+    - Recycle Bin APIs (restore, empty)
+    - Record-level email sharing / unsharing
+    - Data Sharing Rules management (create, retrieve, activate, filter)
+    - Calls Preferences APIs (From / To number fields)
+    - Deal linking and unlinking for contact emails
+    - Workflow management APIs (create, update, delete, reorder)
+    - Connected Workflows end-to-end management
+    - Action APIs — Field Updates, Email Notifications, Automation Tasks, Webhooks
+    - Blueprint APIs (process states and transitions)
+    - Kiosk APIs (form configuration and execution)
+    - Calendar APIs (view and preference management)
+    - Assignment Threshold APIs
+    - Zia Assistant API for context-aware AI queries
+    enhanced:
+    - Fields
+    - Layouts
+    - Territories
+    - Global Picklist
+    - Search
+    - Business Hours
+    tooling:
+    - >-
+      OpenAPI Specification 3.0.0 support published for the whole API surface, hosted
+      at github.com/zoho/crm-oas (the files themselves declare openapi 3.1.0)
+    - '"APIs and References" index page'
+sources:
+- url: https://www.zoho.com/crm/developer/docs/api/v8/whats-new.html
+  status: 200
+- url: https://www.zoho.com/crm/developer/docs/api/v8/openapi-specification.html
+  status: 200
+- url: https://www.zoho.com/crm/blog/
+  status: 200
+  note: quarterly product update posts, harvested into blogs/

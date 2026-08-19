@@ -1,0 +1,71 @@
+generated: '2026-08-13'
+method: searched
+status: published
+source: https://www.zoho.com/mcp/
+server:
+  name: Zoho MCP
+  vendor: Zoho Corporation
+  product_page: https://www.zoho.com/mcp/
+  console: https://mcp.zoho.com/
+  transport: http
+  covers:
+  - Zoho CRM
+  - Zoho Mail
+  - Zoho Calendar
+  - Zoho Desk
+  - Zoho Cliq
+  - Zoho Projects
+  - Zoho WorkDrive
+  - Zoho Books
+  - Zoho Billing
+  - Zoho Creator
+  - Zoho Survey
+  - Zoho Expense
+  - Zoho People
+  - Bigin
+deployment:
+  mode: remote
+  endpoint: null
+  auth: oauth
+  verified: searched
+  note: >-
+    Zoho ships a first-party hosted MCP product ("Zoho MCP") whose own marketing
+    page names Zoho CRM as a supported app and describes OAuth-based, permission-
+    scoped authorization plus a built-in playground. It is a REMOTE server, not a
+    stdio package: there is no npx/pip install anywhere in Zoho's docs or on npm.
+    The endpoint URL is NOT recorded because Zoho does not publish one. The console
+    at https://mcp.zoho.com/ 302s to
+    https://accounts.zoho.com/login?servicename=ZohoMCP..., and each connector URL
+    appears to be minted per account inside that console. Every anonymous probe of
+    a plausible path (/mcp, /mcp/v1, /baas/mcp/v1, /sse, /api/mcp, /crm/mcp) returned
+    Zoho's own JSON 404 (INVALID_URL_PATTERN), and /.well-known/oauth-authorization-server
+    and /.well-known/oauth-protected-resource both returned 400 "Invalid request uri."
+    Per the no-fabrication rule an endpoint is left null rather than guessed.
+evidence:
+- url: https://www.zoho.com/mcp/
+  status: 200
+  finding: >-
+    "Meet Zoho MCP (Model Context Protocol)... It connects LLMs like GPT or Claude
+    to Zoho's APIs, data models, and actions"; the supported-app carousel includes
+    Zoho CRM; "Secure, permission-scoped — OAuth-based authorization ensures proper
+    access control"; "Built-in playground".
+- url: https://mcp.zoho.com/
+  status: 200
+  finding: 302 to accounts.zoho.com login (servicename=ZohoMCP); console is auth-gated.
+- url: https://mcp.zoho.com/mcp
+  status: 404
+  finding: '{"status":"failure","data":{"error_code":"INVALID_URL_PATTERN"}}'
+- url: https://mcp.zoho.com/.well-known/oauth-protected-resource
+  status: 400
+  finding: plain-text "Invalid request uri." — no RFC 9728 document served
+tools:
+  discovery: gated
+  note: >-
+    tools/list could not be called because no anonymous endpoint is published, so
+    the live tool set with real inputSchemas is not captured here. Zoho's own
+    "How it works" walkthrough on https://www.zoho.com/mcp/ shows the MCP tool
+    layer executing plain Zoho CRM REST calls — the worked example is
+    POST https://www.zohoapis.com/crm/v2/Leads with a Zoho CRM record body — which
+    is why mcp/zoho-crm-tool-crosswalk.yml binds the capability surface to the
+    published Zoho CRM OpenAPI operations rather than to a fetched tool manifest.
+crosswalk: mcp/zoho-crm-tool-crosswalk.yml

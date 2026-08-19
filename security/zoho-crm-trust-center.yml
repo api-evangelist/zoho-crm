@@ -1,0 +1,52 @@
+generated: '2026-08-13'
+method: searched
+probe: true
+url: https://www.zoho.com/compliance.html
+scope: >-
+  Zoho Corporation-wide compliance portfolio. Zoho does not run a per-product trust
+  centre; Zoho CRM inherits this posture. Recorded at the corporate level, which is
+  where Zoho publishes it.
+certifications:
+- ISO/IEC 27001
+- ISO/IEC 27017
+- ISO/IEC 27018
+- ISO/IEC 27701
+- ISO 9001
+- ISO/IEC 20000-1
+- ISO 22301
+- SOC 1 Type 2 (SSAE 18 / ISAE 3402)
+- SOC 2 Type 2
+- SOC 2 + HIPAA Type 2
+- PCI DSS (SAQ-D)
+- CSA STAR Self-Assessment
+- Cyber Essentials Plus
+- TX-RAMP
+- ENS (Esquema Nacional de Seguridad, Spain)
+- NCA Class B (Saudi Arabia)
+- NHS DSPT (UK) v8
+- GoBD (Germany)
+- 21 CFR Part 11 / EudraLex Annex 11
+- WCAG 2.2 AA
+regulatory_programs:
+- GDPR
+- CCPA
+- HIPAA
+security_whitepaper: https://www.zoho.com/security.html
+gdpr_page: https://www.zoho.com/gdpr.html
+evidence:
+- source: https://www.zoho.com/compliance.html
+  status: 200
+  keywords: [iso 27001, soc 2 type 2, pci dss, hipaa, gdpr, csa star, tx-ramp]
+- source: https://www.zoho.com/security.html
+  status: 200
+  keywords: [owasp, nist, security whitepaper]
+- source: https://www.zoho.com/gdpr.html
+  status: 200
+not_found:
+- url: https://trust.zoho.com/
+  note: no dedicated trust.<domain> host; the compliance portfolio at /compliance.html is the equivalent surface
+- url: https://www.zoho.com/trust/
+  status: 404
+related:
+- security/zoho-crm-vulnerability-disclosure.yml
+- conformance/zoho-crm-conformance.yml

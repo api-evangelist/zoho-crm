@@ -1,0 +1,42 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://www.npmjs.com/package/zoho-extension-toolkit,
+  https://www.zoho.com/crm/developer/docs/widgets/
+name: ZET — Zoho Extension Toolkit
+scope: extensions-and-widgets
+scope_note: >-
+  ZET is a first-party CLI, but it is a WIDGET/EXTENSION build tool, not a REST API
+  client. It scaffolds, serves and packages the client-side widgets that run inside
+  Zoho CRM; it does not wrap the Zoho CRM REST API the way a `stripe`-style CLI does.
+  Zoho publishes no general-purpose Zoho CRM API CLI — there is no `zoho crm get
+  records` equivalent. Recorded honestly as the CLI Zoho actually ships.
+install:
+- method: npm
+  command: npm install -g zoho-extension-toolkit
+  package: zoho-extension-toolkit
+  registry: npm
+  version: 1.0.28
+  published: '2026-04-16'
+  url: https://www.npmjs.com/package/zoho-extension-toolkit
+binary: zet
+commands:
+- command: zet init
+  description: Scaffold a new Zoho extension/widget project, choosing the Zoho service (CRM, Desk, ...) and widget type.
+- command: zet run
+  description: Serve the widget locally over HTTPS so it can be loaded into a Zoho CRM sandbox/dev environment.
+- command: zet pack
+  description: Package the widget into the .zip artifact uploaded to the Zoho Developer Console / Marketplace.
+- command: zet validate
+  description: Validate the extension package against Zoho's plugin-manifest rules before submission.
+commands_note: >-
+  Command surface as published by the package and the widgets documentation. Flags
+  are not enumerated here because Zoho does not publish a reference page for them.
+related_console:
+  url: https://api-console.zoho.com/
+  description: >-
+    Zoho API Console — the web UI (not a CLI) where OAuth client IDs/secrets and
+    self-client tokens are created. HTTP 200 on probe 2026-08-13.
+related:
+- packages/zoho-crm-packages.yml
+- components/zoho-crm-components.yml

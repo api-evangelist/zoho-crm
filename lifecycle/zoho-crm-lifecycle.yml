@@ -1,0 +1,49 @@
+generated: '2026-08-13'
+method: searched
+source: >-
+  https://www.zoho.com/crm/developer/docs/api/v8/whats-new.html,
+  https://www.zoho.com/crm/developer/docs/api/v8/,
+  https://status.zoho.com/
+versioning:
+  scheme: uri-path
+  current: v8
+  supported_concurrently: [v8, v7, v6, v5, v4, v3, v2.1, v2]
+  supported_note: >-
+    Zoho keeps every major API version addressable at its own path (/crm/v2 through
+    /crm/v8) and ships an SDK generation per version, rather than retiring old
+    versions on a schedule. The Notifications surface captured in asyncapi/ is still
+    documented against /crm/v2.
+  server_template: 'https://zohoapis.{dc}/crm/{version}'
+  docs: https://www.zoho.com/crm/developer/docs/api/v8/
+deprecation:
+  policy_url: null
+  sunset_header: false
+  deprecation_header: false
+  note: >-
+    NO published deprecation or sunset policy was found. There is no
+    /deprecation, /sunset or /api-lifecycle page under
+    zoho.com/crm/developer/docs/api/v8/, no RFC 8594 Sunset or Deprecation header is
+    documented, and not one of the 405 operations in the 105 published OAS files
+    carries `deprecated: true`. What exists instead is a "What's New in V8" page that
+    lists additions. This is a real gap: an integrator has no published notice period
+    and no machine-readable signal that an operation is going away.
+  probe:
+  - url: https://www.zoho.com/crm/developer/docs/api/v8/api-changes.html
+    status: 404
+  - url: https://www.zoho.com/crm/developer/docs/api/v8/deprecate-v2.html
+    status: 404
+  - url: https://www.zoho.com/crm/developer/docs/api/v8/release-notes.html
+    status: 404
+deprecated_operations: []
+status_page: https://status.zoho.com/
+status_page_note: >-
+  Zoho Service Status covers every Zoho product including CRM; probed 2026-08-13,
+  HTTP 200.
+sla:
+  url: null
+  uptime_target: null
+  note: No public uptime SLA page was found for Zoho CRM; SLAs appear only in enterprise agreements.
+changelog: changelog/zoho-crm-changelog.yml
+related:
+- conventions/zoho-crm-conventions.yml
+- https://www.zoho.com/crm/developer/docs/api/v8/multi-dc.html

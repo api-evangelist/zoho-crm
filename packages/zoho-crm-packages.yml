@@ -1,0 +1,152 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.zoho.com/crm/developer/docs/server-side-sdks/ + public registry metadata endpoints (registry.npmjs.org, pypi.org, repo.packagist.org, api.nuget.org)
+note: >-
+  Zoho ships one SDK package per major API version rather than a single evolving
+  package, so the current-generation library for Zoho CRM API v8 is the "8.0"
+  variant in each registry. Version + published dates below were read from each
+  registry's own metadata endpoint on 2026-08-13. Maven Central and RubyGems were
+  queried and returned no com.zoho.crm / ZOHOCRMSDK artifacts, so the Java, Scala
+  and Ruby SDKs Zoho lists in its docs are distributed from GitHub releases rather
+  than a public registry — recorded as version: null below.
+packages:
+- language: javascript
+  registry: npm
+  name: "@zohocrm/nodejs-sdk-8.0"
+  url: https://www.npmjs.com/package/@zohocrm/nodejs-sdk-8.0
+  install: npm install @zohocrm/nodejs-sdk-8.0
+  official: true
+  version: 3.0.0
+  published: '2025-12-26'
+  api_version: v8
+- language: typescript
+  registry: npm
+  name: "@zohocrm/typescript-sdk-8.0"
+  url: https://www.npmjs.com/package/@zohocrm/typescript-sdk-8.0
+  install: npm install @zohocrm/typescript-sdk-8.0
+  official: true
+  version: 3.0.0
+  published: '2025-12-27'
+  api_version: v8
+- language: javascript
+  registry: npm
+  name: "@zohocrm/nodejs-sdk-7.0"
+  url: https://www.npmjs.com/package/@zohocrm/nodejs-sdk-7.0
+  install: npm install @zohocrm/nodejs-sdk-7.0
+  official: true
+  version: 4.0.0
+  published: '2025-02-07'
+  api_version: v7
+- language: python
+  registry: pypi
+  name: zohocrmsdk8-0
+  url: https://pypi.org/project/zohocrmsdk8-0/
+  install: pip install zohocrmsdk8-0
+  official: true
+  version: 7.0.0
+  published: '2026-07-24'
+  api_version: v8
+- language: python
+  registry: pypi
+  name: zohocrmsdk7-0
+  url: https://pypi.org/project/zohocrmsdk7-0/
+  install: pip install zohocrmsdk7-0
+  official: true
+  version: 6.0.0
+  published: '2025-03-27'
+  api_version: v7
+- language: php
+  registry: packagist
+  name: zohocrm/php-sdk-8.0
+  url: https://packagist.org/packages/zohocrm/php-sdk-8.0
+  install: composer require zohocrm/php-sdk-8.0
+  official: true
+  version: 5.0.0
+  published: '2025-12-27'
+  api_version: v8
+- language: php
+  registry: packagist
+  name: zohocrm/php-sdk-7.0
+  url: https://packagist.org/packages/zohocrm/php-sdk-7.0
+  install: composer require zohocrm/php-sdk-7.0
+  official: true
+  version: 3.1.0
+  published: '2024-12-31'
+  api_version: v7
+- language: csharp
+  registry: nuget
+  name: ZOHOCRMSDK-8.0
+  url: https://www.nuget.org/packages/ZOHOCRMSDK-8.0
+  install: dotnet add package ZOHOCRMSDK-8.0
+  official: true
+  version: 4.0.0
+  published: '2025-12-27'
+  api_version: v8
+- language: csharp
+  registry: nuget
+  name: ZOHOCRMSDK-7.0
+  url: https://www.nuget.org/packages/ZOHOCRMSDK-7.0
+  install: dotnet add package ZOHOCRMSDK-7.0
+  official: true
+  version: 5.0.0
+  published: '2025-03-07'
+  api_version: v7
+- language: java
+  registry: github
+  name: zoho/zohocrm-java-sdk-8.0
+  url: https://github.com/zoho/zohocrm-java-sdk-8.0
+  official: true
+  version: null
+  published: null
+  note: >-
+    Zoho lists a Java SDK in its server-side SDK docs and the repository
+    github.com/zoho/zohocrm-java-sdk-8.0 exists (last pushed 2026-01-07), but a
+    search.maven.org query for g:"com.zoho.crm" returned no artifacts, so there is
+    no Maven Central metadata endpoint to read a version or release date from.
+- language: ruby
+  registry: null
+  name: zoho/zcrm-ruby-sdk
+  url: https://github.com/zoho/zcrm-ruby-sdk
+  official: true
+  version: null
+  published: null
+  note: >-
+    Zoho's docs list a Ruby SDK, and github.com/zoho/zcrm-ruby-sdk exists, but
+    rubygems.org returned no ZOHOCRMSDK gem on a name lookup or a search for
+    "zohocrmsdk", so there is no registry metadata to date the release.
+- language: javascript
+  registry: npm
+  name: zcrmsdk
+  url: https://www.npmjs.com/package/zcrmsdk
+  install: npm install zcrmsdk
+  official: true
+  version: 1.1.0
+  published: '2021-05-13'
+  api_version: v2
+  deprecated: true
+  note: >-
+    First-generation Node SDK (github.com/zoho/zcrm-nodejs-sdk). Last published
+    2021-05-13 against API v2; superseded by @zohocrm/nodejs-sdk-8.0.
+- language: python
+  registry: pypi
+  name: zcrmsdk
+  url: https://pypi.org/project/zcrmsdk/
+  install: pip install zcrmsdk
+  official: true
+  version: 3.1.0
+  published: '2021-05-13'
+  api_version: v2
+  deprecated: true
+  note: First-generation Python SDK, last published 2021-05-13 against API v2.
+- language: javascript
+  registry: npm
+  name: zoho-extension-toolkit
+  url: https://www.npmjs.com/package/zoho-extension-toolkit
+  install: npm install -g zoho-extension-toolkit
+  official: true
+  version: 1.0.28
+  published: '2026-04-16'
+  kind: cli
+  note: >-
+    ZET — the Zoho Extension Toolkit CLI used to scaffold, run and pack Zoho CRM
+    widgets and extensions. Command surface captured in cli/zoho-crm-cli.yml.

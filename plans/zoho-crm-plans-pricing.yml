@@ -1,0 +1,101 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.zoho.com/crm/zohocrm-pricing.html
+plan_count: 5
+currency: INR
+currency_note: >-
+  The pricing page renders prices client-side and geo-selects the currency; the
+  fetch on 2026-08-13 was served INR. The page carries a currency switcher offering
+  USD, INR, EUR, GBP, JPY, SGD, AUD and CAD, and the per-currency figures are loaded
+  from a separate JSON file rather than being present in the HTML, so only the INR
+  figures actually observed are recorded here. Prices below are the values printed
+  on the page for the monthly-billed toggle, per user per month.
+billing_period: per user per month
+trial: true
+trial_note: Every paid edition CTA is "START FREE TRIAL"; the page does not state the trial length.
+plans:
+- name: Free
+  price: 0
+  currency: INR
+  period: month
+  quota: up to 3 users
+  api_credits_per_day: 5000
+  api_concurrency: 5
+  highlights:
+  - Contact management
+  - Follow-up reminders
+  - Workflow automation
+  - Custom email templates
+  - Tasks, meetings and calls
+  - Mobile apps
+- name: Standard
+  price: 800
+  currency: INR
+  period: month
+  positioning: Beginner-friendly
+  api_credits_per_day: 50000 + (users x 250) + add-ons, capped at 100000
+  api_concurrency: 10
+  highlights:
+  - Workflows and assignment rules
+  - AI agents
+  - Cadences
+  - Reports and dashboards
+  - Sales forecasting
+  - Self-service kiosks
+- name: Professional
+  price: 1400
+  currency: INR
+  period: month
+  positioning: Automation and AI
+  api_credits_per_day: 50000 + (users x 500) + add-ons, capped at 3000000
+  api_concurrency: 15
+  highlights:
+  - Everything in Standard
+  - CPQ
+  - Email intelligence
+  - Process management
+  - Widgets (client-side extensions)
+  - Inventory management
+  - Google Ads integration
+- name: Enterprise
+  price: 2400
+  currency: INR
+  period: month
+  positioning: Deep customizability
+  api_credits_per_day: 50000 + (users x 1000) + add-ons, capped at 5000000
+  api_concurrency: 20
+  highlights:
+  - Everything in Professional
+  - Zia AI sales assistant
+  - Journey orchestration
+  - Territory management
+  - Custom functions
+  - Wizards
+  - Customer portals
+- name: Ultimate
+  price: 2600
+  currency: INR
+  period: month
+  positioning: Bespoke solutions
+  api_credits_per_day: 50000 + (users x 2000) + add-ons, uncapped
+  api_concurrency: 25
+  highlights:
+  - Everything in Enterprise
+  - Enhanced feature limits
+  - Consulting
+  - Migration assistance
+  - Custom AI/ML
+  - Data preparation
+overage:
+  model: add-on credit packs
+  note: >-
+    The daily API credit formula on api-limits.html includes an explicit "+ Add-ons"
+    term, so credits are purchasable above the edition baseline, but the pricing page
+    does not publish a per-credit price.
+api_access:
+  included_in_all_paid_plans: true
+  free_edition_has_api: true
+  note: Widgets (client-side extensions) require Professional or above.
+related:
+- rate-limits/zoho-crm-rate-limits.yml
+- https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html

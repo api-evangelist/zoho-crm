@@ -1,0 +1,822 @@
+generated: '2026-08-13'
+method: derived
+source: >-
+  openapi/ (105 first-party Zoho CRM OAS 3.1.0 files from github.com/zoho/crm-oas),
+  mcp/zoho-crm-mcp.yml, graphql/zoho-crm-schema.graphql
+note: >-
+  Zoho publishes a hosted MCP product that covers Zoho CRM, but the connector URL is
+  minted inside an auth-gated console, so tools/list could not be called and the real
+  tool names + inputSchemas are NOT known. This crosswalk therefore does the honest
+  half: it records the surfaces, and it binds the ONE tool invocation Zoho itself
+  publishes (the worked example on https://www.zoho.com/mcp/, a POST of a Lead record
+  to https://www.zohoapis.com/crm/v2/Leads) to its backing OpenAPI operation. Every
+  other row is a capability the MCP layer must reach through some tool, mapped by
+  semantics with confidence: low, and clearly labelled as unverified. No tool name is
+  invented — rows whose tool name is unknown carry `tool: null`.
+surfaces:
+  openapi:
+    files: 105
+    operations: 405
+    source: https://github.com/zoho/crm-oas
+    gated: false
+  mcp:
+    product: https://www.zoho.com/mcp/
+    console: https://mcp.zoho.com/
+    endpoint: null
+    gated: true
+    reason: connector URL issued per account behind accounts.zoho.com login; tools/list unreachable anonymously
+  graphql:
+    endpoint: null
+    file: graphql/zoho-crm-schema.graphql
+    gated: true
+    reason: >-
+      Zoho CRM publishes no public GraphQL endpoint; the schema in graphql/ is an
+      API Evangelist-derived model of the REST data core, not a provider surface, so
+      it contributes no graphql-only rows here.
+crosswalk:
+- tool: null
+  category: records
+  capability: Create a record in a CRM module
+  rest: [createRecords]
+  spec: openapi/zoho-crm-record-openapi.json
+  binding: rest
+  confidence: high
+  note: >-
+    The only provider-published MCP tool invocation. Zoho's own "How it works"
+    example shows the MCP tool executing POST https://www.zohoapis.com/crm/v2/Leads
+    with a record body — the v8 equivalent is POST /{module} => createRecords. Tool
+    NAME is not published, hence null.
+- tool: null
+  category: records
+  capability: Read / list records in a module
+  rest: [getRecords, getRecord]
+  spec: openapi/zoho-crm-record-openapi.json
+  binding: rest
+  confidence: low
+  note: unverified — inferred from the "search the desk / monitor deal progress" prompts on zoho.com/mcp, not from a fetched tool manifest
+- tool: null
+  category: records
+  capability: Update a record (e.g. "mark the Zylker deal as won")
+  rest: [updateRecord, updateRecords]
+  spec: openapi/zoho-crm-record-openapi.json
+  binding: rest
+  confidence: low
+  note: unverified — matches the published sample prompt "Mark the Zylker deal as won"
+- tool: null
+  category: activities
+  capability: Schedule a call / meeting against a record
+  rest: [postAppointmentsS]
+  spec: openapi/zoho-crm-appointments-openapi.json
+  binding: rest
+  confidence: low
+  note: unverified — matches the published sample prompt "schedule a call with John for an onboarding meeting"
+- tool: null
+  category: search
+  capability: Search records by criteria/email/phone/word
+  rest: [searchRecords]
+  spec: openapi/zoho-crm-module-search-openapi.json
+  binding: rest
+  confidence: low
+  note: unverified
+- tool: null
+  category: metadata
+  capability: Discover module API names before acting
+  rest: [getModules]
+  spec: openapi/zoho-crm-modules-openapi.json
+  binding: rest
+  confidence: low
+  note: >-
+    Zoho's OAS page tells integrators to call the modules-metadata API to resolve the
+    {module_API_name} placeholder in every scope, so an agent surface almost certainly
+    exposes it — but it is inference, not an observed tool.
+mcp_only: []
+mcp_only_note: >-
+  Cannot be determined without an authenticated tools/list. Recording an empty list
+  here is a statement that none were OBSERVED, not a claim that none exist.
+rest_only:
+- capability: Available Apis
+  spec: openapi/zoho-crm-apis-openapi.json
+  operations:
+  - getAvailableApis
+- capability: Appointment Preference
+  spec: openapi/zoho-crm-appointment-preference-openapi.json
+  operations:
+  - getAppointmentPreference
+  - updateAppointmentPreference
+- capability: Appointments API
+  spec: openapi/zoho-crm-appointments-openapi.json
+  operations:
+  - getAppointmentsS
+  - putAppointmentsS
+  - postAppointmentsS
+  - deleteAppointmentsS
+  - getAppointmentById
+  - updateAppointmentById
+  - deleteId
+- capability: Assignment rules
+  spec: openapi/zoho-crm-assignment-rules-openapi.json
+  operations:
+  - getAssignmentRules
+  - getAssignmentRuleById
+- capability: Zoho CRM Associate Email API
+  spec: openapi/zoho-crm-associate-email-openapi.json
+  operations:
+  - associateEmail
+- capability: Attachments
+  spec: openapi/zoho-crm-attachments-openapi.json
+  operations:
+  - getAttachmentById
+  - deleteAttachment
+  - getAttachments
+  - uploadAttachment
+- capability: Audit Log Export
+  spec: openapi/zoho-crm-audit-log-export-openapi.json
+  operations:
+  - createAuditLogExport
+  - getAuditLogExports
+  - getAuditLogExportsById
+- capability: Bulk Read
+  spec: openapi/zoho-crm-bulk-read-openapi.json
+  operations:
+  - createBulkReadJob
+  - getBulkReadJobDetails
+  - downloadResult
+- capability: Bulk Write
+  spec: openapi/zoho-crm-bulk-write-openapi.json
+  operations:
+  - createBulkWriteJob
+  - getJobDetails
+- capability: Business Hours
+  spec: openapi/zoho-crm-business-hours-openapi.json
+  operations:
+  - createBusinessHours
+  - updateBusinessHours
+  - getBusinessHours
+- capability: Cadence Execution
+  spec: openapi/zoho-crm-cadences-execution-openapi.json
+  operations:
+  - postUnenrolFromCadences
+  - postEnrolInCadences
+- capability: Cadences
+  spec: openapi/zoho-crm-cadences-openapi.json
+  operations:
+  - getCadences
+- capability: Call Preferences
+  spec: openapi/zoho-crm-call-preferences-openapi.json
+  operations:
+  - getCallPreferences
+  - updateCallPreferences
+- capability: Cancel Meetings
+  spec: openapi/zoho-crm-cancel-meetings-openapi.json
+  operations:
+  - cancelMeetings
+- capability: Change Owner
+  spec: openapi/zoho-crm-change-owner-openapi.json
+  operations:
+  - singleUpdate
+  - bulkChangeOwner
+- capability: Composite Requests
+  spec: openapi/zoho-crm-composite-requests-openapi.json
+  operations:
+  - composite
+- capability: Contact Roles
+  spec: openapi/zoho-crm-contact-roles-openapi.json
+  operations:
+  - getContactRoles
+  - createRoles
+  - updateRoles
+  - deleteRoles
+  - getRole
+  - updateRole
+  - deleteRole
+- capability: Zoho CRM Lead Conversion Options API
+  spec: openapi/zoho-crm-conversion-option-openapi.json
+  operations:
+  - getLeadConversionOptions
+- capability: Zoho CRM Lead Conversion API
+  spec: openapi/zoho-crm-convert-openapi.json
+  operations:
+  - convertLead
+- capability: Coql
+  spec: openapi/zoho-crm-coql-openapi.json
+  operations:
+  - executeCOQLQuery
+- capability: Currencies
+  spec: openapi/zoho-crm-currencies-openapi.json
+  operations:
+  - getCurrencies
+  - createCurrencies
+  - updateCurrencies
+  - getCurrencyById
+  - updateCurrencyById
+  - enableCurrency
+  - updateBaseCurrency
+- capability: Custom Views
+  spec: openapi/zoho-crm-custom-views-openapi.json
+  operations:
+  - getCustomViews
+  - getCustomViewById
+  - changeSort
+  - changeSortById
+- capability: Data Sharing
+  spec: openapi/zoho-crm-data-sharing-openapi.json
+  operations:
+  - getDataSharing
+  - updateDataSharing
+- capability: Deal Contact Roles
+  spec: openapi/zoho-crm-deal-contact-roles-openapi.json
+  operations:
+  - getAssociatedContactRoles
+  - upsertContactRoleRelations
+  - deleteContactRoleRelations
+  - getDealContactRoleForContact
+  - associateContactRoleToDeal
+  - deleteContactRoleRelation
+- capability: Deal Link Emails
+  spec: openapi/zoho-crm-deal-link-emails-openapi.json
+  operations:
+  - linkEmailsToDeals
+  - getRecordActions
+  - getRecordActionsSingle
+  - getRecordActions2Single
+- capability: Download Email Attachments
+  spec: openapi/zoho-crm-download-attachments-openapi.json
+  operations:
+  - downloadEmailAttachments
+- capability: Download Inline Images
+  spec: openapi/zoho-crm-download-inline-images-openapi.json
+  operations:
+  - getDownloadInlineImages
+- capability: Duplicate Check Preference
+  spec: openapi/zoho-crm-duplicate-check-preference-openapi.json
+  operations:
+  - getDuplicateCheckPreference
+  - createDuplicateCheckPreference
+  - updateDuplicateCheckPreference
+  - deleteDuplicateCheckPreference
+- capability: Email Drafts
+  spec: openapi/zoho-crm-email-drafts-openapi.json
+  operations:
+  - getEmailDrafts
+  - createEmailDrafts
+  - getEmailDraft
+  - updateEmailDrafts
+  - deleteEmailDrafts
+- capability: Email Templates
+  spec: openapi/zoho-crm-email-templates-openapi.json
+  operations:
+  - getTemplates
+- capability: Get Email Shared Details
+  spec: openapi/zoho-crm-emails-sharing-details-openapi.json
+  operations:
+  - getEmailSharingDetail
+- capability: Features
+  spec: openapi/zoho-crm-features-openapi.json
+  operations:
+  - getFeatureDetails
+  - getFeatureSepcificDetails
+- capability: Fetch Full Data
+  spec: openapi/zoho-crm-fetch-full-data-openapi.json
+  operations:
+  - fetchFullDataForMultipleRecords
+  - fetchFullDataForSingleRecord
+- capability: Field Updates
+  spec: openapi/zoho-crm-field-updates-openapi.json
+  operations:
+  - getFieldUpdates
+  - postFieldUpdates
+  - deleteFieldUpdates
+  - getFieldUpdateById
+  - putFieldUpdateById
+  - deleteFieldUpdateById
+- capability: Fields API
+  spec: openapi/zoho-crm-fields-openapi.json
+  operations:
+  - getFields
+  - postFields
+  - patchFields
+  - getFieldsWithID
+  - putFieldsWithId
+  - deleteCustomField
+- capability: Files
+  spec: openapi/zoho-crm-files-openapi.json
+  operations:
+  - uploadFiles
+  - getFile
+- capability: Find And Merge
+  spec: openapi/zoho-crm-find-and-merge-openapi.json
+  operations:
+  - getMergeJobStatus
+  - mergeRecords
+- capability: Fiscal Year
+  spec: openapi/zoho-crm-fiscal-year-openapi.json
+  operations:
+  - getFiscalYear
+  - updateFiscalYear
+- capability: From Addresses
+  spec: openapi/zoho-crm-from-addresses-openapi.json
+  operations:
+  - getAddresses
+- capability: Related Records Count
+  spec: openapi/zoho-crm-get-related-records-count-openapi.json
+  operations:
+  - getRelatedRecordsCount
+- capability: Global Picklists
+  spec: openapi/zoho-crm-global-picklists-openapi.json
+  operations:
+  - getBulkGlobalPicklists
+  - createGlobalPicklist
+  - getSingleGlobalPicklists
+  - updateGlobalPicklistById
+  - deleteGlobalPicklist
+  - replacePicklistValues
+  - getReplacedValues
+  - getGlobalPickListFieldAssociations
+  - getPickListValuesAssociations
+- capability: Zoho CRM Holidays API
+  spec: openapi/zoho-crm-holidays-openapi.json
+  operations:
+  - getHolidays
+  - createHolidays
+  - updateHolidays
+  - updateHoliday
+  - getHoliday
+  - deleteHoliday
+- capability: Inventory Convert
+  spec: openapi/zoho-crm-inventory-convert-openapi.json
+  operations:
+  - convertInventory
+- capability: Inventory Templates
+  spec: openapi/zoho-crm-inventory-templates-openapi.json
+  operations:
+  - getTemplates
+- capability: Layout Activate and Deactivate API
+  spec: openapi/zoho-crm-layouts-activate-deactivate-openapi.json
+  operations:
+  - layoutActivate
+  - layoutDeactivate
+- capability: Layouts API
+  spec: openapi/zoho-crm-layouts-openapi.json
+  operations:
+  - getLayouts
+  - getLayoutById
+  - updateLayout
+  - deleteLayout
+- capability: Locking Information
+  spec: openapi/zoho-crm-locking-informations-openapi.json
+  operations:
+  - getRecordLockingInformationOfTheRecord
+  - lockRecord
+  - updateReasonofLockedRecord
+  - removeLockFromLockedRecord
+- capability: Mail Merge
+  spec: openapi/zoho-crm-mail-merge-openapi.json
+  operations:
+  - postSendMailMerge
+  - postSignMailMerge
+  - postDownloadMailMerge
+- capability: Map Dependency
+  spec: openapi/zoho-crm-map-dependency-openapi.json
+  operations:
+  - getMapDependency
+  - createMapDependency
+  - getMapDependencyById
+  - updateMapDependency
+  - deleteMapDependency
+- capability: Mass Change Owner
+  spec: openapi/zoho-crm-mass-change-owner-openapi.json
+  operations:
+  - massChangeOwner
+  - checkStatus
+- capability: Mass Convert
+  spec: openapi/zoho-crm-mass-convert-openapi.json
+  operations:
+  - massConvert
+  - getJobStatus
+- capability: Mass Delete Api
+  spec: openapi/zoho-crm-mass-delete-cvid-openapi.json
+  operations:
+  - massDelete
+  - getMassDeleteJobStatus
+- capability: Mass Delete Tags
+  spec: openapi/zoho-crm-mass-delete-tags-openapi.json
+  operations:
+  - createMassDeleteTags
+  - getStatus
+- capability: Mass Update API
+  spec: openapi/zoho-crm-mass-update-openapi.json
+  operations:
+  - idsUpdate
+  - getMassUpdateStatus
+- capability: Search Records
+  spec: openapi/zoho-crm-module-search-openapi.json
+  operations:
+  - searchRecords
+- capability: Modules
+  spec: openapi/zoho-crm-modules-openapi.json
+  operations:
+  - getModules
+  - createModules
+  - updateModules
+  - getModuleByApiName
+  - updateModuleByApiName
+- capability: Notes
+  spec: openapi/zoho-crm-notes-openapi.json
+  operations:
+  - getNotesModule
+  - createNotesModule
+  - updateNotesModule
+  - deleteNotesModule
+  - getNoteById
+  - updateNoteById
+  - deleteNoteById
+- capability: Notifications
+  spec: openapi/zoho-crm-notifications-openapi.json
+  operations:
+  - getNotifications
+  - createNotifications
+  - updateNotificationDetails
+  - updateNotificationInfo
+  - disableNotifications
+- capability: Org
+  spec: openapi/zoho-crm-org-openapi.json
+  operations:
+  - getOrganization
+- capability: Org Photo
+  spec: openapi/zoho-crm-org-photo-openapi.json
+  operations:
+  - getOrgPhoto
+  - uploadOrganizationPhoto
+  - delete
+- capability: Pick List Values
+  spec: openapi/zoho-crm-pick-list-values-openapi.json
+  operations:
+  - getPickListValues
+- capability: Pipeline
+  spec: openapi/zoho-crm-pipeline-openapi.json
+  operations:
+  - getPipelines
+  - createPipeline
+  - updateOrDeletePipelinePatch
+  - updateOrDeletePipelinePut
+  - getPipeline
+  - updateOrDeletePipelinePatchURL
+  - updateOrDeletePipelinePutURL
+  - transferAndDeletePipelines
+- capability: Portal User Type
+  spec: openapi/zoho-crm-portal-user-type-openapi.json
+  operations:
+  - getPortalUserTypes
+  - createPortalUserType
+  - getPortalUserType
+  - updatePortalUserType
+  - deletePortalUserType
+- capability: Portal Users
+  spec: openapi/zoho-crm-portal-users-openapi.json
+  operations:
+  - getPortalUsers
+  - deletePortalUsers
+  - inviteUsers
+  - getScheduledInviteUsersInfo
+  - singleInviteUser
+  - transferPortalUsers
+  - changePortalUsersStatus
+  - changePortalUsersStatusBulk
+- capability: Portals
+  spec: openapi/zoho-crm-portals-openapi.json
+  operations:
+  - getPortals
+  - createPortal
+  - getPortal
+  - updatePortal
+  - deletePortal
+- capability: Profiles API
+  spec: openapi/zoho-crm-profiles-openapi.json
+  operations:
+  - getProfiles
+  - cloneProfile
+  - updateProfile
+  - getProfile
+  - deleteProfile
+- capability: Module Record Count
+  spec: openapi/zoho-crm-record-count-openapi.json
+  operations:
+  - getCount
+- capability: Record Locking Configuration
+  spec: openapi/zoho-crm-record-locking-configurations-openapi.json
+  operations:
+  - createRecordLockingConfiguration
+  - updateRecordLockingConfiguration
+  - getRecordLockingConfiguration
+  - deleteRecordLockingConfiguration
+  - updateRecordLockingConfigurationPassingIdInURL
+  - getRecordLockingConfigurationPassingIdInURL
+  - deleteRecordLockingConfigurationPassingIdInURL
+- capability: Records
+  spec: openapi/zoho-crm-record-openapi.json
+  operations:
+  - getRecords
+  - createRecords
+  - updateRecords
+  - deleteRecords
+  - getRecord
+  - updateRecord
+  - deleteRecord
+  - upsertRecords
+  - getDeletedRecords
+  - cloneRecord
+- capability: Record Photo
+  spec: openapi/zoho-crm-record-photo-openapi.json
+  operations:
+  - getPhoto
+  - uploadPhoto
+  - deletePhoto
+- capability: Record Level Sharing Of Emails
+  spec: openapi/zoho-crm-record-share-email-openapi.json
+  operations:
+  - shareEmails
+  - unshareEmails
+  - shareBulkEmails
+  - unshareBulkEmails
+- capability: Recycle Bin
+  spec: openapi/zoho-crm-recycle-bin-openapi.json
+  operations:
+  - getRecycleBinRecords
+  - deleteRecycleBinRecords
+  - restoreRecycleBinRecords
+  - getRecycleBinCounts
+  - emptyRecycleBin
+  - restoreRecycleBinRecord
+  - getRecycleBinRecord
+  - deleteRecycleBinRecord
+- capability: Related Lists
+  spec: openapi/zoho-crm-related-lists-openapi.json
+  operations:
+  - getRelatedLists
+- capability: Related Notes
+  spec: openapi/zoho-crm-related-notes-openapi.json
+  operations:
+  - getNotes
+  - createNotes
+  - updateBulkNotes
+  - deleteBulkNotes
+  - getNotesById
+  - updateNotes
+  - deleteNotes
+- capability: Zoho CRM Related Records API
+  spec: openapi/zoho-crm-related-records-openapi.json
+  operations:
+  - getRelatedRecords
+  - updateRelatedRecords
+  - delinkRelatedRecords
+  - getRelatedRecord
+  - updateSpecificRelatedRecord
+  - delinkSpecificRelatedRecord
+  - getDeletedRelatedRecord
+- capability: Roles
+  spec: openapi/zoho-crm-roles-openapi.json
+  operations:
+  - getRoles
+  - createRoles
+  - updateRoles
+  - getRole
+  - updateRole
+  - deleteRole
+- capability: Scoring Rules
+  spec: openapi/zoho-crm-scoring-rules-openapi.json
+  operations:
+  - getScoringRules
+  - putScoringRules
+  - postScoringRules
+  - deleteScoringRules
+  - getScoringRuleById
+  - putScoringRuleById
+  - deleteScoringRuleById
+  - putActivate
+  - deleteActivate
+  - postClone
+- capability: Send Mail
+  spec: openapi/zoho-crm-send-mail-openapi.json
+  operations:
+  - sendMail
+- capability: Service Preference
+  spec: openapi/zoho-crm-service-preference-openapi.json
+  operations:
+  - getServicePreference
+  - updateServicePreference
+- capability: Services API
+  spec: openapi/zoho-crm-services-openapi.json
+  operations:
+  - getServicesS
+  - putServicesS
+  - postServicesS
+  - deleteServicesS
+  - getServiceById
+  - putServiceById
+  - deleteServiceById
+- capability: Share Records
+  spec: openapi/zoho-crm-share-records-openapi.json
+  operations:
+  - getShareRecords
+  - createShareRecords
+  - updateShareRecords
+  - deleteShareRecords
+- capability: Shift Hours
+  spec: openapi/zoho-crm-shift-hours-openapi.json
+  operations:
+  - getShifts
+  - createShifts
+  - updateShiftHours
+  - getSingleShiftHour
+  - updateSingleShiftHour
+  - deleteSingleShiftHour
+- capability: Tag Actions API
+  spec: openapi/zoho-crm-tags-actions-openapi.json
+  operations:
+  - postAddTags
+  - postRemoveTags
+  - postAddTagsWithId
+  - postRemoveTagsWithId
+  - getRecordsCount
+  - postMerge
+- capability: Tags CRUD API
+  spec: openapi/zoho-crm-tags-openapi.json
+  operations:
+  - getTags
+  - putTags
+  - postTags
+  - putTagsWithId
+  - deleteTags
+- capability: Territories
+  spec: openapi/zoho-crm-territories-openapi.json
+  operations:
+  - getAllTerritories
+  - createTerritories
+  - updateTerritory
+  - deleteTerritories
+  - getTerritory
+  - updateTerritoryById
+  - deleteTerritoryById
+  - transferAndDeleteTerritories
+  - transferAndDeleteTerritoryById
+  - getChildTerritoriesById
+  - getAssociatedUsersCount
+  - asssignTerritoriesToRecord
+  - asssignTerritoriesToRecords
+  - removeTerritoriesToRecord
+  - removeTerritoriesToRecords
+- capability: Territory Users
+  spec: openapi/zoho-crm-territory-users-openapi.json
+  operations:
+  - getTerritoryUsers
+  - associateUsersToTerritory
+  - deassociateUsersFromTerritories
+  - getUserDetailsFromTerritory
+  - associateUserToSpecificTerritory
+  - deassociateUserFromSpecificTerritory
+- capability: Timelines
+  spec: openapi/zoho-crm-timelines-openapi.json
+  operations:
+  - getTimelines
+- capability: Unblock Email
+  spec: openapi/zoho-crm-unblock-email-openapi.json
+  operations:
+  - unblockEmailByModule
+  - unblockEmailById
+- capability: unsubscribe_links
+  spec: openapi/zoho-crm-unsubscribe-links-openapi.json
+  operations:
+  - getUnsubscribeLinks
+  - putUnsubscribeLinks
+  - postUnsubscribeLinks
+  - get111111000000115718
+  - put111111000000115722
+  - delete111111000000115722
+  - getAssociations
+- capability: Upload
+  spec: openapi/zoho-crm-upload-openapi.json
+  operations:
+  - uploadFile
+- capability: User Groups
+  spec: openapi/zoho-crm-user-groups-openapi.json
+  operations:
+  - getGroups
+  - createGroup
+  - getGroup
+  - updateGroup
+  - deleteGroup
+  - getSources
+  - getSourcesCount
+  - getAssociatedUsersCount
+  - getAssociatedGroupsForUser
+  - getAssociations
+- capability: Users API
+  spec: openapi/zoho-crm-users-openapi.json
+  operations:
+  - getUsers
+  - createUser
+  - updateUser
+  - getSingleUser
+  - updateSingleUser
+  - deleteUser
+- capability: Users Territories
+  spec: openapi/zoho-crm-users-territories-openapi.json
+  operations:
+  - getTerritoriesOfUser
+  - associateTerritoriesToUser
+  - removeTerritoriesfromUser
+  - getSpecificTerritoryOfUser
+  - removeSpecificTerritoriesfromUser
+- capability: Users Transfer
+  spec: openapi/zoho-crm-users-transfer-openapi.json
+  operations:
+  - userTransfer
+  - userTransferWithoutId
+  - getTransferStatus
+  - userTransferAPI
+  - getTransferAPIStatus
+  - getValidateBeforeTransferStatus
+- capability: Variable Groups
+  spec: openapi/zoho-crm-variable-groups-openapi.json
+  operations:
+  - getVariableGroups
+  - putVariableGroups
+  - getVariableGroupById
+  - putVariableGroupById
+- capability: Variables
+  spec: openapi/zoho-crm-variables-openapi.json
+  operations:
+  - getVariables
+  - putVariables
+  - postVariables
+  - deleteVariables
+  - getVariableById
+  - putVariableById
+  - deleteVariableById
+- capability: Webhooks
+  spec: openapi/zoho-crm-webhooks-openapi.json
+  operations:
+  - getWebhooks
+  - putWebhooks
+  - postWebhooks
+  - deleteWebhooks
+  - getWebhookById
+  - putWebhooksById
+  - deleteWebhooksById
+  - getWebhookFailures
+  - getAssociatedModules
+  - getUsageReports
+- capability: Wizards
+  spec: openapi/zoho-crm-wizards-openapi.json
+  operations:
+  - getAllWizards
+- capability: Workflow Configurations
+  spec: openapi/zoho-crm-workflow-configurations-openapi.json
+  operations:
+  - getWorkflowConfigurations
+- capability: Workflow Rules
+  spec: openapi/zoho-crm-workflow-rules-openapi.json
+  operations:
+  - postWorkflowRule
+  - updateWorkflowRule
+  - getWorkflowRules
+  - deleteWorkflowRules
+  - updateWorkflowRuleById
+  - getWorkflowRuleById
+  - deleteWorkflowRuleById
+  - getActionsCount
+  - getModuleSpecificActionsCount
+  - getRulesCount
+  - getUsage
+  - putReorder
+- capability: Automation Task
+  spec: openapi/zoho-crm-workflow-tasks-openapi.json
+  operations:
+  - getTasks
+  - postTasks
+  - deleteTasks
+  - getTaskById
+  - putTasksById
+  - deleteTaskById
+- capability: Zia Enrichment Configuration API
+  spec: openapi/zoho-crm-zia-enrichment-openapi.json
+  operations:
+  - getZiaEnrichmentConfiguration
+- capability: ZIA Organization Enrichment API
+  spec: openapi/zoho-crm-zia-org-enrichment-openapi.json
+  operations:
+  - submitOrgEnrichmentRequest
+  - getZiaOrgEnrichment
+  - getOrgEnrichmentById
+coverage:
+  tools_named: 0
+  tools_bound: 0
+  capabilities_mapped: 6
+  capabilities_bound_high_confidence: 1
+  mcp_only_observed: 0
+  rest_operations_total: 405
+  rest_operations_with_a_mapped_capability: 10
+  note: >-
+    tools_named is 0 because Zoho publishes no tool manifest. The low
+    rest_operations_with_a_mapped_capability count is a measurement of that gap,
+    not of Zoho's MCP server.

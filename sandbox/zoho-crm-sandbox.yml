@@ -1,0 +1,57 @@
+generated: '2026-08-13'
+method: searched
+source: https://help.zoho.com/portal/en/kb/crm/developer-guide/sandbox/articles/sandbox-overview
+summary: >-
+  Zoho CRM ships a real sandbox, but it is an ISOLATED ORG COPY, not a test MODE of
+  the production API. There is no test/live key prefix, no magic test values, no test
+  clock, and no shared demo credentials — you provision a sandbox org from your own
+  CRM account and then point your integration at the sandbox host with tokens issued
+  for that org. Nothing in this file is a published test credential, because Zoho
+  publishes none.
+model: isolated-org-copy
+separation:
+  key_prefix_test_vs_live: null
+  mode_flag: null
+  note: >-
+    Zoho does not distinguish test from live by key prefix or a mode header. The
+    separation is by HOST and by org.
+hosts:
+- host: https://sandbox.zohoapis.com
+  role: sandbox API host
+  probe:
+    url: https://sandbox.zohoapis.com/crm/v8/settings/modules
+    status: 401
+    body: '{"code":"AUTHENTICATION_FAILURE","details":{},"message":"Authentication failed","status":"error"}'
+    finding: >-
+      Probed unauthenticated on 2026-08-13. The host resolves and returns the SAME
+      Zoho CRM API gateway error envelope as the production host www.zohoapis.com,
+      which confirms it fronts the CRM API rather than being a parked name. It is
+      recorded on the strength of that probe; Zoho's sandbox help article does not
+      itself name the domain.
+- host: https://www.zohoapis.com
+  role: production API host
+capabilities:
+  multiple_sandboxes: true
+  multiple_sandboxes_note: >-
+    "Organizations can create such multiple isolated environments and test different
+    CRM settings independently" — the help article illustrates three under one account.
+  tested_surfaces:
+  - Workflow rules and triggers
+  - Blueprint configurations
+  - Canvas page customization
+  - Email formatting and merge fields
+  deploy_to_production: true
+  deploy_note: Changes are promoted from the sandbox to the production account after validation.
+not_published:
+- Edition availability for sandbox
+- Number of sandboxes permitted per org
+- Whether production records are copied into the sandbox
+- How OAuth clients/scopes are issued against a sandbox org
+- Any test data, test IDs or fixture values
+test_values: []
+test_values_note: >-
+  EMPTY BY MEASUREMENT, not by omission. Zoho publishes no test card numbers, magic
+  identifiers, seeded records or shared sandbox credentials for Zoho CRM.
+related:
+- https://api-console.zoho.com/
+- authentication/zoho-crm-authentication.yml

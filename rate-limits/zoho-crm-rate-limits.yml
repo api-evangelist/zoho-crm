@@ -1,0 +1,93 @@
+generated: '2026-08-13'
+method: searched
+source: https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html
+model: credits
+model_note: >-
+  Zoho CRM does not meter raw request counts. It meters API CREDITS on a rolling
+  24-hour window per org, and separately caps SIMULTANEOUS active calls
+  (concurrency) per org per connected app. Most calls cost 1 credit; some cost far
+  more (bulk write initialize and custom-module creation are 500 credits each).
+limit_count: 12
+window: rolling 24 hours from the start of the call
+limits:
+- scope: per-org-per-day
+  edition: Free
+  metric: api_credits
+  window: 24h rolling
+  limit: 5000
+  maximum: 5000
+- scope: per-org-per-day
+  edition: Standard / Starter
+  metric: api_credits
+  window: 24h rolling
+  limit: 50000 + (users x 250) + add-ons
+  maximum: 100000
+- scope: per-org-per-day
+  edition: Professional
+  metric: api_credits
+  window: 24h rolling
+  limit: 50000 + (users x 500) + add-ons
+  maximum: 3000000
+- scope: per-org-per-day
+  edition: Enterprise / Zoho One
+  metric: api_credits
+  window: 24h rolling
+  limit: 50000 + (users x 1000) + add-ons
+  maximum: 5000000
+- scope: per-org-per-day
+  edition: Ultimate / CRM Plus
+  metric: api_credits
+  window: 24h rolling
+  limit: 50000 + (users x 2000) + add-ons
+  maximum: unlimited
+- scope: per-org-per-app
+  edition: Free
+  metric: concurrent_calls
+  limit: 5
+- scope: per-org-per-app
+  edition: Standard / Starter
+  metric: concurrent_calls
+  limit: 10
+- scope: per-org-per-app
+  edition: Professional
+  metric: concurrent_calls
+  limit: 15
+- scope: per-org-per-app
+  edition: Enterprise / Zoho One
+  metric: concurrent_calls
+  limit: 20
+- scope: per-org-per-app
+  edition: Ultimate / CRM Plus
+  metric: concurrent_calls
+  limit: 25
+- scope: per-endpoint-class
+  edition: all
+  metric: sub_concurrency
+  limit: 10
+  note: '"The sub-concurrency limit for the above APIs is 10 for all the CRM editions."'
+- scope: per-call
+  metric: credit_cost
+  limit: 1
+  note: >-
+    Baseline cost of a standard call. Insert/update/upsert cost 1 credit per 10
+    records; Convert Lead costs 5 credits; Bulk Write Initialize and Create Custom
+    Module cost 500 credits each.
+headers:
+- name: X-API-CREDITS-REMAINING
+  direction: response
+  emitted_when: usage for the 24-hour window reaches 50% or above
+  note: >-
+    This is the only rate-limit signal Zoho documents on the response. There is no
+    X-RateLimit-Limit / RateLimit-* / Retry-After documented, so an agent gets a
+    remaining-credits number only after it is already halfway through the day's
+    budget, and gets no reset timestamp at all.
+exhaustion:
+  http_status: 429
+  meaning: >-
+    "Number of API requests for the 24 hour period is exceeded or the concurrency
+    limit of the user for the app is exceeded." (status-codes.html)
+  error_keyword: TOO_MANY_REQUESTS
+  retry_after_header: false
+docs:
+- https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html
+- https://www.zoho.com/crm/developer/docs/api/v8/status-codes.html
