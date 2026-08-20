@@ -31,6 +31,18 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zoho-crm.p
 tags:
 - CRM
 - Sales
+- Marketing Automation
+- Lead Management
+- Customer Engagement
+- Sales Automation
+- Contact Management
+- Pipeline Management
+- Software-as-a-Service
+- OpenAPI
+- Authentication
+tags_raw:
+- CRM
+- Sales
 - Customer Relationship Management
 - Marketing Automation
 - Lead Management
@@ -56,6 +68,12 @@ apis:
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
   tags:
+  - CRM
+  - Notification
+  - Webhook
+  - Event
+  - AsyncAPI
+  tags_raw:
   - CRM
   - Notifications
   - Webhooks
@@ -521,6 +539,10 @@ apis:
   tags:
   - CRM
   - Zoho CRM API v8
+  - Currency
+  tags_raw:
+  - CRM
+  - Zoho CRM API v8
   - Currencies
   properties:
   - type: OpenAPI
@@ -837,6 +859,10 @@ apis:
   humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
   baseURL: https://www.zohoapis.com/crm/v8
   tags:
+  - CRM
+  - Zoho CRM API v8
+  - File
+  tags_raw:
   - CRM
   - Zoho CRM API v8
   - Files
@@ -1306,6 +1332,12 @@ apis:
   tags:
   - CRM
   - Zoho CRM API v8
+  - Notification
+  - Webhook
+  - Event
+  tags_raw:
+  - CRM
+  - Zoho CRM API v8
   - Notifications
   - Webhooks
   - Events
@@ -1482,6 +1514,10 @@ apis:
   humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
   baseURL: https://www.zohoapis.com/crm/v8
   tags:
+  - CRM
+  - Zoho CRM API v8
+  - Portal
+  tags_raw:
   - CRM
   - Zoho CRM API v8
   - Portals
@@ -1992,6 +2028,9 @@ apis:
   tags:
   - CRM
   - Zoho CRM API v8
+  tags_raw:
+  - CRM
+  - Zoho CRM API v8
   - unsubscribe_links
   properties:
   - type: OpenAPI
@@ -2160,6 +2199,10 @@ apis:
   humanURL: https://www.zoho.com/crm/developer/docs/api/v8/
   baseURL: https://www.zohoapis.com/crm/v8
   tags:
+  - CRM
+  - Zoho CRM API v8
+  - Webhook
+  tags_raw:
   - CRM
   - Zoho CRM API v8
   - Webhooks
