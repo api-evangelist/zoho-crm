@@ -11,6 +11,19 @@ description: Zoho CRM is Zoho Corporation's AI-powered sales and customer relati
   Java, Ruby and Scala, a widget/extension CLI (ZET), a documented webhook surface (Instant Notifications), and
   a hosted MCP product that names Zoho CRM as a supported app.
 type: Index
+deliveryModel:
+  model: unknown
+  open_source: unknown
+  commercial: true
+  callable_host: true
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - openapi
+  - pricing
+  - repository-unlicensed
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: freemium
   onboarding: self-service
@@ -8342,6 +8355,9 @@ apis:
   - type: SourceCode
     url: https://github.com/zoho/crm-oas/blob/main/v8.0/zia_org_enrichment.json
 common:
+- type: CapabilityMap
+  url: capabilities/zoho-crm-capability-edges.yml
+  name: Zoho CRM Business Capability Map
 - type: Overlay
   url: overlays/zoho-crm-apis-overlay.yaml
 - type: Overlay
