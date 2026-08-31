@@ -44,6 +44,7 @@ image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/zoho-crm.p
 tags:
 - CRM
 - Sales
+- Customer Relationship Management
 - Marketing Automation
 - Lead Management
 - Customer Engagement
@@ -306,7 +307,8 @@ apis:
   description: The Apis API from Zoho CRM — 1 operation(s) for apis.
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
-  tags:
+  tags: []
+  tags_raw:
   - Apis
   properties:
   - type: OpenAPI
@@ -2838,6 +2840,8 @@ apis:
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
   tags:
+  - Event
+  tags_raw:
   - Events
   properties:
   - type: OpenAPI
@@ -3298,6 +3302,8 @@ apis:
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
   tags:
+  - File
+  tags_raw:
   - Files
   properties:
   - type: OpenAPI
@@ -5367,7 +5373,8 @@ apis:
   description: The Read API from Zoho CRM — 3 operation(s) for read.
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
-  tags:
+  tags: []
+  tags_raw:
   - Read
   properties:
   - type: OpenAPI
@@ -6518,6 +6525,8 @@ apis:
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
   tags:
+  - Timelines
+  tags_raw:
   - Timeline
   properties:
   - type: OpenAPI
@@ -6977,7 +6986,8 @@ apis:
   description: The Upsert API from Zoho CRM — 1 operation(s) for upsert.
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
-  tags:
+  tags: []
+  tags_raw:
   - Upsert
   properties:
   - type: OpenAPI
@@ -7208,6 +7218,8 @@ apis:
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
@@ -7668,7 +7680,8 @@ apis:
   description: The Write API from Zoho CRM — 2 operation(s) for write.
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
-  tags:
+  tags: []
+  tags_raw:
   - Write
   properties:
   - type: OpenAPI
