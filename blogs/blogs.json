@@ -2,23 +2,21 @@
   "repo": "zoho-crm",
   "feeds": [
     {
-      "source": "https://www.zoho.com/crm/blog/feed/",
-      "feed_url": "https://www.zoho.com/crm/blog/feed/",
-      "title": "",
-      "saved": 0,
-      "method": "feed",
-      "nature": "vendor-blog",
-      "nature_basis": "path_blog"
-    },
-    {
       "source": "https://help.zoho.com/portal/en/community/zoho-crm",
       "feed_url": "https://help.zoho.com/portal/en/community/zoho-crm",
       "title": "",
       "saved": 0,
       "method": "none"
+    },
+    {
+      "source": "https://www.zoho.com/crm/blog/feed/",
+      "feed_url": "https://www.zoho.com/crm/blog/feed/",
+      "title": "",
+      "saved": 0,
+      "method": "feed"
     }
   ],
-  "fetched": "2026-08-30T22:33:40Z",
+  "fetched": "2026-09-06T19:17:18Z",
   "post_count": 10,
   "feed_nature": "vendor-blog",
   "feed_nature_basis": "path_blog",

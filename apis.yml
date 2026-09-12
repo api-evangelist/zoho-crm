@@ -8695,3 +8695,5 @@ x-enrichment:
     hand-scaffolded 2-operation specs and the two Postman collections derived from
     them. No agent card is served on any host; no idempotency key and no deprecation
     policy are published, so those pointers are deliberately absent.
+x-parent: zoho
+x-relationship: product
