@@ -301,237 +301,6 @@ apis:
     url: https://github.com/zoho/crm-oas/blob/main/v8.0/zia_enrichment.json
   - type: SourceCode
     url: https://github.com/zoho/crm-oas/blob/main/v8.0/zia_org_enrichment.json
-- aid: zoho-crm:zoho-crm-apis-api
-  name: Zoho CRM APIS API
-  description: The Apis API from Zoho CRM — 1 operation(s) for apis.
-  humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
-  baseURL: https://www.zohoapis.com/crm/v2
-  tags: []
-  tags_raw:
-  - Apis
-  properties:
-  - type: OpenAPI
-    url: openapi/zoho-crm-apis-api-openapi.yml
-  - type: Documentation
-    url: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
-  - type: AsyncAPI
-    url: asyncapi/zoho-crm-notifications-asyncapi.yml
-  - type: Webhooks
-    url: asyncapi/zoho-crm-notifications-asyncapi.yml
-  - type: Documentation
-    url: https://www.zoho.com/crm/developer/docs/api/v8/
-  - type: APIReference
-    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/apis.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/appointment_preference.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/appointments.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/assignment_rules.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/associate_email.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/attachments.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/audit_log_export.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/available_currencies.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/bulk_read.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/bulk_write.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/business_hours.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/cadences_execution.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/cadences.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/call_preferences.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/cancel_meetings.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/change_owner.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/composite_requests.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/contact_roles.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/conversion_option.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/convert.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/coql.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/currencies.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/custom_views.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/data_sharing.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/deal_contact_roles.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/deal_link_emails.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/download_attachments.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/download_inline_images.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/duplicate_check_preference.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/email_drafts.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/email_templates.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/emails_sharing_details.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/features.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/fetch_full_data.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/field_updates.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/fields.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/files.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/find_and_merge.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/fiscal_year.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/from_addresses.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/get_related_records_count.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/global_picklists.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/holidays.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/inventory_convert.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/inventory_templates.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/layouts_activate_deactivate.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/layouts.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/locking_informations.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mail_merge.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/map_dependency.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_change_owner.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_convert.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_delete_cvid.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_delete_tags.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_update.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/module_search.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/modules.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/notes.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/notifications.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/org.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/org_photo.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/ownership_history.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/pick_list_values.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/pipeline.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/portal_user_type.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/portal_users.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/portals.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/profiles.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_count.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_locking_configurations.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_photo.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_share_email.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/recycle_bin.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/related_lists.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/related_notes.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/related_records.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/roles.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/scoring_rules.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/send_mail.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/service_preference.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/services.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/share_records.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/shift_hours.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/tags_actions.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/tags.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/territories.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/territory_users.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/timelines.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/unblock_email.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/unsubscribe_links.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/upload.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/user_groups.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/users.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/users_territories.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/users_transfer.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/variable_groups.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/variables.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/webhooks.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/wizards.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/workflow_configurations.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/workflow_rules.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/workflow_tasks.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/zia_enrichment.json
-  - type: SourceCode
-    url: https://github.com/zoho/crm-oas/blob/main/v8.0/zia_org_enrichment.json
 - aid: zoho-crm:zoho-crm-appointments-s-api
   name: Zoho CRM Appointments S API
   description: The Appointments S API from Zoho CRM — 2 operation(s) for appointments s.
@@ -8146,6 +7915,236 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/zoho-crm-zoho-crm-related-records-api-api-openapi.yml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
+  - type: AsyncAPI
+    url: asyncapi/zoho-crm-notifications-asyncapi.yml
+  - type: Webhooks
+    url: asyncapi/zoho-crm-notifications-asyncapi.yml
+  - type: Documentation
+    url: https://www.zoho.com/crm/developer/docs/api/v8/
+  - type: APIReference
+    url: https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/apis.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/appointment_preference.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/appointments.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/assignment_rules.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/associate_email.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/attachments.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/audit_log_export.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/available_currencies.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/bulk_read.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/bulk_write.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/business_hours.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/cadences_execution.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/cadences.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/call_preferences.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/cancel_meetings.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/change_owner.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/composite_requests.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/contact_roles.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/conversion_option.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/convert.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/coql.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/currencies.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/custom_views.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/data_sharing.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/deal_contact_roles.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/deal_link_emails.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/download_attachments.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/download_inline_images.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/duplicate_check_preference.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/email_drafts.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/email_templates.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/emails_sharing_details.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/features.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/fetch_full_data.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/field_updates.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/fields.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/files.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/find_and_merge.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/fiscal_year.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/from_addresses.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/get_related_records_count.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/global_picklists.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/holidays.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/inventory_convert.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/inventory_templates.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/layouts_activate_deactivate.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/layouts.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/locking_informations.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mail_merge.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/map_dependency.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_change_owner.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_convert.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_delete_cvid.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_delete_tags.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/mass_update.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/module_search.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/modules.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/notes.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/notifications.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/org.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/org_photo.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/ownership_history.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/pick_list_values.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/pipeline.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/portal_user_type.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/portal_users.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/portals.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/profiles.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_count.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_locking_configurations.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_photo.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/record_share_email.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/recycle_bin.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/related_lists.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/related_notes.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/related_records.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/roles.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/scoring_rules.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/send_mail.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/service_preference.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/services.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/share_records.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/shift_hours.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/tags_actions.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/tags.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/territories.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/territory_users.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/timelines.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/unblock_email.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/unsubscribe_links.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/upload.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/user_groups.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/users.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/users_territories.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/users_transfer.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/variable_groups.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/variables.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/webhooks.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/wizards.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/workflow_configurations.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/workflow_rules.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/workflow_tasks.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/zia_enrichment.json
+  - type: SourceCode
+    url: https://github.com/zoho/crm-oas/blob/main/v8.0/zia_org_enrichment.json
+- aid: zoho-crm:zoho-crm-ap-is-api
+  name: Zoho CRM AP Is API
+  description: The AP Is API from Zoho CRM — 1 operation(s) for ap is.
+  humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
+  baseURL: https://www.zohoapis.com/crm/v2
+  tags:
+  - AP Is
+  properties:
+  - type: OpenAPI
+    url: openapi/zoho-crm-ap-is-api-openapi.yml
   - type: Documentation
     url: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   - type: AsyncAPI
