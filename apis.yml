@@ -2147,6 +2147,8 @@ apis:
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
   tags:
+  - Email
+  tags_raw:
   - Emails
   properties:
   - type: OpenAPI
@@ -4912,6 +4914,8 @@ apis:
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
   tags:
+  - Photos
+  tags_raw:
   - Photo
   properties:
   - type: OpenAPI
@@ -8140,7 +8144,8 @@ apis:
   description: The Apis API from Zoho CRM — 1 operation(s) for apis.
   humanURL: https://www.zoho.com/crm/developer/docs/api/v2/notifications/
   baseURL: https://www.zohoapis.com/crm/v2
-  tags:
+  tags: []
+  tags_raw:
   - Apis
   properties:
   - type: OpenAPI
