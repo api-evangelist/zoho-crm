@@ -3018,33 +3018,14 @@ paths:
           description: API version
 components:
   parameters:
-    Page:
-      name: page
+    PerPage:
+      name: per_page
       in: query
       required: false
-      description: Page number for pagination
+      description: Number of records per page
       schema:
         type: integer
         format: int32
-    Id:
-      name: id
-      in: path
-      required: true
-      description: Unique identifier of the note
-      schema:
-        type: string
-        format: int64
-    SortBy:
-      name: sort_by
-      in: query
-      required: false
-      description: Field name to sort results by
-      schema:
-        type: string
-        enum:
-        - Modified_Time
-        - Created_Time
-        - id
     SortOrder:
       name: sort_order
       in: query
@@ -3063,14 +3044,6 @@ components:
       schema:
         type: string
         maxLength: 1024
-    PageToken:
-      name: page_token
-      in: query
-      required: false
-      description: Page token for fetching more than 2000 records
-      schema:
-        type: string
-        maxLength: 2000
     Ids:
       name: ids
       in: query
@@ -3079,46 +3052,52 @@ components:
       schema:
         type: string
         maxLength: 1024
-    PerPage:
-      name: per_page
+    PageToken:
+      name: page_token
       in: query
       required: false
-      description: Number of records per page
+      description: Page token for fetching more than 2000 records
       schema:
-        type: integer
-        format: int32
-    Page_2:
+        type: string
+        maxLength: 2000
+    Page:
       name: page
       in: query
       required: false
-      description: Page number for pagination (starting from 1)
+      description: Page number for pagination
+      schema:
+        type: integer
+        format: int32
+    SortBy:
+      name: sort_by
+      in: query
+      required: false
+      description: Field name to sort results by
+      schema:
+        type: string
+        enum:
+        - Modified_Time
+        - Created_Time
+        - id
+    Id:
+      name: id
+      in: path
+      required: true
+      description: Unique identifier of the note
+      schema:
+        type: string
+        format: int64
+    PerPage_2:
+      name: perPage
+      in: query
+      required: false
+      description: Number of records to return per page
       schema:
         type: integer
         format: int32
         minimum: 1
-        maximum: 10000
-        default: 1
-    ParentRecordModule:
-      name: parentRecordModule
-      in: path
-      required: true
-      description: The module API name of the parent record (e.g., Contacts, Leads, Deals, Accounts)
-      schema:
-        type: string
-        pattern: ^[A-Za-z_][A-Za-z0-9_]*$
-        maxLength: 50
-    SortBy_2:
-      name: sort_by
-      in: query
-      required: false
-      description: Field name to sort the notes by
-      schema:
-        type: string
-        enum:
-        - id
-        - Created_Time
-        - Modified_Time
-        maxLength: 50
+        maximum: 200
+        default: 200
     SortOrder_2:
       name: sort_order
       in: query
@@ -3130,11 +3109,11 @@ components:
         - asc
         - desc
         maxLength: 10
-    NoteId:
-      name: noteId
+    ParentRecordId:
+      name: parentRecordId
       in: path
       required: true
-      description: The unique identifier of the specific note record. Must be a valid numeric record ID.
+      description: The unique identifier of the parent record. Must be a valid numeric record ID.
       schema:
         type: string
         pattern: ^[0-9]+$
@@ -3157,297 +3136,48 @@ components:
         type: string
         pattern: ^[0-9]+(,[0-9]+)*$
         maxLength: 2000
-    ParentRecordId:
-      name: parentRecordId
+    ParentRecordModule:
+      name: parentRecordModule
       in: path
       required: true
-      description: The unique identifier of the parent record. Must be a valid numeric record ID.
+      description: The module API name of the parent record (e.g., Contacts, Leads, Deals, Accounts)
       schema:
         type: string
-        pattern: ^[0-9]+$
-        format: int64
-    PerPage_2:
-      name: perPage
+        pattern: ^[A-Za-z_][A-Za-z0-9_]*$
+        maxLength: 50
+    Page_2:
+      name: page
       in: query
       required: false
-      description: Number of records to return per page
+      description: Page number for pagination (starting from 1)
       schema:
         type: integer
         format: int32
         minimum: 1
-        maximum: 200
-        default: 200
+        maximum: 10000
+        default: 1
+    SortBy_2:
+      name: sort_by
+      in: query
+      required: false
+      description: Field name to sort the notes by
+      schema:
+        type: string
+        enum:
+        - id
+        - Created_Time
+        - Modified_Time
+        maxLength: 50
+    NoteId:
+      name: noteId
+      in: path
+      required: true
+      description: The unique identifier of the specific note record. Must be a valid numeric record ID.
+      schema:
+        type: string
+        pattern: ^[0-9]+$
+        format: int64
   schemas:
-    InvalidIdError:
-      type: object
-      description: Error response when an invalid record ID is provided
-      additionalProperties: false
-      properties:
-        code:
-          type: string
-          description: Error code indicating the type of error
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          description: Additional details about the error
-          additionalProperties: false
-          properties:
-            resource_path_index:
-              type: integer
-              description: Index in the resource path where the invalid ID was found
-              format: int32
-          required:
-          - resource_path_index
-        message:
-          type: string
-          description: Human-readable error message
-          maxLength: 500
-        status:
-          type: string
-          description: Status of the response
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-    InvalidDataErrorSingle:
-      type: object
-      description: Error response for invalid data in single record operations
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of error results for single record
-          maxItems: 1
-          items:
-            type: object
-            description: Error details for invalid data
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Error code indicating the type of error
-                enum:
-                - INVALID_DATA
-              details:
-                type: object
-                description: Additional details about the error
-                additionalProperties: true
-              message:
-                type: string
-                description: Human-readable error message
-                maxLength: 500
-              status:
-                type: string
-                description: Status of the response
-                enum:
-                - error
-            required:
-            - code
-            - details
-            - message
-            - status
-      required:
-      - data
-    NoPermissionError:
-      type: object
-      description: Error response when user lacks required permissions
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of error results
-          maxItems: 100
-          items:
-            type: object
-            description: Error details for permission denied
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Error code indicating the type of error
-                enum:
-                - NO_PERMISSION
-              details:
-                type: object
-                description: Additional details about required permissions
-                additionalProperties: false
-                properties:
-                  permissions:
-                    type: array
-                    description: List of required permissions
-                    maxItems: 10
-                    items:
-                      type: string
-                      description: Permission name
-                      maxLength: 255
-                required:
-                - permissions
-              message:
-                type: string
-                description: Human-readable error message
-                maxLength: 500
-              status:
-                type: string
-                description: Status of the response
-                enum:
-                - error
-            required:
-            - code
-            - details
-            - message
-            - status
-      required:
-      - data
-    CannotPerformActionErrorSingle:
-      type: object
-      description: Error response when user cannot perform action on a record in single record operations
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of error results for single record
-          maxItems: 1
-          items:
-            type: object
-            description: Error details for cannot perform action
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Error code indicating the type of error
-                enum:
-                - CANNOT_PERFORM_ACTION
-              details:
-                type: object
-                description: Additional details about the error
-                additionalProperties: false
-              message:
-                type: string
-                description: Human-readable error message
-                maxLength: 500
-              status:
-                type: string
-                description: Status of the response
-                enum:
-                - error
-            required:
-            - code
-            - details
-            - message
-            - status
-      required:
-      - data
-    RequiredParamMissingError:
-      type: object
-      description: Error response for required parameter missing
-      additionalProperties: false
-      properties:
-        code:
-          type: string
-          description: Error code indicating the type of error
-          enum:
-          - REQUIRED_PARAM_MISSING
-        details:
-          type: object
-          description: Additional details about the error
-          additionalProperties: true
-          properties:
-            param_name:
-              type: string
-              description: The name of the missing parameter
-              maxLength: 255
-        message:
-          type: string
-          description: Human-readable error message
-          maxLength: 500
-        status:
-          type: string
-          description: Status of the response
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-    ExpiredValueError:
-      type: object
-      description: Error response when a token or value has expired
-      additionalProperties: false
-      properties:
-        code:
-          type: string
-          description: Error code indicating the type of error
-          enum:
-          - EXPIRED_VALUE
-        details:
-          type: object
-          description: Additional details about the expired value
-          additionalProperties: false
-          properties:
-            param_name:
-              type: string
-              description: Name of the parameter with expired value
-              maxLength: 100
-          required:
-          - param_name
-        message:
-          type: string
-          description: Human-readable error message
-          maxLength: 500
-        status:
-          type: string
-          description: Status of the response
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-    CannotPerformActionError:
-      type: object
-      description: Error response when user cannot perform action on a record
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of error results
-          maxItems: 100
-          items:
-            type: object
-            description: Error details for cannot perform action
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Error code indicating the type of error
-                enum:
-                - CANNOT_PERFORM_ACTION
-              details:
-                type: object
-                description: Additional details about the error
-                additionalProperties: false
-              message:
-                type: string
-                description: Human-readable error message
-                maxLength: 500
-              status:
-                type: string
-                description: Status of the response
-                enum:
-                - error
-            required:
-            - code
-            - details
-            - message
-            - status
-      required:
-      - data
     MandatoryNotFoundError:
       type: object
       description: Error response for mandatory field not found
@@ -3499,9 +3229,9 @@ components:
             - status
       required:
       - data
-    NotAllowedError:
+    InvalidDataError:
       type: object
-      description: Error response when operation is not allowed
+      description: Error response for invalid field data
       additionalProperties: false
       properties:
         data:
@@ -3510,30 +3240,18 @@ components:
           maxItems: 100
           items:
             type: object
-            description: Error details for not allowed operation
+            description: Error details for invalid data
             additionalProperties: false
             properties:
               code:
                 type: string
                 description: Error code indicating the type of error
                 enum:
-                - NOT_ALLOWED
+                - INVALID_DATA
               details:
                 type: object
-                description: Additional details about the error
-                additionalProperties: false
-                properties:
-                  api_name:
-                    type: string
-                    description: API name of the field
-                    maxLength: 255
-                  json_path:
-                    type: string
-                    description: JSON path to the field
-                    maxLength: 500
-                required:
-                - api_name
-                - json_path
+                description: Additional details about the error, can include various constraint information
+                additionalProperties: true
               message:
                 type: string
                 description: Human-readable error message
@@ -3595,15 +3313,15 @@ components:
       - details
       - message
       - status
-    NotAllowedErrorSingle:
+    NotAllowedError:
       type: object
-      description: Error response when operation is not allowed in single record operations
+      description: Error response when operation is not allowed
       additionalProperties: false
       properties:
         data:
           type: array
-          description: Array of error results for single record
-          maxItems: 1
+          description: Array of error results
+          maxItems: 100
           items:
             type: object
             description: Error details for not allowed operation
@@ -3646,15 +3364,15 @@ components:
             - status
       required:
       - data
-    InvalidDataError:
+    InvalidDataErrorSingle:
       type: object
-      description: Error response for invalid field data
+      description: Error response for invalid data in single record operations
       additionalProperties: false
       properties:
         data:
           type: array
-          description: Array of error results
-          maxItems: 100
+          description: Array of error results for single record
+          maxItems: 1
           items:
             type: object
             description: Error details for invalid data
@@ -3667,7 +3385,7 @@ components:
                 - INVALID_DATA
               details:
                 type: object
-                description: Additional details about the error, can include various constraint information
+                description: Additional details about the error
                 additionalProperties: true
               message:
                 type: string
@@ -3685,6 +3403,41 @@ components:
             - status
       required:
       - data
+    InvalidIdError:
+      type: object
+      description: Error response when an invalid record ID is provided
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          description: Error code indicating the type of error
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          description: Additional details about the error
+          additionalProperties: false
+          properties:
+            resource_path_index:
+              type: integer
+              description: Index in the resource path where the invalid ID was found
+              format: int32
+          required:
+          - resource_path_index
+        message:
+          type: string
+          description: Human-readable error message
+          maxLength: 500
+        status:
+          type: string
+          description: Status of the response
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
     DiscretePaginationLimitExceededError:
       type: object
       description: Error response for pagination limit exceeded
@@ -3718,9 +3471,9 @@ components:
       - details
       - message
       - status
-    ExpectedFieldMissingErrorSingle:
+    CannotPerformActionErrorSingle:
       type: object
-      description: Error response for missing expected fields in single record operations
+      description: Error response when user cannot perform action on a record in single record operations
       additionalProperties: false
       properties:
         data:
@@ -3729,38 +3482,68 @@ components:
           maxItems: 1
           items:
             type: object
-            description: Error details for missing expected fields
+            description: Error details for cannot perform action
             additionalProperties: false
             properties:
               code:
                 type: string
                 description: Error code indicating the type of error
                 enum:
-                - EXPECTED_FIELD_MISSING
+                - CANNOT_PERFORM_ACTION
               details:
                 type: object
                 description: Additional details about the error
                 additionalProperties: false
+              message:
+                type: string
+                description: Human-readable error message
+                maxLength: 500
+              status:
+                type: string
+                description: Status of the response
+                enum:
+                - error
+            required:
+            - code
+            - details
+            - message
+            - status
+      required:
+      - data
+    NoPermissionError:
+      type: object
+      description: Error response when user lacks required permissions
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of error results
+          maxItems: 100
+          items:
+            type: object
+            description: Error details for permission denied
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Error code indicating the type of error
+                enum:
+                - NO_PERMISSION
+              details:
+                type: object
+                description: Additional details about required permissions
+                additionalProperties: false
                 properties:
-                  expected_fields:
+                  permissions:
                     type: array
-                    description: List of expected fields that are missing
-                    maxItems: 2
+                    description: List of required permissions
+                    maxItems: 10
                     items:
-                      type: object
-                      description: Expected field details
-                      additionalProperties: false
-                      properties:
-                        api_name:
-                          type: string
-                          description: API name of the expected field
-                          maxLength: 255
-                        json_path:
-                          type: string
-                          description: JSON path to the expected field
-                          maxLength: 500
+                      type: string
+                      description: Permission name
+                      maxLength: 255
                 required:
-                - expected_fields
+                - permissions
               message:
                 type: string
                 description: Human-readable error message
@@ -3839,6 +3622,190 @@ components:
             - status
       required:
       - data
+    NotAllowedErrorSingle:
+      type: object
+      description: Error response when operation is not allowed in single record operations
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of error results for single record
+          maxItems: 1
+          items:
+            type: object
+            description: Error details for not allowed operation
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Error code indicating the type of error
+                enum:
+                - NOT_ALLOWED
+              details:
+                type: object
+                description: Additional details about the error
+                additionalProperties: false
+                properties:
+                  api_name:
+                    type: string
+                    description: API name of the field
+                    maxLength: 255
+                  json_path:
+                    type: string
+                    description: JSON path to the field
+                    maxLength: 500
+                required:
+                - api_name
+                - json_path
+              message:
+                type: string
+                description: Human-readable error message
+                maxLength: 500
+              status:
+                type: string
+                description: Status of the response
+                enum:
+                - error
+            required:
+            - code
+            - details
+            - message
+            - status
+      required:
+      - data
+    ExpectedFieldMissingErrorSingle:
+      type: object
+      description: Error response for missing expected fields in single record operations
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of error results for single record
+          maxItems: 1
+          items:
+            type: object
+            description: Error details for missing expected fields
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Error code indicating the type of error
+                enum:
+                - EXPECTED_FIELD_MISSING
+              details:
+                type: object
+                description: Additional details about the error
+                additionalProperties: false
+                properties:
+                  expected_fields:
+                    type: array
+                    description: List of expected fields that are missing
+                    maxItems: 2
+                    items:
+                      type: object
+                      description: Expected field details
+                      additionalProperties: false
+                      properties:
+                        api_name:
+                          type: string
+                          description: API name of the expected field
+                          maxLength: 255
+                        json_path:
+                          type: string
+                          description: JSON path to the expected field
+                          maxLength: 500
+                required:
+                - expected_fields
+              message:
+                type: string
+                description: Human-readable error message
+                maxLength: 500
+              status:
+                type: string
+                description: Status of the response
+                enum:
+                - error
+            required:
+            - code
+            - details
+            - message
+            - status
+      required:
+      - data
+    ExpiredValueError:
+      type: object
+      description: Error response when a token or value has expired
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          description: Error code indicating the type of error
+          enum:
+          - EXPIRED_VALUE
+        details:
+          type: object
+          description: Additional details about the expired value
+          additionalProperties: false
+          properties:
+            param_name:
+              type: string
+              description: Name of the parameter with expired value
+              maxLength: 100
+          required:
+          - param_name
+        message:
+          type: string
+          description: Human-readable error message
+          maxLength: 500
+        status:
+          type: string
+          description: Status of the response
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+    CannotPerformActionError:
+      type: object
+      description: Error response when user cannot perform action on a record
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of error results
+          maxItems: 100
+          items:
+            type: object
+            description: Error details for cannot perform action
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Error code indicating the type of error
+                enum:
+                - CANNOT_PERFORM_ACTION
+              details:
+                type: object
+                description: Additional details about the error
+                additionalProperties: false
+              message:
+                type: string
+                description: Human-readable error message
+                maxLength: 500
+              status:
+                type: string
+                description: Status of the response
+                enum:
+                - error
+            required:
+            - code
+            - details
+            - message
+            - status
+      required:
+      - data
     FileSizeExceedsError:
       type: object
       description: Error response when attachment file size exceeds the limit
@@ -3890,146 +3857,39 @@ components:
             - status
       required:
       - data
-    NoPermissionError_2:
+    RequiredParamMissingError:
       type: object
-      description: Error response when user lacks required permissions
+      description: Error response for required parameter missing
       additionalProperties: false
       properties:
-        data:
-          type: array
-          description: Array of error results
-          maxItems: 200
-          items:
-            type: object
-            description: Error details for permission denied
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Error code indicating the type of error
-                enum:
-                - NO_PERMISSION
-              details:
-                type: object
-                description: Additional details about required permissions
-                additionalProperties: false
-                properties:
-                  permissions:
-                    type: array
-                    description: List of required permissions
-                    maxItems: 10
-                    items:
-                      type: string
-                      description: Permission name
-                      maxLength: 255
-                required:
-                - permissions
-              message:
-                type: string
-                description: Human-readable error message
-                maxLength: 500
-              status:
-                type: string
-                description: Status of the response
-                enum:
-                - error
-            required:
-            - code
-            - details
-            - message
-            - status
+        code:
+          type: string
+          description: Error code indicating the type of error
+          enum:
+          - REQUIRED_PARAM_MISSING
+        details:
+          type: object
+          description: Additional details about the error
+          additionalProperties: true
+          properties:
+            param_name:
+              type: string
+              description: The name of the missing parameter
+              maxLength: 255
+        message:
+          type: string
+          description: Human-readable error message
+          maxLength: 500
+        status:
+          type: string
+          description: Status of the response
+          enum:
+          - error
       required:
-      - data
-    CannotPerformActionError_2:
-      type: object
-      description: Error response when user cannot perform action on a record
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of error results
-          maxItems: 200
-          items:
-            type: object
-            description: Error details for cannot perform action
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Error code indicating the type of error
-                enum:
-                - CANNOT_PERFORM_ACTION
-              details:
-                type: object
-                description: Additional details about the error
-                additionalProperties: false
-              message:
-                type: string
-                description: Human-readable error message
-                maxLength: 500
-              status:
-                type: string
-                description: Status of the response
-                enum:
-                - error
-            required:
-            - code
-            - details
-            - message
-            - status
-      required:
-      - data
-    NotAllowedError_2:
-      type: object
-      description: Error response when operation is not allowed
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of error results
-          maxItems: 200
-          items:
-            type: object
-            description: Error details for not allowed operation
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Error code indicating the type of error
-                enum:
-                - NOT_ALLOWED
-              details:
-                type: object
-                description: Additional details about the error
-                additionalProperties: false
-                properties:
-                  api_name:
-                    type: string
-                    description: API name of the field
-                    maxLength: 255
-                  json_path:
-                    type: string
-                    description: JSON path to the field
-                    maxLength: 500
-                required:
-                - api_name
-                - json_path
-              message:
-                type: string
-                description: Human-readable error message
-                maxLength: 500
-              status:
-                type: string
-                description: Status of the response
-                enum:
-                - error
-            required:
-            - code
-            - details
-            - message
-            - status
-      required:
-      - data
+      - code
+      - details
+      - message
+      - status
     MandatoryNotFoundError_2:
       type: object
       description: Error response for mandatory field not found
@@ -4101,6 +3961,107 @@ components:
                 type: object
                 description: Additional details about the error, can include various constraint information
                 additionalProperties: true
+              message:
+                type: string
+                description: Human-readable error message
+                maxLength: 500
+              status:
+                type: string
+                description: Status of the response
+                enum:
+                - error
+            required:
+            - code
+            - details
+            - message
+            - status
+      required:
+      - data
+    NotAllowedError_2:
+      type: object
+      description: Error response when operation is not allowed
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of error results
+          maxItems: 200
+          items:
+            type: object
+            description: Error details for not allowed operation
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Error code indicating the type of error
+                enum:
+                - NOT_ALLOWED
+              details:
+                type: object
+                description: Additional details about the error
+                additionalProperties: false
+                properties:
+                  api_name:
+                    type: string
+                    description: API name of the field
+                    maxLength: 255
+                  json_path:
+                    type: string
+                    description: JSON path to the field
+                    maxLength: 500
+                required:
+                - api_name
+                - json_path
+              message:
+                type: string
+                description: Human-readable error message
+                maxLength: 500
+              status:
+                type: string
+                description: Status of the response
+                enum:
+                - error
+            required:
+            - code
+            - details
+            - message
+            - status
+      required:
+      - data
+    NoPermissionError_2:
+      type: object
+      description: Error response when user lacks required permissions
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of error results
+          maxItems: 200
+          items:
+            type: object
+            description: Error details for permission denied
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Error code indicating the type of error
+                enum:
+                - NO_PERMISSION
+              details:
+                type: object
+                description: Additional details about required permissions
+                additionalProperties: false
+                properties:
+                  permissions:
+                    type: array
+                    description: List of required permissions
+                    maxItems: 10
+                    items:
+                      type: string
+                      description: Permission name
+                      maxLength: 255
+                required:
+                - permissions
               message:
                 type: string
                 description: Human-readable error message
@@ -4209,6 +4170,45 @@ components:
       - details
       - message
       - status
+    CannotPerformActionError_2:
+      type: object
+      description: Error response when user cannot perform action on a record
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of error results
+          maxItems: 200
+          items:
+            type: object
+            description: Error details for cannot perform action
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Error code indicating the type of error
+                enum:
+                - CANNOT_PERFORM_ACTION
+              details:
+                type: object
+                description: Additional details about the error
+                additionalProperties: false
+              message:
+                type: string
+                description: Human-readable error message
+                maxLength: 500
+              status:
+                type: string
+                description: Status of the response
+                enum:
+                - error
+            required:
+            - code
+            - details
+            - message
+            - status
+      required:
+      - data
     FileSizeExceedsError_2:
       type: object
       description: Error response when attachment file size exceeds the limit
@@ -4261,8 +4261,6 @@ components:
       required:
       - data
   responses:
-    NoContent:
-      description: No content - The request was successful but there are no records to return
     InternalServerError:
       description: Internal Server Error - An unexpected error occurred on the server
       content:
@@ -4295,6 +4293,8 @@ components:
             - details
             - message
             - status
+    NoContent:
+      description: No content - The request was successful but there are no records to return
     NotFound:
       description: Not Found - The requested resource does not exist
       content:

@@ -2518,14 +2518,6 @@ paths:
           description: API Server URL TLD
 components:
   parameters:
-    Role:
-      name: role
-      in: path
-      description: The unique identifier of the contact role.
-      required: true
-      schema:
-        type: string
-        maxLength: 255
     Ids:
       name: ids
       in: query
@@ -2534,16 +2526,14 @@ components:
       schema:
         type: string
         maxLength: 255
-    MessageId:
-      description: The ID of the email message to be linked or unlinked
-      name: messageId
+    Role:
+      name: role
       in: path
+      description: The unique identifier of the contact role.
       required: true
       schema:
         type: string
-        enum:
-        - fa3efd2e3d21c63dfb3a1ead81cfbcacef42ff6e3779f724ad799f911f6b8cc6ba45cad7c0856e06f2f6ea8b0f41798b
-        - fa3efd2e3d21c63dfb3a1ead81cfbcac3428b9eb290577709d7f12289b5aa1bf5b2bd0f6744144c7a9aae67068ccdc7f
+        maxLength: 255
     MessageIds:
       description: The IDs of the email messages to be linked
       name: message_ids
@@ -2563,6 +2553,16 @@ components:
         type: string
         enum:
         - '1238016000000362001'
+    MessageId:
+      description: The ID of the email message to be linked or unlinked
+      name: messageId
+      in: path
+      required: true
+      schema:
+        type: string
+        enum:
+        - fa3efd2e3d21c63dfb3a1ead81cfbcacef42ff6e3779f724ad799f911f6b8cc6ba45cad7c0856e06f2f6ea8b0f41798b
+        - fa3efd2e3d21c63dfb3a1ead81cfbcac3428b9eb290577709d7f12289b5aa1bf5b2bd0f6744144c7a9aae67068ccdc7f
     ContactId:
       name: contactId
       description: The ID of the contact to which the email is to be linked or unlinked

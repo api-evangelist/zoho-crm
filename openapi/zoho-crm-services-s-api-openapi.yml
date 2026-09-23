@@ -409,6 +409,894 @@ paths:
       - Services S
 components:
   schemas:
+    ErrorResponseCore980155013:
+      type: object
+      additionalProperties: false
+      description: One of the expected parameter is missing
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - REQUIRED_PARAM_MISSING
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            param:
+              type: string
+              description: 'Detail field: param'
+              maxLength: 255
+          required:
+          - param
+        message:
+          type: string
+          description: Error message
+          enum:
+          - One of the expected parameter is missing
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    GETAvailableTimingsNested:
+      type: object
+      additionalProperties: false
+      description: Nested schema for Available_Timings
+      properties:
+        From:
+          type: string
+          description: 'Field: From'
+          maxLength: 255
+        To:
+          type: string
+          description: 'Field: To'
+          maxLength: 255
+      required:
+      - From
+      - To
+    PostservicessRequest:
+      type: object
+      additionalProperties: false
+      description: Request body schema
+      properties:
+        data:
+          type: array
+          description: data array  (Required)
+          items:
+            $ref: '#/components/schemas/DataNested'
+          maxItems: 5
+        skip_mandatory:
+          type:
+          - boolean
+          - 'null'
+          description: boolean
+      required:
+      - data
+    ErrorResponseCore1915970813:
+      type: object
+      additionalProperties: false
+      description: Job Sheet is not configured in services preferences
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - NOT_ALLOWED
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Job Sheet is not configured in services preferences
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    ErrorResponseCore48783029:
+      type: object
+      additionalProperties: false
+      description: The given Availability Type is not in picklist
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - The given Availability Type is not in picklist
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    CreatedByNested:
+      type: object
+      additionalProperties: false
+      description: Nested schema for Created_By
+      properties:
+        name:
+          type: string
+          description: 'Field: name'
+          maxLength: 255
+        id:
+          type: string
+          description: 'Field: id'
+          maxLength: 255
+    GETDataSourceDetailsNested:
+      type: object
+      additionalProperties: false
+      description: Nested schema for $data_source_details
+    ErrorResponseCore1202290576:
+      type: object
+      additionalProperties: false
+      description: record not deleted
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            resource_path_index:
+              type: integer
+              format: int32
+              description: 'Detail field: resource_path_index'
+          required:
+          - resource_path_index
+        message:
+          type: string
+          description: Error message
+          enum:
+          - record not deleted
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    ErrorResponseCore964180820:
+      type: object
+      additionalProperties: false
+      description: Available Dates value in holiday or Not in BusinessDays
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - DEPENDENT_MISMATCH
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            dependee:
+              type: object
+              additionalProperties: false
+              description: 'Detail field: dependee'
+              properties:
+                api_name:
+                  type: string
+                  description: 'Nested detail field: api_name'
+                  maxLength: 255
+                json_path:
+                  type: string
+                  description: 'Nested detail field: json_path'
+                  maxLength: 1000
+              required:
+              - api_name
+              - json_path
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - dependee
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Available Dates value in holiday or Not in BusinessDays
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    MembersBase:
+      type: object
+      additionalProperties: true
+      description: Base schema for Members
+      properties:
+        module:
+          type:
+          - string
+          - 'null'
+          description: member module
+          maxLength: 100
+        name:
+          type:
+          - string
+          - 'null'
+          description: name of the owner
+          enum:
+          - Madeshwaran G
+          maxLength: 100
+        id:
+          type:
+          - string
+          - 'null'
+          description: id of the owner
+          enum:
+          - '4671651000000635001'
+          maxLength: 100
+    AvailableTimingsNested:
+      type: object
+      additionalProperties: false
+      description: contains the service availability timing
+      properties:
+        From:
+          type:
+          - string
+          - 'null'
+          description: service starts from time
+          maxLength: 5
+        To:
+          type:
+          - string
+          - 'null'
+          description: 'service end time '
+          maxLength: 5
+    ErrorResponseCore775669499:
+      type: object
+      additionalProperties: false
+      description: When the service status is available, unavailable till must be lesser than current Time
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - DEPENDENT_MISMATCH
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            dependee:
+              type: object
+              additionalProperties: false
+              description: 'Detail field: dependee'
+              properties:
+                api_name:
+                  type: string
+                  description: 'Nested detail field: api_name'
+                  maxLength: 255
+                json_path:
+                  type: string
+                  description: 'Nested detail field: json_path'
+                  maxLength: 1000
+              required:
+              - api_name
+              - json_path
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - dependee
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - When the service status is available, unavailable till must be lesser than current Time
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    ErrorResponseCore591812267:
+      type: object
+      additionalProperties: false
+      description: Auto-generated from ApiDefinition for INVALID_DATA
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            expected_data_type:
+              type: string
+              description: 'Detail field: expected_data_type'
+              maxLength: 255
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - expected_data_type
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Invalid data type
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    ModifiedByNested:
+      type: object
+      additionalProperties: false
+      description: Nested schema for Modified_By
+      properties:
+        name:
+          type: string
+          description: 'Field: name'
+          maxLength: 255
+        id:
+          type: string
+          description: 'Field: id'
+          maxLength: 255
+    GETMembersNested:
+      type: object
+      additionalProperties: false
+      description: Nested schema for Members
+      properties:
+        module:
+          type: string
+          description: 'Field: module'
+          maxLength: 255
+        name:
+          type: string
+          description: 'Field: name'
+          maxLength: 255
+        id:
+          type: string
+          description: 'Field: id'
+          maxLength: 255
+      required:
+      - id
+      - module
+      - name
+    DetailsNested:
+      type: object
+      additionalProperties: true
+      description: Nested schema for details
+      properties:
+        Modified_Time:
+          type: string
+          description: 'Field: Modified_Time'
+          maxLength: 255
+        Modified_By:
+          $ref: '#/components/schemas/ModifiedByNested'
+        Created_Time:
+          type: string
+          description: 'Field: Created_Time'
+          maxLength: 255
+        id:
+          type: string
+          description: 'Field: id'
+          maxLength: 255
+        Created_By:
+          $ref: '#/components/schemas/CreatedByNested'
+    OwnerBase:
+      type: object
+      additionalProperties: true
+      description: Base schema for Owner
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+          description: name of the owner
+          enum:
+          - Madeshwaran G
+          maxLength: 100
+        id:
+          type:
+          - string
+          - 'null'
+          description: id of the owner
+          enum:
+          - '4671651000000635001'
+          maxLength: 100
+        email:
+          type:
+          - string
+          - 'null'
+          description: email
+          enum:
+          - madeshwaran.g@zohocorp.com
+          maxLength: 100
+    ErrorResponseCore1835963120:
+      type: object
+      additionalProperties: false
+      description: Unavailable Till must be greater than Unavailable From
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - DEPENDENT_MISMATCH
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            dependee:
+              type: object
+              additionalProperties: false
+              description: 'Detail field: dependee'
+              properties:
+                api_name:
+                  type: string
+                  description: 'Nested detail field: api_name'
+                  maxLength: 255
+                json_path:
+                  type: string
+                  description: 'Nested detail field: json_path'
+                  maxLength: 1000
+              required:
+              - api_name
+              - json_path
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - dependee
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Unavailable Till must be greater than Unavailable From
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    DataNested:
+      type: object
+      additionalProperties: false
+      description: 'data array '
+      properties:
+        Job_Sheet_Required:
+          type:
+          - string
+          - 'null'
+          description: is job sheet required for the service
+          maxLength: 3
+        Owner:
+          $ref: '#/components/schemas/OwnerNested'
+          description: owner of the service
+        Available_Timings:
+          type:
+          - array
+          - 'null'
+          description: contains the service availability timing
+          items:
+            $ref: '#/components/schemas/AvailableTimingsNested'
+          maxItems: 4
+        Description:
+          type:
+          - string
+          - 'null'
+          description: Represents the description of the service
+          maxLength: 32000
+        Available_From:
+          type:
+          - string
+          - 'null'
+          format: date
+          description: service availability start time (this field is mandatory when service availability type is specific date range)
+          maxLength: 100
+        Service_Name:
+          type: string
+          description: name of the service (Required)
+          maxLength: 120
+        Available_Till:
+          type:
+          - string
+          - 'null'
+          format: date
+          description: service availability end time (this field is mandatory when service availability type is specific date range)
+          maxLength: 100
+        Available_Days:
+          type:
+          - array
+          - 'null'
+          description: contains days (this field is mandatory when availability type is set to specific days)
+          items:
+            type: string
+            maxLength: 225
+            description: service available days
+          maxItems: 7
+        Duration:
+          type: integer
+          format: int32
+          description: duration of the service (Required)
+        Tax:
+          type:
+          - array
+          - 'null'
+          description: Contains the ID and value of the tax applied to the service cost
+          items:
+            $ref: '#/components/schemas/TaxNested'
+          maxItems: 2
+        Price:
+          type: integer
+          format: int32
+          description: price of the service (Required)
+        Layout:
+          $ref: '#/components/schemas/LayoutNested'
+          description: Layout id
+        zia_suggested_users:
+          type:
+          - object
+          - 'null'
+          additionalProperties: false
+          description: zia
+        Availability_Type:
+          type: string
+          description: service availability type i.e specific date range or specific days  (Required)
+          maxLength: 100
+        $zia_owner_assignment:
+          type:
+          - string
+          - 'null'
+          description: zia
+          maxLength: 32
+        Members:
+          type: array
+          description: members who does this service (contains multiple members) (Required)
+          items:
+            $ref: '#/components/schemas/MembersNested'
+          maxItems: 5
+        Available_Dates:
+          type:
+          - array
+          - 'null'
+          description: contains available date (this field is mandatory when availability type is specific dates )
+          items:
+            description: service available dates
+            type: string
+            maxLength: 255
+          maxItems: 3
+        Location:
+          type: string
+          description: Location where the service held (Required)
+          maxLength: 100
+      required:
+      - Availability_Type
+      - Duration
+      - Location
+      - Members
+      - Price
+      - Service_Name
+    ErrorResponseCore1168955151:
+      type: object
+      additionalProperties: true
+      description: Auto-generated from 207 Multi-Status error item
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - MANDATORY_NOT_FOUND
+        details:
+          type: object
+          additionalProperties: true
+          description: Error details with validation information
+          properties:
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+        message:
+          type: string
+          description: Error message
+          maxLength: 100
+        status:
+          type: string
+          description: Error status
+          maxLength: 100
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    PostservicessResponse201:
+      type: object
+      additionalProperties: false
+      description: services post response
+      properties:
+        data:
+          type: array
+          description: 'Field: data'
+          items:
+            $ref: '#/components/schemas/DataNested1'
+          maxItems: 2
+    DataError:
+      type: object
+      description: Generated schema for dataError
+      additionalProperties: true
+      properties:
+        code:
+          description: error code
+          maxLength: 255
+          type: string
+        details:
+          type: object
+          additionalProperties: false
+          description: error details with validation information
+          properties:
+            api_name:
+              description: name of the invalid field
+              type: string
+              maxLength: 255
+            json_path:
+              description: json path of the invalid field
+              type: string
+              maxLength: 1000
+          required: []
+        message:
+          type: string
+          description: error message
+          maxLength: 1000
+        status:
+          description: status
+          type: string
+          maxLength: 1000
+      required:
+      - code
+      - details
+      - message
+      - status
+    GETHasMoreNested:
+      type: object
+      additionalProperties: false
+      description: Nested schema for $has_more
+      properties:
+        Members:
+          type: boolean
+          description: 'Field: Members'
+      required:
+      - Members
+    ErrorResponseCore1569170772:
+      type: object
+      additionalProperties: false
+      description: Service available time does not satisfy the business timing
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - DEPENDENT_MISMATCH
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            dependee:
+              type: object
+              additionalProperties: false
+              description: 'Detail field: dependee'
+              properties:
+                api_name:
+                  type: string
+                  description: 'Nested detail field: api_name'
+                  maxLength: 255
+                json_path:
+                  type: string
+                  description: 'Nested detail field: json_path'
+                  maxLength: 1000
+              required:
+              - api_name
+              - json_path
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - dependee
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Service available time does not satisfy the business timing
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    DeleteservicessResponse200:
+      type: object
+      additionalProperties: false
+      description: services records delete , success response
+      properties:
+        data:
+          type: array
+          description: 'Field: data'
+          items:
+            $ref: '#/components/schemas/DataNested1'
+          maxItems: 1
+    ErrorResponseCore1805991557:
+      type: object
+      additionalProperties: false
+      description: Unavailable from must not be greater than current Time
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Unavailable from must not be greater than current Time
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
     ErrorResponseCore1604071034:
       type: object
       additionalProperties: false
@@ -456,6 +1344,321 @@ components:
       - message
       - status
       title: Error Response Core
+    ErrorResponseCore1872678286:
+      type: object
+      additionalProperties: false
+      description: One of the expected parameter is missing
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - REQUIRED_PARAM_MISSING
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            param_name:
+              type: string
+              description: 'Detail field: param_name'
+              maxLength: 255
+          required:
+          - param_name
+        message:
+          type: string
+          description: Error message
+          enum:
+          - One of the expected parameter is missing
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    ErrorResponseCore531684933:
+      type: object
+      additionalProperties: false
+      description: Job_Sheet_Section__s can have value only when value of Job_Sheet_Required is Yes
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - DEPENDENT_MISMATCH
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            dependee:
+              type: object
+              additionalProperties: false
+              description: 'Detail field: dependee'
+              properties:
+                api_name:
+                  type: string
+                  description: 'Nested detail field: api_name'
+                  maxLength: 255
+                json_path:
+                  type: string
+                  description: 'Nested detail field: json_path'
+                  maxLength: 1000
+              required:
+              - api_name
+              - json_path
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - dependee
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Job_Sheet_Section__s can have value only when value of Job_Sheet_Required is Yes
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    MembersNested:
+      type: object
+      additionalProperties: false
+      description: contains member details
+      properties:
+        name:
+          type:
+          - string
+          - 'null'
+          description: name of the member
+          maxLength: 8
+        Members:
+          $ref: '#/components/schemas/MembersNested'
+          description: contains member details
+        id:
+          type:
+          - string
+          - 'null'
+          description: id of the member
+          maxLength: 18
+    ErrorResponseCore695778820:
+      type: object
+      additionalProperties: false
+      description: Dependent Field missing
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - DEPENDENT_FIELD_MISSING
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            dependee:
+              type: object
+              additionalProperties: false
+              description: 'Detail field: dependee'
+              properties:
+                api_name:
+                  type: string
+                  description: 'Nested detail field: api_name'
+                  maxLength: 255
+                json_path:
+                  type: string
+                  description: 'Nested detail field: json_path'
+                  maxLength: 1000
+              required:
+              - api_name
+              - json_path
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - dependee
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Dependent Field missing
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    GETModifiedByNested:
+      type: object
+      additionalProperties: false
+      description: Nested schema for Modified_By
+      properties:
+        name:
+          type: string
+          description: 'Field: name'
+          maxLength: 255
+        id:
+          type: string
+          description: 'Field: id'
+          maxLength: 255
+        email:
+          type: string
+          description: 'Field: email'
+          maxLength: 255
+      required:
+      - email
+      - id
+      - name
+    ErrorResponseCore1173663876:
+      type: object
+      additionalProperties: false
+      description: When the service status is available, either both unavailable till and unavailable from can be null or both unavailable from and unavailable till can have value
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - DEPENDENT_MISMATCH
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            dependee:
+              type: object
+              additionalProperties: false
+              description: 'Detail field: dependee'
+              properties:
+                api_name:
+                  type: string
+                  description: 'Nested detail field: api_name'
+                  maxLength: 255
+                json_path:
+                  type: string
+                  description: 'Nested detail field: json_path'
+                  maxLength: 1000
+              required:
+              - api_name
+              - json_path
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - dependee
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - When the service status is available, either both unavailable till and unavailable from can be null or both unavailable from and unavailable till can have value
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    ErrorResponseCore542688165:
+      type: object
+      additionalProperties: false
+      description: More than 100 users cannot be associated
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - LIMIT_EXCEEDED
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            limit:
+              type: integer
+              format: int32
+              description: 'Detail field: limit'
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+          - limit
+        message:
+          type: string
+          description: Error message
+          enum:
+          - More than 100 users cannot be associated
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    GetservicessResponse200:
+      type: object
+      additionalProperties: true
+      description: services records get , success response
+      properties:
+        data:
+          type: array
+          description: 'Field: data'
+          items:
+            $ref: '#/components/schemas/GETDataNested'
+          maxItems: 1
+      required:
+      - data
     GETDataNested:
       type: object
       additionalProperties: true
@@ -644,68 +1847,25 @@ components:
       - Unavailable_From
       - Unavailable_Till
       - id
-    MembersBase:
-      type: object
-      additionalProperties: true
-      description: Base schema for Members
-      properties:
-        module:
-          type:
-          - string
-          - 'null'
-          description: member module
-          maxLength: 100
-        name:
-          type:
-          - string
-          - 'null'
-          description: name of the owner
-          enum:
-          - Madeshwaran G
-          maxLength: 100
-        id:
-          type:
-          - string
-          - 'null'
-          description: id of the owner
-          enum:
-          - '4671651000000635001'
-          maxLength: 100
-    MembersNested:
+    ErrorResponseCore197782636:
       type: object
       additionalProperties: false
-      description: contains member details
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-          description: name of the member
-          maxLength: 8
-        Members:
-          $ref: '#/components/schemas/MembersNested'
-          description: contains member details
-        id:
-          type:
-          - string
-          - 'null'
-          description: id of the member
-          maxLength: 18
-    ErrorResponseCore1168955151:
-      type: object
-      additionalProperties: true
-      description: Auto-generated from 207 Multi-Status error item
+      description: invalid data
       properties:
         code:
           type: string
           description: Error code
           enum:
-          - MANDATORY_NOT_FOUND
+          - INVALID_DATA
         details:
           type: object
-          additionalProperties: true
+          additionalProperties: false
           description: Error details with validation information
           properties:
+            expected_data_type:
+              type: string
+              description: 'Detail field: expected_data_type'
+              maxLength: 255
             api_name:
               type: string
               description: 'Detail field: api_name'
@@ -716,25 +1876,42 @@ components:
               maxLength: 1000
           required:
           - api_name
+          - expected_data_type
           - json_path
         message:
           type: string
           description: Error message
-          maxLength: 100
+          enum:
+          - invalid data
         status:
           type: string
           description: Error status
-          maxLength: 100
+          enum:
+          - error
       required:
       - code
       - details
       - message
       - status
       title: Error Response Core
-    GETModifiedByNested:
+    GETMembersNested1:
       type: object
       additionalProperties: false
-      description: Nested schema for Modified_By
+      description: Nested schema for Members
+      properties:
+        id:
+          type: string
+          description: 'Field: id'
+          maxLength: 255
+        Members:
+          $ref: '#/components/schemas/GETMembersNested'
+      required:
+      - Members
+      - id
+    GETCreatedByNested:
+      type: object
+      additionalProperties: false
+      description: Nested schema for Created_By
       properties:
         name:
           type: string
@@ -752,677 +1929,89 @@ components:
       - email
       - id
       - name
-    OwnerBase:
+    ErrorResponseCore1484615382:
       type: object
-      additionalProperties: true
-      description: Base schema for Owner
+      additionalProperties: false
+      description: Members is not Active
       properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            user_status:
+              type: string
+              description: 'Detail field: user_status'
+              maxLength: 255
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+          - user_status
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Members is not Active
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    PutservicessRequest:
+      type: object
+      additionalProperties: false
+      description: Request body schema
+      properties:
+        data:
+          type: array
+          description: a (Required)
+          items:
+            $ref: '#/components/schemas/DataNestedV2'
+          maxItems: 100
+      required:
+      - data
+    OwnerNested:
+      type: object
+      additionalProperties: false
+      description: owner of the service
+      properties:
+        full_name:
+          type:
+          - string
+          - 'null'
+          description: full name of the owner
+          maxLength: 8
         name:
           type:
           - string
           - 'null'
           description: name of the owner
-          enum:
-          - Madeshwaran G
-          maxLength: 100
+          maxLength: 8
         id:
           type:
           - string
           - 'null'
           description: id of the owner
-          enum:
-          - '4671651000000635001'
-          maxLength: 100
-        email:
-          type:
-          - string
-          - 'null'
-          description: email
-          enum:
-          - madeshwaran.g@zohocorp.com
-          maxLength: 100
-    ErrorResponseCore964180820:
-      type: object
-      additionalProperties: false
-      description: Available Dates value in holiday or Not in BusinessDays
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - DEPENDENT_MISMATCH
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            dependee:
-              type: object
-              additionalProperties: false
-              description: 'Detail field: dependee'
-              properties:
-                api_name:
-                  type: string
-                  description: 'Nested detail field: api_name'
-                  maxLength: 255
-                json_path:
-                  type: string
-                  description: 'Nested detail field: json_path'
-                  maxLength: 1000
-              required:
-              - api_name
-              - json_path
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - dependee
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Available Dates value in holiday or Not in BusinessDays
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore695778820:
-      type: object
-      additionalProperties: false
-      description: Dependent Field missing
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - DEPENDENT_FIELD_MISSING
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            dependee:
-              type: object
-              additionalProperties: false
-              description: 'Detail field: dependee'
-              properties:
-                api_name:
-                  type: string
-                  description: 'Nested detail field: api_name'
-                  maxLength: 255
-                json_path:
-                  type: string
-                  description: 'Nested detail field: json_path'
-                  maxLength: 1000
-              required:
-              - api_name
-              - json_path
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - dependee
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Dependent Field missing
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore1872678286:
-      type: object
-      additionalProperties: false
-      description: One of the expected parameter is missing
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - REQUIRED_PARAM_MISSING
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            param_name:
-              type: string
-              description: 'Detail field: param_name'
-              maxLength: 255
-          required:
-          - param_name
-        message:
-          type: string
-          description: Error message
-          enum:
-          - One of the expected parameter is missing
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore1173663876:
-      type: object
-      additionalProperties: false
-      description: When the service status is available, either both unavailable till and unavailable from can be null or both unavailable from and unavailable till can have value
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - DEPENDENT_MISMATCH
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            dependee:
-              type: object
-              additionalProperties: false
-              description: 'Detail field: dependee'
-              properties:
-                api_name:
-                  type: string
-                  description: 'Nested detail field: api_name'
-                  maxLength: 255
-                json_path:
-                  type: string
-                  description: 'Nested detail field: json_path'
-                  maxLength: 1000
-              required:
-              - api_name
-              - json_path
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - dependee
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - When the service status is available, either both unavailable till and unavailable from can be null or both unavailable from and unavailable till can have value
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore1335501272:
-      type: object
-      additionalProperties: false
-      description: To value must be Greater than From value
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - DEPENDENT_MISMATCH
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            dependee:
-              type: object
-              additionalProperties: false
-              description: 'Detail field: dependee'
-              properties:
-                api_name:
-                  type: string
-                  description: 'Nested detail field: api_name'
-                  maxLength: 255
-                json_path:
-                  type: string
-                  description: 'Nested detail field: json_path'
-                  maxLength: 1000
-              required:
-              - api_name
-              - json_path
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - dependee
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - To value must be Greater than From value
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    DetailsNested:
-      type: object
-      additionalProperties: true
-      description: Nested schema for details
-      properties:
-        Modified_Time:
-          type: string
-          description: 'Field: Modified_Time'
-          maxLength: 255
-        Modified_By:
-          $ref: '#/components/schemas/ModifiedByNested'
-        Created_Time:
-          type: string
-          description: 'Field: Created_Time'
-          maxLength: 255
-        id:
-          type: string
-          description: 'Field: id'
-          maxLength: 255
-        Created_By:
-          $ref: '#/components/schemas/CreatedByNested'
-    ErrorResponseCore1835963120:
-      type: object
-      additionalProperties: false
-      description: Unavailable Till must be greater than Unavailable From
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - DEPENDENT_MISMATCH
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            dependee:
-              type: object
-              additionalProperties: false
-              description: 'Detail field: dependee'
-              properties:
-                api_name:
-                  type: string
-                  description: 'Nested detail field: api_name'
-                  maxLength: 255
-                json_path:
-                  type: string
-                  description: 'Nested detail field: json_path'
-                  maxLength: 1000
-              required:
-              - api_name
-              - json_path
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - dependee
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Unavailable Till must be greater than Unavailable From
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore542688165:
-      type: object
-      additionalProperties: false
-      description: More than 100 users cannot be associated
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - LIMIT_EXCEEDED
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            limit:
-              type: integer
-              format: int32
-              description: 'Detail field: limit'
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-          - limit
-        message:
-          type: string
-          description: Error message
-          enum:
-          - More than 100 users cannot be associated
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore531684933:
-      type: object
-      additionalProperties: false
-      description: Job_Sheet_Section__s can have value only when value of Job_Sheet_Required is Yes
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - DEPENDENT_MISMATCH
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            dependee:
-              type: object
-              additionalProperties: false
-              description: 'Detail field: dependee'
-              properties:
-                api_name:
-                  type: string
-                  description: 'Nested detail field: api_name'
-                  maxLength: 255
-                json_path:
-                  type: string
-                  description: 'Nested detail field: json_path'
-                  maxLength: 1000
-              required:
-              - api_name
-              - json_path
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - dependee
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Job_Sheet_Section__s can have value only when value of Job_Sheet_Required is Yes
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore980155013:
-      type: object
-      additionalProperties: false
-      description: One of the expected parameter is missing
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - REQUIRED_PARAM_MISSING
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            param:
-              type: string
-              description: 'Detail field: param'
-              maxLength: 255
-          required:
-          - param
-        message:
-          type: string
-          description: Error message
-          enum:
-          - One of the expected parameter is missing
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore297287888:
-      type: object
-      additionalProperties: true
-      description: Auto-generated from 207 Multi-Status error item
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-          maxLength: 255
-        details:
-          type: object
-          additionalProperties: true
-          description: Error details with validation information
-          properties:
-            id:
-              type: string
-              description: 'Detail field: id'
-              maxLength: 255
-          required: []
-        message:
-          type: string
-          description: Error message
-          maxLength: 100
-        status:
-          type: string
-          description: Error status
-          maxLength: 100
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore48783029:
-      type: object
-      additionalProperties: false
-      description: The given Availability Type is not in picklist
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - The given Availability Type is not in picklist
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    DataError:
-      type: object
-      description: Generated schema for dataError
-      additionalProperties: true
-      properties:
-        code:
-          description: error code
-          maxLength: 255
-          type: string
-        details:
-          type: object
-          additionalProperties: false
-          description: error details with validation information
-          properties:
-            api_name:
-              description: name of the invalid field
-              type: string
-              maxLength: 255
-            json_path:
-              description: json path of the invalid field
-              type: string
-              maxLength: 1000
-          required: []
-        message:
-          type: string
-          description: error message
-          maxLength: 1000
-        status:
-          description: status
-          type: string
-          maxLength: 1000
-      required:
-      - code
-      - details
-      - message
-      - status
-    Post207multistatusResponse207:
-      type: object
-      additionalProperties: false
-      description: Generated schema for dataSuccess
-      properties:
-        details:
-          $ref: '#/components/schemas/DetailsNested'
-        code:
-          type: string
-          description: 'Field: code'
-          maxLength: 255
-        message:
-          type: string
-          description: 'Field: message'
-          maxLength: 255
-        status:
-          type: string
-          description: 'Field: status'
-          maxLength: 255
-    GETHasMoreNested:
-      type: object
-      additionalProperties: false
-      description: Nested schema for $has_more
-      properties:
-        Members:
-          type: boolean
-          description: 'Field: Members'
-      required:
-      - Members
-    GETDataSourceDetailsNested:
-      type: object
-      additionalProperties: false
-      description: Nested schema for $data_source_details
+          maxLength: 18
     DataNestedBase:
       type: object
       additionalProperties: true
@@ -1588,16 +2177,35 @@ components:
           - 'null'
           description: 'service unavailable till '
           maxLength: 255
-    ErrorResponseCore416413920:
+    DataNested1:
       type: object
       additionalProperties: false
-      description: As service availability is not valid, status cannot be changed
+      description: Nested schema for data
+      properties:
+        code:
+          type: string
+          description: 'Field: code'
+          maxLength: 255
+        details:
+          $ref: '#/components/schemas/DetailsNested'
+        message:
+          type: string
+          description: 'Field: message'
+          maxLength: 255
+        status:
+          type: string
+          description: 'Field: status'
+          maxLength: 255
+    ErrorResponseCore541683400:
+      type: object
+      additionalProperties: false
+      description: Unavailable From time does not fall within service availability
       properties:
         code:
           type: string
           description: Error code
           enum:
-          - NOT_ALLOWED
+          - INVALID_DATA
         details:
           type: object
           additionalProperties: false
@@ -1618,7 +2226,49 @@ components:
           type: string
           description: Error message
           enum:
-          - As service availability is not valid, status cannot be changed
+          - Unavailable From time does not fall within service availability
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    ErrorResponseCore815194988:
+      type: object
+      additionalProperties: false
+      description: Duration value should not be greater than 24hrs or less than 5mins
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Duration value should not be greater than 24hrs or less than 5mins
         status:
           type: string
           description: Error status
@@ -1689,16 +2339,16 @@ components:
       - message
       - status
       title: Error Response Core
-    ErrorResponseCore541683400:
+    ErrorResponseCore416413920:
       type: object
       additionalProperties: false
-      description: Unavailable From time does not fall within service availability
+      description: As service availability is not valid, status cannot be changed
       properties:
         code:
           type: string
           description: Error code
           enum:
-          - INVALID_DATA
+          - NOT_ALLOWED
         details:
           type: object
           additionalProperties: false
@@ -1719,7 +2369,7 @@ components:
           type: string
           description: Error message
           enum:
-          - Unavailable From time does not fall within service availability
+          - As service availability is not valid, status cannot be changed
         status:
           type: string
           description: Error status
@@ -1731,169 +2381,30 @@ components:
       - message
       - status
       title: Error Response Core
-    PutservicessRequest:
+    OwnerNestedV2:
+      allOf:
+      - $ref: '#/components/schemas/OwnerBase'
+      - type: object
+        additionalProperties: true
+        description: Required fields for Owner in PUT
+        required:
+        - email
+      description: Operation-specific schema for Owner in PUT
+    ErrorResponseCore661033389:
       type: object
       additionalProperties: false
-      description: Request body schema
-      properties:
-        data:
-          type: array
-          description: a (Required)
-          items:
-            $ref: '#/components/schemas/DataNestedV2'
-          maxItems: 100
-      required:
-      - data
-    DataNested:
-      type: object
-      additionalProperties: false
-      description: 'data array '
-      properties:
-        Job_Sheet_Required:
-          type:
-          - string
-          - 'null'
-          description: is job sheet required for the service
-          maxLength: 3
-        Owner:
-          $ref: '#/components/schemas/OwnerNested'
-          description: owner of the service
-        Available_Timings:
-          type:
-          - array
-          - 'null'
-          description: contains the service availability timing
-          items:
-            $ref: '#/components/schemas/AvailableTimingsNested'
-          maxItems: 4
-        Description:
-          type:
-          - string
-          - 'null'
-          description: Represents the description of the service
-          maxLength: 32000
-        Available_From:
-          type:
-          - string
-          - 'null'
-          format: date
-          description: service availability start time (this field is mandatory when service availability type is specific date range)
-          maxLength: 100
-        Service_Name:
-          type: string
-          description: name of the service (Required)
-          maxLength: 120
-        Available_Till:
-          type:
-          - string
-          - 'null'
-          format: date
-          description: service availability end time (this field is mandatory when service availability type is specific date range)
-          maxLength: 100
-        Available_Days:
-          type:
-          - array
-          - 'null'
-          description: contains days (this field is mandatory when availability type is set to specific days)
-          items:
-            type: string
-            maxLength: 225
-            description: service available days
-          maxItems: 7
-        Duration:
-          type: integer
-          format: int32
-          description: duration of the service (Required)
-        Tax:
-          type:
-          - array
-          - 'null'
-          description: Contains the ID and value of the tax applied to the service cost
-          items:
-            $ref: '#/components/schemas/TaxNested'
-          maxItems: 2
-        Price:
-          type: integer
-          format: int32
-          description: price of the service (Required)
-        Layout:
-          $ref: '#/components/schemas/LayoutNested'
-          description: Layout id
-        zia_suggested_users:
-          type:
-          - object
-          - 'null'
-          additionalProperties: false
-          description: zia
-        Availability_Type:
-          type: string
-          description: service availability type i.e specific date range or specific days  (Required)
-          maxLength: 100
-        $zia_owner_assignment:
-          type:
-          - string
-          - 'null'
-          description: zia
-          maxLength: 32
-        Members:
-          type: array
-          description: members who does this service (contains multiple members) (Required)
-          items:
-            $ref: '#/components/schemas/MembersNested'
-          maxItems: 5
-        Available_Dates:
-          type:
-          - array
-          - 'null'
-          description: contains available date (this field is mandatory when availability type is specific dates )
-          items:
-            description: service available dates
-            type: string
-            maxLength: 255
-          maxItems: 3
-        Location:
-          type: string
-          description: Location where the service held (Required)
-          maxLength: 100
-      required:
-      - Availability_Type
-      - Duration
-      - Location
-      - Members
-      - Price
-      - Service_Name
-    CreatedByNested:
-      type: object
-      additionalProperties: false
-      description: Nested schema for Created_By
-      properties:
-        name:
-          type: string
-          description: 'Field: name'
-          maxLength: 255
-        id:
-          type: string
-          description: 'Field: id'
-          maxLength: 255
-    ErrorResponseCore1484615382:
-      type: object
-      additionalProperties: false
-      description: Members is not Active
+      description: required field not found
       properties:
         code:
           type: string
           description: Error code
           enum:
-          - INVALID_DATA
+          - MANDATORY_NOT_FOUND
         details:
           type: object
           additionalProperties: false
           description: Error details with validation information
           properties:
-            user_status:
-              type: string
-              description: 'Detail field: user_status'
-              maxLength: 255
             api_name:
               type: string
               description: 'Detail field: api_name'
@@ -1905,12 +2416,11 @@ components:
           required:
           - api_name
           - json_path
-          - user_status
         message:
           type: string
           description: Error message
           enum:
-          - Members is not Active
+          - required field not found
         status:
           type: string
           description: Error status
@@ -1933,81 +2443,10 @@ components:
             $ref: '#/components/schemas/OwnerNestedV2'
       description: Operation-specific schema for PUT
       unevaluatedProperties: false
-    ErrorResponseCore1924753111:
+    ErrorResponseCore1335501272:
       type: object
       additionalProperties: false
-      description: You cannot create more than 500 active services
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - LIMIT_EXCEEDED
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            limit:
-              type: integer
-              format: int32
-              description: 'Detail field: limit'
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-          - limit
-        message:
-          type: string
-          description: Error message
-          enum:
-          - You cannot create more than 500 active services
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    MembersitemBase:
-      type: object
-      additionalProperties: true
-      description: Base schema for MembersItem
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-          description: id of the owner
-          maxLength: 100
-        Members:
-          $ref: '#/components/schemas/MembersBase'
-    PostservicessResponse201:
-      type: object
-      additionalProperties: false
-      description: services post response
-      properties:
-        data:
-          type: array
-          description: 'Field: data'
-          items:
-            $ref: '#/components/schemas/DataNested1'
-          maxItems: 2
-    ErrorResponseCore775669499:
-      type: object
-      additionalProperties: false
-      description: When the service status is available, unavailable till must be lesser than current Time
+      description: To value must be Greater than From value
       properties:
         code:
           type: string
@@ -2051,7 +2490,7 @@ components:
           type: string
           description: Error message
           enum:
-          - When the service status is available, unavailable till must be lesser than current Time
+          - To value must be Greater than From value
         status:
           type: string
           description: Error status
@@ -2063,23 +2502,135 @@ components:
       - message
       - status
       title: Error Response Core
-    ModifiedByNested:
+    LayoutNested:
       type: object
       additionalProperties: false
-      description: Nested schema for Modified_By
+      description: Layout id
       properties:
-        name:
-          type: string
-          description: 'Field: name'
-          maxLength: 255
         id:
-          type: string
-          description: 'Field: id'
-          maxLength: 255
-    ErrorResponseCore661033389:
+          type:
+          - string
+          - 'null'
+          description: id
+          maxLength: 18
+    ErrorResponseCore578559762:
       type: object
       additionalProperties: false
-      description: required field not found
+      description: Auto-generated from ApiDefinition for INVALID_DATA
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            maximum_length:
+              type: integer
+              format: int32
+              description: 'Detail field: maximum_length'
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+          - maximum_length
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Invalid data
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    TaxNested:
+      type: object
+      additionalProperties: false
+      description: Contains the ID and value of the tax applied to the service cost
+      properties:
+        id:
+          type: 'null'
+          description: id
+        value:
+          type:
+          - string
+          - 'null'
+          description: value to be applied
+          maxLength: 100
+    PutservicessResponse200:
+      type: object
+      additionalProperties: false
+      description: services put success response
+      properties:
+        data:
+          type: array
+          description: 'Field: data'
+          items:
+            $ref: '#/components/schemas/DataNested1'
+          maxItems: 2
+    ErrorResponseCore2060249394:
+      type: object
+      additionalProperties: false
+      description: The given custom time is invalid
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - ' The given custom time is invalid'
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    ErrorResponseCore1759680246:
+      type: object
+      additionalProperties: false
+      description: Auto-generated from ApiDefinition for MANDATORY_NOT_FOUND
       properties:
         code:
           type: string
@@ -2106,7 +2657,54 @@ components:
           type: string
           description: Error message
           enum:
-          - required field not found
+          - Required field is missing
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    ErrorResponseCore1924753111:
+      type: object
+      additionalProperties: false
+      description: You cannot create more than 500 active services
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - LIMIT_EXCEEDED
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            limit:
+              type: integer
+              format: int32
+              description: 'Detail field: limit'
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+          - limit
+        message:
+          type: string
+          description: Error message
+          enum:
+          - You cannot create more than 500 active services
         status:
           type: string
           description: Error status
@@ -2155,653 +2753,19 @@ components:
       - message
       - status
       title: Error Response Core
-    ErrorResponseCore1202290576:
+    MembersitemBase:
       type: object
-      additionalProperties: false
-      description: record not deleted
+      additionalProperties: true
+      description: Base schema for MembersItem
       properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            resource_path_index:
-              type: integer
-              format: int32
-              description: 'Detail field: resource_path_index'
-          required:
-          - resource_path_index
-        message:
-          type: string
-          description: Error message
-          enum:
-          - record not deleted
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore815194988:
-      type: object
-      additionalProperties: false
-      description: Duration value should not be greater than 24hrs or less than 5mins
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Duration value should not be greater than 24hrs or less than 5mins
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore2060249394:
-      type: object
-      additionalProperties: false
-      description: The given custom time is invalid
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - ' The given custom time is invalid'
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore578559762:
-      type: object
-      additionalProperties: false
-      description: Auto-generated from ApiDefinition for INVALID_DATA
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            maximum_length:
-              type: integer
-              format: int32
-              description: 'Detail field: maximum_length'
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-          - maximum_length
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Invalid data
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    OwnerNested:
-      type: object
-      additionalProperties: false
-      description: owner of the service
-      properties:
-        full_name:
-          type:
-          - string
-          - 'null'
-          description: full name of the owner
-          maxLength: 8
-        name:
-          type:
-          - string
-          - 'null'
-          description: name of the owner
-          maxLength: 8
         id:
           type:
           - string
           - 'null'
           description: id of the owner
-          maxLength: 18
-    GETCreatedByNested:
-      type: object
-      additionalProperties: false
-      description: Nested schema for Created_By
-      properties:
-        name:
-          type: string
-          description: 'Field: name'
-          maxLength: 255
-        id:
-          type: string
-          description: 'Field: id'
-          maxLength: 255
-        email:
-          type: string
-          description: 'Field: email'
-          maxLength: 255
-      required:
-      - email
-      - id
-      - name
-    ErrorResponseCore197782636:
-      type: object
-      additionalProperties: false
-      description: invalid data
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            expected_data_type:
-              type: string
-              description: 'Detail field: expected_data_type'
-              maxLength: 255
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - expected_data_type
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - invalid data
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    DataNested1:
-      type: object
-      additionalProperties: false
-      description: Nested schema for data
-      properties:
-        code:
-          type: string
-          description: 'Field: code'
-          maxLength: 255
-        details:
-          $ref: '#/components/schemas/DetailsNested'
-        message:
-          type: string
-          description: 'Field: message'
-          maxLength: 255
-        status:
-          type: string
-          description: 'Field: status'
-          maxLength: 255
-    ErrorResponseCore1805991557:
-      type: object
-      additionalProperties: false
-      description: Unavailable from must not be greater than current Time
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Unavailable from must not be greater than current Time
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore1915970813:
-      type: object
-      additionalProperties: false
-      description: Job Sheet is not configured in services preferences
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - NOT_ALLOWED
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Job Sheet is not configured in services preferences
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore591812267:
-      type: object
-      additionalProperties: false
-      description: Auto-generated from ApiDefinition for INVALID_DATA
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            expected_data_type:
-              type: string
-              description: 'Detail field: expected_data_type'
-              maxLength: 255
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - expected_data_type
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Invalid data type
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    GetservicessResponse200:
-      type: object
-      additionalProperties: true
-      description: services records get , success response
-      properties:
-        data:
-          type: array
-          description: 'Field: data'
-          items:
-            $ref: '#/components/schemas/GETDataNested'
-          maxItems: 1
-      required:
-      - data
-    GETAvailableTimingsNested:
-      type: object
-      additionalProperties: false
-      description: Nested schema for Available_Timings
-      properties:
-        From:
-          type: string
-          description: 'Field: From'
-          maxLength: 255
-        To:
-          type: string
-          description: 'Field: To'
-          maxLength: 255
-      required:
-      - From
-      - To
-    GETOwnerNested:
-      type: object
-      additionalProperties: false
-      description: Nested schema for Owner
-      properties:
-        name:
-          type: string
-          description: 'Field: name'
-          maxLength: 255
-        id:
-          type: string
-          description: 'Field: id'
-          maxLength: 255
-        email:
-          type: string
-          description: 'Field: email'
-          maxLength: 255
-      required:
-      - email
-      - id
-      - name
-    OwnerNestedV2:
-      allOf:
-      - $ref: '#/components/schemas/OwnerBase'
-      - type: object
-        additionalProperties: true
-        description: Required fields for Owner in PUT
-        required:
-        - email
-      description: Operation-specific schema for Owner in PUT
-    ErrorResponseCore1759680246:
-      type: object
-      additionalProperties: false
-      description: Auto-generated from ApiDefinition for MANDATORY_NOT_FOUND
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - MANDATORY_NOT_FOUND
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Required field is missing
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    AvailableTimingsNested:
-      type: object
-      additionalProperties: false
-      description: contains the service availability timing
-      properties:
-        From:
-          type:
-          - string
-          - 'null'
-          description: service starts from time
-          maxLength: 5
-        To:
-          type:
-          - string
-          - 'null'
-          description: 'service end time '
-          maxLength: 5
-    DeleteservicessResponse200:
-      type: object
-      additionalProperties: false
-      description: services records delete , success response
-      properties:
-        data:
-          type: array
-          description: 'Field: data'
-          items:
-            $ref: '#/components/schemas/DataNested1'
-          maxItems: 1
-    LayoutNested:
-      type: object
-      additionalProperties: false
-      description: Layout id
-      properties:
-        id:
-          type:
-          - string
-          - 'null'
-          description: id
-          maxLength: 18
-    PutservicessResponse200:
-      type: object
-      additionalProperties: false
-      description: services put success response
-      properties:
-        data:
-          type: array
-          description: 'Field: data'
-          items:
-            $ref: '#/components/schemas/DataNested1'
-          maxItems: 2
-    GETMembersNested1:
-      type: object
-      additionalProperties: false
-      description: Nested schema for Members
-      properties:
-        id:
-          type: string
-          description: 'Field: id'
-          maxLength: 255
-        Members:
-          $ref: '#/components/schemas/GETMembersNested'
-      required:
-      - Members
-      - id
-    ErrorResponseCore1569170772:
-      type: object
-      additionalProperties: false
-      description: Service available time does not satisfy the business timing
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - DEPENDENT_MISMATCH
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            dependee:
-              type: object
-              additionalProperties: false
-              description: 'Detail field: dependee'
-              properties:
-                api_name:
-                  type: string
-                  description: 'Nested detail field: api_name'
-                  maxLength: 255
-                json_path:
-                  type: string
-                  description: 'Nested detail field: json_path'
-                  maxLength: 1000
-              required:
-              - api_name
-              - json_path
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - dependee
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Service available time does not satisfy the business timing
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    TaxNested:
-      type: object
-      additionalProperties: false
-      description: Contains the ID and value of the tax applied to the service cost
-      properties:
-        id:
-          type: 'null'
-          description: id
-        value:
-          type:
-          - string
-          - 'null'
-          description: value to be applied
           maxLength: 100
+        Members:
+          $ref: '#/components/schemas/MembersBase'
     ErrorResponseCore564845355:
       type: object
       additionalProperties: false
@@ -2861,15 +2825,11 @@ components:
       - message
       - status
       title: Error Response Core
-    GETMembersNested:
+    GETOwnerNested:
       type: object
       additionalProperties: false
-      description: Nested schema for Members
+      description: Nested schema for Owner
       properties:
-        module:
-          type: string
-          description: 'Field: module'
-          maxLength: 255
         name:
           type: string
           description: 'Field: name'
@@ -2878,28 +2838,68 @@ components:
           type: string
           description: 'Field: id'
           maxLength: 255
+        email:
+          type: string
+          description: 'Field: email'
+          maxLength: 255
       required:
+      - email
       - id
-      - module
       - name
-    PostservicessRequest:
+    Post207multistatusResponse207:
       type: object
       additionalProperties: false
-      description: Request body schema
+      description: Generated schema for dataSuccess
       properties:
-        data:
-          type: array
-          description: data array  (Required)
-          items:
-            $ref: '#/components/schemas/DataNested'
-          maxItems: 5
-        skip_mandatory:
-          type:
-          - boolean
-          - 'null'
-          description: boolean
+        details:
+          $ref: '#/components/schemas/DetailsNested'
+        code:
+          type: string
+          description: 'Field: code'
+          maxLength: 255
+        message:
+          type: string
+          description: 'Field: message'
+          maxLength: 255
+        status:
+          type: string
+          description: 'Field: status'
+          maxLength: 255
+    ErrorResponseCore297287888:
+      type: object
+      additionalProperties: true
+      description: Auto-generated from 207 Multi-Status error item
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_DATA
+          maxLength: 255
+        details:
+          type: object
+          additionalProperties: true
+          description: Error details with validation information
+          properties:
+            id:
+              type: string
+              description: 'Detail field: id'
+              maxLength: 255
+          required: []
+        message:
+          type: string
+          description: Error message
+          maxLength: 100
+        status:
+          type: string
+          description: Error status
+          maxLength: 100
       required:
-      - data
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
   parameters:
     ParamPathId:
       name: id

@@ -132,6 +132,14 @@ paths:
       - Upload
 components:
   parameters:
+    CRMOrgHeader:
+      name: X-CRM-ORG
+      in: header
+      description: The organization ID for the CRM instance.
+      required: true
+      schema:
+        type: string
+        maxLength: 255
     Feature:
       name: feature
       in: header
@@ -141,14 +149,6 @@ components:
         type: string
         enum:
         - bulk-write
-    CRMOrgHeader:
-      name: X-CRM-ORG
-      in: header
-      description: The organization ID for the CRM instance.
-      required: true
-      schema:
-        type: string
-        maxLength: 255
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

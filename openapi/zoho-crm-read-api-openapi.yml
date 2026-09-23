@@ -1382,7 +1382,6 @@ paths:
                   description: The response oneof
                   additionalProperties: false
       summary: Createbulkreadjob
-      description: Createbulkreadjob
       security:
       - iam-oauth2-schema:
         - ZohoCRM.bulk.READ
@@ -1673,7 +1672,6 @@ paths:
                 description: The response
                 additionalProperties: false
       summary: Getbulkreadjobdetails
-      description: Getbulkreadjobdetails
       security:
       - iam-oauth2-schema:
         - ZohoCRM.bulk.READ
@@ -1748,7 +1746,6 @@ paths:
                 description: The response
                 additionalProperties: false
       summary: Downloadresult
-      description: Downloadresult
       security:
       - iam-oauth2-schema:
         - ZohoCRM.bulk.READ

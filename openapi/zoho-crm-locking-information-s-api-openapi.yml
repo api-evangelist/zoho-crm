@@ -1551,25 +1551,9 @@ paths:
       - Locking Information S
 components:
   parameters:
-    Fields:
-      name: fields
-      in: query
-      required: false
-      description: A comma-separated list of field API names to be included in the response.
-      schema:
-        type: string
-        maxLength: 2048
     RecordId:
       name: recordId
       description: The ID of the record from which the lock is to be removed.
-      in: path
-      required: true
-      schema:
-        type: string
-        maxLength: 32
-    LockId:
-      name: lockId
-      description: The ID of the lock to be removed from the locked record.
       in: path
       required: true
       schema:
@@ -1583,6 +1567,22 @@ components:
       schema:
         type: string
         maxLength: 256
+    Fields:
+      name: fields
+      in: query
+      required: false
+      description: A comma-separated list of field API names to be included in the response.
+      schema:
+        type: string
+        maxLength: 2048
+    LockId:
+      name: lockId
+      description: The ID of the lock to be removed from the locked record.
+      in: path
+      required: true
+      schema:
+        type: string
+        maxLength: 32
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

@@ -927,66 +927,6 @@ components:
         type: string
         maxLength: 255
   schemas:
-    ConversionSuccess:
-      type: object
-      description: Successful lead conversion result
-      required:
-      - code
-      - message
-      - status
-      - details
-      additionalProperties: false
-      properties:
-        code:
-          type: string
-          enum:
-          - SUCCESS
-          description: Status code indicating successful conversion
-        message:
-          type: string
-          description: Human-readable message describing the conversion result
-          maxLength: 500
-        status:
-          type: string
-          enum:
-          - success
-          description: Overall status of the conversion operation
-        details:
-          type: object
-          description: Details of created records including their IDs and names
-          required:
-          - Contacts
-          - Deals
-          - Accounts
-          additionalProperties: false
-          properties:
-            Contacts:
-              $ref: '#/components/schemas/EntityReference'
-            Deals:
-              oneOf:
-              - $ref: '#/components/schemas/EntityReference'
-              - type: 'null'
-                description: No Deal was created during conversion
-              description: Deal record information, or null if no Deal was created
-            Accounts:
-              oneOf:
-              - $ref: '#/components/schemas/EntityReference'
-              - type: 'null'
-                description: No Account was created during conversion
-              description: Account record information, or null if no Account was created
-    ConversionRequestWrapper:
-      type: object
-      description: Wrapper object containing array of conversion requests
-      required:
-      - data
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of lead conversion configurations
-          maxItems: 100
-          items:
-            $ref: '#/components/schemas/ConversionRequest'
     ValidationErrorWrapper:
       type: object
       description: Wrapper for validation error responses
@@ -1000,133 +940,19 @@ components:
           maxItems: 100
           items:
             $ref: '#/components/schemas/ValidationError'
-    ConversionScheduled:
+    ConversionRequestWrapper:
       type: object
-      description: Lead conversion scheduled for background processing
-      required:
-      - code
-      - message
-      - status
-      - details
-      additionalProperties: false
-      properties:
-        code:
-          type: string
-          enum:
-          - SCHEDULED
-          description: Status code indicating conversion was scheduled
-        message:
-          type: string
-          description: Human-readable message
-          maxLength: 500
-        status:
-          type: string
-          enum:
-          - success
-          description: Overall status
-        details:
-          type: object
-          description: Job details
-          required:
-          - job_id
-          additionalProperties: false
-          properties:
-            job_id:
-              type: string
-              description: Unique job identifier
-              maxLength: 20
-    ConversionSuccessWrapper:
-      type: object
-      description: Wrapper for successful conversion response
+      description: Wrapper object containing array of conversion requests
       required:
       - data
       additionalProperties: false
       properties:
         data:
           type: array
-          description: Array of conversion results
+          description: Array of lead conversion configurations
           maxItems: 100
           items:
-            $ref: '#/components/schemas/ConversionSuccess'
-    EntityReference:
-      type: object
-      description: Reference to a CRM entity with ID and name
-      required:
-      - name
-      - id
-      additionalProperties: false
-      properties:
-        name:
-          type: string
-          description: Name of the entity
-          maxLength: 200
-        id:
-          type: string
-          description: Unique identifier of the entity record (int64 as string)
-          maxLength: 20
-    DealConversion:
-      type: object
-      description: Deal record configuration for lead conversion
-      required:
-      - Deal_Name
-      - Pipeline
-      - Stage
-      - Closing_Date
-      additionalProperties: false
-      properties:
-        Deal_Name:
-          type: string
-          description: Name of the Deal
-          maxLength: 120
-        Campaign_Source:
-          type: string
-          description: Campaign source associated with this Deal
-          maxLength: 100
-        Amount:
-          type: number
-          format: double
-          description: Expected revenue amount for the Deal
-        Contact_Role:
-          type: string
-          description: Role of the Contact in this Deal
-          maxLength: 50
-        Pipeline:
-          type: string
-          description: Sales pipeline for the Deal. Must match an existing pipeline in the CRM.
-          maxLength: 100
-        $move_attachments:
-          type: boolean
-          description: If true, moves attachments from the Lead to the Deal
-        Stage:
-          type: string
-          description: Current stage of the Deal within the specified Pipeline. Must be valid for the chosen Pipeline.
-          maxLength: 100
-        Closing_Date:
-          type: string
-          format: date
-          description: 'Expected closing date for the Deal (ISO 8601 date format: YYYY-MM-DD)'
-        Type:
-          type: string
-          description: Type of Deal (e.g., New Business, Existing Business)
-          maxLength: 50
-        Probability:
-          type: integer
-          format: int32
-          minimum: 0
-          maximum: 100
-          description: Win probability percentage (0-100)
-        Lead_Source:
-          type: string
-          description: Source from which the Lead originated
-          maxLength: 100
-        Next_Step:
-          type: string
-          description: Next action or milestone for the Deal
-          maxLength: 200
-        Description:
-          type: string
-          description: Detailed description of the Deal
-          maxLength: 32000
+            $ref: '#/components/schemas/ConversionRequest'
     ConversionRequest:
       type: object
       description: Configuration for converting a single lead
@@ -1219,6 +1045,82 @@ components:
               type: string
               description: Name of the missing or invalid parameter
               maxLength: 100
+    ConversionScheduledWrapper:
+      type: object
+      description: Wrapper for scheduled conversion response
+      required:
+      - data
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array containing the scheduled job information
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/ConversionScheduled'
+    DealConversion:
+      type: object
+      description: Deal record configuration for lead conversion
+      required:
+      - Deal_Name
+      - Pipeline
+      - Stage
+      - Closing_Date
+      additionalProperties: false
+      properties:
+        Deal_Name:
+          type: string
+          description: Name of the Deal
+          maxLength: 120
+        Campaign_Source:
+          type: string
+          description: Campaign source associated with this Deal
+          maxLength: 100
+        Amount:
+          type: number
+          format: double
+          description: Expected revenue amount for the Deal
+        Contact_Role:
+          type: string
+          description: Role of the Contact in this Deal
+          maxLength: 50
+        Pipeline:
+          type: string
+          description: Sales pipeline for the Deal. Must match an existing pipeline in the CRM.
+          maxLength: 100
+        $move_attachments:
+          type: boolean
+          description: If true, moves attachments from the Lead to the Deal
+        Stage:
+          type: string
+          description: Current stage of the Deal within the specified Pipeline. Must be valid for the chosen Pipeline.
+          maxLength: 100
+        Closing_Date:
+          type: string
+          format: date
+          description: 'Expected closing date for the Deal (ISO 8601 date format: YYYY-MM-DD)'
+        Type:
+          type: string
+          description: Type of Deal (e.g., New Business, Existing Business)
+          maxLength: 50
+        Probability:
+          type: integer
+          format: int32
+          minimum: 0
+          maximum: 100
+          description: Win probability percentage (0-100)
+        Lead_Source:
+          type: string
+          description: Source from which the Lead originated
+          maxLength: 100
+        Next_Step:
+          type: string
+          description: Next action or milestone for the Deal
+          maxLength: 200
+        Description:
+          type: string
+          description: Detailed description of the Deal
+          maxLength: 32000
     ValidationError:
       type: object
       description: Validation error details
@@ -1274,19 +1176,117 @@ components:
               type: integer
               format: int32
               description: Maximum allowed length for the field
-    ConversionScheduledWrapper:
+    EntityReference:
       type: object
-      description: Wrapper for scheduled conversion response
+      description: Reference to a CRM entity with ID and name
+      required:
+      - name
+      - id
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+          description: Name of the entity
+          maxLength: 200
+        id:
+          type: string
+          description: Unique identifier of the entity record (int64 as string)
+          maxLength: 20
+    ConversionScheduled:
+      type: object
+      description: Lead conversion scheduled for background processing
+      required:
+      - code
+      - message
+      - status
+      - details
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          enum:
+          - SCHEDULED
+          description: Status code indicating conversion was scheduled
+        message:
+          type: string
+          description: Human-readable message
+          maxLength: 500
+        status:
+          type: string
+          enum:
+          - success
+          description: Overall status
+        details:
+          type: object
+          description: Job details
+          required:
+          - job_id
+          additionalProperties: false
+          properties:
+            job_id:
+              type: string
+              description: Unique job identifier
+              maxLength: 20
+    ConversionSuccessWrapper:
+      type: object
+      description: Wrapper for successful conversion response
       required:
       - data
       additionalProperties: false
       properties:
         data:
           type: array
-          description: Array containing the scheduled job information
-          maxItems: 1
+          description: Array of conversion results
+          maxItems: 100
           items:
-            $ref: '#/components/schemas/ConversionScheduled'
+            $ref: '#/components/schemas/ConversionSuccess'
+    ConversionSuccess:
+      type: object
+      description: Successful lead conversion result
+      required:
+      - code
+      - message
+      - status
+      - details
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          enum:
+          - SUCCESS
+          description: Status code indicating successful conversion
+        message:
+          type: string
+          description: Human-readable message describing the conversion result
+          maxLength: 500
+        status:
+          type: string
+          enum:
+          - success
+          description: Overall status of the conversion operation
+        details:
+          type: object
+          description: Details of created records including their IDs and names
+          required:
+          - Contacts
+          - Deals
+          - Accounts
+          additionalProperties: false
+          properties:
+            Contacts:
+              $ref: '#/components/schemas/EntityReference'
+            Deals:
+              oneOf:
+              - $ref: '#/components/schemas/EntityReference'
+              - type: 'null'
+                description: No Deal was created during conversion
+              description: Deal record information, or null if no Deal was created
+            Accounts:
+              oneOf:
+              - $ref: '#/components/schemas/EntityReference'
+              - type: 'null'
+                description: No Account was created during conversion
+              description: Account record information, or null if no Account was created
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

@@ -788,17 +788,6 @@ paths:
                 additionalProperties: false
 components:
   parameters:
-    Year:
-      name: year
-      in: query
-      required: false
-      description: Filter holidays by year. Must be a valid 4-digit year value within a reasonable range.
-      schema:
-        type: integer
-        format: int32
-        minimum: 2000
-        maximum: 2100
-        description: The Year of the object.
     ShiftId:
       name: shift_id
       in: query
@@ -810,17 +799,6 @@ components:
         minLength: 1
         maxLength: 30
         description: The Shift id of the object.
-    HolidayId:
-      name: holidayId
-      in: path
-      required: true
-      description: Unique identifier of the holiday. Must be a valid numeric string identifier.
-      schema:
-        type: string
-        pattern: ^[0-9]+$
-        minLength: 1
-        maxLength: 30
-        description: The Holiday id of the object.
     Type:
       name: type
       in: query
@@ -832,7 +810,54 @@ components:
         - business_holiday
         - shift_holiday
         description: The Type of the object.
+    Year:
+      name: year
+      in: query
+      required: false
+      description: Filter holidays by year. Must be a valid 4-digit year value within a reasonable range.
+      schema:
+        type: integer
+        format: int32
+        minimum: 2000
+        maximum: 2100
+        description: The Year of the object.
+    HolidayId:
+      name: holidayId
+      in: path
+      required: true
+      description: Unique identifier of the holiday. Must be a valid numeric string identifier.
+      schema:
+        type: string
+        pattern: ^[0-9]+$
+        minLength: 1
+        maxLength: 30
+        description: The Holiday id of the object.
   schemas:
+    InvalidDataResponse:
+      type: object
+      properties:
+        code:
+          type: string
+          enum:
+          - DUPLICATE_DATA
+          - INVALID_DATA
+          - DEPENDENT_FIELD_MISSING
+          description: The Code of the object.
+        details:
+          type: object
+          description: The Details of the object.
+          additionalProperties: true
+        message:
+          type: string
+          description: The Message of the object.
+          maxLength: 255
+        status:
+          type: string
+          enum:
+          - error
+          description: The Status of the object.
+      description: The Item of the object.
+      additionalProperties: false
     HolidaysSuccessResponse:
       type: object
       properties:
@@ -876,31 +901,6 @@ components:
       required:
       - holidays
       description: The Holidayssuccessresponse of the object.
-      additionalProperties: false
-    InvalidDataResponse:
-      type: object
-      properties:
-        code:
-          type: string
-          enum:
-          - DUPLICATE_DATA
-          - INVALID_DATA
-          - DEPENDENT_FIELD_MISSING
-          description: The Code of the object.
-        details:
-          type: object
-          description: The Details of the object.
-          additionalProperties: true
-        message:
-          type: string
-          description: The Message of the object.
-          maxLength: 255
-        status:
-          type: string
-          enum:
-          - error
-          description: The Status of the object.
-      description: The Item of the object.
       additionalProperties: false
   responses:
     ForbiddenError:

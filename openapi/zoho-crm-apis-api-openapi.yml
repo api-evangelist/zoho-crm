@@ -22,7 +22,7 @@ servers:
       default: v8
       description: API version
 tags:
-- name: Apis
+- name: APIs
 paths:
   /__apis:
     get:
@@ -112,17 +112,29 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerError'
       tags:
-      - Apis
+      - APIs
 components:
   responses:
-    TooManyRequests:
-      description: Rate limit exceeded.
+    NotFound:
+      description: Resource not found.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
     Forbidden:
       description: Forbidden.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    TooManyRequests:
+      description: Rate limit exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    BadRequest:
+      description: Bad request.
       content:
         application/json:
           schema:
@@ -135,18 +147,6 @@ components:
             $ref: '#/components/schemas/ErrorResponse'
     Unauthorized:
       description: Unauthorized.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    NotFound:
-      description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    BadRequest:
-      description: Bad request.
       content:
         application/json:
           schema:

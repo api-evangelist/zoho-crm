@@ -26,7 +26,6 @@ paths:
     get:
       operationId: getTimelines
       summary: Get Timelines
-      description: Get Timelines
       security:
       - iam-oauth2-schema:
         - ZohoCRM.modules.Leads.READ
@@ -1132,68 +1131,25 @@ paths:
       - Timeline
 components:
   parameters:
-    IncludeTimelineType:
-      name: include_timeline_type
-      description: Type of timeline to include
-      in: query
-      required: false
+    RecordId:
+      name: recordId
+      description: The ID of the record for which timelines are to be fetched
+      in: path
+      required: true
       schema:
         type: string
         maxLength: 255
-    Page:
-      name: page
-      description: Page number for pagination
-      in: query
-      required: false
-      schema:
-        type: integer
-        format: int32
-    SortOrder:
-      name: sort_order
-      description: Sort order for the timelines
-      in: query
-      required: false
-      schema:
-        type: string
-        enum:
-        - asc
-        - desc
-    PageToken:
-      name: page_token
-      description: Token for pagination
-      in: query
-      required: false
-      schema:
-        type: string
-        maxLength: 255
-    SortBy:
-      name: sort_by
-      description: Field to sort the timelines by
-      in: query
-      required: false
-      schema:
-        type: string
-        enum:
-        - audited_time
-    IncludeInnerDetails:
-      name: include_inner_details
-      description: Flag to include inner details
-      in: query
-      required: false
+    Module:
+      description: The API module name (e.g., Leads, Contacts, etc.)
+      name: module
+      in: path
+      required: true
       schema:
         type: string
         maxLength: 255
     Filter:
       name: filter
       description: Filter criteria for timelines
-      in: query
-      required: false
-      schema:
-        type: string
-        maxLength: 255
-    Include:
-      name: include
-      description: Additional data to include
       in: query
       required: false
       schema:
@@ -1209,22 +1165,65 @@ components:
         format: int32
         enum:
         - 3
-    Module:
-      description: The API module name (e.g., Leads, Contacts, etc.)
-      name: module
-      in: path
-      required: true
+    PageToken:
+      name: page_token
+      description: Token for pagination
+      in: query
+      required: false
       schema:
         type: string
         maxLength: 255
-    RecordId:
-      name: recordId
-      description: The ID of the record for which timelines are to be fetched
-      in: path
-      required: true
+    Include:
+      name: include
+      description: Additional data to include
+      in: query
+      required: false
       schema:
         type: string
         maxLength: 255
+    IncludeInnerDetails:
+      name: include_inner_details
+      description: Flag to include inner details
+      in: query
+      required: false
+      schema:
+        type: string
+        maxLength: 255
+    Page:
+      name: page
+      description: Page number for pagination
+      in: query
+      required: false
+      schema:
+        type: integer
+        format: int32
+    IncludeTimelineType:
+      name: include_timeline_type
+      description: Type of timeline to include
+      in: query
+      required: false
+      schema:
+        type: string
+        maxLength: 255
+    SortBy:
+      name: sort_by
+      description: Field to sort the timelines by
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+        - audited_time
+    SortOrder:
+      name: sort_order
+      description: Sort order for the timelines
+      in: query
+      required: false
+      schema:
+        type: string
+        enum:
+        - asc
+        - desc
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2
