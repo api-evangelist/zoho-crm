@@ -8678,8 +8678,6 @@ common:
   url: asyncapi/zoho-crm-notifications-asyncapi.yml
 - type: Webhooks
   url: asyncapi/zoho-crm-notifications-asyncapi.yml
-- type: GraphQL
-  url: graphql/zoho-crm-graphql.md
 - type: Rules
   url: rules/zoho-crm-asyncapi-spectral-rules.yml
 maintainers:
