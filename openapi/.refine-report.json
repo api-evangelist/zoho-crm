@@ -145,9 +145,7 @@
     "zoho-crm-workflow-configurations-api-openapi.yml",
     "zoho-crm-zia-org-enrichment-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 1 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -772,12 +770,11 @@
     "tag 'Records' spans 2 source specs (zoho-crm-record-count-openapi.json, zoho-crm-record-openapi.json): per-path servers applied",
     "tag 'Deleted' spans 2 source specs (zoho-crm-record-openapi.json, zoho-crm-related-records-openapi.json): per-path servers applied",
     "tag 'Users' spans 4 source specs (zoho-crm-user-groups-openapi.json, zoho-crm-users-openapi.json, zoho-crm-users-territories-openapi.json, zoho-crm-users-transfer-openapi.json): per-path servers applied",
-    "superseded outputs removed: zoho-crm-ap-is-api-openapi.yml",
-    "apis.yml register: written (+1 apis, 36 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "zoho-crm-actions-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "zoho-crm-ap-is-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "zoho-crm-apis-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "zoho-crm-appointments-s-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "zoho-crm-attachments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "zoho-crm-composite-requests-api-openapi.yml: previously refined output, superseded by openapi/_original/",

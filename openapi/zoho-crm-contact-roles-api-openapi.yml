@@ -519,6 +519,32 @@ paths:
       - Contact Roles
 components:
   parameters:
+    Fields:
+      name: fields
+      in: query
+      required: true
+      description: Comma-separated list of field names to include in the response. Field names must follow API naming conventions.
+      schema:
+        type: string
+        pattern: ^[A-Za-z_][A-Za-z0-9_]*(?:,[A-Za-z_][A-Za-z0-9_]*)*$
+        minLength: 1
+        maxLength: 1000
+    Contact:
+      name: contactId
+      in: path
+      required: true
+      description: The unique identifier of the contact record
+      schema:
+        type: string
+        format: int64
+    Ids:
+      name: ids
+      in: query
+      required: false
+      description: Comma-separated list of contact role relation IDs to delete
+      schema:
+        type: string
+        format: int64
     DealId:
       name: dealId
       in: path
@@ -536,32 +562,6 @@ components:
         type: string
         enum:
         - Deals
-    Contact:
-      name: contactId
-      in: path
-      required: true
-      description: The unique identifier of the contact record
-      schema:
-        type: string
-        format: int64
-    Fields:
-      name: fields
-      in: query
-      required: true
-      description: Comma-separated list of field names to include in the response. Field names must follow API naming conventions.
-      schema:
-        type: string
-        pattern: ^[A-Za-z_][A-Za-z0-9_]*(?:,[A-Za-z_][A-Za-z0-9_]*)*$
-        minLength: 1
-        maxLength: 1000
-    Ids:
-      name: ids
-      in: query
-      required: false
-      description: Comma-separated list of contact role relation IDs to delete
-      schema:
-        type: string
-        format: int64
   schemas:
     InvalidRelationNameError:
       type: object
@@ -587,205 +587,6 @@ components:
           type: string
           description: Error message indicating the relation name is invalid
           const: the relation name given seems to be invalid
-        status:
-          type: string
-          description: Response status
-          const: error
-      required:
-      - code
-      - details
-      - message
-      - status
-      additionalProperties: false
-    InvalidModuleError:
-      type: object
-      description: Invalid module name error
-      properties:
-        code:
-          type: string
-          description: Error code indicating invalid module name
-          const: INVALID_MODULE
-        details:
-          type: object
-          description: Error details containing the path index
-          properties:
-            resource_path_index:
-              type: integer
-              format: int32
-              description: Index of the path parameter that is invalid (0 for module)
-              const: 0
-          required:
-          - resource_path_index
-          additionalProperties: false
-        message:
-          type: string
-          description: Error message indicating the module name is invalid
-          const: the module name given seems to be invalid
-        status:
-          type: string
-          description: Response status
-          const: error
-      required:
-      - code
-      - details
-      - message
-      - status
-      additionalProperties: false
-    UpsertRelationsRequest:
-      type: object
-      description: Payload for adding or updating contact role relations on a deal
-      properties:
-        data:
-          type: array
-          description: List of contact role relations to upsert
-          minItems: 1
-          maxItems: 100
-          items:
-            type: object
-            description: Contact role relation definition
-            properties:
-              Contact_Role:
-                type: object
-                description: Contact role to associate with the relation
-                properties:
-                  name:
-                    type: string
-                    description: Contact role display name
-                    maxLength: 255
-                  id:
-                    type: string
-                    format: int64
-                    description: Contact role identifier
-                required:
-                - id
-                additionalProperties: false
-              id:
-                type: string
-                format: int64
-                description: Identifier of the contact relation for the deal
-            required:
-            - Contact_Role
-            - id
-            additionalProperties: false
-      required:
-      - data
-      additionalProperties: false
-    DeleteRelationsSuccessResponse:
-      type: object
-      description: Response returned after deleting contact role relations
-      properties:
-        data:
-          type: array
-          description: Status entries for each deleted relation
-          maxItems: 100
-          items:
-            type: object
-            description: Result for a single relation delete operation
-            properties:
-              code:
-                type: string
-                description: Operation status code
-                const: SUCCESS
-              details:
-                type: object
-                description: Details about the deleted relation
-                properties:
-                  id:
-                    type: string
-                    format: int64
-                    description: Identifier of the deleted relation
-                required:
-                - id
-                additionalProperties: false
-              message:
-                type: string
-                description: Result message
-                const: relation removed
-              status:
-                type: string
-                description: Operation status
-                const: success
-            required:
-            - code
-            - details
-            - message
-            - status
-            additionalProperties: false
-          minItems: 1
-      required:
-      - data
-      additionalProperties: false
-    UpsertRelationsSuccessResponse:
-      type: object
-      description: Response returned after adding or updating contact role relations
-      properties:
-        data:
-          type: array
-          description: Status entries for each processed relation
-          minItems: 1
-          maxItems: 100
-          items:
-            type: object
-            description: Result for processing a single relation
-            properties:
-              code:
-                type: string
-                description: Operation status code
-                const: SUCCESS
-              details:
-                type: object
-                description: Details about the processed relation
-                properties:
-                  id:
-                    type: string
-                    format: int64
-                    description: Identifier of the processed relation
-                required:
-                - id
-                additionalProperties: false
-              message:
-                type: string
-                description: Result message describing the action performed
-                enum:
-                - relation updated
-                - relation added
-              status:
-                type: string
-                description: Operation status
-                const: success
-            required:
-            - code
-            - details
-            - message
-            - status
-            additionalProperties: false
-      required:
-      - data
-      additionalProperties: false
-    InvalidDataError:
-      type: object
-      description: Invalid related ID error
-      properties:
-        code:
-          type: string
-          description: Error code indicating invalid deal ID
-          const: INVALID_DATA
-        details:
-          type: object
-          description: Error details containing the path index
-          properties:
-            resource_path_index:
-              type: integer
-              format: int64
-              description: Index of the path parameter that is invalid (1 for deal ID)
-              const: 1
-          required:
-          - resource_path_index
-          additionalProperties: false
-        message:
-          type: string
-          description: Error message indicating the deal ID is invalid
-          const: the related id given seems to be invalid
         status:
           type: string
           description: Response status
@@ -870,6 +671,45 @@ components:
       - message
       - status
       additionalProperties: false
+    UpsertRelationsRequest:
+      type: object
+      description: Payload for adding or updating contact role relations on a deal
+      properties:
+        data:
+          type: array
+          description: List of contact role relations to upsert
+          minItems: 1
+          maxItems: 100
+          items:
+            type: object
+            description: Contact role relation definition
+            properties:
+              Contact_Role:
+                type: object
+                description: Contact role to associate with the relation
+                properties:
+                  name:
+                    type: string
+                    description: Contact role display name
+                    maxLength: 255
+                  id:
+                    type: string
+                    format: int64
+                    description: Contact role identifier
+                required:
+                - id
+                additionalProperties: false
+              id:
+                type: string
+                format: int64
+                description: Identifier of the contact relation for the deal
+            required:
+            - Contact_Role
+            - id
+            additionalProperties: false
+      required:
+      - data
+      additionalProperties: false
     RequiredParamMissingError:
       type: object
       description: Required parameter missing error
@@ -893,6 +733,166 @@ components:
           type: string
           description: Error message indicating a parameter is missing
           const: One of the expected parameter is missing
+        status:
+          type: string
+          description: Response status
+          const: error
+      required:
+      - code
+      - details
+      - message
+      - status
+      additionalProperties: false
+    DeleteRelationsSuccessResponse:
+      type: object
+      description: Response returned after deleting contact role relations
+      properties:
+        data:
+          type: array
+          description: Status entries for each deleted relation
+          maxItems: 100
+          items:
+            type: object
+            description: Result for a single relation delete operation
+            properties:
+              code:
+                type: string
+                description: Operation status code
+                const: SUCCESS
+              details:
+                type: object
+                description: Details about the deleted relation
+                properties:
+                  id:
+                    type: string
+                    format: int64
+                    description: Identifier of the deleted relation
+                required:
+                - id
+                additionalProperties: false
+              message:
+                type: string
+                description: Result message
+                const: relation removed
+              status:
+                type: string
+                description: Operation status
+                const: success
+            required:
+            - code
+            - details
+            - message
+            - status
+            additionalProperties: false
+          minItems: 1
+      required:
+      - data
+      additionalProperties: false
+    InvalidDataError:
+      type: object
+      description: Invalid related ID error
+      properties:
+        code:
+          type: string
+          description: Error code indicating invalid deal ID
+          const: INVALID_DATA
+        details:
+          type: object
+          description: Error details containing the path index
+          properties:
+            resource_path_index:
+              type: integer
+              format: int64
+              description: Index of the path parameter that is invalid (1 for deal ID)
+              const: 1
+          required:
+          - resource_path_index
+          additionalProperties: false
+        message:
+          type: string
+          description: Error message indicating the deal ID is invalid
+          const: the related id given seems to be invalid
+        status:
+          type: string
+          description: Response status
+          const: error
+      required:
+      - code
+      - details
+      - message
+      - status
+      additionalProperties: false
+    UpsertRelationsSuccessResponse:
+      type: object
+      description: Response returned after adding or updating contact role relations
+      properties:
+        data:
+          type: array
+          description: Status entries for each processed relation
+          minItems: 1
+          maxItems: 100
+          items:
+            type: object
+            description: Result for processing a single relation
+            properties:
+              code:
+                type: string
+                description: Operation status code
+                const: SUCCESS
+              details:
+                type: object
+                description: Details about the processed relation
+                properties:
+                  id:
+                    type: string
+                    format: int64
+                    description: Identifier of the processed relation
+                required:
+                - id
+                additionalProperties: false
+              message:
+                type: string
+                description: Result message describing the action performed
+                enum:
+                - relation updated
+                - relation added
+              status:
+                type: string
+                description: Operation status
+                const: success
+            required:
+            - code
+            - details
+            - message
+            - status
+            additionalProperties: false
+      required:
+      - data
+      additionalProperties: false
+    InvalidModuleError:
+      type: object
+      description: Invalid module name error
+      properties:
+        code:
+          type: string
+          description: Error code indicating invalid module name
+          const: INVALID_MODULE
+        details:
+          type: object
+          description: Error details containing the path index
+          properties:
+            resource_path_index:
+              type: integer
+              format: int32
+              description: Index of the path parameter that is invalid (0 for module)
+              const: 0
+          required:
+          - resource_path_index
+          additionalProperties: false
+        message:
+          type: string
+          description: Error message indicating the module name is invalid
+          const: the module name given seems to be invalid
         status:
           type: string
           description: Response status

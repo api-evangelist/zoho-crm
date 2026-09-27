@@ -589,23 +589,18 @@ paths:
         - ZohoCRM.settings.global_picklist.READ
 components:
   schemas:
-    PickListReferenceValue:
-      type: string
-      maxLength: 120
-      description: Reference value of the picklist field.
-    ModulepluralLabel:
-      type: string
-      description: Plural label of the module.
-      maxLength: 25
-    ApiName:
-      type: string
-      description: API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.
-      pattern: ^[A-Za-z][A-Za-z0-9_]*$
-      maxLength: 50
     Id:
       type: string
       description: Id of the resource.
       format: int64
+    ModulepluralLabel:
+      type: string
+      description: Plural label of the module.
+      maxLength: 25
+    LayoutName:
+      type: string
+      description: Name of the layout
+      maxLength: 50
     FieldLabel:
       type: string
       description: Name of the field label.
@@ -614,26 +609,20 @@ components:
       type: string
       description: Name of the module
       maxLength: 100
+    ApiName:
+      type: string
+      description: API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.
+      pattern: ^[A-Za-z][A-Za-z0-9_]*$
+      maxLength: 50
     PickListDisplayValue:
       type: string
       maxLength: 120
       description: The picklist display value(translated value if translation enabled).
-    LayoutName:
+    PickListReferenceValue:
       type: string
-      description: Name of the layout
-      maxLength: 50
+      maxLength: 120
+      description: Reference value of the picklist field.
   parameters:
-    PerPage:
-      name: per_page
-      in: query
-      required: false
-      description: 'Number of records per page. Default and maximum: 200.'
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 200
-        default: 200
-        format: int64
     Id:
       name: id
       in: path
@@ -652,7 +641,49 @@ components:
         format: int32
         minimum: 1
         default: 1
+    PerPage:
+      name: per_page
+      in: query
+      required: false
+      description: 'Number of records per page. Default and maximum: 200.'
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 200
+        default: 200
+        format: int64
   responses:
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            description: Internal server error response object containing code, message, details, and status.
+            properties:
+              code:
+                type: string
+                description: Error code indicating the type of error.
+                maxLength: 50
+              message:
+                type: string
+                description: Human-readable error message.
+                maxLength: 255
+              details:
+                type: object
+                description: Additional details about the error.
+                additionalProperties: true
+              status:
+                type: string
+                description: Status of the error response.
+                enum:
+                - error
+            required:
+            - code
+            - message
+            - details
+            - status
+            additionalProperties: false
     Forbidden:
       description: Forbidden
       content:
@@ -689,37 +720,6 @@ components:
                 enum:
                 - error
                 maxLength: 100
-            required:
-            - code
-            - message
-            - details
-            - status
-            additionalProperties: false
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            description: Internal server error response object containing code, message, details, and status.
-            properties:
-              code:
-                type: string
-                description: Error code indicating the type of error.
-                maxLength: 50
-              message:
-                type: string
-                description: Human-readable error message.
-                maxLength: 255
-              details:
-                type: object
-                description: Additional details about the error.
-                additionalProperties: true
-              status:
-                type: string
-                description: Status of the error response.
-                enum:
-                - error
             required:
             - code
             - message

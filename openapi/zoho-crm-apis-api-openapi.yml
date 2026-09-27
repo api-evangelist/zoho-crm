@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Available APIS API
+  title: Available APIs API
   description: API to list all available REST APIs in Zoho CRM v8 for the current user and org.
   version: '8.0'
 servers:
@@ -115,20 +115,14 @@ paths:
       - APIs
 components:
   responses:
+    Unauthorized:
+      description: Unauthorized.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
     NotFound:
       description: Resource not found.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Forbidden:
-      description: Forbidden.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    TooManyRequests:
-      description: Rate limit exceeded.
       content:
         application/json:
           schema:
@@ -139,14 +133,20 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
+    TooManyRequests:
+      description: Rate limit exceeded.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
     InternalServerError:
       description: Unexpected server error.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
-    Unauthorized:
-      description: Unauthorized.
+    Forbidden:
+      description: Forbidden.
       content:
         application/json:
           schema:
