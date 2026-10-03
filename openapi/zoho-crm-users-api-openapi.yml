@@ -3052,16 +3052,6 @@ components:
         format: int32
         default: 1
         minimum: 1
-    Include:
-      name: include
-      in: query
-      required: false
-      description: Additional data to include in the response
-      schema:
-        type: string
-        enum:
-        - sources_count
-        - sources
     PerPage:
       name: per_page
       in: query
@@ -3073,14 +3063,16 @@ components:
         default: 200
         maximum: 200
         minimum: 1
-    User:
-      name: user
-      in: path
-      description: user Id
-      required: true
+    Include:
+      name: include
+      in: query
+      required: false
+      description: Additional data to include in the response
       schema:
         type: string
-        maxLength: 20
+        enum:
+        - sources_count
+        - sources
     Type:
       name: type
       in: query
@@ -3118,14 +3110,14 @@ components:
       schema:
         type: integer
         format: int32
-    User_2:
-      description: The ID of the user
+    User:
       name: user
       in: path
+      description: user Id
       required: true
       schema:
-        format: int64
         type: string
+        maxLength: 20
     Territory:
       description: The ID of the territory
       name: territory
@@ -3144,6 +3136,14 @@ components:
         description: Comma-separated IDs (digits only, separated by commas)
         pattern: ^[0-9]+(,[0-9]+)*$
         maxLength: 2000
+    User_2:
+      description: The ID of the user
+      name: user
+      in: path
+      required: true
+      schema:
+        format: int64
+        type: string
     JobId:
       name: job_id
       in: query
@@ -4263,105 +4263,6 @@ components:
       - code
       - details
       - status
-    SuccessResponse:
-      type: object
-      additionalProperties: false
-      description: Response for successful association of territories to a user
-      properties:
-        territories:
-          type: array
-          description: List of per-territory result items
-          minItems: 0
-          maxItems: 200
-          uniqueItems: true
-          items:
-            type: object
-            additionalProperties: false
-            description: Per-territory result item
-            properties:
-              code:
-                type: string
-                description: Result code
-                enum:
-                - SUCCESS
-              details:
-                type: object
-                description: Details for the result item
-                additionalProperties: false
-                properties:
-                  id:
-                    type: string
-                    format: int64
-                    description: ID of the territory
-                required:
-                - id
-              message:
-                type: string
-                description: Human-readable message
-                maxLength: 1000
-              status:
-                type: string
-                description: Status of the result
-                enum:
-                - success
-            required:
-            - code
-            - details
-            - message
-            - status
-      required:
-      - territories
-    CommonErrorResponse:
-      type: object
-      additionalProperties: false
-      description: Response containing an array of per-territory error items
-      properties:
-        territories:
-          type: array
-          description: List of per-territory error items
-          minItems: 0
-          maxItems: 200
-          uniqueItems: true
-          items:
-            type: object
-            additionalProperties: false
-            description: Per-territory error object for territory-specific validation failures
-            properties:
-              code:
-                type: string
-                description: Error code
-                enum:
-                - INVALID_DATA
-                - DUPLICATE_DATA
-                - PERMISSION_DENIED
-              details:
-                type: object
-                description: Error details for the territory
-                additionalProperties: false
-                properties:
-                  api_name:
-                    type: string
-                    description: The API field name related to the error
-                    maxLength: 255
-                  json_path:
-                    type: string
-                    description: JSON path that points to the invalid value
-                    maxLength: 1000
-              message:
-                type: string
-                description: Human-readable error message
-                maxLength: 1000
-              status:
-                type: string
-                description: Status of the error
-                enum:
-                - error
-            required:
-            - code
-            - details
-            - status
-      required:
-      - territories
     TerritoryGetResponse:
       additionalProperties: false
       description: Response schema for getting territories of a user
@@ -4448,6 +4349,105 @@ components:
       required:
       - territories
       - info
+    CommonErrorResponse:
+      type: object
+      additionalProperties: false
+      description: Response containing an array of per-territory error items
+      properties:
+        territories:
+          type: array
+          description: List of per-territory error items
+          minItems: 0
+          maxItems: 200
+          uniqueItems: true
+          items:
+            type: object
+            additionalProperties: false
+            description: Per-territory error object for territory-specific validation failures
+            properties:
+              code:
+                type: string
+                description: Error code
+                enum:
+                - INVALID_DATA
+                - DUPLICATE_DATA
+                - PERMISSION_DENIED
+              details:
+                type: object
+                description: Error details for the territory
+                additionalProperties: false
+                properties:
+                  api_name:
+                    type: string
+                    description: The API field name related to the error
+                    maxLength: 255
+                  json_path:
+                    type: string
+                    description: JSON path that points to the invalid value
+                    maxLength: 1000
+              message:
+                type: string
+                description: Human-readable error message
+                maxLength: 1000
+              status:
+                type: string
+                description: Status of the error
+                enum:
+                - error
+            required:
+            - code
+            - details
+            - status
+      required:
+      - territories
+    SuccessResponse:
+      type: object
+      additionalProperties: false
+      description: Response for successful association of territories to a user
+      properties:
+        territories:
+          type: array
+          description: List of per-territory result items
+          minItems: 0
+          maxItems: 200
+          uniqueItems: true
+          items:
+            type: object
+            additionalProperties: false
+            description: Per-territory result item
+            properties:
+              code:
+                type: string
+                description: Result code
+                enum:
+                - SUCCESS
+              details:
+                type: object
+                description: Details for the result item
+                additionalProperties: false
+                properties:
+                  id:
+                    type: string
+                    format: int64
+                    description: ID of the territory
+                required:
+                - id
+              message:
+                type: string
+                description: Human-readable message
+                maxLength: 1000
+              status:
+                type: string
+                description: Status of the result
+                enum:
+                - success
+            required:
+            - code
+            - details
+            - message
+            - status
+      required:
+      - territories
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

@@ -438,7 +438,163 @@ paths:
       tags:
       - Attachments
 components:
+  responses:
+    BadRequest:
+      description: Bad request - invalid input parameters or request body
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Forbidden:
+      description: Forbidden - insufficient permissions to perform the operation
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    TooManyRequests:
+      description: Too many requests - rate limit exceeded
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    Unauthorized:
+      description: Unauthorized - authentication credentials are missing or invalid
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    NotFound:
+      description: Not found - the specified record or attachment does not exist
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    PayloadTooLarge:
+      description: Request entity too large - file size exceeds 100MB limit
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/BodySizeLimitError'
+    ServiceUnavailable:
+      description: Service unavailable - server is temporarily unable to handle the request
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    InternalServerError:
+      description: Internal server error - unexpected server failure
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      description: The unique identifier of the attachment
+      schema:
+        type: string
+        maxLength: 64
+    Fields:
+      name: fields
+      in: query
+      required: false
+      description: Specify the fields to retrieve
+      schema:
+        type: string
+        maxLength: 100000
+    ModuleApiName:
+      name: moduleApiName
+      in: path
+      required: true
+      description: The API name of the module
+      schema:
+        type: string
+        maxLength: 64
+    RecordId:
+      name: recordId
+      in: path
+      required: true
+      description: The unique identifier of the record
+      schema:
+        type: string
+        maxLength: 64
   schemas:
+    ErrorResponse:
+      type: object
+      description: Generic error response structure
+      properties:
+        status:
+          type: string
+          description: Error status indicator
+          enum:
+          - error
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_URL_PATTERN
+          - MANDATORY_NOT_FOUND
+          - INVALID_DATA
+          - REQUIRED_PARAM_MISSING
+          - INVALID_MODULE
+          - INVALID_TOKEN
+          - OAUTH_SCOPE_MISMATCH
+          - RATE_LIMIT_EXCEEDED
+          - INTERNAL_ERROR
+          - SERVICE_UNAVAILABLE
+        message:
+          type: string
+          description: Error message
+          enum:
+          - the given attachment URL is incorrect
+          - required field not found
+          - invalid data provided
+          - One of the expected parameter is missing
+          - the related id given seems to be invalid
+          - the module name given seems to be invalid
+          - invalid oauth token
+          - required oauth scope is missing
+          - the id given seems to be invalid
+          - API rate limit exceeded. Please retry after some time
+          - Internal Server Error
+          - Service temporarily unavailable. Please try again later
+        details:
+          type: object
+          description: Additional error details
+          additionalProperties: false
+          properties:
+            param_name:
+              type: string
+              description: Name of the parameter causing the error
+              maxLength: 100
+            resource_path_index:
+              type: integer
+              format: int32
+              description: Index of the resource path causing the error
+      required:
+      - status
+      - code
+      - message
+      - details
+      additionalProperties: false
+    AttachmentListResponse:
+      type: object
+      description: Response containing list of attachments for a record
+      properties:
+        data:
+          type: array
+          description: Array of attachment objects
+          maxItems: 1000
+          items:
+            $ref: '#/components/schemas/AttachmentObject'
+        info:
+          $ref: '#/components/schemas/Info'
+      required:
+      - data
+      - info
+      additionalProperties: false
     BodySizeLimitError:
       type: object
       description: Error response for body size limit exceeded
@@ -674,22 +830,6 @@ components:
       - Modified_Time
       - Modified_By
       additionalProperties: false
-    AttachmentListResponse:
-      type: object
-      description: Response containing list of attachments for a record
-      properties:
-        data:
-          type: array
-          description: Array of attachment objects
-          maxItems: 1000
-          items:
-            $ref: '#/components/schemas/AttachmentObject'
-        info:
-          $ref: '#/components/schemas/Info'
-      required:
-      - data
-      - info
-      additionalProperties: false
     AttachmentSuccessResponse:
       type: object
       description: Successful attachment operation response
@@ -784,146 +924,6 @@ components:
       required:
       - data
       additionalProperties: false
-    ErrorResponse:
-      type: object
-      description: Generic error response structure
-      properties:
-        status:
-          type: string
-          description: Error status indicator
-          enum:
-          - error
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_URL_PATTERN
-          - MANDATORY_NOT_FOUND
-          - INVALID_DATA
-          - REQUIRED_PARAM_MISSING
-          - INVALID_MODULE
-          - INVALID_TOKEN
-          - OAUTH_SCOPE_MISMATCH
-          - RATE_LIMIT_EXCEEDED
-          - INTERNAL_ERROR
-          - SERVICE_UNAVAILABLE
-        message:
-          type: string
-          description: Error message
-          enum:
-          - the given attachment URL is incorrect
-          - required field not found
-          - invalid data provided
-          - One of the expected parameter is missing
-          - the related id given seems to be invalid
-          - the module name given seems to be invalid
-          - invalid oauth token
-          - required oauth scope is missing
-          - the id given seems to be invalid
-          - API rate limit exceeded. Please retry after some time
-          - Internal Server Error
-          - Service temporarily unavailable. Please try again later
-        details:
-          type: object
-          description: Additional error details
-          additionalProperties: false
-          properties:
-            param_name:
-              type: string
-              description: Name of the parameter causing the error
-              maxLength: 100
-            resource_path_index:
-              type: integer
-              format: int32
-              description: Index of the resource path causing the error
-      required:
-      - status
-      - code
-      - message
-      - details
-      additionalProperties: false
-  parameters:
-    Fields:
-      name: fields
-      in: query
-      required: false
-      description: Specify the fields to retrieve
-      schema:
-        type: string
-        maxLength: 100000
-    RecordId:
-      name: recordId
-      in: path
-      required: true
-      description: The unique identifier of the record
-      schema:
-        type: string
-        maxLength: 64
-    Id:
-      name: id
-      in: path
-      required: true
-      description: The unique identifier of the attachment
-      schema:
-        type: string
-        maxLength: 64
-    ModuleApiName:
-      name: moduleApiName
-      in: path
-      required: true
-      description: The API name of the module
-      schema:
-        type: string
-        maxLength: 64
-  responses:
-    PayloadTooLarge:
-      description: Request entity too large - file size exceeds 100MB limit
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/BodySizeLimitError'
-    Unauthorized:
-      description: Unauthorized - authentication credentials are missing or invalid
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    NotFound:
-      description: Not found - the specified record or attachment does not exist
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    BadRequest:
-      description: Bad request - invalid input parameters or request body
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    ServiceUnavailable:
-      description: Service unavailable - server is temporarily unable to handle the request
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    TooManyRequests:
-      description: Too many requests - rate limit exceeded
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    InternalServerError:
-      description: Internal server error - unexpected server failure
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Forbidden:
-      description: Forbidden - insufficient permissions to perform the operation
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

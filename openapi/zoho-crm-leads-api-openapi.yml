@@ -982,101 +982,6 @@ components:
               type: integer
               format: int32
               description: Maximum allowed length for the field
-    ConversionScheduled:
-      type: object
-      description: Lead conversion scheduled for background processing
-      required:
-      - code
-      - message
-      - status
-      - details
-      additionalProperties: false
-      properties:
-        code:
-          type: string
-          enum:
-          - SCHEDULED
-          description: Status code indicating conversion was scheduled
-        message:
-          type: string
-          description: Human-readable message
-          maxLength: 500
-        status:
-          type: string
-          enum:
-          - success
-          description: Overall status
-        details:
-          type: object
-          description: Job details
-          required:
-          - job_id
-          additionalProperties: false
-          properties:
-            job_id:
-              type: string
-              description: Unique job identifier
-              maxLength: 20
-    ConversionSuccess:
-      type: object
-      description: Successful lead conversion result
-      required:
-      - code
-      - message
-      - status
-      - details
-      additionalProperties: false
-      properties:
-        code:
-          type: string
-          enum:
-          - SUCCESS
-          description: Status code indicating successful conversion
-        message:
-          type: string
-          description: Human-readable message describing the conversion result
-          maxLength: 500
-        status:
-          type: string
-          enum:
-          - success
-          description: Overall status of the conversion operation
-        details:
-          type: object
-          description: Details of created records including their IDs and names
-          required:
-          - Contacts
-          - Deals
-          - Accounts
-          additionalProperties: false
-          properties:
-            Contacts:
-              $ref: '#/components/schemas/EntityReference'
-            Deals:
-              oneOf:
-              - $ref: '#/components/schemas/EntityReference'
-              - type: 'null'
-                description: No Deal was created during conversion
-              description: Deal record information, or null if no Deal was created
-            Accounts:
-              oneOf:
-              - $ref: '#/components/schemas/EntityReference'
-              - type: 'null'
-                description: No Account was created during conversion
-              description: Account record information, or null if no Account was created
-    ConversionSuccessWrapper:
-      type: object
-      description: Wrapper for successful conversion response
-      required:
-      - data
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of conversion results
-          maxItems: 100
-          items:
-            $ref: '#/components/schemas/ConversionSuccess'
     ErrorResponse:
       type: object
       description: Root-level error response without data wrapper
@@ -1119,19 +1024,6 @@ components:
               type: string
               description: Name of the missing or invalid parameter
               maxLength: 100
-    ConversionRequestWrapper:
-      type: object
-      description: Wrapper object containing array of conversion requests
-      required:
-      - data
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of lead conversion configurations
-          maxItems: 100
-          items:
-            $ref: '#/components/schemas/ConversionRequest'
     ConversionScheduledWrapper:
       type: object
       description: Wrapper for scheduled conversion response
@@ -1145,85 +1037,6 @@ components:
           maxItems: 1
           items:
             $ref: '#/components/schemas/ConversionScheduled'
-    EntityReference:
-      type: object
-      description: Reference to a CRM entity with ID and name
-      required:
-      - name
-      - id
-      additionalProperties: false
-      properties:
-        name:
-          type: string
-          description: Name of the entity
-          maxLength: 200
-        id:
-          type: string
-          description: Unique identifier of the entity record (int64 as string)
-          maxLength: 20
-    ValidationErrorWrapper:
-      type: object
-      description: Wrapper for validation error responses
-      required:
-      - data
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of validation errors
-          maxItems: 100
-          items:
-            $ref: '#/components/schemas/ValidationError'
-    ConversionRequest:
-      type: object
-      description: Configuration for converting a single lead
-      additionalProperties: false
-      properties:
-        overwrite:
-          type: boolean
-          description: If true, overwrites existing Account or Contact data when add_to_existing_record is enabled. Default is false.
-          default: false
-        notify_lead_owner:
-          type: boolean
-          description: If true, sends email notification to the Lead owner about the conversion. Default is false.
-          default: false
-        notify_new_entity_owner:
-          type: boolean
-          description: If true, notifies the owner(s) of newly created Contact, Account, or Deal records. Default is false.
-          default: false
-        add_to_existing_record:
-          type: boolean
-          description: When true, associates the Lead with an existing Account or Contact instead of creating duplicates.
-        assign_to:
-          type: object
-          description: Specifies the user to assign the converted records to. If omitted, records are assigned to the current Lead owner.
-          required:
-          - id
-          additionalProperties: false
-          properties:
-            id:
-              type: string
-              description: Zoho CRM user ID (int64 as string)
-              maxLength: 20
-        Deals:
-          $ref: '#/components/schemas/DealConversion'
-        carry_over_tags:
-          type: object
-          description: Configuration for carrying over tags from the Lead to converted records
-          additionalProperties: false
-          properties:
-            Contacts:
-              type: object
-              description: Tag carryover settings for Contact records
-              additionalProperties: true
-            Accounts:
-              type: object
-              description: Tag carryover settings for Account records
-              additionalProperties: true
-            Deals:
-              type: object
-              description: Tag carryover settings for Deal records
-              additionalProperties: true
     DealConversion:
       type: object
       description: Deal record configuration for lead conversion
@@ -1287,6 +1100,193 @@ components:
           type: string
           description: Detailed description of the Deal
           maxLength: 32000
+    ValidationErrorWrapper:
+      type: object
+      description: Wrapper for validation error responses
+      required:
+      - data
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of validation errors
+          maxItems: 100
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ConversionRequest:
+      type: object
+      description: Configuration for converting a single lead
+      additionalProperties: false
+      properties:
+        overwrite:
+          type: boolean
+          description: If true, overwrites existing Account or Contact data when add_to_existing_record is enabled. Default is false.
+          default: false
+        notify_lead_owner:
+          type: boolean
+          description: If true, sends email notification to the Lead owner about the conversion. Default is false.
+          default: false
+        notify_new_entity_owner:
+          type: boolean
+          description: If true, notifies the owner(s) of newly created Contact, Account, or Deal records. Default is false.
+          default: false
+        add_to_existing_record:
+          type: boolean
+          description: When true, associates the Lead with an existing Account or Contact instead of creating duplicates.
+        assign_to:
+          type: object
+          description: Specifies the user to assign the converted records to. If omitted, records are assigned to the current Lead owner.
+          required:
+          - id
+          additionalProperties: false
+          properties:
+            id:
+              type: string
+              description: Zoho CRM user ID (int64 as string)
+              maxLength: 20
+        Deals:
+          $ref: '#/components/schemas/DealConversion'
+        carry_over_tags:
+          type: object
+          description: Configuration for carrying over tags from the Lead to converted records
+          additionalProperties: false
+          properties:
+            Contacts:
+              type: object
+              description: Tag carryover settings for Contact records
+              additionalProperties: true
+            Accounts:
+              type: object
+              description: Tag carryover settings for Account records
+              additionalProperties: true
+            Deals:
+              type: object
+              description: Tag carryover settings for Deal records
+              additionalProperties: true
+    EntityReference:
+      type: object
+      description: Reference to a CRM entity with ID and name
+      required:
+      - name
+      - id
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+          description: Name of the entity
+          maxLength: 200
+        id:
+          type: string
+          description: Unique identifier of the entity record (int64 as string)
+          maxLength: 20
+    ConversionSuccess:
+      type: object
+      description: Successful lead conversion result
+      required:
+      - code
+      - message
+      - status
+      - details
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          enum:
+          - SUCCESS
+          description: Status code indicating successful conversion
+        message:
+          type: string
+          description: Human-readable message describing the conversion result
+          maxLength: 500
+        status:
+          type: string
+          enum:
+          - success
+          description: Overall status of the conversion operation
+        details:
+          type: object
+          description: Details of created records including their IDs and names
+          required:
+          - Contacts
+          - Deals
+          - Accounts
+          additionalProperties: false
+          properties:
+            Contacts:
+              $ref: '#/components/schemas/EntityReference'
+            Deals:
+              oneOf:
+              - $ref: '#/components/schemas/EntityReference'
+              - type: 'null'
+                description: No Deal was created during conversion
+              description: Deal record information, or null if no Deal was created
+            Accounts:
+              oneOf:
+              - $ref: '#/components/schemas/EntityReference'
+              - type: 'null'
+                description: No Account was created during conversion
+              description: Account record information, or null if no Account was created
+    ConversionScheduled:
+      type: object
+      description: Lead conversion scheduled for background processing
+      required:
+      - code
+      - message
+      - status
+      - details
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          enum:
+          - SCHEDULED
+          description: Status code indicating conversion was scheduled
+        message:
+          type: string
+          description: Human-readable message
+          maxLength: 500
+        status:
+          type: string
+          enum:
+          - success
+          description: Overall status
+        details:
+          type: object
+          description: Job details
+          required:
+          - job_id
+          additionalProperties: false
+          properties:
+            job_id:
+              type: string
+              description: Unique job identifier
+              maxLength: 20
+    ConversionRequestWrapper:
+      type: object
+      description: Wrapper object containing array of conversion requests
+      required:
+      - data
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of lead conversion configurations
+          maxItems: 100
+          items:
+            $ref: '#/components/schemas/ConversionRequest'
+    ConversionSuccessWrapper:
+      type: object
+      description: Wrapper for successful conversion response
+      required:
+      - data
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of conversion results
+          maxItems: 100
+          items:
+            $ref: '#/components/schemas/ConversionSuccess'
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

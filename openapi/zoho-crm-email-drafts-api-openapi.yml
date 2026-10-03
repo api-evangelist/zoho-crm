@@ -1450,22 +1450,6 @@ components:
       schema:
         type: string
         maxLength: 100
-    Draft:
-      name: draft
-      in: path
-      required: true
-      description: Unique draft identifier
-      schema:
-        type: string
-        maxLength: 100
-    Module:
-      name: module
-      in: path
-      required: true
-      description: module of the record
-      schema:
-        type: string
-        maxLength: 100
     Page:
       name: page
       in: query
@@ -1477,6 +1461,14 @@ components:
         enum:
         - 1
         - 2
+    Draft:
+      name: draft
+      in: path
+      required: true
+      description: Unique draft identifier
+      schema:
+        type: string
+        maxLength: 100
     PerPage:
       name: per_page
       in: query
@@ -1489,6 +1481,14 @@ components:
         - 1
         - 5
         - 10
+    Module:
+      name: module
+      in: path
+      required: true
+      description: module of the record
+      schema:
+        type: string
+        maxLength: 100
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

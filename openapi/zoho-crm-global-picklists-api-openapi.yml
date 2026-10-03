@@ -588,40 +588,6 @@ paths:
       - iam-oauth2-schema:
         - ZohoCRM.settings.global_picklist.READ
 components:
-  schemas:
-    Id:
-      type: string
-      description: Id of the resource.
-      format: int64
-    ModulepluralLabel:
-      type: string
-      description: Plural label of the module.
-      maxLength: 25
-    LayoutName:
-      type: string
-      description: Name of the layout
-      maxLength: 50
-    FieldLabel:
-      type: string
-      description: Name of the field label.
-      maxLength: 100
-    ModuleName:
-      type: string
-      description: Name of the module
-      maxLength: 100
-    ApiName:
-      type: string
-      description: API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.
-      pattern: ^[A-Za-z][A-Za-z0-9_]*$
-      maxLength: 50
-    PickListDisplayValue:
-      type: string
-      maxLength: 120
-      description: The picklist display value(translated value if translation enabled).
-    PickListReferenceValue:
-      type: string
-      maxLength: 120
-      description: Reference value of the picklist field.
   parameters:
     Id:
       name: id
@@ -652,38 +618,41 @@ components:
         maximum: 200
         default: 200
         format: int64
+  schemas:
+    Id:
+      type: string
+      description: Id of the resource.
+      format: int64
+    ApiName:
+      type: string
+      description: API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.
+      pattern: ^[A-Za-z][A-Za-z0-9_]*$
+      maxLength: 50
+    FieldLabel:
+      type: string
+      description: Name of the field label.
+      maxLength: 100
+    LayoutName:
+      type: string
+      description: Name of the layout
+      maxLength: 50
+    PickListDisplayValue:
+      type: string
+      maxLength: 120
+      description: The picklist display value(translated value if translation enabled).
+    ModulepluralLabel:
+      type: string
+      description: Plural label of the module.
+      maxLength: 25
+    PickListReferenceValue:
+      type: string
+      maxLength: 120
+      description: Reference value of the picklist field.
+    ModuleName:
+      type: string
+      description: Name of the module
+      maxLength: 100
   responses:
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            description: Internal server error response object containing code, message, details, and status.
-            properties:
-              code:
-                type: string
-                description: Error code indicating the type of error.
-                maxLength: 50
-              message:
-                type: string
-                description: Human-readable error message.
-                maxLength: 255
-              details:
-                type: object
-                description: Additional details about the error.
-                additionalProperties: true
-              status:
-                type: string
-                description: Status of the error response.
-                enum:
-                - error
-            required:
-            - code
-            - message
-            - details
-            - status
-            additionalProperties: false
     Forbidden:
       description: Forbidden
       content:
@@ -720,6 +689,37 @@ components:
                 enum:
                 - error
                 maxLength: 100
+            required:
+            - code
+            - message
+            - details
+            - status
+            additionalProperties: false
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            description: Internal server error response object containing code, message, details, and status.
+            properties:
+              code:
+                type: string
+                description: Error code indicating the type of error.
+                maxLength: 50
+              message:
+                type: string
+                description: Human-readable error message.
+                maxLength: 255
+              details:
+                type: object
+                description: Additional details about the error.
+                additionalProperties: true
+              status:
+                type: string
+                description: Status of the error response.
+                enum:
+                - error
             required:
             - code
             - message
