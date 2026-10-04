@@ -519,6 +519,77 @@ paths:
       - Contact Roles
 components:
   schemas:
+    NoPermissionContactsError:
+      type: object
+      description: No permission to view contacts
+      properties:
+        code:
+          type: string
+          description: Error code indicating lack of permission
+          const: NO_PERMISSION
+        details:
+          type: object
+          description: Details about the missing permissions
+          properties:
+            permissions:
+              type: array
+              description: List of required permissions that are missing
+              items:
+                type: string
+                description: Permission identifier for viewing contacts
+                const: Crm_Implied_View_Contacts
+              maxItems: 1
+          required:
+          - permissions
+          additionalProperties: false
+        message:
+          type: string
+          description: Error message indicating permission denial
+          const: permission denied
+        status:
+          type: string
+          description: Response status
+          const: error
+      required:
+      - code
+      - details
+      - message
+      - status
+      additionalProperties: false
+    InvalidModuleError:
+      type: object
+      description: Invalid module name error
+      properties:
+        code:
+          type: string
+          description: Error code indicating invalid module name
+          const: INVALID_MODULE
+        details:
+          type: object
+          description: Error details containing the path index
+          properties:
+            resource_path_index:
+              type: integer
+              format: int32
+              description: Index of the path parameter that is invalid (0 for module)
+              const: 0
+          required:
+          - resource_path_index
+          additionalProperties: false
+        message:
+          type: string
+          description: Error message indicating the module name is invalid
+          const: the module name given seems to be invalid
+        status:
+          type: string
+          description: Response status
+          const: error
+      required:
+      - code
+      - details
+      - message
+      - status
+      additionalProperties: false
     DeleteRelationsSuccessResponse:
       type: object
       description: Response returned after deleting contact role relations
@@ -563,39 +634,6 @@ components:
           minItems: 1
       required:
       - data
-      additionalProperties: false
-    RequiredParamMissingError:
-      type: object
-      description: Required parameter missing error
-      properties:
-        code:
-          type: string
-          description: Error code indicating a required parameter is missing
-          const: REQUIRED_PARAM_MISSING
-        details:
-          type: object
-          description: Error details containing the missing parameter name
-          properties:
-            param_name:
-              type: string
-              description: Name of the missing required parameter
-              const: fields
-          required:
-          - param_name
-          additionalProperties: false
-        message:
-          type: string
-          description: Error message indicating a parameter is missing
-          const: One of the expected parameter is missing
-        status:
-          type: string
-          description: Response status
-          const: error
-      required:
-      - code
-      - details
-      - message
-      - status
       additionalProperties: false
     UpsertRelationsSuccessResponse:
       type: object
@@ -644,33 +682,30 @@ components:
       required:
       - data
       additionalProperties: false
-    NoPermissionDealsError:
+    InvalidRelationNameError:
       type: object
-      description: No permission to view deals
+      description: Invalid relation name error
       properties:
         code:
           type: string
-          description: Error code indicating lack of permission
-          const: NO_PERMISSION
+          description: Error code indicating invalid relation name
+          const: INVALID_DATA
         details:
           type: object
-          description: Details about the missing permissions
+          description: Error details containing the path index
           properties:
-            permissions:
-              type: array
-              description: List of required permissions that are missing
-              items:
-                type: string
-                description: Permission identifier for viewing deals
-                const: Crm_Implied_View_Potentials
-              maxItems: 1
+            resource_path_index:
+              type: integer
+              format: int32
+              description: Index of the path parameter that is invalid (2 for relation name)
+              const: 2
           required:
-          - permissions
+          - resource_path_index
           additionalProperties: false
         message:
           type: string
-          description: Error message indicating permission denial
-          const: permission denied
+          description: Error message indicating the relation name is invalid
+          const: the relation name given seems to be invalid
         status:
           type: string
           description: Response status
@@ -754,9 +789,42 @@ components:
       required:
       - data
       additionalProperties: false
-    NoPermissionContactsError:
+    RequiredParamMissingError:
       type: object
-      description: No permission to view contacts
+      description: Required parameter missing error
+      properties:
+        code:
+          type: string
+          description: Error code indicating a required parameter is missing
+          const: REQUIRED_PARAM_MISSING
+        details:
+          type: object
+          description: Error details containing the missing parameter name
+          properties:
+            param_name:
+              type: string
+              description: Name of the missing required parameter
+              const: fields
+          required:
+          - param_name
+          additionalProperties: false
+        message:
+          type: string
+          description: Error message indicating a parameter is missing
+          const: One of the expected parameter is missing
+        status:
+          type: string
+          description: Response status
+          const: error
+      required:
+      - code
+      - details
+      - message
+      - status
+      additionalProperties: false
+    NoPermissionDealsError:
+      type: object
+      description: No permission to view deals
       properties:
         code:
           type: string
@@ -771,8 +839,8 @@ components:
               description: List of required permissions that are missing
               items:
                 type: string
-                description: Permission identifier for viewing contacts
-                const: Crm_Implied_View_Contacts
+                description: Permission identifier for viewing deals
+                const: Crm_Implied_View_Potentials
               maxItems: 1
           required:
           - permissions
@@ -791,83 +859,7 @@ components:
       - message
       - status
       additionalProperties: false
-    InvalidRelationNameError:
-      type: object
-      description: Invalid relation name error
-      properties:
-        code:
-          type: string
-          description: Error code indicating invalid relation name
-          const: INVALID_DATA
-        details:
-          type: object
-          description: Error details containing the path index
-          properties:
-            resource_path_index:
-              type: integer
-              format: int32
-              description: Index of the path parameter that is invalid (2 for relation name)
-              const: 2
-          required:
-          - resource_path_index
-          additionalProperties: false
-        message:
-          type: string
-          description: Error message indicating the relation name is invalid
-          const: the relation name given seems to be invalid
-        status:
-          type: string
-          description: Response status
-          const: error
-      required:
-      - code
-      - details
-      - message
-      - status
-      additionalProperties: false
-    InvalidModuleError:
-      type: object
-      description: Invalid module name error
-      properties:
-        code:
-          type: string
-          description: Error code indicating invalid module name
-          const: INVALID_MODULE
-        details:
-          type: object
-          description: Error details containing the path index
-          properties:
-            resource_path_index:
-              type: integer
-              format: int32
-              description: Index of the path parameter that is invalid (0 for module)
-              const: 0
-          required:
-          - resource_path_index
-          additionalProperties: false
-        message:
-          type: string
-          description: Error message indicating the module name is invalid
-          const: the module name given seems to be invalid
-        status:
-          type: string
-          description: Response status
-          const: error
-      required:
-      - code
-      - details
-      - message
-      - status
-      additionalProperties: false
   parameters:
-    Ids:
-      name: ids
-      in: query
-      required: false
-      description: Comma-separated list of contact role relation IDs to delete
-      schema:
-        type: string
-        format: int64
     Fields:
       name: fields
       in: query
@@ -878,14 +870,6 @@ components:
         pattern: ^[A-Za-z_][A-Za-z0-9_]*(?:,[A-Za-z_][A-Za-z0-9_]*)*$
         minLength: 1
         maxLength: 1000
-    DealId:
-      name: dealId
-      in: path
-      required: true
-      description: The unique identifier of the deal record
-      schema:
-        type: string
-        format: int64
     Contact:
       name: contactId
       in: path
@@ -903,6 +887,22 @@ components:
         type: string
         enum:
         - Deals
+    Ids:
+      name: ids
+      in: query
+      required: false
+      description: Comma-separated list of contact role relation IDs to delete
+      schema:
+        type: string
+        format: int64
+    DealId:
+      name: dealId
+      in: path
+      required: true
+      description: The unique identifier of the deal record
+      schema:
+        type: string
+        format: int64
   responses:
     InternalServerError:
       description: Internal Server Error

@@ -480,15 +480,6 @@ components:
         enum:
         - '1'
         - '2'
-    PerPage:
-      description: Per Page Count
-      name: per_page
-      in: query
-      required: false
-      schema:
-        type: string
-        enum:
-        - '10'
     ApiNames:
       description: Api names of the feature comma separated
       name: api_names
@@ -504,19 +495,28 @@ components:
         - external_field
         - unique_field
         - private_fields
-    Feature:
-      description: Feature api name
-      name: feature
-      in: path
-      required: true
+    PerPage:
+      description: Per Page Count
+      name: per_page
+      in: query
+      required: false
       schema:
-        maxLength: 25
         type: string
+        enum:
+        - '10'
     Module:
       description: module name
       name: module
       in: query
       required: false
+      schema:
+        maxLength: 25
+        type: string
+    Feature:
+      description: Feature api name
+      name: feature
+      in: path
+      required: true
       schema:
         maxLength: 25
         type: string

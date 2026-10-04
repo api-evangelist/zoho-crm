@@ -788,17 +788,6 @@ paths:
                 additionalProperties: false
 components:
   parameters:
-    Year:
-      name: year
-      in: query
-      required: false
-      description: Filter holidays by year. Must be a valid 4-digit year value within a reasonable range.
-      schema:
-        type: integer
-        format: int32
-        minimum: 2000
-        maximum: 2100
-        description: The Year of the object.
     Type:
       name: type
       in: query
@@ -832,6 +821,17 @@ components:
         minLength: 1
         maxLength: 30
         description: The Holiday id of the object.
+    Year:
+      name: year
+      in: query
+      required: false
+      description: Filter holidays by year. Must be a valid 4-digit year value within a reasonable range.
+      schema:
+        type: integer
+        format: int32
+        minimum: 2000
+        maximum: 2100
+        description: The Year of the object.
   schemas:
     InvalidDataResponse:
       type: object

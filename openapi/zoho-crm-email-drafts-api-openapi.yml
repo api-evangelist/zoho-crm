@@ -1442,14 +1442,6 @@ paths:
       - Email Drafts
 components:
   parameters:
-    Record:
-      name: record
-      in: path
-      required: true
-      description: Entity id of the record
-      schema:
-        type: string
-        maxLength: 100
     Page:
       name: page
       in: query
@@ -1486,6 +1478,14 @@ components:
       in: path
       required: true
       description: module of the record
+      schema:
+        type: string
+        maxLength: 100
+    Record:
+      name: record
+      in: path
+      required: true
+      description: Entity id of the record
       schema:
         type: string
         maxLength: 100

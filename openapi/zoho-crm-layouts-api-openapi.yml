@@ -72,7 +72,92 @@ paths:
         '500':
           $ref: '#/components/responses/InternalServerErrorResponse'
 components:
+  parameters:
+    ModuleParameter:
+      name: module
+      in: query
+      required: true
+      description: Specify the API name of the required module. Supports both standard modules (Leads, Accounts, Contacts, Deals, Campaigns, Tasks, Cases, Events, Calls, Solutions, Products, Vendors, Price_Books, Quotes, Sales_Orders, Purchase_Orders, Invoices, Appointments, Services) and custom modules. Module API names are case-insensitive, can contain alphanumeric characters and underscores, must not contain spaces, and have a maximum length of 50 characters. Use the GET - Modules Metadata API to retrieve all available module API names.
+      schema:
+        $ref: '#/components/schemas/ModuleName'
+    LayoutIdParameter:
+      name: id
+      in: path
+      required: true
+      description: Unique identifier of the layout. Must be a valid 64-bit integer represented as a string. Can be obtained from the Get Layouts API.
+      schema:
+        $ref: '#/components/schemas/Id'
   schemas:
+    FieldUpdateObject:
+      type: object
+      description: Field object for adding, updating, creating, or removing fields from a section. For adding an existing field, provide only id. For updating field position, provide id and sequence_number. For creating a new field, provide field_label, data_type, and optionally length and sequence_number. For removing/moving a field, provide id and _delete object.
+      minProperties: 1
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+          description: Unique identifier of an existing field. Required when adding, updating position, or removing an existing field. Omit when creating a new custom field.
+        field_label:
+          type: string
+          description: Display label for the field. Required when creating a new custom field.
+          minLength: 1
+          maxLength: 255
+        data_type:
+          type: string
+          description: Data type of the field. Required when creating a new custom field. Determines the field's input type and validation.
+          enum:
+          - text
+          - textarea
+          - email
+          - phone
+          - website
+          - integer
+          - bigint
+          - currency
+          - double
+          - percent
+          - date
+          - datetime
+          - boolean
+          - picklist
+          - multiselectpicklist
+          - lookup
+          - multiselectlookup
+          - autonumber
+          - fileupload
+          - imageupload
+          - formula
+          - rollup_summary
+          - consent_lookup
+          - profileimage
+          - richtextarea
+          - userlookup
+          - multiuserlookup
+          - event_reminder
+        length:
+          type: integer
+          format: int32
+          description: Maximum length of the field value in characters. Applicable for text-type fields (text, textarea, richtextarea).
+          minimum: 1
+          maximum: 32000
+        sequence_number:
+          type: integer
+          format: int32
+          description: Position/order of the field within the section (1-based). Lower numbers appear first.
+          minimum: 1
+        _delete:
+          $ref: '#/components/schemas/DeleteObject'
+          description: Delete configuration for removing the field. Set permanent to false to move to unused section (can be re-added later), true to permanently delete the field and its data.
+      additionalProperties: false
+    DeleteObject:
+      type: object
+      description: Delete configuration object.
+      required:
+      - permanent
+      properties:
+        permanent:
+          type: boolean
+          description: If true, permanently deletes the resource. If false, moves it to unused section (for fields).
+      additionalProperties: false
     LayoutUpdateSuccessResult:
       type: object
       description: Success result for a layout update.
@@ -134,119 +219,6 @@ components:
           enum:
           - error
       additionalProperties: false
-    LayoutUpdateObject:
-      type: object
-      description: Layout object containing the fields to update. At least one property must be provided. Maximum 5 sections and 5 fields (total across all sections) can be modified per request.
-      minProperties: 1
-      properties:
-        name:
-          type: string
-          description: New name for the layout. Must be unique within the module.
-          minLength: 1
-          maxLength: 255
-        show_business_card:
-          type: boolean
-          description: Enable or disable the business card display for this layout.
-        profiles:
-          type: array
-          description: Array of profile objects to add or remove from the layout.
-          items:
-            $ref: '#/components/schemas/ProfileUpdateObject'
-          minItems: 1
-          maxItems: 50
-        sections:
-          type: array
-          description: Array of section objects to create, update, or delete. Maximum 5 sections allowed per request. Total fields across all sections must not exceed 5.
-          items:
-            $ref: '#/components/schemas/SectionUpdateObject'
-          minItems: 1
-          maxItems: 5
-      additionalProperties: false
-    FieldUpdateObject:
-      type: object
-      description: Field object for adding, updating, creating, or removing fields from a section. For adding an existing field, provide only id. For updating field position, provide id and sequence_number. For creating a new field, provide field_label, data_type, and optionally length and sequence_number. For removing/moving a field, provide id and _delete object.
-      minProperties: 1
-      properties:
-        id:
-          $ref: '#/components/schemas/Id'
-          description: Unique identifier of an existing field. Required when adding, updating position, or removing an existing field. Omit when creating a new custom field.
-        field_label:
-          type: string
-          description: Display label for the field. Required when creating a new custom field.
-          minLength: 1
-          maxLength: 255
-        data_type:
-          type: string
-          description: Data type of the field. Required when creating a new custom field. Determines the field's input type and validation.
-          enum:
-          - text
-          - textarea
-          - email
-          - phone
-          - website
-          - integer
-          - bigint
-          - currency
-          - double
-          - percent
-          - date
-          - datetime
-          - boolean
-          - picklist
-          - multiselectpicklist
-          - lookup
-          - multiselectlookup
-          - autonumber
-          - fileupload
-          - imageupload
-          - formula
-          - rollup_summary
-          - consent_lookup
-          - profileimage
-          - richtextarea
-          - userlookup
-          - multiuserlookup
-          - event_reminder
-        length:
-          type: integer
-          format: int32
-          description: Maximum length of the field value in characters. Applicable for text-type fields (text, textarea, richtextarea).
-          minimum: 1
-          maximum: 32000
-        sequence_number:
-          type: integer
-          format: int32
-          description: Position/order of the field within the section (1-based). Lower numbers appear first.
-          minimum: 1
-        _delete:
-          $ref: '#/components/schemas/DeleteObject'
-          description: Delete configuration for removing the field. Set permanent to false to move to unused section (can be re-added later), true to permanently delete the field and its data.
-      additionalProperties: false
-    LayoutUpdateErrorDetails:
-      type: object
-      description: Error details specific to layout update operations.
-      properties:
-        api_name:
-          type: string
-          description: API name of the field that caused the error.
-          maxLength: 100
-        json_path:
-          type: string
-          description: JSON path to the field that caused the error.
-          maxLength: 500
-        expected_data_type:
-          type: string
-          description: Expected data type for the field.
-          maxLength: 50
-        maximum_length:
-          type: integer
-          format: int32
-          description: Maximum allowed length for the field.
-        limit:
-          type: integer
-          format: int32
-          description: Maximum limit exceeded.
-      additionalProperties: true
     ErrorDetails:
       type: object
       description: Additional context-specific error details. Properties vary based on error type.
@@ -292,19 +264,6 @@ components:
             maxLength: 100
           maxItems: 20
       additionalProperties: true
-    ProfileUpdateObject:
-      type: object
-      description: Profile object for adding or removing profile permissions.
-      required:
-      - id
-      properties:
-        id:
-          $ref: '#/components/schemas/Id'
-          description: Unique identifier of the profile.
-        _delete:
-          type: boolean
-          description: Set to true to remove this profile's access to the layout.
-      additionalProperties: false
     SectionUpdateObject:
       type: object
       description: Section object for creating, updating, or deleting sections. For creating a new section, provide name, display_label, sequence_number, tab_traversal, and column_count. For updating an existing section, provide id along with properties to update. For deleting a section, provide id and _delete object.
@@ -388,6 +347,54 @@ components:
           - error
           description: Status indicator for the response
       additionalProperties: false
+    ModuleName:
+      type: string
+      pattern: ^[A-Za-z0-9_]+$
+      minLength: 1
+      maxLength: 50
+      description: Module API name
+    UpdateLayoutRequest:
+      type: object
+      description: Request body for updating a layout. Only a single layout can be updated per request.
+      required:
+      - layouts
+      properties:
+        layouts:
+          type: array
+          description: Array containing exactly one layout object with update properties. Only single layout updates are supported per request.
+          minItems: 1
+          maxItems: 1
+          items:
+            $ref: '#/components/schemas/LayoutUpdateObject'
+      additionalProperties: false
+    LayoutUpdateObject:
+      type: object
+      description: Layout object containing the fields to update. At least one property must be provided. Maximum 5 sections and 5 fields (total across all sections) can be modified per request.
+      minProperties: 1
+      properties:
+        name:
+          type: string
+          description: New name for the layout. Must be unique within the module.
+          minLength: 1
+          maxLength: 255
+        show_business_card:
+          type: boolean
+          description: Enable or disable the business card display for this layout.
+        profiles:
+          type: array
+          description: Array of profile objects to add or remove from the layout.
+          items:
+            $ref: '#/components/schemas/ProfileUpdateObject'
+          minItems: 1
+          maxItems: 50
+        sections:
+          type: array
+          description: Array of section objects to create, update, or delete. Maximum 5 sections allowed per request. Total fields across all sections must not exceed 5.
+          items:
+            $ref: '#/components/schemas/SectionUpdateObject'
+          minItems: 1
+          maxItems: 5
+      additionalProperties: false
     LayoutUpdateErrorResult:
       type: object
       description: Error result for a layout update.
@@ -420,37 +427,6 @@ components:
           enum:
           - error
       additionalProperties: false
-    DeleteObject:
-      type: object
-      description: Delete configuration object.
-      required:
-      - permanent
-      properties:
-        permanent:
-          type: boolean
-          description: If true, permanently deletes the resource. If false, moves it to unused section (for fields).
-      additionalProperties: false
-    Id:
-      type: string
-      format: int64
-      pattern: ^[0-9]{1,19}$
-      minLength: 1
-      maxLength: 19
-      description: Unique identifier (64-bit integer represented as string)
-    UpdateLayoutRequest:
-      type: object
-      description: Request body for updating a layout. Only a single layout can be updated per request.
-      required:
-      - layouts
-      properties:
-        layouts:
-          type: array
-          description: Array containing exactly one layout object with update properties. Only single layout updates are supported per request.
-          minItems: 1
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/LayoutUpdateObject'
-      additionalProperties: false
     UpdateLayoutSuccessResponse:
       type: object
       description: Successful response for layout update operation.
@@ -465,12 +441,51 @@ components:
           minItems: 1
           maxItems: 1
       additionalProperties: false
-    ModuleName:
+    ProfileUpdateObject:
+      type: object
+      description: Profile object for adding or removing profile permissions.
+      required:
+      - id
+      properties:
+        id:
+          $ref: '#/components/schemas/Id'
+          description: Unique identifier of the profile.
+        _delete:
+          type: boolean
+          description: Set to true to remove this profile's access to the layout.
+      additionalProperties: false
+    Id:
       type: string
-      pattern: ^[A-Za-z0-9_]+$
+      format: int64
+      pattern: ^[0-9]{1,19}$
       minLength: 1
-      maxLength: 50
-      description: Module API name
+      maxLength: 19
+      description: Unique identifier (64-bit integer represented as string)
+    LayoutUpdateErrorDetails:
+      type: object
+      description: Error details specific to layout update operations.
+      properties:
+        api_name:
+          type: string
+          description: API name of the field that caused the error.
+          maxLength: 100
+        json_path:
+          type: string
+          description: JSON path to the field that caused the error.
+          maxLength: 500
+        expected_data_type:
+          type: string
+          description: Expected data type for the field.
+          maxLength: 50
+        maximum_length:
+          type: integer
+          format: int32
+          description: Maximum allowed length for the field.
+        limit:
+          type: integer
+          format: int32
+          description: Maximum limit exceeded.
+      additionalProperties: true
   responses:
     InternalServerErrorResponse:
       description: Internal Server Error - An unexpected error occurred on the server
@@ -484,21 +499,6 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
-  parameters:
-    LayoutIdParameter:
-      name: id
-      in: path
-      required: true
-      description: Unique identifier of the layout. Must be a valid 64-bit integer represented as a string. Can be obtained from the Get Layouts API.
-      schema:
-        $ref: '#/components/schemas/Id'
-    ModuleParameter:
-      name: module
-      in: query
-      required: true
-      description: Specify the API name of the required module. Supports both standard modules (Leads, Accounts, Contacts, Deals, Campaigns, Tasks, Cases, Events, Calls, Solutions, Products, Vendors, Price_Books, Quotes, Sales_Orders, Purchase_Orders, Invoices, Appointments, Services) and custom modules. Module API names are case-insensitive, can contain alphanumeric characters and underscores, must not contain spaces, and have a maximum length of 50 characters. Use the GET - Modules Metadata API to retrieve all available module API names.
-      schema:
-        $ref: '#/components/schemas/ModuleName'
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

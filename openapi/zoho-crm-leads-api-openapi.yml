@@ -927,6 +927,74 @@ components:
         type: string
         maxLength: 255
   schemas:
+    ConversionSuccessWrapper:
+      type: object
+      description: Wrapper for successful conversion response
+      required:
+      - data
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of conversion results
+          maxItems: 100
+          items:
+            $ref: '#/components/schemas/ConversionSuccess'
+    ValidationErrorWrapper:
+      type: object
+      description: Wrapper for validation error responses
+      required:
+      - data
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of validation errors
+          maxItems: 100
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    ErrorResponse:
+      type: object
+      description: Root-level error response without data wrapper
+      required:
+      - status
+      - code
+      - message
+      - details
+      additionalProperties: false
+      properties:
+        status:
+          type: string
+          enum:
+          - error
+          description: Error status indicator
+        code:
+          type: string
+          enum:
+          - INVALID_DATA
+          - ID_ALREADY_CONVERTED
+          - CANNOT_PERFORM_ACTION
+          - NOT_ALLOWED
+          - REQUIRED_PARAM_MISSING
+          - NOT_REVIEWED
+          description: Error code
+        message:
+          type: string
+          description: Error message
+          maxLength: 500
+        details:
+          type: object
+          description: Error details
+          additionalProperties: true
+          properties:
+            resource_path_index:
+              type: integer
+              format: int32
+              description: Index of the resource path that caused the error
+            param_name:
+              type: string
+              description: Name of the missing or invalid parameter
+              maxLength: 100
     ValidationError:
       type: object
       description: Validation error details
@@ -982,61 +1050,6 @@ components:
               type: integer
               format: int32
               description: Maximum allowed length for the field
-    ErrorResponse:
-      type: object
-      description: Root-level error response without data wrapper
-      required:
-      - status
-      - code
-      - message
-      - details
-      additionalProperties: false
-      properties:
-        status:
-          type: string
-          enum:
-          - error
-          description: Error status indicator
-        code:
-          type: string
-          enum:
-          - INVALID_DATA
-          - ID_ALREADY_CONVERTED
-          - CANNOT_PERFORM_ACTION
-          - NOT_ALLOWED
-          - REQUIRED_PARAM_MISSING
-          - NOT_REVIEWED
-          description: Error code
-        message:
-          type: string
-          description: Error message
-          maxLength: 500
-        details:
-          type: object
-          description: Error details
-          additionalProperties: true
-          properties:
-            resource_path_index:
-              type: integer
-              format: int32
-              description: Index of the resource path that caused the error
-            param_name:
-              type: string
-              description: Name of the missing or invalid parameter
-              maxLength: 100
-    ConversionScheduledWrapper:
-      type: object
-      description: Wrapper for scheduled conversion response
-      required:
-      - data
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array containing the scheduled job information
-          maxItems: 1
-          items:
-            $ref: '#/components/schemas/ConversionScheduled'
     DealConversion:
       type: object
       description: Deal record configuration for lead conversion
@@ -1100,19 +1113,35 @@ components:
           type: string
           description: Detailed description of the Deal
           maxLength: 32000
-    ValidationErrorWrapper:
+    EntityReference:
       type: object
-      description: Wrapper for validation error responses
+      description: Reference to a CRM entity with ID and name
+      required:
+      - name
+      - id
+      additionalProperties: false
+      properties:
+        name:
+          type: string
+          description: Name of the entity
+          maxLength: 200
+        id:
+          type: string
+          description: Unique identifier of the entity record (int64 as string)
+          maxLength: 20
+    ConversionScheduledWrapper:
+      type: object
+      description: Wrapper for scheduled conversion response
       required:
       - data
       additionalProperties: false
       properties:
         data:
           type: array
-          description: Array of validation errors
-          maxItems: 100
+          description: Array containing the scheduled job information
+          maxItems: 1
           items:
-            $ref: '#/components/schemas/ValidationError'
+            $ref: '#/components/schemas/ConversionScheduled'
     ConversionRequest:
       type: object
       description: Configuration for converting a single lead
@@ -1163,22 +1192,6 @@ components:
               type: object
               description: Tag carryover settings for Deal records
               additionalProperties: true
-    EntityReference:
-      type: object
-      description: Reference to a CRM entity with ID and name
-      required:
-      - name
-      - id
-      additionalProperties: false
-      properties:
-        name:
-          type: string
-          description: Name of the entity
-          maxLength: 200
-        id:
-          type: string
-          description: Unique identifier of the entity record (int64 as string)
-          maxLength: 20
     ConversionSuccess:
       type: object
       description: Successful lead conversion result
@@ -1226,6 +1239,19 @@ components:
               - type: 'null'
                 description: No Account was created during conversion
               description: Account record information, or null if no Account was created
+    ConversionRequestWrapper:
+      type: object
+      description: Wrapper object containing array of conversion requests
+      required:
+      - data
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of lead conversion configurations
+          maxItems: 100
+          items:
+            $ref: '#/components/schemas/ConversionRequest'
     ConversionScheduled:
       type: object
       description: Lead conversion scheduled for background processing
@@ -1261,32 +1287,6 @@ components:
               type: string
               description: Unique job identifier
               maxLength: 20
-    ConversionRequestWrapper:
-      type: object
-      description: Wrapper object containing array of conversion requests
-      required:
-      - data
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of lead conversion configurations
-          maxItems: 100
-          items:
-            $ref: '#/components/schemas/ConversionRequest'
-    ConversionSuccessWrapper:
-      type: object
-      description: Wrapper for successful conversion response
-      required:
-      - data
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of conversion results
-          maxItems: 100
-          items:
-            $ref: '#/components/schemas/ConversionSuccess'
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

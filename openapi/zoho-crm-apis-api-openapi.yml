@@ -114,28 +114,7 @@ paths:
       tags:
       - APIs
 components:
-  parameters:
-    Filters:
-      name: filters
-      in: query
-      required: false
-      description: Filter APIs by OAuth scope.
-      schema:
-        type: string
-        maxLength: 2048
   responses:
-    BadRequest:
-      description: Bad request.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
-    Forbidden:
-      description: Forbidden.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse'
     TooManyRequests:
       description: Rate limit exceeded.
       content:
@@ -154,12 +133,33 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
+    Forbidden:
+      description: Forbidden.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
+    BadRequest:
+      description: Bad request.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse'
     InternalServerError:
       description: Unexpected server error.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse'
+  parameters:
+    Filters:
+      name: filters
+      in: query
+      required: false
+      description: Filter APIs by OAuth scope.
+      schema:
+        type: string
+        maxLength: 2048
   schemas:
     ErrorResponse:
       type: object
