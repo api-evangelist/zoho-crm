@@ -99,3 +99,46 @@ api_access:
 related:
 - rate-limits/zoho-crm-rate-limits.yml
 - https://www.zoho.com/crm/developer/docs/api/v8/api-limits.html
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - free
+  - subscription
+  units: []
+  plans:
+  - name: Free
+    access: other
+    model: free
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Standard
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Professional
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Enterprise
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
+  - name: Ultimate
+    access: other
+    model: subscription
+    model_how: derived
+    units: []
+    periods:
+    - month
