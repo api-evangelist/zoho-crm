@@ -316,7 +316,6 @@
   arazzo: null
 - slug: zoho-crm-linkedin-ads
   label: LinkedIn Ads
-  partner: linkedin-ads
   partner_name: LinkedIn Ads
   category: Ads & Conversion
   type: marketplace
@@ -324,7 +323,7 @@
   channel: ipaas-usage
   evidence: https://zapier.com/apps/zoho-crm/integrations/linkedin-ads
   source: edge
-  status: pending-generation
+  status: pending-partner-spec
   arazzo: null
 - slug: zoho-crm-jotform
   label: Jotform
@@ -494,7 +493,6 @@
   arazzo: null
 - slug: zoho-crm-monday-com
   label: monday.com
-  partner: monday-com
   partner_name: monday.com
   category: Project Management
   type: marketplace
@@ -502,7 +500,7 @@
   channel: ipaas-usage
   evidence: https://zapier.com/apps/zoho-crm/integrations/monday
   source: edge
-  status: pending-generation
+  status: pending-partner-spec
   arazzo: null
 - slug: zoho-crm-brevo
   label: Brevo
