@@ -448,7 +448,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/360-sms-for-zoho-crm
   category: Sales
-  use_case: '360 SMS for Zoho CRM: Win more customers faster with the #1 bulk SMS & text messaging app for Zoho CRM. Two-way SMS, MMS & WhatsApp- complete CRM texting platform.'
+  use_case: '360 SMS for Zoho CRM: Win more customers faster with the #1 bulk SMS & text messaging app for Zoho
+    CRM. Two-way SMS, MMS & WhatsApp- complete CRM texting platform.'
 - partner_name: Mav Consulting Group LLC
   partner: null
   type: marketplace
@@ -498,7 +499,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/smooth-messenger-for-zoho-crm
   category: Marketing
-  use_case: 'Sinch Engage SMS for Zoho CRM: Improve engagement with SMS,  MMS & RCS in Zoho CRM—automated workflows, bulk messaging, and real-time two-way texting.'
+  use_case: 'Sinch Engage SMS for Zoho CRM: Improve engagement with SMS,  MMS & RCS in Zoho CRM—automated workflows,
+    bulk messaging, and real-time two-way texting.'
 - partner_name: Ulgebra
   partner: null
   type: marketplace
@@ -518,7 +520,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/ringio-power-dialer-for-zoho-crm
   category: Sales
-  use_case: 'Ring.io Power Dialer for Zoho CRM: Power dialer for Zoho CRM. 12.3% human connection rate against a 5.4% industry average - measured, published daily'
+  use_case: 'Ring.io Power Dialer for Zoho CRM: Power dialer for Zoho CRM. 12.3% human connection rate against a
+    5.4% industry average - measured, published daily'
 - partner_name: Zoho Corporation
   partner: zoho
   type: marketplace
@@ -558,7 +561,9 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/kixie
   category: Telephony
-  use_case: 'PowerCall and SMS for Zoho: Kixie is the #1 calling and texting solution for revenue teams working with Zoho. Multi-line Power Dialing, AI-powered local presence, Spam protection with phone number reputation management, Conversation Intelligence, automated SMS/MMS, Team SMS and so much more.'
+  use_case: 'PowerCall and SMS for Zoho: Kixie is the #1 calling and texting solution for revenue teams working
+    with Zoho. Multi-line Power Dialing, AI-powered local presence, Spam protection with phone number reputation
+    management, Conversation Intelligence, automated SMS/MMS, Team SMS and so much more.'
 - partner_name: SaasPlugin
   partner: null
   type: marketplace
@@ -568,7 +573,9 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/burst-sms
   category: Telephony
-  use_case: 'Zoho CRM 2 Burst SMS: Bidirectional Messaging (Sending & Receiving SMS) . An SMS can be sent using any custom message or a predefined SMS template. SMS automation can also be setup in many different ways throughout the CRM.'
+  use_case: 'Zoho CRM 2 Burst SMS: Bidirectional Messaging (Sending & Receiving SMS) . An SMS can be sent using
+    any custom message or a predefined SMS template. SMS automation can also be setup in many different ways throughout
+    the CRM.'
 - partner_name: Zoho Corporation
   partner: zoho
   type: marketplace
@@ -598,7 +605,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/wes-for-zoho-crm
   category: Marketing
-  use_case: 'WES for Zoho CRM: Autofill fields in Zoho CRM or related modules, aggregate data, and much more. No custom code needed!'
+  use_case: 'WES for Zoho CRM: Autofill fields in Zoho CRM or related modules, aggregate data, and much more. No
+    custom code needed!'
 - partner_name: Voicespin
   partner: null
   type: marketplace
@@ -638,7 +646,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/google-drive
   category: Collaboration
-  use_case: 'Google Drive: Use the Google Drive Extension to save, share and collaborate on files from within Zoho CRM.'
+  use_case: 'Google Drive: Use the Google Drive Extension to save, share and collaborate on files from within Zoho
+    CRM.'
 - partner_name: Ulgebra
   partner: null
   type: marketplace
@@ -658,7 +667,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/lead-finder-for-zoho-crm
   category: Marketing
-  use_case: 'Lead Finder for Zoho CRM: The Lead Finder extension for Zoho CRM helps you find where your target market lives'
+  use_case: 'Lead Finder for Zoho CRM: The Lead Finder extension for Zoho CRM helps you find where your target market
+    lives'
 - partner_name: EasyToCheck Software Solutions
   partner: null
   type: marketplace
@@ -678,7 +688,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/whatsapp-business-messaging-for-zoho-crm
   category: Sales
-  use_case: 'WhatsApp Business Messaging for Zoho CRM: Personalise WhatsApp messages to qualified leads & contacts with Gallabox'
+  use_case: 'WhatsApp Business Messaging for Zoho CRM: Personalise WhatsApp messages to qualified leads & contacts
+    with Gallabox'
 - partner_name: Zenith Innovations
   partner: null
   type: marketplace
@@ -708,7 +719,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/contact-info-verifier-extension-for-zoho-crm
   category: Sales & Marketing
-  use_case: 'Contact Info Verifier Extension for Zoho CRM: Stay connected and reduce risk with our trusted email and phone number verification extension for Zoho CRM.'
+  use_case: 'Contact Info Verifier Extension for Zoho CRM: Stay connected and reduce risk with our trusted email
+    and phone number verification extension for Zoho CRM.'
 - partner_name: Zenith Innovations
   partner: null
   type: marketplace
@@ -718,7 +730,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/list-manager-for-zoho-crm
   category: Marketing
-  use_case: 'List Manager For Zoho CRM: Smoothly switch prospects and customers to different campaigns and manage lists inside Zoho CRM.'
+  use_case: 'List Manager For Zoho CRM: Smoothly switch prospects and customers to different campaigns and manage
+    lists inside Zoho CRM.'
 - partner_name: CRMOZ
   partner: null
   type: marketplace
@@ -748,7 +761,9 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/xero2zoho
   category: Finance
-  use_case: 'Zoho CRM 2 Xero: Invoicing and payment made more efficient. Connect your Xero account and Zoho CRM with our custom plugin. Collaborate with colleagues, connect with customers, and grow your business fast. Access rich drag-and-drop reporting tools from within CRM.'
+  use_case: 'Zoho CRM 2 Xero: Invoicing and payment made more efficient. Connect your Xero account and Zoho CRM
+    with our custom plugin. Collaborate with colleagues, connect with customers, and grow your business fast. Access
+    rich drag-and-drop reporting tools from within CRM.'
 - partner_name: HelloSend
   partner: null
   type: marketplace
@@ -758,7 +773,9 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/hellosend-twilio-call-sms-whatsapp-zoho-crm
   category: Telephony
-  use_case: 'HelloSend: Call, SMS & WhatsApp for Zoho CRM: HelloSend’s communication app for Zoho CRM streamlines Call, SMS, and WhatsApp interactions—enabling direct messaging, bulk outreach, automated workflows, and voice calling—all seamlessly within the Zoho CRM platform.'
+  use_case: 'HelloSend: Call, SMS & WhatsApp for Zoho CRM: HelloSend’s communication app for Zoho CRM streamlines
+    Call, SMS, and WhatsApp interactions—enabling direct messaging, bulk outreach, automated workflows, and voice
+    calling—all seamlessly within the Zoho CRM platform.'
 - partner_name: Ulgebra
   partner: null
   type: marketplace
@@ -768,7 +785,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/twilio-whatsapp-sms-messages-zoho-crm
   category: Marketing
-  use_case: 'Ultra Twilio for Zoho CRM: Connect with people through Twilio SMS and WhatsApp messages just staying from Zoho CRM'
+  use_case: 'Ultra Twilio for Zoho CRM: Connect with people through Twilio SMS and WhatsApp messages just staying
+    from Zoho CRM'
 - partner_name: Zoho Corporation
   partner: zoho
   type: marketplace
@@ -778,7 +796,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/routeiq-for-zoho-crm
   category: Sales
-  use_case: 'RouteIQ for Zoho CRM: A comprehensive map visualizer and route planner for your field sales and service activities'
+  use_case: 'RouteIQ for Zoho CRM: A comprehensive map visualizer and route planner for your field sales and service
+    activities'
 - partner_name: CRMOZ
   partner: null
   type: marketplace
@@ -808,7 +827,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/kanbanboard
   category: Sales
-  use_case: 'Kanban Board for Zoho CRM: Segregate your sales data to get a better picture of how leads are progressing through your pipeline.'
+  use_case: 'Kanban Board for Zoho CRM: Segregate your sales data to get a better picture of how leads are progressing
+    through your pipeline.'
 - partner_name: Zoho Corporation
   partner: zoho
   type: marketplace
@@ -868,7 +888,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/mapsly-extension-for-zoho-crm
   category: Sales
-  use_case: 'Mapsly: Map Extension for Zoho CRM: Map CRM data, optimize multi-day team routes, manage territories, run check-ins, automate field workflows'
+  use_case: 'Mapsly: Map Extension for Zoho CRM: Map CRM data, optimize multi-day team routes, manage territories,
+    run check-ins, automate field workflows'
 - partner_name: Zoho Corporation
   partner: zoho
   type: marketplace
@@ -878,7 +899,8 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/microsoft-exchange-for-zoho-crm
   category: Business
-  use_case: 'Microsoft Exchange for Zoho CRM: Experience the power of integrating Microsoft Exchange Server with Zoho CRM, and enjoy a seamless integration experience'
+  use_case: 'Microsoft Exchange for Zoho CRM: Experience the power of integrating Microsoft Exchange Server with
+    Zoho CRM, and enjoy a seamless integration experience'
 - partner_name: CRMOZ
   partner: null
   type: marketplace
@@ -919,6 +941,36 @@ edges:
   evidence: https://marketplace.zoho.com/app/crm/linkedin-sales-navigator
   category: Sales
   use_case: 'LinkedIn Sales Navigator: Boost Sales Productivity with LinkedIn Sales Navigator for Zoho'
+- partner_name: supaglue
+  partner: supaglue
+  partner_match: domain
+  type: contract
+  channel: partner-built
+  relationship: processor-connection
+  direction: partner-built
+  evidence: https://github.com/api-evangelist/supaglue/blob/main/openapi/supaglue-syncconfigs-api-openapi.yml
+  contract_reference:
+    repo: supaglue
+    spec_file: supaglue-syncconfigs-api-openapi.yml
+    value: zoho_crm
+    property: components.schemas.provider_name
+    detected_by: detect-payment-method-edges.py
+    detected: '2026-10-12'
+- partner_name: zoho
+  partner: zoho
+  partner_match: domain
+  type: contract
+  channel: partner-built
+  relationship: processor-connection
+  direction: partner-built
+  evidence: https://github.com/api-evangelist/zoho/blob/main/openapi/zoho-timeline-api-openapi.yml
+  contract_reference:
+    repo: zoho
+    spec_file: zoho-timeline-api-openapi.yml
+    value: zoho_crm
+    property: __timeline.source
+    detected_by: detect-payment-method-edges.py
+    detected: '2026-10-12'
 templates:
 - title: Add new Unbounce form submissions to Zoho CRM as leads
   url: https://zapier.com/apps/unbounce/integrations/zoho-crm/1715/add-new-unbounce-form-submissions-to-zoho-crm-as-leads

@@ -832,3 +832,39 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: zoho-crm-supaglue
+  label: supaglue
+  partner: supaglue
+  partner_name: supaglue
+  type: contract
+  channel: partner-built
+  evidence: https://github.com/api-evangelist/supaglue/blob/main/openapi/supaglue-syncconfigs-api-openapi.yml
+  source: edge
+  relationship: processor-connection
+  contract_reference:
+    repo: supaglue
+    spec_file: supaglue-syncconfigs-api-openapi.yml
+    value: zoho_crm
+    property: components.schemas.provider_name
+    detected_by: detect-payment-method-edges.py
+    detected: '2026-10-12'
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-zoho
+  label: zoho
+  partner: zoho
+  partner_name: zoho
+  type: contract
+  channel: partner-built
+  evidence: https://github.com/api-evangelist/zoho/blob/main/openapi/zoho-timeline-api-openapi.yml
+  source: edge
+  relationship: processor-connection
+  contract_reference:
+    repo: zoho
+    spec_file: zoho-timeline-api-openapi.yml
+    value: zoho_crm
+    property: __timeline.source
+    detected_by: detect-payment-method-edges.py
+    detected: '2026-10-12'
+  status: not-a-workflow
+  arazzo: null
