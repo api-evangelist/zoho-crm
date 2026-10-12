@@ -1,0 +1,106 @@
+arazzo: 1.0.1
+info:
+  title: Zoho CRM + Offline conversions in Google Ads for new Zoho CRM contacts
+  summary: Offline conversions in Google Ads for new Zoho CRM contacts
+  description: Recreates the Zapier template "generate offline conversions in google ads for new zoho crm contacts" as an Arazzo workflow over
+    Zoho CRM v8 and google-ads published contracts. Steps the specs did not settle are listed under x-integration.guessed_steps.
+  version: 1.0.0
+sourceDescriptions:
+- name: zohoRecords
+  url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/openapi/zoho-crm-records-api-openapi.yml
+  type: openapi
+- name: gadsCustomers
+  url: https://raw.githubusercontent.com/api-evangelist/google-ads/refs/heads/main/openapi/google-ads-customers-api-openapi.yml
+  type: openapi
+workflows:
+- workflowId: contact-offline-conversion
+  summary: Offline conversions in Google Ads for new Zoho CRM contacts
+  description: Offline conversions in Google Ads for new Zoho CRM contacts, using only operations that exist in both contracts.
+  inputs:
+    type: object
+    required:
+    - customerId
+    - gclid
+    - conversionAction
+    - conversionDateTime
+    properties:
+      fields:
+        type: string
+      perPage:
+        type: string
+      customerId:
+        type: string
+      gclid:
+        type: string
+      conversionAction:
+        type: string
+      conversionDateTime:
+        type: string
+      conversionValue:
+        type: string
+  steps:
+  - stepId: get-contacts
+    description: Read the newest Contacts records from Zoho CRM.
+    operationId: $sourceDescriptions.zohoRecords.getRecords
+    parameters:
+    - name: module
+      in: path
+      value: Contacts
+    - name: fields
+      in: query
+      value: $inputs.fields
+    - name: sort_by
+      in: query
+      value: Created_Time
+    - name: sort_order
+      in: query
+      value: desc
+    - name: per_page
+      in: query
+      value: $inputs.perPage
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      records: $response.body#/data
+      email: $response.body#/data/0/Email
+      firstName: $response.body#/data/0/First_Name
+      lastName: $response.body#/data/0/Last_Name
+  - stepId: upload-conversion
+    description: Upload the click conversion for the record's captured GCLID.
+    operationId: $sourceDescriptions.gadsCustomers.googleads_customers_uploadClickConversions
+    parameters:
+    - name: customersId
+      in: path
+      value: $inputs.customerId
+    requestBody:
+      contentType: application/json
+      payload:
+        conversions:
+        - gclid: $inputs.gclid
+          conversionAction: $inputs.conversionAction
+          conversionDateTime: $inputs.conversionDateTime
+          conversionValue: $inputs.conversionValue
+        partialFailure: true
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      uploadedGclid: $response.body#/results/0/gclid
+      partialFailure: $response.body#/partialFailureError/message
+  outputs:
+    recordId: $steps.upload-conversion.outputs.uploadedGclid
+x-integration:
+  partner: google-ads
+  template: https://zapier.com/apps/google-ads/integrations/zoho-crm/88871/generate-offline-conversions-in-google-ads-for-new-zoho-crm-contacts
+  edge_evidence: https://zapier.com/apps/google-ads/integrations/zoho-crm/88871/generate-offline-conversions-in-google-ads-for-new-zoho-crm-contacts
+  edge_type: marketplace
+  method: generated
+  generated: '2026-10-12'
+  generator: claude-opus-5.5 enrichment local-v5
+  guessed_steps:
+  - step: get-contacts
+    cause: provider-contract
+    why: the getRecords 200 schema is module-generic (id, Owner, Created_Time ...) and declares no Email/First_Name/Last_Name, so those output
+      paths for Contacts are not settled by the spec
+  - step: upload-conversion
+    cause: provider-contract
+    why: Zoho CRM's module-generic record schema declares no GCLID field, so the click id is an input rather than a settled output of get-step

@@ -1,8 +1,19 @@
 ---
-name: Create and update Zoho CRM records without creating duplicates
-description: Write records to any Zoho CRM module with retry-safe semantics, handling the 207 Multi-Status partial-success envelope and the absence of an idempotency key.
+name: create-and-update-records-safely
+description: Write records to any Zoho CRM module with retry-safe semantics, handling the 207 Multi-Status partial-success
+  envelope and the absence of an idempotency key.
 api: openapi/zoho-crm-record-openapi.json
-operations: [createRecords, upsertRecords, getRecords, getRecord, updateRecord, updateRecords, deleteRecord, getDeletedRecords, cloneRecord]
+operations:
+- createRecords
+- upsertRecords
+- getRecords
+- getRecord
+- updateRecord
+- updateRecords
+- deleteRecord
+- getDeletedRecords
+- cloneRecord
+title: Create and update Zoho CRM records without creating duplicates
 ---
 
 # Create and update Zoho CRM records safely

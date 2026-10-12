@@ -1,0 +1,58 @@
+generated: '2026-10-12'
+method: probed
+source: pre-flight dossier (docs platform, portal detections) + CNAME chains and response headers of the hosts apis.yml names
+registry: all/0-working/vendors.yml
+areas_vocabulary:
+- documentation
+- developer-portal
+- api-gateway
+- cdn
+- hosting
+- sdk-generation
+- api-collections
+- status-page
+- support
+- community
+- identity
+- mcp-hosting
+vendors:
+- vendor: postman
+  name: Postman
+  area: api-collections
+  host: www.postman.com
+  evidence: https://www.postman.com/zohocrmdevelopers/zoho-crm-developers/overview
+  signal: url:postman.com
+  confidence: high
+  kin_score:
+  - postman_collection
+- vendor: cloudflare
+  name: Cloudflare
+  area: cdn
+  host: www.zoho.com
+  evidence: cname:cloudflare.net
+  signal: cname
+  confidence: high
+  kin_score:
+  - https_enforced
+  - hsts
+reliance:
+  areas_vendor_served:
+  - api-collections
+  - cdn
+  vendor_count: 2
+  areas_observed: 12
+  share_of_observable_areas: 0.167
+  note: areas where a third party was DETECTED serving this provider; an area absent here was either self-run or not observed, and this script
+    cannot tell those apart
+checked:
+- 'docs-platform: not probed'
+- www.zoho.com (Website)
+- www.zoho.com (DeveloperPortal)
+- www.zoho.com (Documentation)
+- www.zoho.com (APIReference)
+- www.zoho.com (GettingStarted)
+- help.zoho.com (Support)
+- www.zoho.com (SignUp)
+- www.postman.com (Postman)
+- status.zoho.com (StatusPage)
+- www.zohoapis.com (baseURL)

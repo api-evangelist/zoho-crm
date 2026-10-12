@@ -1,0 +1,418 @@
+generated: '2026-10-12'
+method: derived
+generator: derive-vocabulary.py
+source:
+- openapi/zoho-crm-actions-api-openapi.yml
+- openapi/zoho-crm-apis-api-openapi.yml
+- openapi/zoho-crm-appointments-s-api-openapi.yml
+- openapi/zoho-crm-attachments-api-openapi.yml
+- openapi/zoho-crm-composite-requests-api-openapi.yml
+vocabulary:
+  name: Zoho CRM Domain Vocabulary
+  description: 'Terms declared by Zoho CRM''s own API contract: its resource groups, objects and enumerations, with the contract''s definitions.
+    Derived, not authored.'
+  version: '2026-10-12'
+  terms:
+  - term: Holidays
+    definition: Operations for managing holidays that affect business hours and shift schedules
+    tags:
+    - Resource Group
+    source: openapi/zoho-crm-holidays-api-openapi.yml
+  - term: AssociateEmailRequest
+    definition: Request body for associating an email with a record.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/AssociateEmailRequest
+  - term: ActionResponse
+    definition: Generic wrapper for multiple record action responses.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ActionResponse
+  - term: EmailAddress
+    definition: Object representing an email address and display name.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/EmailAddress
+  - term: ErrorResponse
+    definition: Details about a failed API request.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorResponse
+  - term: EmailObject
+    definition: Detailed email metadata object.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/EmailObject
+  - term: AttachmentRef
+    definition: Reference to an email attachment.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/AttachmentRef
+  - term: Error Response Core
+    definition: 'Invalid data type for field: cadences_ids'
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorResponseCore814179042
+  - term: CadencesNested
+    definition: Nested schema for cadences
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/CadencesNested
+  - term: ErrorDataNested
+    definition: Nested schema for data
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorDataNested
+  - term: PostCadencesRequest
+    definition: Request body schema
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/PostCadencesRequest
+  - term: DetailsNested
+    definition: Nested schema for details
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/DetailsNested
+  - term: SuccessDataNested
+    definition: Nested schema for data
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/SuccessDataNested
+  - term: Error Response Core
+    definition: 'Invalid data type for field: cadences_ids'
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorResponseCore1137512454
+  - term: Error Response Core
+    definition: API not supported for selected domains
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorResponseCore1243473672
+  - term: PostcadencesResponse200
+    definition: Successful API operation completed
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/PostcadencesResponse200
+  - term: Error Response 403
+    definition: No permission to access this resource
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorResponse403
+  - term: Error Response Core
+    definition: id given is not manual enrollment cadence
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorResponseCore1414382895
+  - term: Error Response Core
+    definition: API not supported for client portal users
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorResponseCore260315750
+  - term: PostcadencesResponse207
+    definition: Multi status response for unenrolment
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/PostcadencesResponse207
+  - term: Error Response Core
+    definition: 'Invalid data type for field: ids'
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorResponseCore1362235056
+  - term: RelatedRecordCountResult
+    definition: The count result for a specific related list.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RelatedRecordCountResult
+  - term: RelatedListReference
+    definition: Identifies a specific related list by its API name and unique identifier.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RelatedListReference
+  - term: GetRelatedRecordsCountRequest
+    definition: Request payload containing an array of related list count specifications.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/GetRelatedRecordsCountRequest
+  - term: ErrorResponse_2
+    definition: Error response structure
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorResponse_2
+  - term: RelatedRecordCountItem
+    definition: Specifies a related list to count and optional filtering criteria.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RelatedRecordCountItem
+  - term: CountParameters
+    definition: Optional filtering and selection parameters to apply before counting records.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/CountParameters
+  - term: FilterField
+    definition: Specifies the field to filter on when counting related records.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/FilterField
+  - term: GetRelatedRecordsCountResponse
+    definition: Successful response containing count results for the requested related lists.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/GetRelatedRecordsCountResponse
+  - term: FilterCriteria
+    definition: Field-based filter criteria to apply before counting records.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/FilterCriteria
+  - term: RecipientNested
+    definition: Recipient details for signature or approval
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RecipientNested
+  - term: SignersNested
+    definition: The details of the users you want to sign the document.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/SignersNested
+  - term: Invalid Data URL Error
+    definition: Error when invalid data is sent in the URL
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/InvalidDataUrlError
+  - term: Invalid Module Path Error
+    definition: Error when the module given in the URL path is invalid
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/InvalidModulePathError
+  - term: PostdownloadmailmergeRequest
+    definition: Request body schema for download mail merge operation.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/PostdownloadmailmergeRequest
+  - term: Mandatory Field Not Found Error
+    definition: Error when a required field is missing
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/MandatoryFieldNotFoundError
+  - term: BccEmailNested
+    definition: The details of the email or the mail merge field you want to include in the email's bcc. The keys are same as the ones in the
+      "from_address" JSON object.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/BccEmailNested
+  - term: Invalid Request Method Error
+    definition: Error when the HTTP request method is not supported for the URL
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/InvalidRequestMethodError
+  - term: SignMailMergeNested
+    definition: Request payload for sending documents for signature.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/SignMailMergeNested
+  - term: Invalid Module Param Error
+    definition: Error when the module given in the parameter is invalid
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/InvalidModuleParamError
+  - term: SignMailMergeNested1
+    definition: Response payload for sign mail merge operation.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/SignMailMergeNested1
+  - term: MailMergeTemplateNested
+    definition: Mailmerge Object to pass Template details
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/MailMergeTemplateNested
+  - term: PostsignmailmergeRequest
+    definition: Request body schema for sign mail merge operation.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/PostsignmailmergeRequest
+  - term: DetailsNested_2
+    definition: Response details for send mail merge operation.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/DetailsNested_2
+  - term: PostsendmailmergeRequest
+    definition: Request body schema for send mail merge operation.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/PostsendmailmergeRequest
+  - term: Invalid Data Max Length Error
+    definition: Error when data exceeds maximum allowed length
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/InvalidDataMaxLengthError
+  - term: ToAddressNested
+    definition: The email ID you want to use to send emails to.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ToAddressNested
+  - term: CcEmailNested
+    definition: The details of the email or the mail merge field you want to include in the email's cc. The keys are same as the ones in the "from_address"
+      JSON object.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/CcEmailNested
+  - term: SendMailMergeNested
+    definition: Request payload for sending mail merge emails.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/SendMailMergeNested
+  - term: Expected Field Missing Error
+    definition: Error when at least one expected field is missing
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ExpectedFieldMissingError
+  - term: PostsendmailmergeResponse200
+    definition: Upon successful initiation of send mail merge the response as follows.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/PostsendmailmergeResponse200
+  - term: Mandatory Field Not Found Body Error
+    definition: Error when a required field is not found in the request body
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/MandatoryFieldNotFoundBodyError
+  - term: Expected Param Missing Error
+    definition: Error when one of the expected parameters is missing to process the request
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ExpectedParamMissingError
+  - term: PostsignmailmergeResponse200
+    definition: Upon successful initiation of sign mail merge the response as follows.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/PostsignmailmergeResponse200
+  - term: SendMailMergeNested1
+    definition: Response payload for send mail merge operation.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/SendMailMergeNested1
+  - term: Invalid Data Type Error
+    definition: Error when the data type provided is invalid
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/InvalidDataTypeError
+  - term: FromAddressNested
+    definition: The email ID you want to use to send emails from. This email address must be the one of the org-verified email addresses or the
+      current user's email ID.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/FromAddressNested
+  - term: DownloadMailMergeNested
+    definition: Request payload for downloading mail merge documents.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/DownloadMailMergeNested
+  - term: DetailsNested1
+    definition: Response details for sign mail merge operation.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/DetailsNested1
+  - term: Invalid Data Param Error
+    definition: Error when invalid data is sent in a parameter
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/InvalidDataParamError
+  - term: Required Param Missing Error
+    definition: Error when a mandatory parameter is not given
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RequiredParamMissingError
+  - term: ErrorResponse_3
+    definition: Standard error response structure containing error code, message, and optional details
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorResponse_3
+  - term: ErrorDetails_2
+    definition: Specific details about the error, often including which parameter or value caused the issue.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorDetails_2
+  - term: RecordInvalidURLResponse
+    definition: Response schema returned when the requested API endpoint URL pattern is invalid or unsupported.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RecordInvalidURLResponse
+  - term: RecordsErrorResponse
+    definition: Standard error response schema returned when one or more record operations fail.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RecordsErrorResponse
+  - term: RecordsInputSchema
+    definition: Input schema for create, update, or upsert record requests.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RecordsInputSchema
+  - term: RecordPermissionResponse
+    definition: Response schema returned when a user lacks the necessary permissions to perform a record operation.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RecordPermissionResponse
+  - term: RecordUnathorizedResponse
+    definition: Response schema returned when a request is unauthorized due to OAuth scope mismatches.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RecordUnathorizedResponse
+  - term: RecordInternalErrorResponse
+    definition: Schema for internal server error responses related to record operations.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RecordInternalErrorResponse
+  - term: RecordSuccessResponse
+    definition: Standard success response schema for single or bulk record operations.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RecordSuccessResponse
+  - term: EmailUser
+    definition: User email and name details.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/EmailUser
+  - term: FlatErrorResponse
+    definition: Flat error object.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/FlatErrorResponse
+  - term: SendMailRequest
+    definition: Root object for the send mail request.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/SendMailRequest
+  - term: ErrorDetail
+    definition: Individual error item.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ErrorDetail
+  - term: StandardErrorResponse
+    definition: Error data wrapper.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/StandardErrorResponse
+  - term: SuccessResponse
+    definition: Successful operation response.
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/SuccessResponse
+  - term: ActivityModuleRelatedIssueErrorResponse
+    definition: Activity Module Related Issue Error Response - POST and PUT API
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ActivityModuleRelatedIssueErrorResponse
+  - term: InvalidRecordIdErrorResponse
+    definition: Invalid Record Id Error Response - GET, DELETE API
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/InvalidRecordIdErrorResponse
+  - term: ViewParamWithManageValueErrorResponse
+    definition: View Param With Manage Value Error Response - GET API
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/ViewParamWithManageValueErrorResponse
+  - term: RecordForbiddenErrorResponse
+    definition: Record Forbidden Error Response
+    tags:
+    - Object
+    source: openapi/zoho-crm-actions-api-openapi.yml#/components/schemas/RecordForbiddenErrorResponse

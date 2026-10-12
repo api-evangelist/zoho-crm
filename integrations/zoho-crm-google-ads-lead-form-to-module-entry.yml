@@ -1,0 +1,88 @@
+arazzo: 1.0.1
+info:
+  title: Zoho CRM + Google Ads lead form submissions to Zoho CRM
+  summary: Google Ads lead form submissions to Zoho CRM
+  description: Recreates the Zapier template "create or update module entries in zoho crm for new google ads leads" as an Arazzo workflow over
+    Zoho CRM v8 and google-ads published contracts. Steps the specs did not settle are listed under x-integration.guessed_steps.
+  version: 1.0.0
+sourceDescriptions:
+- name: gadsSearch
+  url: https://raw.githubusercontent.com/api-evangelist/google-ads/refs/heads/main/openapi/google-ads-customers-googleads-api-openapi.yml
+  type: openapi
+- name: zohoUpsert
+  url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/openapi/zoho-crm-upsert-api-openapi.yml
+  type: openapi
+workflows:
+- workflowId: lead-form-to-module-entry
+  summary: Google Ads lead form submissions to Zoho CRM
+  description: Google Ads lead form submissions to Zoho CRM, using only operations that exist in both contracts.
+  inputs:
+    type: object
+    required:
+    - customerId
+    properties:
+      customerId:
+        type: string
+      module:
+        type: string
+      email:
+        type: string
+      lastName:
+        type: string
+  steps:
+  - stepId: search-lead-forms
+    description: Query lead form submission data with GAQL.
+    operationId: $sourceDescriptions.gadsSearch.googleads_customers_googleAds_search
+    parameters:
+    - name: customersId
+      in: path
+      value: $inputs.customerId
+    requestBody:
+      contentType: application/json
+      payload:
+        query: SELECT lead_form_submission_data.resource_name, lead_form_submission_data.lead_form_submission_fields, lead_form_submission_data.submission_date_time
+          FROM lead_form_submission_data
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      results: $response.body#/results
+  - stepId: upsert-record
+    description: Insert or update the $inputs.module record, matched on Email.
+    operationId: $sourceDescriptions.zohoUpsert.upsertRecords
+    parameters:
+    - name: module
+      in: path
+      value: $inputs.module
+    requestBody:
+      contentType: application/json
+      payload:
+        data:
+        - Email: $inputs.email
+          Last_Name: $inputs.lastName
+          Lead_Source: Google Ads
+        duplicate_check_fields:
+        - Email
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      recordId: $response.body#/data/0/details/id
+      action: $response.body#/data/0/action
+  outputs:
+    recordId: $steps.upsert-record.outputs.recordId
+x-integration:
+  partner: google-ads
+  template: https://zapier.com/apps/google-ads/integrations/zoho-crm/543123/create-or-update-module-entries-in-zoho-crm-for-new-google-ads-leads
+  edge_evidence: https://zapier.com/apps/google-ads/integrations/zoho-crm/543123/create-or-update-module-entries-in-zoho-crm-for-new-google-ads-leads
+  edge_type: marketplace
+  method: generated
+  generated: '2026-10-12'
+  generator: claude-opus-5.5 enrichment local-v5
+  guessed_steps:
+  - step: search-lead-forms
+    cause: partner-contract
+    why: leadFormSubmissionData is declared, but email and name sit inside the leadFormSubmissionFields array keyed by fieldType, which a JSON
+      pointer cannot select, so they are passed as inputs
+  - step: upsert-record
+    cause: provider-contract
+    why: the upsertRecords 200 response item declares code/message/status/details but no action field, so /data/0/action is not settled by the
+      spec

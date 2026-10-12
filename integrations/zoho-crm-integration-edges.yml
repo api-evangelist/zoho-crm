@@ -1,0 +1,463 @@
+generated: '2026-10-12'
+method: searched
+source:
+- https://zapier.com/apps/zoho-crm/integrations
+- https://n8n.io/integrations/zoho-crm/
+checked:
+- https://composio.dev/toolkits/zoho-crm
+- https://monid.ai/tools/zoho-crm
+- https://n8n.io/integrations/zoho-crm/
+- https://zapier.com/apps/zoho-crm/integrations
+summary: null
+marketplace_apps:
+- marketplace: zapier
+  channel: ipaas-listing
+  app: zoho-crm
+  url: https://zapier.com/apps/zoho-crm/integrations
+  external_url: https://go.zoho.com/wOk
+  partner_tier: PLATINUM
+  triggers:
+  - key: contactList
+    label: New Contact
+  - key: leadList
+    label: New Lead
+  - key: new_module_entry
+    label: New Module Entry
+  - key: new_or_updated_contact
+    label: New or Updated Contact
+  - key: new_or_updated_lead
+    label: New or Updated Lead
+  - key: new_or_updated_module_entry
+    label: New/Updated Module Entry
+  - key: new_user
+    label: New User
+  - key: updated_module_entry
+    label: Updated Module Entry
+  actions:
+  - key: add_attachment
+    label: Add Attachment
+  - key: add_tag
+    label: Add Tag
+  - key: convert_lead
+    label: Convert Lead
+  - key: create_module_entry
+    label: Create Module Entry
+  - key: update_module_entry
+    label: Update Module Entry
+  - key: update_related_record
+    label: Update Related Module Entry
+  - key: upsert_module_entry
+    label: Create/Update Module Entry
+  - key: _zap_raw_request
+    label: API Request (Beta)
+  searches:
+  - key: search_module_entry
+    label: Find Module Entry
+  - key: search_module_entry_multiple
+    label: Find Module Entries
+- marketplace: n8n
+  channel: open-source-node
+  app: zoho-crm
+  url: https://n8n.io/integrations/zoho-crm/
+  identity: title
+  pair_pages: 5
+  pairs:
+  - zoho-desk
+  - zonka-feedback
+  - zoom
+  - zscaler-zia
+  - zulip
+edges:
+- partner_name: Facebook Lead Ads
+  partner: facebook-lead-ads
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/facebook-lead-ads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://www.facebook.com/business/ads/lead-ads
+- partner_name: Google Sheets
+  partner: google-sheets
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/google-sheets
+  direction: third-party
+  category: Google
+  partner_url: http://sheets.google.com/
+- partner_name: Zoho Forms
+  partner: zoho-forms
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/zoho-forms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://go.zoho.com/LL2
+- partner_name: Google Ads
+  partner: google-ads
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/google-ads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://ads.google.com/
+- partner_name: Facebook Conversions
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/facebook-conversions
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://developers.facebook.com/docs/marketing-api/server-side-api/guides/zapier-integration
+- partner_name: Gmail
+  partner: gmail
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/gmail
+  direction: third-party
+  category: Email
+  partner_url: https://mail.google.com/
+- partner_name: Unbounce
+  partner: unbounce
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/unbounce
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://unbounce.com/
+- partner_name: Typeform
+  partner: typeform
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/typeform
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.typeform.com/signup?utm_medium=referral&utm_source=zapier&utm_campaign=zapier_integration&utm_content=marketplace
+- partner_name: Gravity Forms
+  partner: gravity-forms
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/gravity-forms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.gravityforms.com/?utm_campaign=partners&utm_source=zapier-listing-learn-more&utm_medium=free-placement
+- partner_name: Calendly
+  partner: calendly
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/calendly
+  direction: third-party
+  category: Scheduling & Booking
+  partner_url: https://calendly.com/?utm_medium=partner&utm_source=zapier&utm_campaign=main_partner_page&utm_content=main_inbound_link
+- partner_name: HubSpot
+  partner: hubspot
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/hubspot
+  direction: third-party
+  category: Marketing Automation
+  partner_url: http://www.hubspot.com/
+- partner_name: LinkedIn Ads
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/linkedin-ads
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://www.linkedin.com/
+- partner_name: Jotform
+  partner: jotform
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/jotform
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: http://www.jotform.com/
+- partner_name: Shopify
+  partner: shopify
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/shopify
+  direction: third-party
+  category: eCommerce
+  partner_url: https://www.shopify.com/
+- partner_name: Wix
+  partner: wix
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/wix
+  direction: third-party
+  category: Website Builders
+  partner_url: https://www.wix.com/
+- partner_name: Microsoft Outlook
+  partner: microsoft-outlook
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/microsoft-outlook
+  direction: third-party
+  category: Calendar
+  partner_url: https://outlook.live.com/
+- partner_name: Airtable
+  partner: airtable
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/airtable
+  direction: third-party
+  category: Databases
+  partner_url: https://airtable.com/
+- partner_name: Mailchimp
+  partner: mailchimp
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/mailchimp
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://mailchimp.com/
+- partner_name: Facebook Lead Ads (for Business admins)
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/facebook-lead-ads-beta
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://facebook.com/
+- partner_name: WPForms
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/wpforms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://wpforms.com/
+- partner_name: LeadConnector
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/leadconnector
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://www.leadconnectorhq.com/
+- partner_name: Xero
+  partner: xero
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/xero
+  direction: third-party
+  category: Accounting
+  partner_url: https://xero5440.partnerlinks.io/uvwuuwrxyoi8
+- partner_name: Squarespace Forms
+  partner: squarespace
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/squarespace-forms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: https://www.squarespace.com/
+- partner_name: Zoom
+  partner: zoom
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/zoom
+  direction: third-party
+  category: Video Conferencing
+  partner_url: https://www.zoom.us/
+- partner_name: Eventbrite
+  partner: eventbrite
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/eventbrite
+  direction: third-party
+  category: Event Management
+  partner_url: https://eventbrite.com/
+- partner_name: Google Forms
+  partner: google-forms
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/google-forms
+  direction: third-party
+  category: Forms & Surveys
+  partner_url: http://google.com/
+- partner_name: ActiveCampaign
+  partner: activecampaign
+  partner_match: domain
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/activecampaign
+  direction: third-party
+  category: Marketing Automation
+  partner_url: https://www.activecampaign.com/?utm_source=unpaid_syndication_website&utm_medium=referral&utm_campaign=zapier_listing
+- partner_name: monday.com
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/monday
+  direction: third-party
+  category: Project Management
+  partner_url: https://monday.com/
+- partner_name: Brevo
+  partner: brevo
+  partner_match: name-exact
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/brevo
+  direction: third-party
+  category: Email Newsletters
+  partner_url: https://www.sendinblue.com/?utm_medium=plugin&utm_source=zapier
+- partner_name: TikTok Lead Generation
+  partner: null
+  partner_match: null
+  partner_candidate: null
+  type: marketplace
+  marketplace: zapier
+  channel: ipaas-usage
+  evidence: https://zapier.com/apps/zoho-crm/integrations/tiktok-lead-generation
+  direction: third-party
+  category: Ads & Conversion
+  partner_url: https://ads.tiktok.com/
+templates:
+- title: Add new Unbounce form submissions to Zoho CRM as leads
+  url: https://zapier.com/apps/unbounce/integrations/zoho-crm/1715/add-new-unbounce-form-submissions-to-zoho-crm-as-leads
+  apps:
+  - unbounce
+  - zoho-crm
+- title: Create or update module entries in Zoho CRM for new Google Ads leads
+  url: https://zapier.com/apps/google-ads/integrations/zoho-crm/543123/create-or-update-module-entries-in-zoho-crm-for-new-google-ads-leads
+  apps:
+  - google-ads
+  - zoho-crm
+- title: Create contacts on Zoho CRM from new leads from Facebook Lead Ads
+  url: https://zapier.com/apps/facebook-lead-ads/integrations/zoho-crm/10163/create-contacts-on-zoho-crm-from-new-leads-from-facebook-lead-ads
+  apps:
+  - facebook-lead-ads
+  - zoho-crm
+- title: Add new Zoho CRM contacts to Google Ads Custom Lists
+  url: https://zapier.com/apps/google-ads/integrations/zoho-crm/78025/add-new-zoho-crm-contacts-to-google-ads-custom-lists
+  apps:
+  - zoho-crm
+  - google-ads
+- title: Create Zoho CRM contacts from new WPForms entries
+  url: https://zapier.com/apps/wpforms/integrations/zoho-crm/412383/create-zoho-crm-contacts-from-new-wpforms-entries
+  apps:
+  - wpforms
+  - zoho-crm
+- title: Send Offline Conversion to Google Ads for New Lead in Zoho CRM
+  url: https://zapier.com/apps/google-ads/integrations/zoho-crm/1007483/send-offline-conversion-to-google-ads-for-new-lead-in-zoho-crm
+  apps:
+  - zoho-crm
+  - google-ads
+- title: Add new Zoho CRM leads to Google Ads Custom Lists
+  url: https://zapier.com/apps/google-ads/integrations/zoho-crm/78026/add-new-zoho-crm-leads-to-google-ads-custom-lists
+  apps:
+  - zoho-crm
+  - google-ads
+- title: Generate offline conversions in Google Ads for new Zoho CRM contacts
+  url: https://zapier.com/apps/google-ads/integrations/zoho-crm/88871/generate-offline-conversions-in-google-ads-for-new-zoho-crm-contacts
+  apps:
+  - zoho-crm
+  - delay
+  - google-ads
+- title: Send funnel events to Facebook Conversions from Zoho CRM
+  url: https://zapier.com/apps/facebook-conversions/integrations/zoho-crm/1130083/send-funnel-events-to-facebook-conversions-from-zoho-crm
+  apps:
+  - zoho-crm
+  - facebook-conversions
+- title: Send Offline Conversion to Google Ads for New/Updated Module Entry in Zoho CRM
+  url: https://zapier.com/apps/google-ads/integrations/zoho-crm/1007532/send-offline-conversion-to-google-ads-for-newupdated-module-entry-in-zoho-crm
+  apps:
+  - zoho-crm
+  - google-ads
+- title: Send Offline Conversion to Google Ads for New Module Entry in Zoho CRM
+  url: https://zapier.com/apps/google-ads/integrations/zoho-crm/1007512/send-offline-conversion-to-google-ads-for-new-module-entry-in-zoho-crm
+  apps:
+  - zoho-crm
+  - google-ads
+- title: Create or update Zoho CRM module entries for new invitees in Calendly
+  url: https://zapier.com/apps/calendly/integrations/zoho-crm/161808/create-or-update-zoho-crm-module-entries-for-new-invitees-in-calendly
+  apps:
+  - calendly
+  - zoho-crm
+template_total: 3932

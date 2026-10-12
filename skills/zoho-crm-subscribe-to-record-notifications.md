@@ -1,8 +1,15 @@
 ---
-name: Subscribe to Zoho CRM record change notifications
-description: Register a notify_url channel so Zoho CRM POSTs callbacks on record create, edit and delete events, and keep the channel alive.
+name: subscribe-to-record-notifications
+description: Register a notify_url channel so Zoho CRM POSTs callbacks on record create, edit and delete events, and keep
+  the channel alive.
 api: openapi/zoho-crm-notifications-openapi.json, asyncapi/zoho-crm-notifications-asyncapi.yml
-operations: [createNotifications, getNotifications, updateNotificationDetails, updateNotificationInfo, disableNotifications]
+operations:
+- createNotifications
+- getNotifications
+- updateNotificationDetails
+- updateNotificationInfo
+- disableNotifications
+title: Subscribe to Zoho CRM record change notifications
 ---
 
 # Subscribe to Zoho CRM record notifications

@@ -1,0 +1,85 @@
+arazzo: 1.0.1
+info:
+  title: Zoho CRM + Unbounce form submissions to Zoho CRM leads
+  summary: Unbounce form submissions to Zoho CRM leads
+  description: Recreates the Zapier template "add new unbounce form submissions to zoho crm as leads" as an Arazzo workflow over Zoho CRM v8 and
+    unbounce published contracts. Steps the specs did not settle are listed under x-integration.guessed_steps.
+  version: 1.0.0
+sourceDescriptions:
+- name: unbounceLeads
+  url: https://raw.githubusercontent.com/api-evangelist/unbounce/refs/heads/main/openapi/unbounce-leads-api-openapi.yml
+  type: openapi
+- name: zohoRecords
+  url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/openapi/zoho-crm-records-api-openapi.yml
+  type: openapi
+workflows:
+- workflowId: form-submission-to-lead
+  summary: Unbounce form submissions to Zoho CRM leads
+  description: Unbounce form submissions to Zoho CRM leads, using only operations that exist in both contracts.
+  inputs:
+    type: object
+    required:
+    - pageId
+    - leadId
+    properties:
+      pageId:
+        type: string
+      leadId:
+        type: string
+      email:
+        type: string
+      lastName:
+        type: string
+      company:
+        type: string
+  steps:
+  - stepId: get-lead
+    description: Read the Unbounce form submission (lead) for the landing page.
+    operationId: $sourceDescriptions.unbounceLeads.getLeadForPage
+    parameters:
+    - name: page_id
+      in: path
+      value: $inputs.pageId
+    - name: lead_id
+      in: path
+      value: $inputs.leadId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      formData: $response.body#/form_data
+      createdAt: $response.body#/created_at
+  - stepId: create-lead
+    description: Create the record in the Zoho CRM Leads module.
+    operationId: $sourceDescriptions.zohoRecords.createRecords
+    parameters:
+    - name: module
+      in: path
+      value: Leads
+    requestBody:
+      contentType: application/json
+      payload:
+        data:
+        - Last_Name: $inputs.lastName
+          Email: $inputs.email
+          Company: $inputs.company
+          Lead_Source: Unbounce
+          Description: $steps.get-lead.outputs.formData
+    successCriteria:
+    - condition: $statusCode == 201
+    outputs:
+      recordId: $response.body#/data/0/details/id
+      status: $response.body#/data/0/status
+  outputs:
+    recordId: $steps.create-lead.outputs.recordId
+x-integration:
+  partner: unbounce
+  template: https://zapier.com/apps/unbounce/integrations/zoho-crm/1715/add-new-unbounce-form-submissions-to-zoho-crm-as-leads
+  edge_evidence: https://zapier.com/apps/unbounce/integrations/zoho-crm/1715/add-new-unbounce-form-submissions-to-zoho-crm-as-leads
+  edge_type: marketplace
+  method: generated
+  generated: '2026-10-12'
+  generator: claude-opus-5.5 enrichment local-v5
+  guessed_steps:
+  - step: get-lead
+    cause: partner-contract
+    why: form_data is declared with no properties, so individual field paths (email, name) are not settled; they are taken as inputs

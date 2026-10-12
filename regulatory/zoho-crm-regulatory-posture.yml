@@ -1,0 +1,28 @@
+generated: '2026-10-12'
+method: searched
+probe: true
+source: https://www.zoho.com/privacy/sub-processors.html
+signals:
+  subprocessors:
+    url: https://www.zoho.com/privacy/sub-processors.html
+    evidence:
+    - source: https://www.zoho.com/privacy/sub-processors.html
+      http_status: 200
+      fetched: '2026-10-12'
+      quote: 'A sub-processor is a third party data processor engaged by Zoho, who has or potentially will have access to or process Service Data (which may contain Personal Information). Zoho engages different types of sub-processors to perform various functions as explained in the tables below.'
+    note: Tabled sub-processor directory (Third Party Service Providers, Data Centers, Services); the privacy policy and GDPR page reference a Data Processing Addendum.
+  data_residency:
+    url: https://www.zoho.com/know-your-datacenter.html
+    evidence:
+    - source: https://www.zoho.com/know-your-datacenter.html
+      http_status: 200
+      fetched: '2026-10-12'
+      quote: 'Based on the country chosen there, the corresponding datacenter is chosen for your account.'
+    note: Region-pinned data centres; the Zoho CRM OpenAPI servers template the DC into the host (zohoapis.{dc}).
+checked:
+- {url: 'https://www.zoho.com/accessibility/', status: 404}
+- {url: 'https://www.zoho.com/accessibility/vpat.html', status: 404}
+- {url: 'https://www.zoho.com/crm/accessibility.html', status: 200, note: feature page without a conformance report (no WCAG/VPAT statement)}
+- {url: 'https://www.zoho.com/privacy/dpa.html', status: 404}
+- {url: 'https://www.zoho.com/gdpr.html', status: 200}
+- {url: 'https://www.zoho.com/privacy.html', status: 200}

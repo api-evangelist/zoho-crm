@@ -1,8 +1,13 @@
 ---
-name: Query and search Zoho CRM with COQL
-description: Retrieve Zoho CRM records by criteria using COQL, module search and record counts, instead of paging whole modules and filtering client-side.
+name: query-and-search
+description: Retrieve Zoho CRM records by criteria using COQL, module search and record counts, instead of paging whole modules
+  and filtering client-side.
 api: openapi/zoho-crm-coql-openapi.json, openapi/zoho-crm-module-search-openapi.json, openapi/zoho-crm-record-count-openapi.json
-operations: [executeCOQLQuery, searchRecords, getCount]
+operations:
+- executeCOQLQuery
+- searchRecords
+- getCount
+title: Query and search Zoho CRM with COQL
 ---
 
 # Query and search Zoho CRM

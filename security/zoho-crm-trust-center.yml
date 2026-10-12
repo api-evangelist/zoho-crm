@@ -2,10 +2,8 @@ generated: '2026-08-13'
 method: searched
 probe: true
 url: https://www.zoho.com/compliance.html
-scope: >-
-  Zoho Corporation-wide compliance portfolio. Zoho does not run a per-product trust
-  centre; Zoho CRM inherits this posture. Recorded at the corporate level, which is
-  where Zoho publishes it.
+scope: Zoho Corporation-wide compliance portfolio. Zoho does not run a per-product trust centre; Zoho CRM inherits this posture.
+  Recorded at the corporate level, which is where Zoho publishes it.
 certifications:
 - ISO/IEC 27001
 - ISO/IEC 27017
@@ -36,10 +34,20 @@ gdpr_page: https://www.zoho.com/gdpr.html
 evidence:
 - source: https://www.zoho.com/compliance.html
   status: 200
-  keywords: [iso 27001, soc 2 type 2, pci dss, hipaa, gdpr, csa star, tx-ramp]
+  keywords:
+  - iso 27001
+  - soc 2 type 2
+  - pci dss
+  - hipaa
+  - gdpr
+  - csa star
+  - tx-ramp
 - source: https://www.zoho.com/security.html
   status: 200
-  keywords: [owasp, nist, security whitepaper]
+  keywords:
+  - owasp
+  - nist
+  - security whitepaper
 - source: https://www.zoho.com/gdpr.html
   status: 200
 not_found:
@@ -50,3 +58,4 @@ not_found:
 related:
 - security/zoho-crm-vulnerability-disclosure.yml
 - conformance/zoho-crm-conformance.yml
+source: https://www.zoho.com/compliance.html

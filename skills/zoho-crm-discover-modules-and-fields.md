@@ -1,8 +1,14 @@
 ---
-name: Discover Zoho CRM modules and fields before writing
-description: Resolve the tenant's real module API names and field definitions before constructing any Zoho CRM record body, because Zoho CRM's schema is per-org runtime data, not a fixed contract.
+name: discover-modules-and-fields
+description: Resolve the tenant's real module API names and field definitions before constructing any Zoho CRM record body,
+  because Zoho CRM's schema is per-org runtime data, not a fixed contract.
 api: openapi/zoho-crm-modules-openapi.json, openapi/zoho-crm-fields-openapi.json
-operations: [getModules, getModuleByApiName, getFields, getFieldsWithID]
+operations:
+- getModules
+- getModuleByApiName
+- getFields
+- getFieldsWithID
+title: Discover Zoho CRM modules and fields before writing
 ---
 
 # Discover Zoho CRM modules and fields

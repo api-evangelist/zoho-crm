@@ -1,0 +1,80 @@
+arazzo: 1.0.1
+info:
+  title: Zoho CRM + Facebook Lead Ads leads to Zoho CRM contacts
+  summary: Facebook Lead Ads leads to Zoho CRM contacts
+  description: Recreates the Zapier template "create contacts on zoho crm from new leads from facebook lead ads" as an Arazzo workflow over Zoho
+    CRM v8 and facebook-lead-ads published contracts. Steps the specs did not settle are listed under x-integration.guessed_steps.
+  version: 1.0.0
+sourceDescriptions:
+- name: fbLeads
+  url: https://raw.githubusercontent.com/api-evangelist/facebook-lead-ads/refs/heads/main/openapi/facebook-lead-ads-leads-api-openapi.yml
+  type: openapi
+- name: zohoRecords
+  url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/openapi/zoho-crm-records-api-openapi.yml
+  type: openapi
+workflows:
+- workflowId: new-lead-to-contact
+  summary: Facebook Lead Ads leads to Zoho CRM contacts
+  description: Facebook Lead Ads leads to Zoho CRM contacts, using only operations that exist in both contracts.
+  inputs:
+    type: object
+    required:
+    - formId
+    properties:
+      formId:
+        type: string
+      email:
+        type: string
+      lastName:
+        type: string
+      firstName:
+        type: string
+  steps:
+  - stepId: list-leads
+    description: List the leads captured by the Lead Ads form.
+    operationId: $sourceDescriptions.fbLeads.listLeadsForForm
+    parameters:
+    - name: form-id
+      in: path
+      value: $inputs.formId
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      leads: $response.body#/data
+      leadId: $response.body#/data/0/id
+      fieldData: $response.body#/data/0/field_data
+  - stepId: create-contact
+    description: Create the record in the Zoho CRM Contacts module.
+    operationId: $sourceDescriptions.zohoRecords.createRecords
+    parameters:
+    - name: module
+      in: path
+      value: Contacts
+    requestBody:
+      contentType: application/json
+      payload:
+        data:
+        - Last_Name: $inputs.lastName
+          First_Name: $inputs.firstName
+          Email: $inputs.email
+          Lead_Source: Facebook
+    successCriteria:
+    - condition: $statusCode == 201
+    outputs:
+      recordId: $response.body#/data/0/details/id
+      status: $response.body#/data/0/status
+  outputs:
+    recordId: $steps.create-contact.outputs.recordId
+x-integration:
+  partner: facebook-lead-ads
+  template: https://zapier.com/apps/facebook-lead-ads/integrations/zoho-crm/10163/create-contacts-on-zoho-crm-from-new-leads-from-facebook-lead-ads
+  edge_evidence: https://zapier.com/apps/facebook-lead-ads/integrations/zoho-crm/10163/create-contacts-on-zoho-crm-from-new-leads-from-facebook-lead-ads
+  edge_type: marketplace
+  method: generated
+  generated: '2026-10-12'
+  generator: claude-opus-5.5 enrichment local-v5
+  guessed_steps:
+  - step: list-leads
+    cause: partner-contract
+    why: the listLeadsForForm data[] items declare no properties, so /data/0/id and field_data are not settled by the spec; contact fields are
+      taken as inputs

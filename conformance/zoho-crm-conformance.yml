@@ -1,29 +1,19 @@
 generated: '2026-08-13'
 method: searched
-source: >-
-  openapi/ (105 first-party OAS 3.1.0 files),
-  well-known/zoho-crm-openid-configuration.json,
-  https://www.zoho.com/compliance.html,
-  https://www.zoho.com/crm/developer/docs/api/v8/status-codes.html
+source: openapi/ (105 first-party OAS 3.1.0 files), well-known/zoho-crm-openid-configuration.json, https://www.zoho.com/compliance.html, https://www.zoho.com/crm/developer/docs/api/v8/status-codes.html
 standards:
 - id: openapi-3.1
   conforms: true
-  evidence: >-
-    All 105 published files declare "openapi": "3.1.0" (the docs page calls it
-    "OAS 3.0.0"; the artifacts are 3.1.0). 405 operations, 864 component schemas,
-    every operation carrying an operationId and a security[] requirement.
+  evidence: 'All 105 published files declare "openapi": "3.1.0" (the docs page calls it "OAS 3.0.0"; the artifacts are 3.1.0). 405 operations,
+    864 component schemas, every operation carrying an operationId and a security[] requirement.'
 - id: oauth2
   conforms: true
-  evidence: >-
-    components.securitySchemes.iam-oauth2-schema type oauth2 in every spec;
-    authorizationCode flow with authorizationUrl https://accounts.zoho.com/oauth/v2/auth,
+  evidence: components.securitySchemes.iam-oauth2-schema type oauth2 in every spec; authorizationCode flow with authorizationUrl https://accounts.zoho.com/oauth/v2/auth,
     tokenUrl and refreshUrl https://accounts.zoho.com/oauth/v2/token, 458 distinct scopes.
 - id: oidc
   conforms: true
-  evidence: >-
-    https://accounts.zoho.com/.well-known/openid-configuration returns 200 with a
-    complete OIDC Discovery 1.0 document (issuer, jwks_uri, userinfo, id_token
-    RS256/RS384, claims_supported).
+  evidence: https://accounts.zoho.com/.well-known/openid-configuration returns 200 with a complete OIDC Discovery 1.0 document (issuer, jwks_uri,
+    userinfo, id_token RS256/RS384, claims_supported).
 - id: rfc6749-authorization-code
   conforms: true
   evidence: grant_types_supported includes authorization_code, refresh_token, implicit.
@@ -44,19 +34,16 @@ standards:
   evidence: grant_types_supported includes urn:ietf:params:oauth:grant-type:jwt-bearer; token_endpoint_auth_methods_supported includes private_key_jwt.
 - id: rfc6750-bearer-token
   conforms: false
-  evidence: >-
-    Zoho does NOT use the Bearer scheme. The Authorization header is
-    "Zoho-oauthtoken {access_token}", a vendor prefix, so generic RFC 6750 clients
-    fail on the first call.
+  evidence: Zoho does NOT use the Bearer scheme. The Authorization header is "Zoho-oauthtoken {access_token}", a vendor prefix, so generic RFC
+    6750 clients fail on the first call.
 - id: rfc9116-security-txt
   conforms: true
-  evidence: https://www.zoho.com/.well-known/security.txt returns 200 with Contact, Policy, Encryption, Acknowledgements, Canonical, Preferred-Languages and Expires.
+  evidence: https://www.zoho.com/.well-known/security.txt returns 200 with Contact, Policy, Encryption, Acknowledgements, Canonical, Preferred-Languages
+    and Expires.
 - id: rfc9457-problem-details
   conforms: false
-  evidence: >-
-    No operation across the 105 specs declares application/problem+json; every error
-    body is application/json carrying Zoho's own {code, status, message, details}
-    envelope.
+  evidence: No operation across the 105 specs declares application/problem+json; every error body is application/json carrying Zoho's own {code,
+    status, message, details} envelope.
 - id: rfc8594-sunset-header
   conforms: false
   evidence: No Sunset or Deprecation header is documented and no operation is marked deprecated.
@@ -68,10 +55,8 @@ standards:
   evidence: security.txt and openid-configuration served under /.well-known/ on zoho.com and accounts.zoho.com respectively.
 - id: asyncapi-2.6
   conforms: partial
-  evidence: >-
-    asyncapi/zoho-crm-notifications-asyncapi.yml is an API Evangelist-authored 2.6.0
-    model of Zoho's documented Instant Notifications callbacks; Zoho itself publishes
-    no AsyncAPI document.
+  evidence: asyncapi/zoho-crm-notifications-asyncapi.yml is an API Evangelist-authored 2.6.0 model of Zoho's documented Instant Notifications
+    callbacks; Zoho itself publishes no AsyncAPI document.
 - id: json-api
   conforms: false
   evidence: Response envelope is {data, info}, not the JSON:API media type or structure.
@@ -85,13 +70,23 @@ standards:
   evidence: No public GraphQL endpoint; graphql/ in this repo is a derived model, not a provider surface.
 - id: mcp
   conforms: partial
-  evidence: >-
-    Zoho ships a hosted MCP product covering Zoho CRM (https://www.zoho.com/mcp/) but
-    publishes no anonymous endpoint, no tools/list, and no RFC 8414/9728 metadata, so
-    protocol conformance could not be verified. See mcp/zoho-crm-mcp.yml.
+  evidence: Zoho ships a hosted MCP product covering Zoho CRM (https://www.zoho.com/mcp/) but publishes no anonymous endpoint, no tools/list,
+    and no RFC 8414/9728 metadata, so protocol conformance could not be verified. See mcp/zoho-crm-mcp.yml.
 - id: a2a
   conforms: false
   evidence: /.well-known/agent-card.json and /.well-known/agent.json returned 404 on all four probed hosts.
+- id: openapi-3.2
+  conforms: true
+  evidence: the document declares 3.2.0
+- id: rfc9457
+  conforms: false
+  evidence: no response declares application/problem+json
+- id: idempotency
+  conforms: false
+  evidence: no idempotency key parameter on mutating operations
+- id: pagination
+  conforms: true
+  evidence: list operations take page, page_token, per_page
 compliance_programs:
   published: true
   url: https://www.zoho.com/compliance.html

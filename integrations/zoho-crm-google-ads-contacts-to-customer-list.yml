@@ -1,0 +1,129 @@
+arazzo: 1.0.1
+info:
+  title: Zoho CRM + New Zoho CRM contacts to a Google Ads Customer Match list
+  summary: New Zoho CRM contacts to a Google Ads Customer Match list
+  description: Recreates the Zapier template "add new zoho crm contacts to google ads custom lists" as an Arazzo workflow over Zoho CRM v8 and
+    google-ads published contracts. Steps the specs did not settle are listed under x-integration.guessed_steps.
+  version: 1.0.0
+sourceDescriptions:
+- name: zohoRecords
+  url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/openapi/zoho-crm-records-api-openapi.yml
+  type: openapi
+- name: gadsJobs
+  url: https://raw.githubusercontent.com/api-evangelist/google-ads/refs/heads/main/openapi/google-ads-customers-offlineuserdatajobs-api-openapi.yml
+  type: openapi
+workflows:
+- workflowId: contacts-to-customer-list
+  summary: New Zoho CRM contacts to a Google Ads Customer Match list
+  description: New Zoho CRM contacts to a Google Ads Customer Match list, using only operations that exist in both contracts.
+  inputs:
+    type: object
+    required:
+    - customerId
+    - userListResourceName
+    properties:
+      fields:
+        type: string
+      perPage:
+        type: string
+      customerId:
+        type: string
+      userListResourceName:
+        type: string
+      jobId:
+        type: string
+      hashedEmail:
+        type: string
+  steps:
+  - stepId: get-contacts
+    description: Read the newest Contacts records from Zoho CRM.
+    operationId: $sourceDescriptions.zohoRecords.getRecords
+    parameters:
+    - name: module
+      in: path
+      value: Contacts
+    - name: fields
+      in: query
+      value: $inputs.fields
+    - name: sort_by
+      in: query
+      value: Created_Time
+    - name: sort_order
+      in: query
+      value: desc
+    - name: per_page
+      in: query
+      value: $inputs.perPage
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      records: $response.body#/data
+      email: $response.body#/data/0/Email
+      firstName: $response.body#/data/0/First_Name
+      lastName: $response.body#/data/0/Last_Name
+  - stepId: create-job
+    description: Create a Customer Match offline user data job for the target user list.
+    operationId: $sourceDescriptions.gadsJobs.googleads_customers_offlineUserDataJobs_create
+    parameters:
+    - name: customersId
+      in: path
+      value: $inputs.customerId
+    requestBody:
+      contentType: application/json
+      payload:
+        job:
+          type: CUSTOMER_MATCH_USER_LIST
+          customerMatchUserListMetadata:
+            userList: $inputs.userListResourceName
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      jobResourceName: $response.body#/resourceName
+  - stepId: add-members
+    description: Add the Contacts email as a hashed user identifier to the job.
+    operationId: $sourceDescriptions.gadsJobs.googleads_customers_offlineUserDataJobs_addOperations
+    parameters:
+    - name: customersId
+      in: path
+      value: $inputs.customerId
+    - name: offlineUserDataJobsId
+      in: path
+      value: $inputs.jobId
+    requestBody:
+      contentType: application/json
+      payload:
+        operations:
+        - create:
+            userIdentifiers:
+            - hashedEmail: $inputs.hashedEmail
+    successCriteria:
+    - condition: $statusCode == 200
+  - stepId: run-job
+    description: Run the job so Google Ads processes the new members.
+    operationId: $sourceDescriptions.gadsJobs.googleads_customers_offlineUserDataJobs_run
+    parameters:
+    - name: customersId
+      in: path
+      value: $inputs.customerId
+    - name: offlineUserDataJobsId
+      in: path
+      value: $inputs.jobId
+    successCriteria:
+    - condition: $statusCode == 200
+x-integration:
+  partner: google-ads
+  template: https://zapier.com/apps/google-ads/integrations/zoho-crm/78025/add-new-zoho-crm-contacts-to-google-ads-custom-lists
+  edge_evidence: https://zapier.com/apps/google-ads/integrations/zoho-crm/78025/add-new-zoho-crm-contacts-to-google-ads-custom-lists
+  edge_type: marketplace
+  method: generated
+  generated: '2026-10-12'
+  generator: claude-opus-5.5 enrichment local-v5
+  guessed_steps:
+  - step: get-contacts
+    cause: provider-contract
+    why: the getRecords 200 schema is module-generic (id, Owner, Created_Time ...) and declares no Email/First_Name/Last_Name, so those output
+      paths for Contacts are not settled by the spec
+  - step: add-members
+    cause: partner-contract
+    why: the offlineUserDataJobs create response returns only a resourceName, not the numeric job id the addOperations/run path needs, so offlineUserDataJobsId
+      is supplied as an input

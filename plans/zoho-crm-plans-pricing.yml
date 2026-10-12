@@ -1,15 +1,13 @@
 generated: '2026-08-13'
 method: searched
 source: https://www.zoho.com/crm/zohocrm-pricing.html
+name: Zoho CRM API Plans
 plan_count: 5
 currency: INR
-currency_note: >-
-  The pricing page renders prices client-side and geo-selects the currency; the
-  fetch on 2026-08-13 was served INR. The page carries a currency switcher offering
-  USD, INR, EUR, GBP, JPY, SGD, AUD and CAD, and the per-currency figures are loaded
-  from a separate JSON file rather than being present in the HTML, so only the INR
-  figures actually observed are recorded here. Prices below are the values printed
-  on the page for the monthly-billed toggle, per user per month.
+currency_note: The pricing page renders prices client-side and geo-selects the currency; the fetch on 2026-08-13 was served
+  INR. The page carries a currency switcher offering USD, INR, EUR, GBP, JPY, SGD, AUD and CAD, and the per-currency figures
+  are loaded from a separate JSON file rather than being present in the HTML, so only the INR figures actually observed are
+  recorded here. Prices below are the values printed on the page for the monthly-billed toggle, per user per month.
 billing_period: per user per month
 trial: true
 trial_note: Every paid edition CTA is "START FREE TRIAL"; the page does not state the trial length.
@@ -28,6 +26,7 @@ plans:
   - Custom email templates
   - Tasks, meetings and calls
   - Mobile apps
+  price_text: ₹ 0 3 users
 - name: Standard
   price: 800
   currency: INR
@@ -42,6 +41,7 @@ plans:
   - Reports and dashboards
   - Sales forecasting
   - Self-service kiosks
+  price_text: ₹ 800 /user/month
 - name: Professional
   price: 1400
   currency: INR
@@ -57,6 +57,7 @@ plans:
   - Widgets (client-side extensions)
   - Inventory management
   - Google Ads integration
+  price_text: ₹ 1,400 /user/month
 - name: Enterprise
   price: 2400
   currency: INR
@@ -72,6 +73,7 @@ plans:
   - Custom functions
   - Wizards
   - Customer portals
+  price_text: ₹ 2,400 /user/month
 - name: Ultimate
   price: 2600
   currency: INR
@@ -86,12 +88,11 @@ plans:
   - Migration assistance
   - Custom AI/ML
   - Data preparation
+  price_text: ₹ 2,600 /user/month
 overage:
   model: add-on credit packs
-  note: >-
-    The daily API credit formula on api-limits.html includes an explicit "+ Add-ons"
-    term, so credits are purchasable above the edition baseline, but the pricing page
-    does not publish a per-credit price.
+  note: The daily API credit formula on api-limits.html includes an explicit "+ Add-ons" term, so credits are purchasable
+    above the edition baseline, but the pricing page does not publish a per-credit price.
 api_access:
   included_in_all_paid_plans: true
   free_edition_has_api: true
@@ -142,3 +143,8 @@ x-canonical:
     units: []
     periods:
     - month
+audience: business-product
+pricing_basis: per-seat
+delivery:
+  delivery: managed
+published: true

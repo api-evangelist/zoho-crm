@@ -1,8 +1,12 @@
 ---
-name: Convert a Zoho CRM lead into an account, contact and deal
+name: convert-a-lead
 description: Run the lead-conversion flow, the one Zoho CRM write that is neither idempotent nor cheap, with the right preconditions.
 api: openapi/zoho-crm-convert-openapi.json, openapi/zoho-crm-conversion-option-openapi.json
-operations: [convertLead, getLeadConversionOptions, getRecord]
+operations:
+- convertLead
+- getLeadConversionOptions
+- getRecord
+title: Convert a Zoho CRM lead into an account, contact and deal
 ---
 
 # Convert a Zoho CRM lead

@@ -1,0 +1,99 @@
+arazzo: 1.0.1
+info:
+  title: Zoho CRM + Calendly invitees to Zoho CRM module entries
+  summary: Calendly invitees to Zoho CRM module entries
+  description: Recreates the Zapier template "create or update zoho crm module entries for new invitees in calendly" as an Arazzo workflow over
+    Zoho CRM v8 and calendly published contracts. Steps the specs did not settle are listed under x-integration.guessed_steps.
+  version: 1.0.0
+sourceDescriptions:
+- name: calendlyEvents
+  url: https://raw.githubusercontent.com/api-evangelist/calendly/refs/heads/main/openapi/calendly-scheduled-events-api-openapi.yml
+  type: openapi
+- name: calendlyInvitees
+  url: https://raw.githubusercontent.com/api-evangelist/calendly/refs/heads/main/openapi/calendly-invitees-api-openapi.yml
+  type: openapi
+- name: zohoUpsert
+  url: https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/openapi/zoho-crm-upsert-api-openapi.yml
+  type: openapi
+workflows:
+- workflowId: invitee-to-module-entry
+  summary: Calendly invitees to Zoho CRM module entries
+  description: Calendly invitees to Zoho CRM module entries, using only operations that exist in both contracts.
+  inputs:
+    type: object
+    required:
+    - eventUuid
+    properties:
+      eventUuid:
+        type: string
+      module:
+        type: string
+  steps:
+  - stepId: get-event
+    description: Read the scheduled Calendly event.
+    operationId: $sourceDescriptions.calendlyEvents.getScheduledEvent
+    parameters:
+    - name: uuid
+      in: path
+      value: $inputs.eventUuid
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      eventName: $response.body#/resource/name
+      startTime: $response.body#/resource/start_time
+  - stepId: list-invitees
+    description: List the invitees of the event.
+    operationId: $sourceDescriptions.calendlyInvitees.listEventInvitees
+    parameters:
+    - name: event_uuid
+      in: path
+      value: $inputs.eventUuid
+    - name: status
+      in: query
+      value: active
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      email: $response.body#/collection/0/email
+      firstName: $response.body#/collection/0/first_name
+      lastName: $response.body#/collection/0/last_name
+  - stepId: upsert-record
+    description: Insert or update the $inputs.module record, matched on Email.
+    operationId: $sourceDescriptions.zohoUpsert.upsertRecords
+    parameters:
+    - name: module
+      in: path
+      value: $inputs.module
+    requestBody:
+      contentType: application/json
+      payload:
+        data:
+        - Email: $steps.list-invitees.outputs.email
+          First_Name: $steps.list-invitees.outputs.firstName
+          Last_Name: $steps.list-invitees.outputs.lastName
+          Description: $steps.get-event.outputs.eventName
+        duplicate_check_fields:
+        - Email
+    successCriteria:
+    - condition: $statusCode == 200
+    outputs:
+      recordId: $response.body#/data/0/details/id
+      action: $response.body#/data/0/action
+  outputs:
+    recordId: $steps.upsert-record.outputs.recordId
+x-integration:
+  partner: calendly
+  template: https://zapier.com/apps/calendly/integrations/zoho-crm/161808/create-or-update-zoho-crm-module-entries-for-new-invitees-in-calendly
+  edge_evidence: https://zapier.com/apps/calendly/integrations/zoho-crm/161808/create-or-update-zoho-crm-module-entries-for-new-invitees-in-calendly
+  edge_type: marketplace
+  method: generated
+  generated: '2026-10-12'
+  generator: claude-opus-5.5 enrichment local-v5
+  guessed_steps:
+  - step: get-event
+    cause: partner-contract
+    why: resource/name and resource/start_time follow Calendly's envelope; the paths were not verified against a declared response schema
+  - step: upsert-record
+    cause: provider-contract
+    why: the upsertRecords 200 response item declares code/message/status/details but no action field, so /data/0/action is not settled by the
+      spec

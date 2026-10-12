@@ -1,0 +1,119 @@
+generated: '2026-10-12'
+method: derived
+source: the pre-flight dossier, apis.yml pointers, spec servers, well-known, vendors -- nothing fetched here
+generator: derive-hosts.py
+summary:
+  hosts: 9
+  own: 4
+  other_domain: 2
+  platform: 3
+  roles:
+  - collections
+  - other
+  - security
+  - source
+  - status
+  - support
+  - website
+hosts:
+- host: api-console.zoho.com
+  found_by:
+  - pointer
+  types:
+  - Console
+  serves: []
+  registrable_domain: zoho.com
+  role: other
+  relation: own
+- host: bugbounty.zohocorp.com
+  found_by:
+  - pointer
+  types:
+  - Security
+  serves: []
+  registrable_domain: zohocorp.com
+  role: security
+  relation: other-domain
+- host: github.com
+  found_by:
+  - pointer
+  types:
+  - GitHubOrganization
+  - SourceCode
+  serves: []
+  registrable_domain: github.com
+  role: source
+  relation: platform
+- host: help.zoho.com
+  found_by:
+  - pointer
+  types:
+  - Support
+  serves: []
+  registrable_domain: zoho.com
+  role: support
+  relation: own
+- host: status.zoho.com
+  found_by:
+  - pointer
+  types:
+  - StatusPage
+  serves: []
+  registrable_domain: zoho.com
+  role: status
+  relation: own
+- host: www.linkedin.com
+  found_by:
+  - pointer
+  types:
+  - LinkedIn
+  serves: []
+  registrable_domain: linkedin.com
+  role: other
+  relation: platform
+- host: www.postman.com
+  found_by:
+  - pointer
+  - vendor-detect
+  types:
+  - Postman
+  - PostmanWorkspace
+  serves:
+  - api-collections
+  vendor: postman
+  registrable_domain: postman.com
+  role: collections
+  relation: platform
+- host: www.zoho.com
+  found_by:
+  - pointer
+  - apis[]
+  - vendor-detect
+  types:
+  - Website
+  - DeveloperPortal
+  - Documentation
+  - APIReference
+  - GettingStarted
+  - Blog
+  - Pricing
+  - SignUp
+  - TermsOfService
+  - PrivacyPolicy
+  - Compliance
+  serves:
+  - docs
+  - cdn
+  vendor: cloudflare
+  registrable_domain: zoho.com
+  role: website
+  relation: own
+- host: www.zohoapis.com
+  found_by:
+  - apis[]
+  types: []
+  serves:
+  - api
+  registrable_domain: zohoapis.com
+  role: other
+  relation: other-domain

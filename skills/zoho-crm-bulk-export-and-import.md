@@ -1,8 +1,15 @@
 ---
-name: Export and import Zoho CRM data in bulk
-description: Move large volumes in and out of Zoho CRM with the asynchronous Bulk Read and Bulk Write job APIs instead of paging the record endpoints.
+name: bulk-export-and-import
+description: Move large volumes in and out of Zoho CRM with the asynchronous Bulk Read and Bulk Write job APIs instead of
+  paging the record endpoints.
 api: openapi/zoho-crm-bulk-read-openapi.json, openapi/zoho-crm-bulk-write-openapi.json, openapi/zoho-crm-upload-openapi.json
-operations: [createBulkReadJob, getBulkReadJobDetails, downloadResult, createBulkWriteJob, getJobDetails]
+operations:
+- createBulkReadJob
+- getBulkReadJobDetails
+- downloadResult
+- createBulkWriteJob
+- getJobDetails
+title: Export and import Zoho CRM data in bulk
 ---
 
 # Export and import Zoho CRM data in bulk

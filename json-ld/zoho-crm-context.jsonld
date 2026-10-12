@@ -1,0 +1,437 @@
+{
+  "@context": {
+    "@vocab": "https://zoho.com/schema#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+    "zoho": "https://zoho.com/schema#",
+    "AssociateEmailRequest": "zoho:AssociateEmailRequest",
+    "data": {
+      "@id": "zoho:data",
+      "@container": "@list"
+    },
+    "ActionResponse": "zoho:ActionResponse",
+    "EmailAddress": "zoho:EmailAddress",
+    "user_name": {
+      "@id": "zoho:user_name",
+      "@type": "xsd:string"
+    },
+    "email": {
+      "@id": "zoho:email",
+      "@type": "xsd:string"
+    },
+    "ErrorResponse": "zoho:ErrorResponse",
+    "code": {
+      "@id": "zoho:code",
+      "@type": "xsd:string"
+    },
+    "message": {
+      "@id": "zoho:message",
+      "@type": "xsd:string"
+    },
+    "status": {
+      "@id": "zoho:status",
+      "@type": "xsd:string"
+    },
+    "details": {
+      "@id": "zoho:details"
+    },
+    "EmailObject": "zoho:EmailObject",
+    "from": {
+      "@id": "zoho:from",
+      "@type": "@id"
+    },
+    "to": {
+      "@id": "zoho:to",
+      "@container": "@list"
+    },
+    "cc": {
+      "@id": "zoho:cc",
+      "@container": "@list"
+    },
+    "bcc": {
+      "@id": "zoho:bcc",
+      "@container": "@list"
+    },
+    "subject": {
+      "@id": "zoho:subject",
+      "@type": "xsd:string"
+    },
+    "content": {
+      "@id": "zoho:content",
+      "@type": "xsd:string"
+    },
+    "mail_format": {
+      "@id": "zoho:mail_format",
+      "@type": "xsd:string"
+    },
+    "original_message_id": {
+      "@id": "zoho:original_message_id",
+      "@type": "xsd:string"
+    },
+    "sent": {
+      "@id": "zoho:sent",
+      "@type": "xsd:boolean"
+    },
+    "date_time": {
+      "@id": "zoho:date_time",
+      "@type": "xsd:dateTime"
+    },
+    "attachments": {
+      "@id": "zoho:attachments",
+      "@container": "@list"
+    },
+    "AttachmentRef": "zoho:AttachmentRef",
+    "id": {
+      "@id": "zoho:id",
+      "@type": "xsd:string"
+    },
+    "ErrorResponseCore814179042": "zoho:ErrorResponseCore814179042",
+    "CadencesNested": "zoho:CadencesNested",
+    "name": {
+      "@id": "zoho:name",
+      "@type": "xsd:string"
+    },
+    "ErrorDataNested": "zoho:ErrorDataNested",
+    "PostCadencesRequest": "zoho:PostCadencesRequest",
+    "cadences_ids": {
+      "@id": "zoho:cadences_ids",
+      "@container": "@list"
+    },
+    "ids": {
+      "@id": "zoho:ids",
+      "@container": "@list"
+    },
+    "DetailsNested": "zoho:DetailsNested",
+    "cadences": {
+      "@id": "zoho:cadences",
+      "@container": "@list"
+    },
+    "SuccessDataNested": "zoho:SuccessDataNested",
+    "ErrorResponseCore1137512454": "zoho:ErrorResponseCore1137512454",
+    "ErrorResponseCore1243473672": "zoho:ErrorResponseCore1243473672",
+    "PostcadencesResponse200": "zoho:PostcadencesResponse200",
+    "ErrorResponse403": "zoho:ErrorResponse403",
+    "ErrorResponseCore1414382895": "zoho:ErrorResponseCore1414382895",
+    "ErrorResponseCore260315750": "zoho:ErrorResponseCore260315750",
+    "PostcadencesResponse207": "zoho:PostcadencesResponse207",
+    "ErrorResponseCore1362235056": "zoho:ErrorResponseCore1362235056",
+    "RelatedRecordCountResult": "zoho:RelatedRecordCountResult",
+    "count": {
+      "@id": "zoho:count",
+      "@type": "xsd:integer"
+    },
+    "related_list": {
+      "@id": "zoho:related_list",
+      "@type": "@id"
+    },
+    "RelatedListReference": "zoho:RelatedListReference",
+    "api_name": {
+      "@id": "zoho:api_name",
+      "@type": "xsd:string"
+    },
+    "GetRelatedRecordsCountRequest": "zoho:GetRelatedRecordsCountRequest",
+    "get_related_records_count": {
+      "@id": "zoho:get_related_records_count",
+      "@container": "@list"
+    },
+    "ErrorResponse_2": "zoho:ErrorResponse_2",
+    "RelatedRecordCountItem": "zoho:RelatedRecordCountItem",
+    "params": {
+      "@id": "zoho:params",
+      "@type": "@id"
+    },
+    "CountParameters": "zoho:CountParameters",
+    "approved": {
+      "@id": "zoho:approved",
+      "@type": "xsd:boolean"
+    },
+    "filters": {
+      "@id": "zoho:filters",
+      "@type": "@id"
+    },
+    "converted": {
+      "@id": "zoho:converted",
+      "@type": "xsd:boolean"
+    },
+    "category": {
+      "@id": "zoho:category",
+      "@type": "xsd:string"
+    },
+    "approval_state": {
+      "@id": "zoho:approval_state",
+      "@type": "xsd:string"
+    },
+    "FilterField": "zoho:FilterField",
+    "GetRelatedRecordsCountResponse": "zoho:GetRelatedRecordsCountResponse",
+    "FilterCriteria": "zoho:FilterCriteria",
+    "comparator": {
+      "@id": "zoho:comparator",
+      "@type": "xsd:string"
+    },
+    "field": {
+      "@id": "zoho:field",
+      "@type": "@id"
+    },
+    "value": {
+      "@id": "zoho:value",
+      "@type": "xsd:string"
+    },
+    "RecipientNested": "zoho:RecipientNested",
+    "type": {
+      "@id": "zoho:type",
+      "@type": "xsd:string"
+    },
+    "SignersNested": "zoho:SignersNested",
+    "recipient": {
+      "@id": "zoho:recipient",
+      "@type": "@id"
+    },
+    "recipient_name": {
+      "@id": "zoho:recipient_name",
+      "@type": "xsd:string"
+    },
+    "action_type": {
+      "@id": "zoho:action_type",
+      "@type": "xsd:string"
+    },
+    "InvalidDataUrlError": "zoho:InvalidDataUrlError",
+    "InvalidModulePathError": "zoho:InvalidModulePathError",
+    "PostdownloadmailmergeRequest": "zoho:PostdownloadmailmergeRequest",
+    "download_mail_merge": {
+      "@id": "zoho:download_mail_merge",
+      "@container": "@list"
+    },
+    "MandatoryFieldNotFoundError": "zoho:MandatoryFieldNotFoundError",
+    "BccEmailNested": "zoho:BccEmailNested",
+    "InvalidRequestMethodError": "zoho:InvalidRequestMethodError",
+    "SignMailMergeNested": "zoho:SignMailMergeNested",
+    "sign_in_order": {
+      "@id": "zoho:sign_in_order",
+      "@type": "xsd:boolean"
+    },
+    "signers": {
+      "@id": "zoho:signers",
+      "@container": "@list"
+    },
+    "mail_merge_template": {
+      "@id": "zoho:mail_merge_template",
+      "@type": "@id"
+    },
+    "file_name": {
+      "@id": "zoho:file_name",
+      "@type": "xsd:string"
+    },
+    "InvalidModuleParamError": "zoho:InvalidModuleParamError",
+    "SignMailMergeNested1": "zoho:SignMailMergeNested1",
+    "MailMergeTemplateNested": "zoho:MailMergeTemplateNested",
+    "PostsignmailmergeRequest": "zoho:PostsignmailmergeRequest",
+    "sign_mail_merge": {
+      "@id": "zoho:sign_mail_merge",
+      "@container": "@list"
+    },
+    "DetailsNested_2": "zoho:DetailsNested_2",
+    "report_link": {
+      "@id": "zoho:report_link",
+      "@type": "@id"
+    },
+    "PostsendmailmergeRequest": "zoho:PostsendmailmergeRequest",
+    "send_mail_merge": {
+      "@id": "zoho:send_mail_merge",
+      "@container": "@list"
+    },
+    "InvalidDataMaxLengthError": "zoho:InvalidDataMaxLengthError",
+    "ToAddressNested": "zoho:ToAddressNested",
+    "CcEmailNested": "zoho:CcEmailNested",
+    "SendMailMergeNested": "zoho:SendMailMergeNested",
+    "bcc_email": {
+      "@id": "zoho:bcc_email",
+      "@container": "@list"
+    },
+    "cc_email": {
+      "@id": "zoho:cc_email",
+      "@container": "@list"
+    },
+    "attachment_name": {
+      "@id": "zoho:attachment_name",
+      "@type": "xsd:string"
+    },
+    "to_address": {
+      "@id": "zoho:to_address",
+      "@container": "@list"
+    },
+    "from_address": {
+      "@id": "zoho:from_address",
+      "@type": "@id"
+    },
+    "ExpectedFieldMissingError": "zoho:ExpectedFieldMissingError",
+    "PostsendmailmergeResponse200": "zoho:PostsendmailmergeResponse200",
+    "MandatoryFieldNotFoundBodyError": "zoho:MandatoryFieldNotFoundBodyError",
+    "ExpectedParamMissingError": "zoho:ExpectedParamMissingError",
+    "PostsignmailmergeResponse200": "zoho:PostsignmailmergeResponse200",
+    "SendMailMergeNested1": "zoho:SendMailMergeNested1",
+    "InvalidDataTypeError": "zoho:InvalidDataTypeError",
+    "FromAddressNested": "zoho:FromAddressNested",
+    "DownloadMailMergeNested": "zoho:DownloadMailMergeNested",
+    "output_format": {
+      "@id": "zoho:output_format",
+      "@type": "xsd:string"
+    },
+    "DetailsNested1": "zoho:DetailsNested1",
+    "sign_resource_id": {
+      "@id": "zoho:sign_resource_id",
+      "@type": "xsd:string"
+    },
+    "InvalidDataParamError": "zoho:InvalidDataParamError",
+    "RequiredParamMissingError": "zoho:RequiredParamMissingError",
+    "ErrorResponse_3": "zoho:ErrorResponse_3",
+    "ErrorDetails_2": "zoho:ErrorDetails_2",
+    "expected_data_type": {
+      "@id": "zoho:expected_data_type",
+      "@type": "xsd:string"
+    },
+    "json_path": {
+      "@id": "zoho:json_path",
+      "@type": "xsd:string"
+    },
+    "ambiguity_due_to": {
+      "@id": "zoho:ambiguity_due_to",
+      "@container": "@list"
+    },
+    "expected_fields": {
+      "@id": "zoho:expected_fields",
+      "@container": "@list"
+    },
+    "dependee": {
+      "@id": "zoho:dependee"
+    },
+    "supported_values": {
+      "@id": "zoho:supported_values",
+      "@container": "@list"
+    },
+    "maximum_length": {
+      "@id": "zoho:maximum_length",
+      "@type": "xsd:integer"
+    },
+    "RecordInvalidURLResponse": "zoho:RecordInvalidURLResponse",
+    "RecordsErrorResponse": "zoho:RecordsErrorResponse",
+    "RecordsInputSchema": "zoho:RecordsInputSchema",
+    "apply_feature_execution": {
+      "@id": "zoho:apply_feature_execution",
+      "@container": "@list"
+    },
+    "skip_feature_execution": {
+      "@id": "zoho:skip_feature_execution",
+      "@container": "@list"
+    },
+    "trigger": {
+      "@id": "zoho:trigger",
+      "@container": "@list"
+    },
+    "RecordPermissionResponse": "zoho:RecordPermissionResponse",
+    "RecordUnathorizedResponse": "zoho:RecordUnathorizedResponse",
+    "RecordInternalErrorResponse": "zoho:RecordInternalErrorResponse",
+    "RecordSuccessResponse": "zoho:RecordSuccessResponse",
+    "EmailUser": "zoho:EmailUser",
+    "FlatErrorResponse": "zoho:FlatErrorResponse",
+    "SendMailRequest": "zoho:SendMailRequest",
+    "ErrorDetail": "zoho:ErrorDetail",
+    "StandardErrorResponse": "zoho:StandardErrorResponse",
+    "SuccessResponse": "zoho:SuccessResponse",
+    "ActivityModuleRelatedIssueErrorResponse": "zoho:ActivityModuleRelatedIssueErrorResponse",
+    "share": {
+      "@id": "zoho:share",
+      "@container": "@list"
+    },
+    "InvalidRecordIdErrorResponse": "zoho:InvalidRecordIdErrorResponse",
+    "ViewParamWithManageValueErrorResponse": "zoho:ViewParamWithManageValueErrorResponse",
+    "RecordForbiddenErrorResponse": "zoho:RecordForbiddenErrorResponse",
+    "InvalidModuleNameErrorResponse": "zoho:InvalidModuleNameErrorResponse",
+    "SharingSharedRecordErrorResponse": "zoho:SharingSharedRecordErrorResponse",
+    "UnsupportedModule": "zoho:UnsupportedModule",
+    "NoSharingAvailableToRevokeErrorResponse": "zoho:NoSharingAvailableToRevokeErrorResponse",
+    "ShareLimitExceedErrorResponse": "zoho:ShareLimitExceedErrorResponse",
+    "RecordLevelSharingNotSupportedForModuleErrorResponse": "zoho:RecordLevelSharingNotSupportedForModuleErrorResponse",
+    "MaximumLengthErrorResponse": "zoho:MaximumLengthErrorResponse",
+    "CommonForbiddenErrorResponse": "zoho:CommonForbiddenErrorResponse",
+    "InvalidShareWithIdErrorResponse": "zoho:InvalidShareWithIdErrorResponse",
+    "InvalidShareWithValueErrorResponse": "zoho:InvalidShareWithValueErrorResponse",
+    "SchedularAlreadyRunningErrorResponse": "zoho:SchedularAlreadyRunningErrorResponse",
+    "MandatoryNotFound": "zoho:MandatoryNotFound",
+    "InvalidTypeErrorResponse": "zoho:InvalidTypeErrorResponse",
+    "AmbiguousShareErrorResponse": "zoho:AmbiguousShareErrorResponse",
+    "NotifyMembersWithoutFeeds": "zoho:NotifyMembersWithoutFeeds",
+    "ErrorResponseCore1875045219": "zoho:ErrorResponseCore1875045219",
+    "PostaddtagsResponse200": "zoho:PostaddtagsResponse200",
+    "over_write": {
+      "@id": "zoho:over_write",
+      "@type": "xsd:boolean"
+    },
+    "locked_count": {
+      "@id": "zoho:locked_count",
+      "@type": "xsd:string"
+    },
+    "success_count": {
+      "@id": "zoho:success_count",
+      "@type": "xsd:string"
+    },
+    "tags": {
+      "@id": "zoho:tags",
+      "@type": "xsd:string"
+    },
+    "ErrorResponseCore239878082": "zoho:ErrorResponseCore239878082",
+    "TagsNested": "zoho:TagsNested",
+    "modified_time": {
+      "@id": "zoho:modified_time",
+      "@type": "xsd:dateTime"
+    },
+    "color_code": {
+      "@id": "zoho:color_code",
+      "@type": "xsd:string"
+    },
+    "conflict_id": {
+      "@id": "zoho:conflict_id",
+      "@type": "xsd:string"
+    },
+    "ErrorResponseCore1161913208": "zoho:ErrorResponseCore1161913208",
+    "TagErrorItemResponse": "zoho:TagErrorItemResponse",
+    "ErrorResponseCore2107518198": "zoho:ErrorResponseCore2107518198",
+    "ErrorResponseCore356490233": "zoho:ErrorResponseCore356490233",
+    "ErrorResponseCore1273605641": "zoho:ErrorResponseCore1273605641",
+    "ErrorResponseCore1335454202": "zoho:ErrorResponseCore1335454202",
+    "DetailsNested_3": "zoho:DetailsNested_3",
+    "modifiedTime": {
+      "@id": "zoho:modifiedTime",
+      "@type": "xsd:string"
+    },
+    "affected_data": {
+      "@id": "zoho:affected_data"
+    },
+    "ErrorResponseCore94581445": "zoho:ErrorResponseCore94581445",
+    "PostremovetagsResponse200": "zoho:PostremovetagsResponse200",
+    "TagsNested1": "zoho:TagsNested1",
+    "MappingMismatchErrorResponse": "zoho:MappingMismatchErrorResponse",
+    "DataNested": "zoho:DataNested",
+    "ErrorResponseCore1799630392": "zoho:ErrorResponseCore1799630392",
+    "PostremovetagsRequest": "zoho:PostremovetagsRequest",
+    "PostaddtagsRequest": "zoho:PostaddtagsRequest",
+    "ErrorResponseCore833637355": "zoho:ErrorResponseCore833637355",
+    "TerritoryErrorPermissionDenied": "zoho:TerritoryErrorPermissionDenied",
+    "TerritoryLimitExceededErrorSchema": "zoho:TerritoryLimitExceededErrorSchema",
+    "TerritoryAssignRecordLocked": "zoho:TerritoryAssignRecordLocked",
+    "TerritoryAssignMandatoryNotFound": "zoho:TerritoryAssignMandatoryNotFound",
+    "TerritoryAssignNotSupported": "zoho:TerritoryAssignNotSupported",
+    "TerritoryInternalServerErrorSchema": "zoho:TerritoryInternalServerErrorSchema"
+  },
+  "@type": "schema:Dataset",
+  "schema:name": "Zoho CRM API JSON-LD context",
+  "schema:description": "A JSON-LD @context for the objects Zoho CRM's own API contract declares: one class per component schema, one property per declared field, typed from the contract. Derived by script (derive-json-ld.py, 2026-10-12) from openapi/zoho-crm-actions-api-openapi.yml, openapi/zoho-crm-apis-api-openapi.yml, openapi/zoho-crm-appointments-s-api-openapi.yml.",
+  "dcterms:created": "2026-10-12",
+  "dcterms:source": [
+    "openapi/zoho-crm-actions-api-openapi.yml",
+    "openapi/zoho-crm-apis-api-openapi.yml",
+    "openapi/zoho-crm-appointments-s-api-openapi.yml",
+    "openapi/zoho-crm-attachments-api-openapi.yml",
+    "openapi/zoho-crm-composite-requests-api-openapi.yml"
+  ]
+}
