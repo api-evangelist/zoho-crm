@@ -8,6 +8,7 @@ checked:
 - https://monid.ai/tools/zoho-crm
 - https://n8n.io/integrations/zoho-crm/
 - https://zapier.com/apps/zoho-crm/integrations
+- https://marketplace.zoho.com/crm
 summary: null
 marketplace_apps:
 - marketplace: zapier
@@ -67,6 +68,26 @@ marketplace_apps:
   - zoom
   - zscaler-zia
   - zulip
+- marketplace: own
+  channel: partner-built
+  app: zoho-crm
+  url: https://marketplace.zoho.com/crm
+  app_count: 1229
+  categories:
+  - Marketing
+  - Customer Service
+  - Sales
+  - Business
+  - Collaboration
+  - Telephony
+  - IT and Administration
+  - Analytics
+  - Finance
+  - Education
+  - Productivity
+  - Inventory Management
+  - Remote Work
+  - Field Service
 edges:
 - partner_name: Facebook Lead Ads
   partner: facebook-lead-ads
@@ -398,6 +419,506 @@ edges:
   direction: third-party
   category: Ads & Conversion
   partner_url: https://ads.tiktok.com/
+- partner_name: Zynergy Labs
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/clean-contacts-pro-for-zoho-crm
+  category: Marketing
+  use_case: 'Clean Contacts Pro for Zoho CRM: Get clean, consistent Zoho CRM data—automated.'
+- partner_name: AMATEC US
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/twilio-chat-for-zoho-crm
+  category: Telephony
+  use_case: 'Twilio Chat for Zoho CRM: Turn Zoho CRM into a real-time chat hub with Twilio-powered messaging.'
+- partner_name: 360 Degree Cloud Technologies Pvt. Ltd.
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/360-sms-for-zoho-crm
+  category: Sales
+  use_case: '360 SMS for Zoho CRM: Win more customers faster with the #1 bulk SMS & text messaging app for Zoho CRM. Two-way SMS, MMS & WhatsApp- complete CRM texting platform.'
+- partner_name: Mav Consulting Group LLC
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/pipeline-for-zoho-crm
+  category: Productivity
+  use_case: 'Pipeline for Zoho CRM: Bring pipeline clarity to any module—not just Deals'
+- partner_name: Quo
+  partner: quo
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/quo-for-zoho-crm
+  category: Telephony
+  use_case: 'Quo for Zoho CRM: Bring calls, texts, and AI insights into your Zoho CRM.'
+- partner_name: Screen Magic Mobile Media Inc
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/sms-magic
+  category: Marketing
+  use_case: 'SMS-Magic: Better Engage with Your Audience Using Multichannel Messaging'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/zoho-sign
+  category: E-Signature
+  use_case: 'Zoho Sign for Zoho CRM: Sign, send, and manage business agreements and contracts.'
+- partner_name: Sinch Engage
+  partner: sinch
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/smooth-messenger-for-zoho-crm
+  category: Marketing
+  use_case: 'Sinch Engage SMS for Zoho CRM: Improve engagement with SMS,  MMS & RCS in Zoho CRM—automated workflows, bulk messaging, and real-time two-way texting.'
+- partner_name: Ulgebra
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/whatsapp-web-for-zoho-crm
+  category: Marketing
+  use_case: 'Ultra WABA for Zoho CRM: Conduct and view all conversations within Zoho CRM'
+- partner_name: Ring.io
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/ringio-power-dialer-for-zoho-crm
+  category: Sales
+  use_case: 'Ring.io Power Dialer for Zoho CRM: Power dialer for Zoho CRM. 12.3% human connection rate against a 5.4% industry average - measured, published daily'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/zoho-bookings-for-zoho-crm
+  category: Marketing
+  use_case: 'Zoho Bookings for Zoho CRM: One-stop appointment scheduling'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/mailchimp
+  category: Marketing
+  use_case: 'Mailchimp: An Email Marketing super app.'
+- partner_name: Credit Reporting Services
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/credit-data-direct-extension-for-zoho-crm
+  category: Finance
+  use_case: 'Credit Data Direct Extension for Zoho CRM: Get credit data in Zoho CRM'
+- partner_name: Kixie
+  partner: kixie
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/kixie
+  category: Telephony
+  use_case: 'PowerCall and SMS for Zoho: Kixie is the #1 calling and texting solution for revenue teams working with Zoho. Multi-line Power Dialing, AI-powered local presence, Spam protection with phone number reputation management, Conversation Intelligence, automated SMS/MMS, Team SMS and so much more.'
+- partner_name: SaasPlugin
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/burst-sms
+  category: Telephony
+  use_case: 'Zoho CRM 2 Burst SMS: Bidirectional Messaging (Sending & Receiving SMS) . An SMS can be sent using any custom message or a predefined SMS template. SMS automation can also be setup in many different ways throughout the CRM.'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/zoho-showtime-for-zoho-crm
+  category: Remote Work
+  use_case: 'Zoho ShowTime for Zoho CRM: A web conferencing solution that brings your virtual training to life.'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/shopify
+  category: Business
+  use_case: 'Shopify for Zoho CRM: Keep track of your customer activities on Shopify.'
+- partner_name: BluRoot, Inc.
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/wes-for-zoho-crm
+  category: Marketing
+  use_case: 'WES for Zoho CRM: Autofill fields in Zoho CRM or related modules, aggregate data, and much more. No custom code needed!'
+- partner_name: Voicespin
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/click2call-extension-for-zoho
+  category: Telephony
+  use_case: 'Voicespin for Zoho: A complete, end to end Sales Communication Platform by Voicespin.'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/leadchain-for-zoho-crm
+  category: Marketing
+  use_case: 'LeadChain for Zoho CRM: Transform your leads into customers by syncing data automatically'
+- partner_name: Zenith Innovations
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/map-view-for-zoho-crm
+  category: Analytics
+  use_case: 'Map View for Zoho CRM: Get a bird''s eye view of your data in Zoho CRM.'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/google-drive
+  category: Collaboration
+  use_case: 'Google Drive: Use the Google Drive Extension to save, share and collaborate on files from within Zoho CRM.'
+- partner_name: Ulgebra
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/calendly-zoho-crm-sync
+  category: Marketing
+  use_case: 'Calendly - Zoho CRM Sync: Sync Calendly organization and schedule appointments'
+- partner_name: Zenith Innovations
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/lead-finder-for-zoho-crm
+  category: Marketing
+  use_case: 'Lead Finder for Zoho CRM: The Lead Finder extension for Zoho CRM helps you find where your target market lives'
+- partner_name: EasyToCheck Software Solutions
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/zoho-crm-integration-with-quickbooks-online
+  category: Finance
+  use_case: 'Quickbooks Online Native Extension for Zoho CRM: Quickbooks Online Native Plugin'
+- partner_name: Gallabox
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/whatsapp-business-messaging-for-zoho-crm
+  category: Sales
+  use_case: 'WhatsApp Business Messaging for Zoho CRM: Personalise WhatsApp messages to qualified leads & contacts with Gallabox'
+- partner_name: Zenith Innovations
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/linked-pro-for-zoho-crm
+  category: Sales & Marketing
+  use_case: 'Linked Pro for Zoho CRM: Enrich your data for better prospecting'
+- partner_name: CRMOZ
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/email-to-lead-for-zoho-crm
+  category: Productivity
+  use_case: 'Email to Lead for Zoho CRM: email2lead email-to-lead'
+- partner_name: Zenith Innovations
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/contact-info-verifier-extension-for-zoho-crm
+  category: Sales & Marketing
+  use_case: 'Contact Info Verifier Extension for Zoho CRM: Stay connected and reduce risk with our trusted email and phone number verification extension for Zoho CRM.'
+- partner_name: Zenith Innovations
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/list-manager-for-zoho-crm
+  category: Marketing
+  use_case: 'List Manager For Zoho CRM: Smoothly switch prospects and customers to different campaigns and manage lists inside Zoho CRM.'
+- partner_name: CRMOZ
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/mysql-easy-sync-for-zoho-crm
+  category: IT and Administration
+  use_case: 'MySQL Easy Sync for Zoho CRM: Push your Zoho CRM data into a MySQL database with this extension'
+- partner_name: Foneco
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/foneco
+  category: Telephony
+  use_case: 'Foneco: Boost your productivity with the powerful Zoho CRM and Foneco integration.'
+- partner_name: SaasPlugin
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/xero2zoho
+  category: Finance
+  use_case: 'Zoho CRM 2 Xero: Invoicing and payment made more efficient. Connect your Xero account and Zoho CRM with our custom plugin. Collaborate with colleagues, connect with customers, and grow your business fast. Access rich drag-and-drop reporting tools from within CRM.'
+- partner_name: HelloSend
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/hellosend-twilio-call-sms-whatsapp-zoho-crm
+  category: Telephony
+  use_case: 'HelloSend: Call, SMS & WhatsApp for Zoho CRM: HelloSend’s communication app for Zoho CRM streamlines Call, SMS, and WhatsApp interactions—enabling direct messaging, bulk outreach, automated workflows, and voice calling—all seamlessly within the Zoho CRM platform.'
+- partner_name: Ulgebra
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/twilio-whatsapp-sms-messages-zoho-crm
+  category: Marketing
+  use_case: 'Ultra Twilio for Zoho CRM: Connect with people through Twilio SMS and WhatsApp messages just staying from Zoho CRM'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/routeiq-for-zoho-crm
+  category: Sales
+  use_case: 'RouteIQ for Zoho CRM: A comprehensive map visualizer and route planner for your field sales and service activities'
+- partner_name: CRMOZ
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/googlesheetstozohocrmsync
+  category: Marketing
+  use_case: 'Google Sheets to Zoho CRM Sync: Google Sheets to Zoho CRM'
+- partner_name: MOBIX
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/linkedin-finder-for-zoho-crm
+  category: Marketing
+  use_case: 'LinkedIn Finder for Zoho CRM: Find contacts and leads, and boost sales with LinkedIn for Zoho CRM—MOBIX'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/kanbanboard
+  category: Sales
+  use_case: 'Kanban Board for Zoho CRM: Segregate your sales data to get a better picture of how leads are progressing through your pipeline.'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/facebook-adverts
+  category: Marketing
+  use_case: 'Facebook Adverts Manager: Bring your Facebook ad sets and campaign information into Zoho CRM.'
+- partner_name: Zenith Innovations
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/zomani-for-zoho-crm
+  category: Productivity
+  use_case: 'Zomani For Zoho CRM: Revolutionize content creation in Zoho CRM with Zomani'
+- partner_name: CRMOZ
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/email-and-phone-checker-extension-for-zoho-crm
+  category: Sales
+  use_case: 'Email and Phone Checker Extension for Zoho CRM: Validate phone numbers and emails in Zoho CRM'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/map-plotter-for-zoho-crm
+  category: Marketing
+  use_case: 'Map Plotter for Zoho CRM: Locate and pin multiple addresses on a single map from Zoho CRM'
+- partner_name: Xtracut
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/acuity-scheduling
+  category: Productivity
+  use_case: 'Acuity Scheduling: Manage your Acuity Scheduling appointments within Zoho CRM'
+- partner_name: Mapsly LLC
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/mapsly-extension-for-zoho-crm
+  category: Sales
+  use_case: 'Mapsly: Map Extension for Zoho CRM: Map CRM data, optimize multi-day team routes, manage territories, run check-ins, automate field workflows'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/microsoft-exchange-for-zoho-crm
+  category: Business
+  use_case: 'Microsoft Exchange for Zoho CRM: Experience the power of integrating Microsoft Exchange Server with Zoho CRM, and enjoy a seamless integration experience'
+- partner_name: CRMOZ
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/phone-checker-for-zoho-crm
+  category: Productivity
+  use_case: 'Phone Checker for Zoho CRM: phone verification'
+- partner_name: Jivrus Technologies
+  partner: null
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/jivrus-integra-of-google-sheets-for-zoho-crm
+  category: Productivity
+  use_case: 'Google Sheets: Integrate Zoho CRM with Google Sheets and sync data between them'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/zoho-contracts-for-zoho-crm
+  category: Sales
+  use_case: 'Zoho Contracts for Zoho CRM: Generate and manage business contracts without leaving Zoho CRM'
+- partner_name: Zoho Corporation
+  partner: zoho
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  relationship: platform-app
+  direction: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/linkedin-sales-navigator
+  category: Sales
+  use_case: 'LinkedIn Sales Navigator: Boost Sales Productivity with LinkedIn Sales Navigator for Zoho'
 templates:
 - title: Add new Unbounce form submissions to Zoho CRM as leads
   url: https://zapier.com/apps/unbounce/integrations/zoho-crm/1715/add-new-unbounce-form-submissions-to-zoho-crm-as-leads

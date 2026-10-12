@@ -1,0 +1,404 @@
+# DERIVED by derive-integration-map.py (roadmap#949): each integration workflow, step by step,
+# resolved to spec file -> tag -> business capability (Turbo EA, CC BY 4.0) and the operation's
+# phrasing intent. Read from our own files; an unmapped link says why.
+slug: zoho-crm
+workflows:
+- file: zoho-crm-calendly-invitee-to-module-entry.yml
+  title: Zoho CRM + Calendly invitees to Zoho CRM module entries
+  partner: calendly
+  template: https://zapier.com/apps/calendly/integrations/zoho-crm/161808/create-or-update-zoho-crm-module-entries-for-new-invitees-in-calendly
+  repos:
+  - calendly
+  - zoho-crm
+  steps:
+  - step: get-event
+    repo: calendly
+    spec_file: calendly-scheduled-events-api-openapi.yml
+    operationId: getScheduledEvent
+    tag: Scheduled Events
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: null
+    effect: null
+    unmapped: no capability edge for this spec file
+  - step: list-invitees
+    repo: calendly
+    spec_file: calendly-invitees-api-openapi.yml
+    operationId: listEventInvitees
+    tag: Invitees
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: null
+    effect: null
+    unmapped: no capability edge for this spec file
+  - step: upsert-record
+    repo: zoho-crm
+    spec_file: zoho-crm-upsert-api-openapi.yml
+    operationId: upsertRecords
+    tag: Upsert
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: Insert or update records by duplicate check
+    effect: write
+    unmapped: no capability edge for this spec file
+  connects:
+    calendly:
+      capabilities: []
+      tags:
+      - Invitees
+      - Scheduled Events
+    zoho-crm:
+      capabilities: []
+      tags:
+      - Upsert
+  intents:
+  - Insert or update records by duplicate check
+- file: zoho-crm-facebook-lead-ads-new-lead-to-contact.yml
+  title: Zoho CRM + Facebook Lead Ads leads to Zoho CRM contacts
+  partner: facebook-lead-ads
+  template: https://zapier.com/apps/facebook-lead-ads/integrations/zoho-crm/10163/create-contacts-on-zoho-crm-from-new-leads-from-facebook-lead-ads
+  repos:
+  - facebook-lead-ads
+  - zoho-crm
+  steps:
+  - step: list-leads
+    repo: facebook-lead-ads
+    spec_file: facebook-lead-ads-leads-api-openapi.yml
+    operationId: listLeadsForForm
+    tag: Leads
+    capability_id: BC-400.40
+    capability: Demand Generation Management
+    capability_l1: BC-400
+    intent: null
+    effect: null
+    unmapped: null
+  - step: create-contact
+    repo: zoho-crm
+    spec_file: zoho-crm-records-api-openapi.yml
+    operationId: createRecords
+    tag: Records
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: Create records in a module
+    effect: write
+    unmapped: no capability edge for this spec file
+  connects:
+    facebook-lead-ads:
+      capabilities:
+      - BC-400.40
+      tags:
+      - Leads
+    zoho-crm:
+      capabilities: []
+      tags:
+      - Records
+  intents:
+  - Create records in a module
+- file: zoho-crm-google-ads-contact-offline-conversion.yml
+  title: Zoho CRM + Offline conversions in Google Ads for new Zoho CRM contacts
+  partner: google-ads
+  template: https://zapier.com/apps/google-ads/integrations/zoho-crm/88871/generate-offline-conversions-in-google-ads-for-new-zoho-crm-contacts
+  repos:
+  - zoho-crm
+  - google-ads
+  steps:
+  - step: get-contacts
+    repo: zoho-crm
+    spec_file: zoho-crm-records-api-openapi.yml
+    operationId: getRecords
+    tag: Records
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: List records in a module
+    effect: read
+    unmapped: no capability edge for this spec file
+  - step: upload-conversion
+    repo: google-ads
+    spec_file: google-ads-customers-api-openapi.yml
+    operationId: googleads_customers_uploadClickConversions
+    tag: customers
+    capability_id: BC-400.60
+    capability: Digital Marketing Management
+    capability_l1: BC-400
+    intent: Upload offline click conversions
+    effect: write
+    unmapped: null
+  connects:
+    zoho-crm:
+      capabilities: []
+      tags:
+      - Records
+    google-ads:
+      capabilities:
+      - BC-400.60
+      tags:
+      - customers
+  intents:
+  - List records in a module
+  - Upload offline click conversions
+- file: zoho-crm-google-ads-contacts-to-customer-list.yml
+  title: Zoho CRM + New Zoho CRM contacts to a Google Ads Customer Match list
+  partner: google-ads
+  template: https://zapier.com/apps/google-ads/integrations/zoho-crm/78025/add-new-zoho-crm-contacts-to-google-ads-custom-lists
+  repos:
+  - zoho-crm
+  - google-ads
+  steps:
+  - step: get-contacts
+    repo: zoho-crm
+    spec_file: zoho-crm-records-api-openapi.yml
+    operationId: getRecords
+    tag: Records
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: List records in a module
+    effect: read
+    unmapped: no capability edge for this spec file
+  - step: create-job
+    repo: google-ads
+    spec_file: google-ads-customers-offlineuserdatajobs-api-openapi.yml
+    operationId: googleads_customers_offlineUserDataJobs_create
+    tag: customers.offlineUserDataJobs
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: Create an offline user data job
+    effect: write
+    unmapped: no capability edge for this spec file
+  - step: add-members
+    repo: google-ads
+    spec_file: google-ads-customers-offlineuserdatajobs-api-openapi.yml
+    operationId: googleads_customers_offlineUserDataJobs_addOperations
+    tag: customers.offlineUserDataJobs
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: Add user data to an offline job
+    effect: write
+    unmapped: no capability edge for this spec file
+  - step: run-job
+    repo: google-ads
+    spec_file: google-ads-customers-offlineuserdatajobs-api-openapi.yml
+    operationId: googleads_customers_offlineUserDataJobs_run
+    tag: customers.offlineUserDataJobs
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: Run an offline user data job
+    effect: write
+    unmapped: no capability edge for this spec file
+  connects:
+    zoho-crm:
+      capabilities: []
+      tags:
+      - Records
+    google-ads:
+      capabilities: []
+      tags:
+      - customers.offlineUserDataJobs
+  intents:
+  - List records in a module
+  - Create an offline user data job
+  - Add user data to an offline job
+  - Run an offline user data job
+- file: zoho-crm-google-ads-lead-form-to-module-entry.yml
+  title: Zoho CRM + Google Ads lead form submissions to Zoho CRM
+  partner: google-ads
+  template: https://zapier.com/apps/google-ads/integrations/zoho-crm/543123/create-or-update-module-entries-in-zoho-crm-for-new-google-ads-leads
+  repos:
+  - google-ads
+  - zoho-crm
+  steps:
+  - step: search-lead-forms
+    repo: google-ads
+    spec_file: google-ads-customers-googleads-api-openapi.yml
+    operationId: googleads_customers_googleAds_search
+    tag: customers.googleAds
+    capability_id: BC-400.60
+    capability: Digital Marketing Management
+    capability_l1: BC-400
+    intent: Run a paged GAQL report query
+    effect: read
+    unmapped: null
+  - step: upsert-record
+    repo: zoho-crm
+    spec_file: zoho-crm-upsert-api-openapi.yml
+    operationId: upsertRecords
+    tag: Upsert
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: Insert or update records by duplicate check
+    effect: write
+    unmapped: no capability edge for this spec file
+  connects:
+    google-ads:
+      capabilities:
+      - BC-400.60
+      tags:
+      - customers.googleAds
+    zoho-crm:
+      capabilities: []
+      tags:
+      - Upsert
+  intents:
+  - Run a paged GAQL report query
+  - Insert or update records by duplicate check
+- file: zoho-crm-google-ads-lead-offline-conversion.yml
+  title: Zoho CRM + Offline conversion in Google Ads for a new Zoho CRM lead
+  partner: google-ads
+  template: https://zapier.com/apps/google-ads/integrations/zoho-crm/1007483/send-offline-conversion-to-google-ads-for-new-lead-in-zoho-crm
+  repos:
+  - zoho-crm
+  - google-ads
+  steps:
+  - step: get-leads
+    repo: zoho-crm
+    spec_file: zoho-crm-records-api-openapi.yml
+    operationId: getRecords
+    tag: Records
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: List records in a module
+    effect: read
+    unmapped: no capability edge for this spec file
+  - step: upload-conversion
+    repo: google-ads
+    spec_file: google-ads-customers-api-openapi.yml
+    operationId: googleads_customers_uploadClickConversions
+    tag: customers
+    capability_id: BC-400.60
+    capability: Digital Marketing Management
+    capability_l1: BC-400
+    intent: Upload offline click conversions
+    effect: write
+    unmapped: null
+  connects:
+    zoho-crm:
+      capabilities: []
+      tags:
+      - Records
+    google-ads:
+      capabilities:
+      - BC-400.60
+      tags:
+      - customers
+  intents:
+  - List records in a module
+  - Upload offline click conversions
+- file: zoho-crm-google-ads-leads-to-customer-list.yml
+  title: Zoho CRM + New Zoho CRM leads to a Google Ads Customer Match list
+  partner: google-ads
+  template: https://zapier.com/apps/google-ads/integrations/zoho-crm/78026/add-new-zoho-crm-leads-to-google-ads-custom-lists
+  repos:
+  - zoho-crm
+  - google-ads
+  steps:
+  - step: get-leads
+    repo: zoho-crm
+    spec_file: zoho-crm-records-api-openapi.yml
+    operationId: getRecords
+    tag: Records
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: List records in a module
+    effect: read
+    unmapped: no capability edge for this spec file
+  - step: create-job
+    repo: google-ads
+    spec_file: google-ads-customers-offlineuserdatajobs-api-openapi.yml
+    operationId: googleads_customers_offlineUserDataJobs_create
+    tag: customers.offlineUserDataJobs
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: Create an offline user data job
+    effect: write
+    unmapped: no capability edge for this spec file
+  - step: add-members
+    repo: google-ads
+    spec_file: google-ads-customers-offlineuserdatajobs-api-openapi.yml
+    operationId: googleads_customers_offlineUserDataJobs_addOperations
+    tag: customers.offlineUserDataJobs
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: Add user data to an offline job
+    effect: write
+    unmapped: no capability edge for this spec file
+  - step: run-job
+    repo: google-ads
+    spec_file: google-ads-customers-offlineuserdatajobs-api-openapi.yml
+    operationId: googleads_customers_offlineUserDataJobs_run
+    tag: customers.offlineUserDataJobs
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: Run an offline user data job
+    effect: write
+    unmapped: no capability edge for this spec file
+  connects:
+    zoho-crm:
+      capabilities: []
+      tags:
+      - Records
+    google-ads:
+      capabilities: []
+      tags:
+      - customers.offlineUserDataJobs
+  intents:
+  - List records in a module
+  - Create an offline user data job
+  - Add user data to an offline job
+  - Run an offline user data job
+- file: zoho-crm-unbounce-form-submission-to-lead.yml
+  title: Zoho CRM + Unbounce form submissions to Zoho CRM leads
+  partner: unbounce
+  template: https://zapier.com/apps/unbounce/integrations/zoho-crm/1715/add-new-unbounce-form-submissions-to-zoho-crm-as-leads
+  repos:
+  - unbounce
+  - zoho-crm
+  steps:
+  - step: get-lead
+    repo: unbounce
+    spec_file: unbounce-leads-api-openapi.yml
+    operationId: getLeadForPage
+    tag: Leads
+    capability_id: BC-400.40
+    capability: Demand Generation Management
+    capability_l1: BC-400
+    intent: Get one lead from a specific page
+    effect: read
+    unmapped: null
+  - step: create-lead
+    repo: zoho-crm
+    spec_file: zoho-crm-records-api-openapi.yml
+    operationId: createRecords
+    tag: Records
+    capability_id: null
+    capability: null
+    capability_l1: null
+    intent: Create records in a module
+    effect: write
+    unmapped: no capability edge for this spec file
+  connects:
+    unbounce:
+      capabilities:
+      - BC-400.40
+      tags:
+      - Leads
+    zoho-crm:
+      capabilities: []
+      tags:
+      - Records
+  intents:
+  - Get one lead from a specific page
+  - Create records in a module

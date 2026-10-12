@@ -491,3 +491,344 @@
   source: edge
   status: pending-partner-spec
   arazzo: null
+- slug: zoho-crm-zynergy-labs
+  label: Zynergy Labs
+  partner_name: Zynergy Labs
+  category: Marketing
+  use_case: 'Clean Contacts Pro for Zoho CRM: Get clean, consistent Zoho CRM data—automated.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/clean-contacts-pro-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-amatec-us
+  label: AMATEC US
+  partner_name: AMATEC US
+  category: Telephony
+  use_case: 'Twilio Chat for Zoho CRM: Turn Zoho CRM into a real-time chat hub with Twilio-powered messaging.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/twilio-chat-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-360-degree-cloud-technologies-pvt-ltd
+  label: 360 Degree Cloud Technologies Pvt. Ltd.
+  partner_name: 360 Degree Cloud Technologies Pvt. Ltd.
+  category: Sales
+  use_case: '360 SMS for Zoho CRM: Win more customers faster with the #1 bulk SMS & text messaging app for Zoho
+    CRM. Two-way SMS, MMS & WhatsApp- complete CRM texting platform.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/360-sms-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-mav-consulting-group-llc
+  label: Mav Consulting Group LLC
+  partner_name: Mav Consulting Group LLC
+  category: Productivity
+  use_case: 'Pipeline for Zoho CRM: Bring pipeline clarity to any module—not just Deals'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/pipeline-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-quo
+  label: Quo
+  partner: quo
+  partner_name: Quo
+  category: Telephony
+  use_case: 'Quo for Zoho CRM: Bring calls, texts, and AI insights into your Zoho CRM.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/quo-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-screen-magic-mobile-media-inc
+  label: Screen Magic Mobile Media Inc
+  partner_name: Screen Magic Mobile Media Inc
+  category: Marketing
+  use_case: 'SMS-Magic: Better Engage with Your Audience Using Multichannel Messaging'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/sms-magic
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-zoho-corporation
+  label: Zoho Corporation
+  partner: zoho
+  partner_name: Zoho Corporation
+  category: E-Signature
+  use_case: 'Zoho Sign for Zoho CRM: Sign, send, and manage business agreements and contracts.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/zoho-sign
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-sinch-engage
+  label: Sinch Engage
+  partner: sinch
+  partner_name: Sinch Engage
+  category: Marketing
+  use_case: 'Sinch Engage SMS for Zoho CRM: Improve engagement with SMS,  MMS & RCS in Zoho CRM—automated workflows,
+    bulk messaging, and real-time two-way texting.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/smooth-messenger-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-ulgebra
+  label: Ulgebra
+  partner_name: Ulgebra
+  category: Marketing
+  use_case: 'Ultra WABA for Zoho CRM: Conduct and view all conversations within Zoho CRM'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/whatsapp-web-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-ring-io
+  label: Ring.io
+  partner_name: Ring.io
+  category: Sales
+  use_case: 'Ring.io Power Dialer for Zoho CRM: Power dialer for Zoho CRM. 12.3% human connection rate against a
+    5.4% industry average - measured, published daily'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/ringio-power-dialer-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-credit-reporting-services
+  label: Credit Reporting Services
+  partner_name: Credit Reporting Services
+  category: Finance
+  use_case: 'Credit Data Direct Extension for Zoho CRM: Get credit data in Zoho CRM'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/credit-data-direct-extension-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-kixie
+  label: Kixie
+  partner: kixie
+  partner_name: Kixie
+  category: Telephony
+  use_case: 'PowerCall and SMS for Zoho: Kixie is the #1 calling and texting solution for revenue teams working
+    with Zoho. Multi-line Power Dialing, AI-powered local presence, Spam protection with phone number reputation
+    management, Conversation Intelligence, automated SMS/MMS, Team SMS and so much more.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/kixie
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-saasplugin
+  label: SaasPlugin
+  partner_name: SaasPlugin
+  category: Telephony
+  use_case: 'Zoho CRM 2 Burst SMS: Bidirectional Messaging (Sending & Receiving SMS) . An SMS can be sent using
+    any custom message or a predefined SMS template. SMS automation can also be setup in many different ways throughout
+    the CRM.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/burst-sms
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-bluroot-inc
+  label: BluRoot, Inc.
+  partner_name: BluRoot, Inc.
+  category: Marketing
+  use_case: 'WES for Zoho CRM: Autofill fields in Zoho CRM or related modules, aggregate data, and much more. No
+    custom code needed!'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/wes-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-voicespin
+  label: Voicespin
+  partner_name: Voicespin
+  category: Telephony
+  use_case: 'Voicespin for Zoho: A complete, end to end Sales Communication Platform by Voicespin.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/click2call-extension-for-zoho
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-zenith-innovations
+  label: Zenith Innovations
+  partner_name: Zenith Innovations
+  category: Analytics
+  use_case: 'Map View for Zoho CRM: Get a bird''s eye view of your data in Zoho CRM.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/map-view-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-easytocheck-software-solutions
+  label: EasyToCheck Software Solutions
+  partner_name: EasyToCheck Software Solutions
+  category: Finance
+  use_case: 'Quickbooks Online Native Extension for Zoho CRM: Quickbooks Online Native Plugin'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/zoho-crm-integration-with-quickbooks-online
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-gallabox
+  label: Gallabox
+  partner_name: Gallabox
+  category: Sales
+  use_case: 'WhatsApp Business Messaging for Zoho CRM: Personalise WhatsApp messages to qualified leads & contacts
+    with Gallabox'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/whatsapp-business-messaging-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-crmoz
+  label: CRMOZ
+  partner_name: CRMOZ
+  category: Productivity
+  use_case: 'Email to Lead for Zoho CRM: email2lead email-to-lead'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/email-to-lead-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-foneco
+  label: Foneco
+  partner_name: Foneco
+  category: Telephony
+  use_case: 'Foneco: Boost your productivity with the powerful Zoho CRM and Foneco integration.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/foneco
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-hellosend
+  label: HelloSend
+  partner_name: HelloSend
+  category: Telephony
+  use_case: 'HelloSend: Call, SMS & WhatsApp for Zoho CRM: HelloSend’s communication app for Zoho CRM streamlines
+    Call, SMS, and WhatsApp interactions—enabling direct messaging, bulk outreach, automated workflows, and voice
+    calling—all seamlessly within the Zoho CRM platform.'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/hellosend-twilio-call-sms-whatsapp-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-mobix
+  label: MOBIX
+  partner_name: MOBIX
+  category: Marketing
+  use_case: 'LinkedIn Finder for Zoho CRM: Find contacts and leads, and boost sales with LinkedIn for Zoho CRM—MOBIX'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/linkedin-finder-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-xtracut
+  label: Xtracut
+  partner_name: Xtracut
+  category: Productivity
+  use_case: 'Acuity Scheduling: Manage your Acuity Scheduling appointments within Zoho CRM'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/acuity-scheduling
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-mapsly-llc
+  label: Mapsly LLC
+  partner_name: Mapsly LLC
+  category: Sales
+  use_case: 'Mapsly: Map Extension for Zoho CRM: Map CRM data, optimize multi-day team routes, manage territories,
+    run check-ins, automate field workflows'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/mapsly-extension-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-jivrus-technologies
+  label: Jivrus Technologies
+  partner_name: Jivrus Technologies
+  category: Productivity
+  use_case: 'Google Sheets: Integrate Zoho CRM with Google Sheets and sync data between them'
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/jivrus-integra-of-google-sheets-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
