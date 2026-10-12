@@ -206,6 +206,42 @@
   source: template
   arazzo: zoho-crm-calendly-invitee-to-module-entry.yml
   status: arazzo
+- slug: zoho-crm-supaglue
+  label: supaglue
+  partner: supaglue
+  partner_name: supaglue
+  type: contract
+  channel: partner-built
+  evidence: https://github.com/api-evangelist/supaglue/blob/main/openapi/supaglue-syncconfigs-api-openapi.yml
+  source: edge
+  relationship: processor-connection
+  contract_reference:
+    repo: supaglue
+    spec_file: supaglue-syncconfigs-api-openapi.yml
+    value: zoho_crm
+    property: components.schemas.provider_name
+    detected_by: detect-payment-method-edges.py
+    detected: '2026-10-12'
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-zoho
+  label: zoho
+  partner: zoho
+  partner_name: zoho
+  type: contract
+  channel: partner-built
+  evidence: https://github.com/api-evangelist/zoho/blob/main/openapi/zoho-timeline-api-openapi.yml
+  source: edge
+  relationship: processor-connection
+  contract_reference:
+    repo: zoho
+    spec_file: zoho-timeline-api-openapi.yml
+    value: zoho_crm
+    property: __timeline.source
+    detected_by: detect-payment-method-edges.py
+    detected: '2026-10-12'
+  status: not-a-workflow
+  arazzo: null
 - slug: zoho-crm-google-sheets
   label: Google Sheets
   partner: google-sheets
@@ -491,11 +527,94 @@
   source: edge
   status: pending-partner-spec
   arazzo: null
+- slug: zoho-crm-hrp-dev
+  label: Hrp Dev
+  partner_name: Hrp Dev
+  category: Productivity
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/data-guardian-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-skyfall-labs
+  label: SKYFALL Labs
+  partner_name: SKYFALL Labs
+  category: Collaboration
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/pulse-text-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-zogenie-corp
+  label: Zogenie Corp.
+  partner_name: Zogenie Corp.
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/export-api-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-easifysms
+  label: EasifySMS
+  partner_name: EasifySMS
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/easify-sms-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-technostacks
+  label: Technostacks
+  partner_name: Technostacks
+  category: Productivity
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/smart-route-planner-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-sarthaksoft
+  label: SarthakSoft
+  partner_name: SarthakSoft
+  category: Productivity
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/kickbox-email-validation-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-spiky-ai-for-zoho-crm
+  label: Spiky.ai for Zoho CRM
+  partner_name: Spiky.ai for Zoho CRM
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/spiky-ai-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
 - slug: zoho-crm-zynergy-labs
   label: Zynergy Labs
   partner_name: Zynergy Labs
   category: Marketing
-  use_case: 'Clean Contacts Pro for Zoho CRM: Get clean, consistent Zoho CRM data—automated.'
   type: marketplace
   marketplace: own
   channel: partner-built
@@ -504,15 +623,110 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-amatec-us
-  label: AMATEC US
-  partner_name: AMATEC US
-  category: Telephony
-  use_case: 'Twilio Chat for Zoho CRM: Turn Zoho CRM into a real-time chat hub with Twilio-powered messaging.'
+- slug: zoho-crm-voycell
+  label: VOYCELL
+  partner_name: VOYCELL
+  category: Productivity
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/twilio-chat-for-zoho-crm
+  evidence: https://marketplace.zoho.com/app/crm/voycell-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-meddicc-score
+  label: Meddicc Score
+  partner_name: Meddicc Score
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/meddiccscore-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-callture
+  label: Callture
+  partner_name: Callture
+  category: Telephony
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/callture-ai-phone-for-zoho
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-intricare-technologies
+  label: Intricare Technologies
+  partner_name: Intricare Technologies
+  category: Productivity
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/leadcrm-sync-from-linkedin-to-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-insta-web-works-pty-ltd
+  label: Insta Web Works Pty Ltd
+  partner_name: Insta Web Works Pty Ltd
+  category: Productivity
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/easy-attachment-backup-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-trademo-technologies-inc
+  label: Trademo Technologies Inc.
+  partner_name: Trademo Technologies Inc.
+  category: Business
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/trademo-sanctions-screener-extension-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-storm
+  label: Storm
+  partner_name: Storm
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/storm-ai-landing-pages-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-plug-play-technologies-inc
+  label: Plug&Play Technologies Inc
+  partner_name: Plug&Play Technologies Inc
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/plug-play-email-assistant-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-cmylead
+  label: Cmylead
+  partner_name: Cmylead
+  category: Productivity
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/cmylead-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
@@ -521,8 +735,6 @@
   label: 360 Degree Cloud Technologies Pvt. Ltd.
   partner_name: 360 Degree Cloud Technologies Pvt. Ltd.
   category: Sales
-  use_case: '360 SMS for Zoho CRM: Win more customers faster with the #1 bulk SMS & text messaging app for Zoho
-    CRM. Two-way SMS, MMS & WhatsApp- complete CRM texting platform.'
   type: marketplace
   marketplace: own
   channel: partner-built
@@ -531,71 +743,122 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-mav-consulting-group-llc
-  label: Mav Consulting Group LLC
-  partner_name: Mav Consulting Group LLC
-  category: Productivity
-  use_case: 'Pipeline for Zoho CRM: Bring pipeline clarity to any module—not just Deals'
+- slug: zoho-crm-bluroot-inc
+  label: BluRoot, Inc.
+  partner_name: BluRoot, Inc.
+  category: Marketing
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/pipeline-for-zoho-crm
+  evidence: https://marketplace.zoho.com/app/crm/relationship-tracker-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-quo
-  label: Quo
-  partner: quo
-  partner_name: Quo
+- slug: zoho-crm-nvoip
+  label: Nvoip
+  partner_name: Nvoip
   category: Telephony
-  use_case: 'Quo for Zoho CRM: Bring calls, texts, and AI insights into your Zoho CRM.'
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/quo-for-zoho-crm
+  evidence: https://marketplace.zoho.com/app/crm/nvoip-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-screen-magic-mobile-media-inc
-  label: Screen Magic Mobile Media Inc
-  partner_name: Screen Magic Mobile Media Inc
+- slug: zoho-crm-outsmart
+  label: Outsmart
+  partner_name: Outsmart
+  category: Productivity
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/daily-backup-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-varthak
+  label: Varthak
+  partner_name: Varthak
   category: Marketing
-  use_case: 'SMS-Magic: Better Engage with Your Audience Using Multichannel Messaging'
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/sms-magic
+  evidence: https://marketplace.zoho.com/app/crm/ai-caller-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-zoho-corporation
-  label: Zoho Corporation
-  partner: zoho
-  partner_name: Zoho Corporation
-  category: E-Signature
-  use_case: 'Zoho Sign for Zoho CRM: Sign, send, and manage business agreements and contracts.'
+- slug: zoho-crm-crm-messaging
+  label: CRM Messaging
+  partner_name: CRM Messaging
+  category: Productivity
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/zoho-sign
+  evidence: https://marketplace.zoho.com/app/crm/email-verifier-extension-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-sinch-engage
-  label: Sinch Engage
-  partner: sinch
-  partner_name: Sinch Engage
+- slug: zoho-crm-croo
+  label: Croo
+  partner_name: Croo
+  category: Telephony
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/croo-for-zoho
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-lead-mapper
+  label: Lead Mapper
+  partner_name: Lead Mapper
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/lead-mapper-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-octfis-techno-llp
+  label: OCTFIS TECHNO LLP
+  partner_name: OCTFIS TECHNO LLP
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/indiamart-extension-for-zoho-crm-by-octfis-techno
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-digital-transformation-management
+  label: Digital Transformation Management
+  partner_name: Digital Transformation Management
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/dialpad-ring-auto-dialer-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-ucraft-llc
+  label: Ucraft LLC
+  partner_name: Ucraft LLC
   category: Marketing
-  use_case: 'Sinch Engage SMS for Zoho CRM: Improve engagement with SMS,  MMS & RCS in Zoho CRM—automated workflows,
-    bulk messaging, and real-time two-way texting.'
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/smooth-messenger-for-zoho-crm
+  evidence: https://marketplace.zoho.com/app/crm/ucraft-ecommerce-builder-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
@@ -604,96 +867,155 @@
   label: Ulgebra
   partner_name: Ulgebra
   category: Marketing
-  use_case: 'Ultra WABA for Zoho CRM: Conduct and view all conversations within Zoho CRM'
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/whatsapp-web-for-zoho-crm
+  evidence: https://marketplace.zoho.com/app/crm/route-mobile-whatsapp-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-ring-io
-  label: Ring.io
-  partner_name: Ring.io
-  category: Sales
-  use_case: 'Ring.io Power Dialer for Zoho CRM: Power dialer for Zoho CRM. 12.3% human connection rate against a
-    5.4% industry average - measured, published daily'
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/ringio-power-dialer-for-zoho-crm
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zoho-crm-credit-reporting-services
-  label: Credit Reporting Services
-  partner_name: Credit Reporting Services
+- slug: zoho-crm-hiltech
+  label: Hiltech
+  partner_name: Hiltech
   category: Finance
-  use_case: 'Credit Data Direct Extension for Zoho CRM: Get credit data in Zoho CRM'
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/credit-data-direct-extension-for-zoho-crm
+  evidence: https://marketplace.zoho.com/app/crm/morning-green-invoice-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-kixie
-  label: Kixie
-  partner: kixie
-  partner_name: Kixie
-  category: Telephony
-  use_case: 'PowerCall and SMS for Zoho: Kixie is the #1 calling and texting solution for revenue teams working
-    with Zoho. Multi-line Power Dialing, AI-powered local presence, Spam protection with phone number reputation
-    management, Conversation Intelligence, automated SMS/MMS, Team SMS and so much more.'
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/kixie
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zoho-crm-saasplugin
-  label: SaasPlugin
-  partner_name: SaasPlugin
-  category: Telephony
-  use_case: 'Zoho CRM 2 Burst SMS: Bidirectional Messaging (Sending & Receiving SMS) . An SMS can be sent using
-    any custom message or a predefined SMS template. SMS automation can also be setup in many different ways throughout
-    the CRM.'
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/burst-sms
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zoho-crm-bluroot-inc
-  label: BluRoot, Inc.
-  partner_name: BluRoot, Inc.
+- slug: zoho-crm-outscraper
+  label: Outscraper
+  partner_name: Outscraper
   category: Marketing
-  use_case: 'WES for Zoho CRM: Autofill fields in Zoho CRM or related modules, aggregate data, and much more. No
-    custom code needed!'
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/wes-for-zoho-crm
+  evidence: https://marketplace.zoho.com/app/crm/outscraper-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-voicespin
-  label: Voicespin
-  partner_name: Voicespin
-  category: Telephony
-  use_case: 'Voicespin for Zoho: A complete, end to end Sales Communication Platform by Voicespin.'
+- slug: zoho-crm-azmarq-technovation-private-limited
+  label: Azmarq Technovation Private Limited
+  partner_name: Azmarq Technovation Private Limited
+  category: Marketing
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/click2call-extension-for-zoho
+  evidence: https://marketplace.zoho.com/app/crm/azmarq-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-asinaria-corporation
+  label: Asinaria Corporation
+  partner_name: Asinaria Corporation
+  category: Customer Service
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/ai-phone-system-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-nexivo-zoho-premium-partner
+  label: Nexivo  | Zoho Premium Partner
+  partner_name: Nexivo  | Zoho Premium Partner
+  category: Collaboration
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/digilocker-docs-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-insyrge
+  label: Insyrge
+  partner_name: Insyrge
+  category: Productivity
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/convert-lead-from-deal-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-square-labs
+  label: Square Labs
+  partner_name: Square Labs
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/auto-document-merge-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-zeeyes-ai-inc
+  label: Zeeyes AI, Inc.
+  partner_name: Zeeyes AI, Inc.
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/shopify-pro-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-clubcode-technology-pvt-ltd
+  label: ClubCode Technology Pvt Ltd
+  partner_name: ClubCode Technology Pvt Ltd
+  category: Collaboration
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/mydocsafe-extension-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-chatsimple
+  label: Chatsimple
+  partner: chatsimple
+  partner_name: Chatsimple
+  category: Customer Service
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/chatsimple-ai-sales-agent-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-ze-partner
+  label: ZE Partner
+  partner_name: ZE Partner
+  category: Productivity
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/ze-portal-client-portals-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-upwise-professionals-llc
+  label: Upwise Professionals LLC
+  partner_name: Upwise Professionals LLC
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/mailshake-connect-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
@@ -701,120 +1023,23 @@
 - slug: zoho-crm-zenith-innovations
   label: Zenith Innovations
   partner_name: Zenith Innovations
-  category: Analytics
-  use_case: 'Map View for Zoho CRM: Get a bird''s eye view of your data in Zoho CRM.'
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/map-view-for-zoho-crm
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zoho-crm-easytocheck-software-solutions
-  label: EasyToCheck Software Solutions
-  partner_name: EasyToCheck Software Solutions
-  category: Finance
-  use_case: 'Quickbooks Online Native Extension for Zoho CRM: Quickbooks Online Native Plugin'
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/zoho-crm-integration-with-quickbooks-online
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zoho-crm-gallabox
-  label: Gallabox
-  partner_name: Gallabox
-  category: Sales
-  use_case: 'WhatsApp Business Messaging for Zoho CRM: Personalise WhatsApp messages to qualified leads & contacts
-    with Gallabox'
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/whatsapp-business-messaging-for-zoho-crm
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zoho-crm-crmoz
-  label: CRMOZ
-  partner_name: CRMOZ
-  category: Productivity
-  use_case: 'Email to Lead for Zoho CRM: email2lead email-to-lead'
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/email-to-lead-for-zoho-crm
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zoho-crm-foneco
-  label: Foneco
-  partner_name: Foneco
-  category: Telephony
-  use_case: 'Foneco: Boost your productivity with the powerful Zoho CRM and Foneco integration.'
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/foneco
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zoho-crm-hellosend
-  label: HelloSend
-  partner_name: HelloSend
-  category: Telephony
-  use_case: 'HelloSend: Call, SMS & WhatsApp for Zoho CRM: HelloSend’s communication app for Zoho CRM streamlines
-    Call, SMS, and WhatsApp interactions—enabling direct messaging, bulk outreach, automated workflows, and voice
-    calling—all seamlessly within the Zoho CRM platform.'
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/hellosend-twilio-call-sms-whatsapp-zoho-crm
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zoho-crm-mobix
-  label: MOBIX
-  partner_name: MOBIX
   category: Marketing
-  use_case: 'LinkedIn Finder for Zoho CRM: Find contacts and leads, and boost sales with LinkedIn for Zoho CRM—MOBIX'
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/linkedin-finder-for-zoho-crm
+  evidence: https://marketplace.zoho.com/app/crm/list-manager-pro-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-xtracut
-  label: Xtracut
-  partner_name: Xtracut
-  category: Productivity
-  use_case: 'Acuity Scheduling: Manage your Acuity Scheduling appointments within Zoho CRM'
+- slug: zoho-crm-ion8
+  label: ion8
+  partner_name: ion8
+  category: Business
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/acuity-scheduling
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
-- slug: zoho-crm-mapsly-llc
-  label: Mapsly LLC
-  partner_name: Mapsly LLC
-  category: Sales
-  use_case: 'Mapsly: Map Extension for Zoho CRM: Map CRM data, optimize multi-day team routes, manage territories,
-    run check-ins, automate field workflows'
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/mapsly-extension-for-zoho-crm
+  evidence: https://marketplace.zoho.com/app/crm/callconnector-ai-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
@@ -822,49 +1047,347 @@
 - slug: zoho-crm-jivrus-technologies
   label: Jivrus Technologies
   partner_name: Jivrus Technologies
-  category: Productivity
-  use_case: 'Google Sheets: Integrate Zoho CRM with Google Sheets and sync data between them'
+  category: Finance
   type: marketplace
   marketplace: own
   channel: partner-built
-  evidence: https://marketplace.zoho.com/app/crm/jivrus-integra-of-google-sheets-for-zoho-crm
+  evidence: https://marketplace.zoho.com/app/crm/quickbooks-online-appiworks-for-zoho-crm
   source: edge
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-supaglue
-  label: supaglue
-  partner: supaglue
-  partner_name: supaglue
-  type: contract
+- slug: zoho-crm-coherent-innovations
+  label: Coherent Innovations
+  partner_name: Coherent Innovations
+  category: Finance
+  type: marketplace
+  marketplace: own
   channel: partner-built
-  evidence: https://github.com/api-evangelist/supaglue/blob/main/openapi/supaglue-syncconfigs-api-openapi.yml
+  evidence: https://marketplace.zoho.com/app/crm/currency-exchange-rate-sync-for-zoho-crm
   source: edge
-  relationship: processor-connection
-  contract_reference:
-    repo: supaglue
-    spec_file: supaglue-syncconfigs-api-openapi.yml
-    value: zoho_crm
-    property: components.schemas.provider_name
-    detected_by: detect-payment-method-edges.py
-    detected: '2026-10-12'
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
-- slug: zoho-crm-zoho
-  label: zoho
-  partner: zoho
-  partner_name: zoho
-  type: contract
+- slug: zoho-crm-pro-futuro-consulting-a-s
+  label: Pro Futuro Consulting a.s.
+  partner_name: Pro Futuro Consulting a.s.
+  category: Business
+  type: marketplace
+  marketplace: own
   channel: partner-built
-  evidence: https://github.com/api-evangelist/zoho/blob/main/openapi/zoho-timeline-api-openapi.yml
+  evidence: https://marketplace.zoho.com/app/crm/regon-for-zoho-crm
   source: edge
-  relationship: processor-connection
-  contract_reference:
-    repo: zoho
-    spec_file: zoho-timeline-api-openapi.yml
-    value: zoho_crm
-    property: __timeline.source
-    detected_by: detect-payment-method-edges.py
-    detected: '2026-10-12'
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-crmoz
+  label: CRMOZ
+  partner_name: CRMOZ
+  category: IT and Administration
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/mongodb-extension-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-deepija-telecom-pvt-ltd
+  label: Deepija Telecom Pvt. Ltd
+  partner_name: Deepija Telecom Pvt. Ltd
+  category: Telephony
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/convox-for-zoho
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-global-call-forwarding
+  label: Global Call Forwarding
+  partner_name: Global Call Forwarding
+  category: Telephony
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/global-call-forwarding-softphone-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-leadmonk-technologies-private-limited
+  label: Leadmonk Technologies Private Limited
+  partner_name: Leadmonk Technologies Private Limited
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/leadmonk-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-voiso
+  label: Voiso
+  partner_name: Voiso
+  category: Telephony
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/voiso-contact-center-for-zoho
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-intovex-digital
+  label: Intovex Digital
+  partner_name: Intovex Digital
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/address-auto-complete-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-amazing-business-results
+  label: Amazing Business Results
+  partner_name: Amazing Business Results
+  category: Customer Service
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/abr-smart-account-relationship-builder-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-human-pixel-pty-ltd
+  label: Human Pixel Pty Ltd
+  partner_name: Human Pixel Pty Ltd
+  category: Business
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/australian-public-holidays-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-arubeh-inc
+  label: Arubeh Inc
+  partner_name: Arubeh Inc
+  category: Business
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/latitude-and-longitude-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-d4-data
+  label: D4 Data
+  partner_name: D4 Data
+  category: Finance
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/automatic-iban-checksum-validation-extension-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-bimind-it-sl
+  label: BiMind IT, SL
+  partner_name: BiMind IT, SL
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/einforma-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-innobyte
+  label: Innobyte
+  partner_name: Innobyte
+  category: Finance
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/cfdi-4.0-for-zoho-crm-facturizame
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-ziwo
+  label: ZIWO
+  partner_name: ZIWO
+  category: Telephony
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/ziwo-for-zoho
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-yuxuan-technology-co-ltd
+  label: YuXuan Technology Co.,Ltd.
+  partner_name: YuXuan Technology Co.,Ltd.
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/organization-charts-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-moitele
+  label: Moitele
+  partner_name: Moitele
+  category: Telephony
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/moitele-extension-for-zoho
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-ciptex-ltd
+  label: Ciptex Ltd
+  partner_name: Ciptex Ltd
+  category: Telephony
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/twilio-flex-for-zoho
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-textellent
+  label: Textellent
+  partner_name: Textellent
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/textellent-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-the-dataholics-app-ltd
+  label: The Dataholics App Ltd
+  partner_name: The Dataholics App Ltd
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/dataholics-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-zoho-corporation
+  label: Zoho Corporation
+  partner_name: Zoho Corporation
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  evidence: https://marketplace.zoho.com/app/crm/naijasmsportal-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-stream-telecom
+  label: Stream Telecom
+  partner_name: Stream Telecom
+  category: Telephony
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/stream-telecom-for-zoho
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-referral-factory
+  label: Referral Factory
+  partner_name: Referral Factory
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/referral-factory-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-clearscope-solutions
+  label: Clearscope Solutions
+  partner_name: Clearscope Solutions
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/logixone-sales-order-consolidator-extension-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-uncanny-lab-ltd
+  label: Uncanny Lab Ltd.
+  partner_name: Uncanny Lab Ltd.
+  category: Marketing
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/bluecap-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-w3s-cloud-technology
+  label: W3S Cloud Technology
+  partner_name: W3S Cloud Technology
+  category: Sales
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/find-address-using-google-maps-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-wekall
+  label: Wekall
+  partner_name: Wekall
+  category: Telephony
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/wekall-for-zoho-crm
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: zoho-crm-talent-deers
+  label: Talent Deers
+  partner_name: Talent Deers
+  category: Productivity
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://marketplace.zoho.com/app/crm/mortgage-calculator-for-zoho-crm
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
