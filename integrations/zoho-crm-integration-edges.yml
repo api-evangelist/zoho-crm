@@ -6,6 +6,7 @@ source:
 - https://marketplace.zoho.com/crm
 checked:
 - https://composio.dev/toolkits/zoho-crm
+- https://hightouch.com/docs/destinations/zohocrm
 - https://marketplace.zoho.com/crm
 - https://monid.ai/tools/zoho-crm
 - https://n8n.io/integrations/zoho-crm/
@@ -1637,6 +1638,24 @@ edges:
   direction: partner-built
   evidence: https://marketplace.zoho.com/app/crm/stripe-subscription-management-extension-for-zoho-crm
   category: Finance
+- partner_name: Hightouch
+  partner: hightouch
+  partner_match: aggregator
+  marketplace: coverage
+  channel: partner-built
+  direction: partner-built
+  type: coverage
+  relationship: connector-coverage
+  evidence: https://hightouch.com/docs/destinations/zohocrm
+  coverage_role:
+  - destination
+  cdp_signals:
+    destination:
+      catalog_entries:
+      - zohocrm
+      status: released
+  detected_by: sweep-cdp.py
+  first_seen: '2026-10-14'
 templates:
 - title: Add new Unbounce form submissions to Zoho CRM as leads
   url: https://zapier.com/apps/unbounce/integrations/zoho-crm/1715/add-new-unbounce-form-submissions-to-zoho-crm-as-leads
