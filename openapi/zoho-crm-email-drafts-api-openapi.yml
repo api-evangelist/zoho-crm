@@ -1442,22 +1442,19 @@ paths:
       - Email Drafts
 components:
   parameters:
-    Page:
-      name: page
-      in: query
-      required: false
-      description: Page number for pagination
-      schema:
-        type: integer
-        format: int32
-        enum:
-        - 1
-        - 2
-    Draft:
-      name: draft
+    Record:
+      name: record
       in: path
       required: true
-      description: Unique draft identifier
+      description: Entity id of the record
+      schema:
+        type: string
+        maxLength: 100
+    Module:
+      name: module
+      in: path
+      required: true
+      description: module of the record
       schema:
         type: string
         maxLength: 100
@@ -1473,22 +1470,25 @@ components:
         - 1
         - 5
         - 10
-    Module:
-      name: module
+    Draft:
+      name: draft
       in: path
       required: true
-      description: module of the record
+      description: Unique draft identifier
       schema:
         type: string
         maxLength: 100
-    Record:
-      name: record
-      in: path
-      required: true
-      description: Entity id of the record
+    Page:
+      name: page
+      in: query
+      required: false
+      description: Page number for pagination
       schema:
-        type: string
-        maxLength: 100
+        type: integer
+        format: int32
+        enum:
+        - 1
+        - 2
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

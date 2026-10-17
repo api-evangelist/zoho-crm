@@ -2093,6 +2093,15 @@ paths:
           description: API Version
 components:
   parameters:
+    Word:
+      name: word
+      in: query
+      required: false
+      description: Performs a global search within the specified module using the given word. The matchable records across multiple fields based on the search term. (e.g., `fin` to match records containing 'fin' in any searchable field).
+      schema:
+        type: string
+        maxLength: 3000
+        description: The word to filter records by.
     Type:
       name: type
       in: query
@@ -2113,38 +2122,6 @@ components:
         - AdminUsers
         - ActiveConfirmedAdmins
         - CurrentUser
-    Phone:
-      name: phone
-      in: query
-      description: Searches for records using a phone number. The API searches across all phone fields in the specified module and returns matching records. (e.g., `9876543210`).
-      required: false
-      schema:
-        type: string
-        maxLength: 3000
-        description: The phone number to filter records by.
-    Converted:
-      name: converted
-      in: query
-      description: Filters leads based on their conversion status.
-      required: false
-      schema:
-        type: string
-        enum:
-        - 'true'
-        - 'false'
-        - both
-        description: Set to true to count only converted leads; false to count only unconverted leads.
-    Page:
-      name: page
-      in: query
-      description: The page number to retrieve.
-      required: false
-      schema:
-        type: integer
-        format: int32
-        default: 1
-        minimum: 1
-        description: The page number for pagination.
     Approved:
       name: approved
       in: query
@@ -2157,6 +2134,36 @@ components:
         - 'false'
         - both
         description: Set to true to count only converted leads; false to count only unconverted leads.
+    ModuleApiName:
+      name: moduleApiName
+      in: path
+      required: true
+      description: The API name of the module to retrieve the record count for.
+      schema:
+        type: string
+        description: The API name of the module for which to retrieve the record count (e.g., `Leads`, `Accounts`).
+        maxLength: 5000
+    Converted:
+      name: converted
+      in: query
+      description: Filters leads based on their conversion status.
+      required: false
+      schema:
+        type: string
+        enum:
+        - 'true'
+        - 'false'
+        - both
+        description: Set to true to count only converted leads; false to count only unconverted leads.
+    Phone:
+      name: phone
+      in: query
+      description: Searches for records using a phone number. The API searches across all phone fields in the specified module and returns matching records. (e.g., `9876543210`).
+      required: false
+      schema:
+        type: string
+        maxLength: 3000
+        description: The phone number to filter records by.
     Email:
       name: email
       in: query
@@ -2178,24 +2185,6 @@ components:
         minimum: 1
         maximum: 200
         description: Number of records per page for pagination.
-    ModuleApiName:
-      name: moduleApiName
-      in: path
-      required: true
-      description: The API name of the module to retrieve the record count for.
-      schema:
-        type: string
-        description: The API name of the module for which to retrieve the record count (e.g., `Leads`, `Accounts`).
-        maxLength: 5000
-    Word:
-      name: word
-      in: query
-      required: false
-      description: Performs a global search within the specified module using the given word. The matchable records across multiple fields based on the search term. (e.g., `fin` to match records containing 'fin' in any searchable field).
-      schema:
-        type: string
-        maxLength: 3000
-        description: The word to filter records by.
     Cvid:
       name: cvid
       in: query
@@ -2350,9 +2339,42 @@ components:
         type: string
         maxLength: 3000
         description: Search criteria string with field API name, operator, and value
-    Fields:
-      name: fields
-      description: Specify the API names of the fields you want to retrieve when fetching the records.
+    Page:
+      name: page
+      in: query
+      description: The page number to retrieve.
+      required: false
+      schema:
+        type: integer
+        format: int32
+        default: 1
+        minimum: 1
+        description: The page number for pagination.
+    Record:
+      name: recordID
+      description: This ID is used to uniquely identify a record
+      in: path
+      required: true
+      schema:
+        type: string
+        format: int64
+    PerPage_2:
+      name: per_page
+      description: Specify how many records to return per page
+      in: query
+      schema:
+        type: integer
+        format: int32
+    Page_2:
+      name: page
+      description: To get the list of records from the respective pages
+      in: query
+      schema:
+        type: integer
+        format: int32
+    Ids:
+      name: ids
+      description: To retrieve specific records based on their unique ID.
       in: query
       schema:
         type: string
@@ -2364,28 +2386,21 @@ components:
       schema:
         type: string
         maxLength: 100
-    Record:
-      name: recordID
-      description: This ID is used to uniquely identify a record
-      in: path
-      required: true
-      schema:
-        type: string
-        format: int64
-    Page_2:
-      name: page
-      description: To get the list of records from the respective pages
-      in: query
-      schema:
-        type: integer
-        format: int32
-    Cvid_2:
-      name: cvid
-      description: Specify the custom view ID to get the list of records based on custom views
+    SortOrder:
+      name: sort_order
+      description: To sort the available list of records in either ascending or descending order
       in: query
       schema:
         type: string
-        format: int64
+        enum:
+        - desc
+        - asc
+    IncludeChild:
+      name: include_child
+      description: To include records from the child territories
+      in: query
+      schema:
+        type: boolean
     Converted_2:
       name: converted
       description: To get the list of converted records
@@ -2403,13 +2418,6 @@ components:
       schema:
         type: string
         format: int64
-    PerPage_2:
-      name: per_page
-      description: Specify how many records to return per page
-      in: query
-      schema:
-        type: integer
-        format: int32
     SortBy:
       name: sort_by
       description: To sort the records based on the fields id, Created_Time, and Modified_Time. The default value is 'id'
@@ -2420,21 +2428,20 @@ components:
         - id
         - Created_Time
         - Modified_Time
-    IncludeChild:
-      name: include_child
-      description: To include records from the child territories
-      in: query
-      schema:
-        type: boolean
-    SortOrder:
-      name: sort_order
-      description: To sort the available list of records in either ascending or descending order
+    Fields:
+      name: fields
+      description: Specify the API names of the fields you want to retrieve when fetching the records.
       in: query
       schema:
         type: string
-        enum:
-        - desc
-        - asc
+        maxLength: 1024
+    Cvid_2:
+      name: cvid
+      description: Specify the custom view ID to get the list of records based on custom views
+      in: query
+      schema:
+        type: string
+        format: int64
     Module:
       name: module
       description: Specifies the module name
@@ -2443,13 +2450,6 @@ components:
       schema:
         type: string
         maxLength: 100
-    Ids:
-      name: ids
-      description: To retrieve specific records based on their unique ID.
-      in: query
-      schema:
-        type: string
-        maxLength: 1024
   schemas:
     ErrorResponse:
       type: object
@@ -2473,6 +2473,184 @@ components:
           description: Indicates the response is an error.
           enum:
           - error
+    RecordGETErrorResponse:
+      description: Error response schema returned when GET record or GET records operations fail due to validation, pagination, or processing errors.
+      type: object
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          maxItems: 100
+          description: List of error objects describing failures encountered while processing GET record(s) requests.
+          items:
+            type: object
+            description: Error object representing a single GET record(s) operation failure.
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Machine-readable error code indicating the specific reason for the GET operation failure.
+                enum:
+                - INVALID_DATA
+                - TOKEN_BOUND_DATA_MISMATCH
+                - INVALID_MODULE
+                - REQUIRED_PARAM_MISSING
+                - LIMIT_EXCEEDED
+                - EXPIRED_VALUE
+                - DISCRETE_PAGINATION_LIMIT_EXCEEDED
+                - AMBIGUITY_DURING_PROCESSING
+                - PAGINATION_LIMIT_EXCEEDED
+              message:
+                type: string
+                maxLength: 1024
+                description: Human-readable description explaining why the GET operation failed.
+              details:
+                type: object
+                description: Additional metadata providing context about the error.
+                additionalProperties: true
+                properties:
+                  resource_path_index:
+                    type: integer
+                    format: int32
+                    description: Index of the resource path segment where the error occurred.
+                required:
+                - resource_path_index
+              status:
+                type: string
+                description: Overall execution status of the GET request.
+                enum:
+                - error
+            required:
+            - code
+            - message
+            - status
+    RecordSuccessResponse:
+      description: Standard success response schema for single or bulk record operations.
+      type: object
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          maxItems: 100
+          description: List of successfully processed records with detailed metadata.
+          items:
+            type: object
+            description: Success object representing a single successfully processed record.
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Machine-readable code indicating a successful operation.
+                enum:
+                - SUCCESS
+              message:
+                type: string
+                maxLength: 1024
+                description: Human-readable success message describing the operation outcome.
+              status:
+                type: string
+                description: Overall execution status of the operation.
+                enum:
+                - success
+              details:
+                type: object
+                description: Detailed metadata about the processed record.
+                additionalProperties: true
+                properties:
+                  id:
+                    type: string
+                    format: int64
+                    description: Unique identifier of the record.
+                  Modified_Time:
+                    type: string
+                    format: date-time
+                    description: Timestamp indicating when the record was last modified.
+                  Created_Time:
+                    type: string
+                    format: date-time
+                    description: Timestamp indicating when the record was created.
+                  Created_By:
+                    type: object
+                    description: User who originally created the record.
+                    additionalProperties: false
+                    properties:
+                      name:
+                        type: string
+                        maxLength: 100
+                        description: Display name of the creating user.
+                      id:
+                        type: string
+                        format: int64
+                        description: Unique identifier of the creating user.
+                    required:
+                    - name
+                    - id
+                  Modified_By:
+                    type: object
+                    description: User who last modified the record.
+                    additionalProperties: false
+                    properties:
+                      name:
+                        type: string
+                        maxLength: 100
+                        description: Display name of the modifying user.
+                      id:
+                        type: string
+                        format: int64
+                        description: Unique identifier of the modifying user.
+                    required:
+                    - name
+                    - id
+                  $approval_state:
+                    type: string
+                    maxLength: 1024
+                    description: Approval state of the record in the approval workflow.
+                required:
+                - id
+                - Modified_Time
+                - Created_Time
+                - Created_By
+                - Modified_By
+                - $approval_state
+            required:
+            - code
+            - message
+            - status
+            - details
+      required:
+      - data
+    RecordPermissionResponse:
+      description: Response schema returned when a user lacks the necessary permissions to perform a record operation.
+      type: object
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          maxItems: 100
+          description: List of error objects indicating insufficient user permissions.
+          items:
+            type: object
+            description: Error object representing a permission denial.
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Machine-readable error code indicating the user does not have permission.
+                enum:
+                - NO_PERMISSION
+              message:
+                type: string
+                maxLength: 1024
+                description: Human-readable explanation describing the permission denial.
+              status:
+                type: string
+                description: Overall execution status of the request.
+                enum:
+                - error
+            required:
+            - code
+            - message
+            - status
     RecordsErrorResponse:
       description: Standard error response schema returned when one or more record operations fail.
       type: object
@@ -2607,280 +2785,6 @@ components:
             - blueprint
             - pathfinder
             - orchestration
-    RecordInternalErrorResponse:
-      description: Schema for internal server error responses related to record operations.
-      type: object
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          maxItems: 100
-          description: List of error objects describing internal server failures.
-          items:
-            type: object
-            description: Error object representing an unexpected internal server error.
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Machine-readable error code indicating an internal server failure.
-                enum:
-                - INTERNAL_ERROR
-              message:
-                type: string
-                maxLength: 1024
-                description: Human-readable description of the internal server error.
-              status:
-                type: string
-                description: Overall execution status of the request.
-                enum:
-                - error
-            required:
-            - code
-            - message
-            - status
-    RecordGETErrorResponse:
-      description: Error response schema returned when GET record or GET records operations fail due to validation, pagination, or processing errors.
-      type: object
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          maxItems: 100
-          description: List of error objects describing failures encountered while processing GET record(s) requests.
-          items:
-            type: object
-            description: Error object representing a single GET record(s) operation failure.
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Machine-readable error code indicating the specific reason for the GET operation failure.
-                enum:
-                - INVALID_DATA
-                - TOKEN_BOUND_DATA_MISMATCH
-                - INVALID_MODULE
-                - REQUIRED_PARAM_MISSING
-                - LIMIT_EXCEEDED
-                - EXPIRED_VALUE
-                - DISCRETE_PAGINATION_LIMIT_EXCEEDED
-                - AMBIGUITY_DURING_PROCESSING
-                - PAGINATION_LIMIT_EXCEEDED
-              message:
-                type: string
-                maxLength: 1024
-                description: Human-readable description explaining why the GET operation failed.
-              details:
-                type: object
-                description: Additional metadata providing context about the error.
-                additionalProperties: true
-                properties:
-                  resource_path_index:
-                    type: integer
-                    format: int32
-                    description: Index of the resource path segment where the error occurred.
-                required:
-                - resource_path_index
-              status:
-                type: string
-                description: Overall execution status of the GET request.
-                enum:
-                - error
-            required:
-            - code
-            - message
-            - status
-    RecordUnathorizedResponse:
-      description: Response schema returned when a request is unauthorized due to OAuth scope mismatches.
-      type: object
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          maxItems: 100
-          description: List of error objects indicating that the request is not authorized.
-          items:
-            type: object
-            description: Error object representing an OAuth scope mismatch.
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Machine-readable error code indicating an OAuth scope mismatch.
-                enum:
-                - OAUTH_SCOPE_MISMATCH
-              message:
-                type: string
-                maxLength: 1024
-                description: Human-readable explanation describing why the OAuth token is unauthorized.
-              status:
-                type: string
-                description: Overall execution status of the request.
-                enum:
-                - error
-            required:
-            - code
-            - message
-            - status
-    RecordSuccessResponse:
-      description: Standard success response schema for single or bulk record operations.
-      type: object
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          maxItems: 100
-          description: List of successfully processed records with detailed metadata.
-          items:
-            type: object
-            description: Success object representing a single successfully processed record.
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Machine-readable code indicating a successful operation.
-                enum:
-                - SUCCESS
-              message:
-                type: string
-                maxLength: 1024
-                description: Human-readable success message describing the operation outcome.
-              status:
-                type: string
-                description: Overall execution status of the operation.
-                enum:
-                - success
-              details:
-                type: object
-                description: Detailed metadata about the processed record.
-                additionalProperties: true
-                properties:
-                  id:
-                    type: string
-                    format: int64
-                    description: Unique identifier of the record.
-                  Modified_Time:
-                    type: string
-                    format: date-time
-                    description: Timestamp indicating when the record was last modified.
-                  Created_Time:
-                    type: string
-                    format: date-time
-                    description: Timestamp indicating when the record was created.
-                  Created_By:
-                    type: object
-                    description: User who originally created the record.
-                    additionalProperties: false
-                    properties:
-                      name:
-                        type: string
-                        maxLength: 100
-                        description: Display name of the creating user.
-                      id:
-                        type: string
-                        format: int64
-                        description: Unique identifier of the creating user.
-                    required:
-                    - name
-                    - id
-                  Modified_By:
-                    type: object
-                    description: User who last modified the record.
-                    additionalProperties: false
-                    properties:
-                      name:
-                        type: string
-                        maxLength: 100
-                        description: Display name of the modifying user.
-                      id:
-                        type: string
-                        format: int64
-                        description: Unique identifier of the modifying user.
-                    required:
-                    - name
-                    - id
-                  $approval_state:
-                    type: string
-                    maxLength: 1024
-                    description: Approval state of the record in the approval workflow.
-                required:
-                - id
-                - Modified_Time
-                - Created_Time
-                - Created_By
-                - Modified_By
-                - $approval_state
-            required:
-            - code
-            - message
-            - status
-            - details
-      required:
-      - data
-    RecordPermissionResponse:
-      description: Response schema returned when a user lacks the necessary permissions to perform a record operation.
-      type: object
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          maxItems: 100
-          description: List of error objects indicating insufficient user permissions.
-          items:
-            type: object
-            description: Error object representing a permission denial.
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Machine-readable error code indicating the user does not have permission.
-                enum:
-                - NO_PERMISSION
-              message:
-                type: string
-                maxLength: 1024
-                description: Human-readable explanation describing the permission denial.
-              status:
-                type: string
-                description: Overall execution status of the request.
-                enum:
-                - error
-            required:
-            - code
-            - message
-            - status
-    RecordInvalidURLResponse:
-      description: Response schema returned when the requested API endpoint URL pattern is invalid or unsupported.
-      type: object
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          maxItems: 100
-          description: List of error objects indicating an invalid or unsupported API endpoint URL.
-          items:
-            type: object
-            description: Error object representing an invalid API URL pattern.
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Machine-readable error code indicating an invalid endpoint URL pattern.
-                enum:
-                - INVALID_URL_PATTERN
-              message:
-                type: string
-                maxLength: 1024
-                description: Human-readable explanation describing why the requested URL is invalid.
-              status:
-                type: string
-                description: Overall execution status of the request.
-                enum:
-                - error
-            required:
-            - code
-            - message
-            - status
     RecordGETSucessResponse:
       description: Successful response schema returned for GET record or GET records API operations.
       type: object
@@ -3001,6 +2905,102 @@ components:
               type: string
               format: date-time
               description: Timestamp indicating when the page tokens will expire.
+    RecordInternalErrorResponse:
+      description: Schema for internal server error responses related to record operations.
+      type: object
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          maxItems: 100
+          description: List of error objects describing internal server failures.
+          items:
+            type: object
+            description: Error object representing an unexpected internal server error.
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Machine-readable error code indicating an internal server failure.
+                enum:
+                - INTERNAL_ERROR
+              message:
+                type: string
+                maxLength: 1024
+                description: Human-readable description of the internal server error.
+              status:
+                type: string
+                description: Overall execution status of the request.
+                enum:
+                - error
+            required:
+            - code
+            - message
+            - status
+    RecordUnathorizedResponse:
+      description: Response schema returned when a request is unauthorized due to OAuth scope mismatches.
+      type: object
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          maxItems: 100
+          description: List of error objects indicating that the request is not authorized.
+          items:
+            type: object
+            description: Error object representing an OAuth scope mismatch.
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Machine-readable error code indicating an OAuth scope mismatch.
+                enum:
+                - OAUTH_SCOPE_MISMATCH
+              message:
+                type: string
+                maxLength: 1024
+                description: Human-readable explanation describing why the OAuth token is unauthorized.
+              status:
+                type: string
+                description: Overall execution status of the request.
+                enum:
+                - error
+            required:
+            - code
+            - message
+            - status
+    RecordInvalidURLResponse:
+      description: Response schema returned when the requested API endpoint URL pattern is invalid or unsupported.
+      type: object
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          maxItems: 100
+          description: List of error objects indicating an invalid or unsupported API endpoint URL.
+          items:
+            type: object
+            description: Error object representing an invalid API URL pattern.
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Machine-readable error code indicating an invalid endpoint URL pattern.
+                enum:
+                - INVALID_URL_PATTERN
+              message:
+                type: string
+                maxLength: 1024
+                description: Human-readable explanation describing why the requested URL is invalid.
+              status:
+                type: string
+                description: Overall execution status of the request.
+                enum:
+                - error
+            required:
+            - code
+            - message
+            - status
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

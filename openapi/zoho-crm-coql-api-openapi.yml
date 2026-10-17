@@ -868,15 +868,6 @@ components:
     TypeNull:
       type: 'null'
       description: Null if no information is available.
-    ApiName:
-      type: string
-      description: API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.
-      pattern: ^[A-Za-z][A-Za-z0-9_]*$
-      maxLength: 50
-    Id:
-      type: string
-      description: Id of the resource.
-      format: int64
     ModuleName:
       type: string
       description: Name of the module
@@ -2095,6 +2086,15 @@ components:
       - lucene_colname
       - generated_type
       additionalProperties: false
+    Id:
+      type: string
+      description: Id of the resource.
+      format: int64
+    ApiName:
+      type: string
+      description: API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.
+      pattern: ^[A-Za-z][A-Za-z0-9_]*$
+      maxLength: 50
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

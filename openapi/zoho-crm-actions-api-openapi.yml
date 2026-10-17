@@ -9830,87 +9830,6 @@ paths:
           default: v8
 components:
   schemas:
-    AssociateEmailRequest:
-      type: object
-      description: Request body for associating an email with a record.
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: List of email objects to process.
-          items:
-            $ref: '#/components/schemas/EmailObject'
-          minItems: 1
-          maxItems: 50
-      required:
-      - data
-    ActionResponse:
-      type: object
-      description: Generic wrapper for multiple record action responses.
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: Array of result statuses.
-          maxItems: 50
-          items:
-            type: object
-            description: Individual result for a specific record.
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Status code.
-                maxLength: 50
-              details:
-                type: object
-                description: Contextual details.
-                additionalProperties: false
-              message:
-                type: string
-                description: Result message.
-                maxLength: 255
-              status:
-                type: string
-                description: Operation status.
-                maxLength: 50
-    EmailAddress:
-      type: object
-      description: Object representing an email address and display name.
-      additionalProperties: false
-      properties:
-        user_name:
-          type: string
-          description: The display name of the user.
-          maxLength: 255
-        email:
-          type: string
-          format: email
-          description: The actual email address string.
-          maxLength: 255
-      required:
-      - email
-    ErrorResponse:
-      type: object
-      description: Details about a failed API request.
-      additionalProperties: false
-      properties:
-        code:
-          type: string
-          description: Error code.
-          maxLength: 50
-        message:
-          type: string
-          description: Error message.
-          maxLength: 255
-        status:
-          type: string
-          description: Error status.
-          maxLength: 50
-        details:
-          type: object
-          description: Detailed error context.
-          additionalProperties: false
     EmailObject:
       type: object
       description: Detailed email metadata object.
@@ -9977,6 +9896,73 @@ components:
       - original_message_id
       - sent
       - date_time
+    ActionResponse:
+      type: object
+      description: Generic wrapper for multiple record action responses.
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: Array of result statuses.
+          maxItems: 50
+          items:
+            type: object
+            description: Individual result for a specific record.
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Status code.
+                maxLength: 50
+              details:
+                type: object
+                description: Contextual details.
+                additionalProperties: false
+              message:
+                type: string
+                description: Result message.
+                maxLength: 255
+              status:
+                type: string
+                description: Operation status.
+                maxLength: 50
+    ErrorResponse:
+      type: object
+      description: Details about a failed API request.
+      additionalProperties: false
+      properties:
+        code:
+          type: string
+          description: Error code.
+          maxLength: 50
+        message:
+          type: string
+          description: Error message.
+          maxLength: 255
+        status:
+          type: string
+          description: Error status.
+          maxLength: 50
+        details:
+          type: object
+          description: Detailed error context.
+          additionalProperties: false
+    EmailAddress:
+      type: object
+      description: Object representing an email address and display name.
+      additionalProperties: false
+      properties:
+        user_name:
+          type: string
+          description: The display name of the user.
+          maxLength: 255
+        email:
+          type: string
+          format: email
+          description: The actual email address string.
+          maxLength: 255
+      required:
+      - email
     AttachmentRef:
       type: object
       description: Reference to an email attachment.
@@ -9988,6 +9974,167 @@ components:
           maxLength: 100
       required:
       - id
+    AssociateEmailRequest:
+      type: object
+      description: Request body for associating an email with a record.
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: List of email objects to process.
+          items:
+            $ref: '#/components/schemas/EmailObject'
+          minItems: 1
+          maxItems: 50
+      required:
+      - data
+    ErrorResponseCore1137512454:
+      type: object
+      additionalProperties: false
+      description: 'Invalid data type for field: cadences_ids'
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            maximum_length:
+              type: integer
+              format: int32
+              description: 'Detail field: maximum_length'
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+          - maximum_length
+        message:
+          type: string
+          description: Error message
+          enum:
+          - invalid data
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    ErrorResponseCore1362235056:
+      type: object
+      additionalProperties: false
+      description: 'Invalid data type for field: ids'
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - LIMIT_EXCEEDED
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            limit:
+              type: integer
+              format: int32
+              description: 'Detail field: limit'
+            limit_due_to:
+              type: array
+              description: 'Detail field: limit_due_to'
+              items:
+                type: object
+                additionalProperties: false
+                description: 'Detail Field: limit_due_to'
+                properties:
+                  api_name:
+                    type: string
+                    description: 'Nested detail field: api_name'
+                    maxLength: 255
+                  json_path:
+                    type: string
+                    description: 'Nested detail field: json_path'
+                    maxLength: 1000
+                required:
+                - api_name
+                - json_path
+              maxItems: 25
+          required:
+          - limit
+          - limit_due_to
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Limit Exceeded, You cannot give more than 100 record ids
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    ErrorResponseCore1414382895:
+      type: object
+      additionalProperties: false
+      description: id given is not manual enrollment cadence
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - NOT_ALLOWED
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - id given is not manual enrollment cadence
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
     ErrorResponseCore814179042:
       type: object
       additionalProperties: false
@@ -10046,6 +10193,56 @@ components:
       - message
       - status
       title: Error Response Core
+    PostcadencesResponse200:
+      type: object
+      additionalProperties: false
+      description: Successful API operation completed
+      properties:
+        data:
+          type: array
+          description: root element json
+          items:
+            $ref: '#/components/schemas/SuccessDataNested'
+          maxItems: 1
+    ErrorResponse403:
+      type: object
+      additionalProperties: false
+      description: No permission to access this resource
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - NO_PERMISSION
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            permissions:
+              type: array
+              description: 'Detail field: permissions'
+              items:
+                type: string
+                description: 'Detail Field: permissions'
+                maxLength: 255
+              maxItems: 25
+        message:
+          type: string
+          description: Error message
+          enum:
+          - No permission
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response 403
     CadencesNested:
       type: object
       additionalProperties: false
@@ -10055,6 +10252,40 @@ components:
           type: string
           description: 'Field: name'
           maxLength: 255
+        id:
+          type: string
+          description: 'Field: id'
+          maxLength: 255
+    SuccessDataNested:
+      type: object
+      additionalProperties: false
+      description: Nested schema for data
+      properties:
+        code:
+          type: string
+          description: success code
+          maxLength: 255
+        details:
+          $ref: '#/components/schemas/DetailsNested'
+        message:
+          type: string
+          description: Success message
+          maxLength: 255
+        status:
+          type: string
+          description: response status
+          maxLength: 255
+    DetailsNested:
+      type: object
+      additionalProperties: false
+      description: Nested schema for details
+      properties:
+        cadences:
+          type: array
+          description: 'Field: cadences'
+          items:
+            $ref: '#/components/schemas/CadencesNested'
+          maxItems: 2
         id:
           type: string
           description: 'Field: id'
@@ -10119,220 +10350,6 @@ components:
       required:
       - cadences_ids
       - ids
-    DetailsNested:
-      type: object
-      additionalProperties: false
-      description: Nested schema for details
-      properties:
-        cadences:
-          type: array
-          description: 'Field: cadences'
-          items:
-            $ref: '#/components/schemas/CadencesNested'
-          maxItems: 2
-        id:
-          type: string
-          description: 'Field: id'
-          maxLength: 255
-    SuccessDataNested:
-      type: object
-      additionalProperties: false
-      description: Nested schema for data
-      properties:
-        code:
-          type: string
-          description: success code
-          maxLength: 255
-        details:
-          $ref: '#/components/schemas/DetailsNested'
-        message:
-          type: string
-          description: Success message
-          maxLength: 255
-        status:
-          type: string
-          description: response status
-          maxLength: 255
-    ErrorResponseCore1137512454:
-      type: object
-      additionalProperties: false
-      description: 'Invalid data type for field: cadences_ids'
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            maximum_length:
-              type: integer
-              format: int32
-              description: 'Detail field: maximum_length'
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-          - maximum_length
-        message:
-          type: string
-          description: Error message
-          enum:
-          - invalid data
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore1243473672:
-      type: object
-      additionalProperties: false
-      description: API not supported for selected domains
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - API_NOT_SUPPORTED
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            supported_domains:
-              type: array
-              description: 'Detail field: supported_domains'
-              items:
-                type: string
-                description: 'Detail Field: supported_domains'
-                maxLength: 255
-              maxItems: 25
-          required:
-          - supported_domains
-        message:
-          type: string
-          description: Error message
-          enum:
-          - api not supported
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    PostcadencesResponse200:
-      type: object
-      additionalProperties: false
-      description: Successful API operation completed
-      properties:
-        data:
-          type: array
-          description: root element json
-          items:
-            $ref: '#/components/schemas/SuccessDataNested'
-          maxItems: 1
-    ErrorResponse403:
-      type: object
-      additionalProperties: false
-      description: No permission to access this resource
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - NO_PERMISSION
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            permissions:
-              type: array
-              description: 'Detail field: permissions'
-              items:
-                type: string
-                description: 'Detail Field: permissions'
-                maxLength: 255
-              maxItems: 25
-        message:
-          type: string
-          description: Error message
-          enum:
-          - No permission
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response 403
-    ErrorResponseCore1414382895:
-      type: object
-      additionalProperties: false
-      description: id given is not manual enrollment cadence
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - NOT_ALLOWED
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - id given is not manual enrollment cadence
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
     ErrorResponseCore260315750:
       type: object
       additionalProperties: false
@@ -10383,53 +10400,36 @@ components:
             - $ref: '#/components/schemas/SuccessDataNested'
             - $ref: '#/components/schemas/ErrorDataNested'
           maxItems: 100
-    ErrorResponseCore1362235056:
+    ErrorResponseCore1243473672:
       type: object
       additionalProperties: false
-      description: 'Invalid data type for field: ids'
+      description: API not supported for selected domains
       properties:
         code:
           type: string
           description: Error code
           enum:
-          - LIMIT_EXCEEDED
+          - API_NOT_SUPPORTED
         details:
           type: object
           additionalProperties: false
           description: Error details with validation information
           properties:
-            limit:
-              type: integer
-              format: int32
-              description: 'Detail field: limit'
-            limit_due_to:
+            supported_domains:
               type: array
-              description: 'Detail field: limit_due_to'
+              description: 'Detail field: supported_domains'
               items:
-                type: object
-                additionalProperties: false
-                description: 'Detail Field: limit_due_to'
-                properties:
-                  api_name:
-                    type: string
-                    description: 'Nested detail field: api_name'
-                    maxLength: 255
-                  json_path:
-                    type: string
-                    description: 'Nested detail field: json_path'
-                    maxLength: 1000
-                required:
-                - api_name
-                - json_path
+                type: string
+                description: 'Detail Field: supported_domains'
+                maxLength: 255
               maxItems: 25
           required:
-          - limit
-          - limit_due_to
+          - supported_domains
         message:
           type: string
           description: Error message
           enum:
-          - Limit Exceeded, You cannot give more than 100 record ids
+          - api not supported
         status:
           type: string
           description: Error status
@@ -10441,41 +10441,17 @@ components:
       - message
       - status
       title: Error Response Core
-    RelatedRecordCountResult:
+    RelatedRecordCountItem:
       type: object
-      description: The count result for a specific related list.
+      description: Specifies a related list to count and optional filtering criteria.
       additionalProperties: false
       properties:
-        count:
-          type: integer
-          format: int32
-          description: The total number of related records matching the specified criteria.
-          minimum: 0
         related_list:
           $ref: '#/components/schemas/RelatedListReference'
+        params:
+          $ref: '#/components/schemas/CountParameters'
       required:
-      - count
       - related_list
-    RelatedListReference:
-      type: object
-      description: Identifies a specific related list by its API name and unique identifier.
-      additionalProperties: false
-      properties:
-        api_name:
-          type: string
-          description: The API name of the related list (e.g., 'Contacts', 'Deals', 'Tasks').
-          pattern: ^[A-Za-z0-9_]+$
-          minLength: 1
-          maxLength: 100
-        id:
-          type: string
-          description: The unique identifier of the related list definition.
-          pattern: ^[0-9]+$
-          minLength: 1
-          maxLength: 20
-      required:
-      - api_name
-      - id
     GetRelatedRecordsCountRequest:
       type: object
       description: Request payload containing an array of related list count specifications.
@@ -10490,48 +10466,6 @@ components:
           maxItems: 20
       required:
       - get_related_records_count
-    ErrorResponse_2:
-      type: object
-      description: Error response structure
-      additionalProperties: false
-      properties:
-        status:
-          type: string
-          description: The status of the response
-          enum:
-          - error
-        code:
-          type: string
-          description: The error code
-          enum:
-          - INVALID_DATA
-          - PATTERN_NOT_MATCHED
-          - MANDATORY_NOT_FOUND
-          - EXPECTED_FIELD_MISSING
-          - NOT_SUPPORTED
-          - DEPENDENT_FIELD_MISMATCH
-        message:
-          type: string
-          description: The error message
-          maxLength: 1000
-        details:
-          $ref: '#/components/schemas/ErrorDetails'
-      required:
-      - status
-      - code
-      - message
-      - details
-    RelatedRecordCountItem:
-      type: object
-      description: Specifies a related list to count and optional filtering criteria.
-      additionalProperties: false
-      properties:
-        related_list:
-          $ref: '#/components/schemas/RelatedListReference'
-        params:
-          $ref: '#/components/schemas/CountParameters'
-      required:
-      - related_list
     CountParameters:
       type: object
       description: Optional filtering and selection parameters to apply before counting records.
@@ -10571,6 +10505,37 @@ components:
           maxLength: 100
       required:
       - api_name
+    ErrorResponse_2:
+      type: object
+      description: Error response structure
+      additionalProperties: false
+      properties:
+        status:
+          type: string
+          description: The status of the response
+          enum:
+          - error
+        code:
+          type: string
+          description: The error code
+          enum:
+          - INVALID_DATA
+          - PATTERN_NOT_MATCHED
+          - MANDATORY_NOT_FOUND
+          - EXPECTED_FIELD_MISSING
+          - NOT_SUPPORTED
+          - DEPENDENT_FIELD_MISMATCH
+        message:
+          type: string
+          description: The error message
+          maxLength: 1000
+        details:
+          $ref: '#/components/schemas/ErrorDetails'
+      required:
+      - status
+      - code
+      - message
+      - details
     GetRelatedRecordsCountResponse:
       type: object
       description: Successful response containing count results for the requested related lists.
@@ -10589,6 +10554,42 @@ components:
           maxItems: 20
       required:
       - get_related_records_count
+    FilterCriteria:
+      type: object
+      description: Field-based filter criteria to apply before counting records.
+      additionalProperties: false
+      properties:
+        comparator:
+          type: string
+          description: The comparison operator to use for filtering.
+          enum:
+          - equal
+        field:
+          $ref: '#/components/schemas/FilterField'
+        value:
+          type: string
+          description: The value to compare the field against.
+          minLength: 1
+          maxLength: 255
+      required:
+      - comparator
+      - field
+      - value
+    RelatedRecordCountResult:
+      type: object
+      description: The count result for a specific related list.
+      additionalProperties: false
+      properties:
+        count:
+          type: integer
+          format: int32
+          description: The total number of related records matching the specified criteria.
+          minimum: 0
+        related_list:
+          $ref: '#/components/schemas/RelatedListReference'
+      required:
+      - count
+      - related_list
     ErrorDetails:
       oneOf:
       - type: object
@@ -10706,446 +10707,26 @@ components:
         - api_name
         - json_path
         - maximum_length
-    FilterCriteria:
+    RelatedListReference:
       type: object
-      description: Field-based filter criteria to apply before counting records.
+      description: Identifies a specific related list by its API name and unique identifier.
       additionalProperties: false
       properties:
-        comparator:
+        api_name:
           type: string
-          description: The comparison operator to use for filtering.
-          enum:
-          - equal
-        field:
-          $ref: '#/components/schemas/FilterField'
-        value:
-          type: string
-          description: The value to compare the field against.
+          description: The API name of the related list (e.g., 'Contacts', 'Deals', 'Tasks').
+          pattern: ^[A-Za-z0-9_]+$
           minLength: 1
-          maxLength: 255
+          maxLength: 100
+        id:
+          type: string
+          description: The unique identifier of the related list definition.
+          pattern: ^[0-9]+$
+          minLength: 1
+          maxLength: 20
       required:
-      - comparator
-      - field
-      - value
-    RecipientNested:
-      type: object
-      additionalProperties: false
-      description: Recipient details for signature or approval
-      properties:
-        type:
-          type: string
-          description: Type of recipient identifier. Use 'email' for direct email addresses or 'merge_field' for mail merge field references.
-          enum:
-          - email
-          - merge_field
-          maxLength: 11
-        value:
-          type: string
-          description: The email ID of the user or a merge field reference (e.g., ${!Leads.Email}) who has to sign or approve the document.
-          maxLength: 255
-      required:
-      - type
-      - value
-    SignersNested:
-      type: object
-      additionalProperties: false
-      description: The details of the users you want to sign the document.
-      properties:
-        recipient:
-          $ref: '#/components/schemas/RecipientNested'
-          description: Recipient Object (Required)
-        recipient_name:
-          type: string
-          description: The name of the user who has to sign or approve the document.
-          maxLength: 255
-        action_type:
-          type: string
-          description: The type of action you want the user to perform. The possible values are sign to sign the document, and approve to approve the document.
-          enum:
-          - sign
-          - approve
-          maxLength: 7
-      required:
-      - action_type
-      - recipient
-      - recipient_name
-    InvalidDataUrlError:
-      type: object
-      additionalProperties: false
-      description: Error when invalid data is sent in the URL
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            resource_path_index:
-              type: integer
-              format: int32
-              description: Index of the resource path segment that contains invalid data
-          required:
-          - resource_path_index
-        message:
-          type: string
-          description: Error message
-          enum:
-          - invalid data
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Invalid Data URL Error
-    InvalidModulePathError:
-      type: object
-      additionalProperties: false
-      description: Error when the module given in the URL path is invalid
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_MODULE
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            resource_path_index:
-              type: integer
-              format: int32
-              description: Index of the resource path segment containing the invalid module
-          required:
-          - resource_path_index
-        message:
-          type: string
-          description: Error message
-          enum:
-          - module name given seems to be invalid
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Invalid Module Path Error
-    PostdownloadmailmergeRequest:
-      type: object
-      additionalProperties: false
-      description: Request body schema for download mail merge operation.
-      properties:
-        download_mail_merge:
-          type: array
-          description: Root Element (Required)
-          items:
-            $ref: '#/components/schemas/DownloadMailMergeNested'
-          maxItems: 1
-      required:
-      - download_mail_merge
-    MandatoryFieldNotFoundError:
-      type: object
-      additionalProperties: false
-      description: Error when a required field is missing
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - MANDATORY_NOT_FOUND
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            api_name:
-              type: string
-              description: Name of the missing mandatory field
-              maxLength: 255
-            json_path:
-              type: string
-              description: JSON path to the missing mandatory field
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Required field is missing
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Mandatory Field Not Found Error
-    BccEmailNested:
-      type: object
-      additionalProperties: false
-      description: The details of the email or the mail merge field you want to include in the email's bcc. The keys are same as the ones in the "from_address" JSON object.
-      properties:
-        type:
-          type: string
-          description: Type of the address. Must be 'email'.
-          enum:
-          - email
-          maxLength: 5
-        value:
-          type: string
-          format: email
-          description: The email ID you want to use to send emails to.
-          pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
-          maxLength: 255
-      required:
-      - type
-      - value
-    InvalidRequestMethodError:
-      type: object
-      additionalProperties: false
-      description: Error when the HTTP request method is not supported for the URL
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_REQUEST_METHOD
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties: {}
-        message:
-          type: string
-          description: Error message
-          enum:
-          - The http request method type is not a valid one
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Invalid Request Method Error
-    SignMailMergeNested:
-      type: object
-      additionalProperties: false
-      description: Request payload for sending documents for signature.
-      properties:
-        sign_in_order:
-          type: boolean
-          description: The value true indicates that the document will first be sent for approval and then for signing.
-        signers:
-          type: array
-          description: The details of the users you want to sign the document.
-          items:
-            $ref: '#/components/schemas/SignersNested'
-          maxItems: 3
-        mail_merge_template:
-          $ref: '#/components/schemas/MailMergeTemplateNested'
-          description: To pass Template details (Required)
-        file_name:
-          type: string
-          description: The name of the file you want to send for signing and approval.
-          maxLength: 255
-      required:
-      - file_name
-      - mail_merge_template
-    InvalidModuleParamError:
-      type: object
-      additionalProperties: false
-      description: Error when the module given in the parameter is invalid
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_MODULE
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            param_name:
-              type: string
-              description: Name of the parameter containing the invalid module
-              maxLength: 255
-          required:
-          - param_name
-        message:
-          type: string
-          description: Error message
-          enum:
-          - module name given seems to be invalid
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Invalid Module Param Error
-    SignMailMergeNested1:
-      type: object
-      additionalProperties: false
-      description: Response payload for sign mail merge operation.
-      properties:
-        code:
-          type: string
-          description: Response code indicating the result of the operation
-          maxLength: 255
-        details:
-          $ref: '#/components/schemas/DetailsNested1'
-        message:
-          type: string
-          description: Human-readable message describing the result
-          maxLength: 255
-        status:
-          type: string
-          description: Status of the operation
-          enum:
-          - success
-          - error
-          maxLength: 255
-    MailMergeTemplateNested:
-      type: object
-      additionalProperties: false
-      description: Mailmerge Object to pass Template details
-      properties:
-        name:
-          type: string
-          description: The name of the mail merge template you want to use.
-          maxLength: 255
-      required:
-      - name
-    PostsignmailmergeRequest:
-      type: object
-      additionalProperties: false
-      description: Request body schema for sign mail merge operation.
-      properties:
-        sign_mail_merge:
-          type: array
-          description: Root element key (Required)
-          items:
-            $ref: '#/components/schemas/SignMailMergeNested'
-          maxItems: 1
-      required:
-      - sign_mail_merge
-    DetailsNested_2:
-      type: object
-      additionalProperties: false
-      description: Response details for send mail merge operation.
-      properties:
-        report_link:
-          type: string
-          description: URL link to the mail merge report
-          format: uri
-          maxLength: 255
-    PostsendmailmergeRequest:
-      type: object
-      additionalProperties: false
-      description: Request body schema for send mail merge operation.
-      properties:
-        send_mail_merge:
-          type: array
-          description: Root Element (Required)
-          items:
-            $ref: '#/components/schemas/SendMailMergeNested'
-          maxItems: 1
-      required:
-      - send_mail_merge
-    InvalidDataMaxLengthError:
-      type: object
-      additionalProperties: false
-      description: Error when data exceeds maximum allowed length
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            maximum_length:
-              type: integer
-              format: int32
-              description: Maximum allowed length for the field
-            api_name:
-              type: string
-              description: Name of the API field that failed validation
-              maxLength: 255
-            json_path:
-              type: string
-              description: JSON path to the field that failed validation
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-          - maximum_length
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Invalid data
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Invalid Data Max Length Error
-    ToAddressNested:
-      type: object
-      additionalProperties: false
-      description: The email ID you want to use to send emails to.
-      properties:
-        type:
-          type: string
-          description: Type of the address. Must be 'email'.
-          enum:
-          - email
-          maxLength: 5
-        value:
-          type: string
-          format: email
-          description: The email ID you want to use to send emails to.
-          pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
-          maxLength: 255
-      required:
-      - type
-      - value
+      - api_name
+      - id
     CcEmailNested:
       type: object
       additionalProperties: false
@@ -11161,6 +10742,90 @@ components:
           type: string
           format: email
           description: The email IDs you want to use to send emails to.
+          pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+          maxLength: 255
+      required:
+      - type
+      - value
+    SendMailMergeNested1:
+      type: object
+      additionalProperties: false
+      description: Response payload for send mail merge operation.
+      properties:
+        code:
+          type: string
+          description: Response code indicating the result of the operation
+          maxLength: 255
+        details:
+          $ref: '#/components/schemas/DetailsNested_2'
+        message:
+          type: string
+          description: Human-readable message describing the result
+          maxLength: 255
+        status:
+          type: string
+          description: Status of the operation
+          enum:
+          - success
+          - error
+          maxLength: 255
+    DownloadMailMergeNested:
+      type: object
+      additionalProperties: false
+      description: Request payload for downloading mail merge documents.
+      properties:
+        mail_merge_template:
+          $ref: '#/components/schemas/MailMergeTemplateNested'
+          description: To pass template name (Required)
+        output_format:
+          type: string
+          description: The format you want for the document. This can be pdf, html or docx. The default format will be pdf.
+          enum:
+          - pdf
+          - html
+          - docx
+          maxLength: 4
+        file_name:
+          type: string
+          description: The file name you want for the document. Default value will be "download". Maximum size for file_name is 255 characters.
+          maxLength: 255
+      required:
+      - mail_merge_template
+    FromAddressNested:
+      type: object
+      additionalProperties: false
+      description: The email ID you want to use to send emails from. This email address must be the one of the org-verified email addresses or the current user's email ID.
+      properties:
+        type:
+          type: string
+          description: Type of the address. Must be 'email'.
+          enum:
+          - email
+          maxLength: 5
+        value:
+          type: string
+          format: email
+          description: The email ID you want to use to send emails from.
+          pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
+          maxLength: 255
+      required:
+      - type
+      - value
+    ToAddressNested:
+      type: object
+      additionalProperties: false
+      description: The email ID you want to use to send emails to.
+      properties:
+        type:
+          type: string
+          description: Type of the address. Must be 'email'.
+          enum:
+          - email
+          maxLength: 5
+        value:
+          type: string
+          format: email
+          description: The email ID you want to use to send emails to.
           pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
           maxLength: 255
       required:
@@ -11216,48 +10881,32 @@ components:
           description: The email ID you want to use to send emails from. This email address must be the one of the org-verified email addresses or the current user's email ID.
       required:
       - mail_merge_template
-    ExpectedFieldMissingError:
+    InvalidDataParamError:
       type: object
       additionalProperties: false
-      description: Error when at least one expected field is missing
+      description: Error when invalid data is sent in a parameter
       properties:
         code:
           type: string
           description: Error code
           enum:
-          - EXPECTED_FIELD_MISSING
+          - INVALID_DATA
         details:
           type: object
           additionalProperties: false
           description: Error details with validation information
           properties:
-            expected_fields:
-              type: array
-              description: List of expected fields, at least one of which must be provided
-              items:
-                type: object
-                additionalProperties: false
-                description: Expected field information
-                properties:
-                  api_name:
-                    type: string
-                    description: Name of the expected field
-                    maxLength: 255
-                  json_path:
-                    type: string
-                    description: JSON path to the expected field
-                    maxLength: 1000
-                required:
-                - api_name
-                - json_path
-              maxItems: 25
+            param_name:
+              type: string
+              description: Name of the parameter containing invalid data
+              maxLength: 255
           required:
-          - expected_fields
+          - param_name
         message:
           type: string
           description: Error message
           enum:
-          - specify atleast one field
+          - invalid data
         status:
           type: string
           description: Error status
@@ -11268,7 +10917,18 @@ components:
       - details
       - message
       - status
-      title: Expected Field Missing Error
+      title: Invalid Data Param Error
+    MailMergeTemplateNested:
+      type: object
+      additionalProperties: false
+      description: Mailmerge Object to pass Template details
+      properties:
+        name:
+          type: string
+          description: The name of the mail merge template you want to use.
+          maxLength: 255
+      required:
+      - name
     PostsendmailmergeResponse200:
       type: object
       additionalProperties: false
@@ -11322,36 +10982,48 @@ components:
       - message
       - status
       title: Mandatory Field Not Found Body Error
-    ExpectedParamMissingError:
+    ExpectedFieldMissingError:
       type: object
       additionalProperties: false
-      description: Error when one of the expected parameters is missing to process the request
+      description: Error when at least one expected field is missing
       properties:
         code:
           type: string
           description: Error code
           enum:
-          - EXPECTED_PARAM_MISSING
+          - EXPECTED_FIELD_MISSING
         details:
           type: object
           additionalProperties: false
           description: Error details with validation information
           properties:
-            param_names:
+            expected_fields:
               type: array
-              description: List of expected parameter names, at least one of which must be provided
+              description: List of expected fields, at least one of which must be provided
               items:
-                type: string
-                description: Expected parameter name
-                maxLength: 255
+                type: object
+                additionalProperties: false
+                description: Expected field information
+                properties:
+                  api_name:
+                    type: string
+                    description: Name of the expected field
+                    maxLength: 255
+                  json_path:
+                    type: string
+                    description: JSON path to the expected field
+                    maxLength: 1000
+                required:
+                - api_name
+                - json_path
               maxItems: 25
           required:
-          - param_names
+          - expected_fields
         message:
           type: string
           description: Error message
           enum:
-          - One of the expected parameter is missing
+          - specify atleast one field
         status:
           type: string
           description: Error status
@@ -11362,7 +11034,7 @@ components:
       - details
       - message
       - status
-      title: Expected Param Missing Error
+      title: Expected Field Missing Error
     PostsignmailmergeResponse200:
       type: object
       additionalProperties: false
@@ -11374,17 +11046,17 @@ components:
           items:
             $ref: '#/components/schemas/SignMailMergeNested1'
           maxItems: 1
-    SendMailMergeNested1:
+    SignMailMergeNested1:
       type: object
       additionalProperties: false
-      description: Response payload for send mail merge operation.
+      description: Response payload for sign mail merge operation.
       properties:
         code:
           type: string
           description: Response code indicating the result of the operation
           maxLength: 255
         details:
-          $ref: '#/components/schemas/DetailsNested_2'
+          $ref: '#/components/schemas/DetailsNested1'
         message:
           type: string
           description: Human-readable message describing the result
@@ -11396,6 +11068,56 @@ components:
           - success
           - error
           maxLength: 255
+    RequiredParamMissingError:
+      type: object
+      additionalProperties: false
+      description: Error when a mandatory parameter is not given
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - REQUIRED_PARAM_MISSING
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            param_name:
+              type: string
+              description: Name of the missing required parameter
+              maxLength: 255
+          required:
+          - param_name
+        message:
+          type: string
+          description: Error message
+          enum:
+          - mandatory param missing
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Required Param Missing Error
+    PostdownloadmailmergeRequest:
+      type: object
+      additionalProperties: false
+      description: Request body schema for download mail merge operation.
+      properties:
+        download_mail_merge:
+          type: array
+          description: Root Element (Required)
+          items:
+            $ref: '#/components/schemas/DownloadMailMergeNested'
+          maxItems: 1
+      required:
+      - download_mail_merge
     InvalidDataTypeError:
       type: object
       additionalProperties: false
@@ -11443,10 +11165,136 @@ components:
       - message
       - status
       title: Invalid Data Type Error
-    FromAddressNested:
+    PostsignmailmergeRequest:
       type: object
       additionalProperties: false
-      description: The email ID you want to use to send emails from. This email address must be the one of the org-verified email addresses or the current user's email ID.
+      description: Request body schema for sign mail merge operation.
+      properties:
+        sign_mail_merge:
+          type: array
+          description: Root element key (Required)
+          items:
+            $ref: '#/components/schemas/SignMailMergeNested'
+          maxItems: 1
+      required:
+      - sign_mail_merge
+    MandatoryFieldNotFoundError:
+      type: object
+      additionalProperties: false
+      description: Error when a required field is missing
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - MANDATORY_NOT_FOUND
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            api_name:
+              type: string
+              description: Name of the missing mandatory field
+              maxLength: 255
+            json_path:
+              type: string
+              description: JSON path to the missing mandatory field
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Required field is missing
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Mandatory Field Not Found Error
+    InvalidModulePathError:
+      type: object
+      additionalProperties: false
+      description: Error when the module given in the URL path is invalid
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_MODULE
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            resource_path_index:
+              type: integer
+              format: int32
+              description: Index of the resource path segment containing the invalid module
+          required:
+          - resource_path_index
+        message:
+          type: string
+          description: Error message
+          enum:
+          - module name given seems to be invalid
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Invalid Module Path Error
+    DetailsNested_2:
+      type: object
+      additionalProperties: false
+      description: Response details for send mail merge operation.
+      properties:
+        report_link:
+          type: string
+          description: URL link to the mail merge report
+          format: uri
+          maxLength: 255
+    SignMailMergeNested:
+      type: object
+      additionalProperties: false
+      description: Request payload for sending documents for signature.
+      properties:
+        sign_in_order:
+          type: boolean
+          description: The value true indicates that the document will first be sent for approval and then for signing.
+        signers:
+          type: array
+          description: The details of the users you want to sign the document.
+          items:
+            $ref: '#/components/schemas/SignersNested'
+          maxItems: 3
+        mail_merge_template:
+          $ref: '#/components/schemas/MailMergeTemplateNested'
+          description: To pass Template details (Required)
+        file_name:
+          type: string
+          description: The name of the file you want to send for signing and approval.
+          maxLength: 255
+      required:
+      - file_name
+      - mail_merge_template
+    BccEmailNested:
+      type: object
+      additionalProperties: false
+      description: The details of the email or the mail merge field you want to include in the email's bcc. The keys are same as the ones in the "from_address" JSON object.
       properties:
         type:
           type: string
@@ -11457,52 +11305,66 @@ components:
         value:
           type: string
           format: email
-          description: The email ID you want to use to send emails from.
+          description: The email ID you want to use to send emails to.
           pattern: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$
           maxLength: 255
       required:
       - type
       - value
-    DownloadMailMergeNested:
+    PostsendmailmergeRequest:
       type: object
       additionalProperties: false
-      description: Request payload for downloading mail merge documents.
+      description: Request body schema for send mail merge operation.
       properties:
-        mail_merge_template:
-          $ref: '#/components/schemas/MailMergeTemplateNested'
-          description: To pass template name (Required)
-        output_format:
-          type: string
-          description: The format you want for the document. This can be pdf, html or docx. The default format will be pdf.
-          enum:
-          - pdf
-          - html
-          - docx
-          maxLength: 4
-        file_name:
-          type: string
-          description: The file name you want for the document. Default value will be "download". Maximum size for file_name is 255 characters.
-          maxLength: 255
+        send_mail_merge:
+          type: array
+          description: Root Element (Required)
+          items:
+            $ref: '#/components/schemas/SendMailMergeNested'
+          maxItems: 1
       required:
-      - mail_merge_template
-    DetailsNested1:
+      - send_mail_merge
+    InvalidModuleParamError:
       type: object
       additionalProperties: false
-      description: Response details for sign mail merge operation.
+      description: Error when the module given in the parameter is invalid
       properties:
-        sign_resource_id:
+        code:
           type: string
-          description: Unique identifier for the signature request resource
-          maxLength: 255
-        report_link:
+          description: Error code
+          enum:
+          - INVALID_MODULE
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            param_name:
+              type: string
+              description: Name of the parameter containing the invalid module
+              maxLength: 255
+          required:
+          - param_name
+        message:
           type: string
-          description: URL link to the signature report
-          format: uri
-          maxLength: 255
-    InvalidDataParamError:
+          description: Error message
+          enum:
+          - module name given seems to be invalid
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Invalid Module Param Error
+    InvalidDataUrlError:
       type: object
       additionalProperties: false
-      description: Error when invalid data is sent in a parameter
+      description: Error when invalid data is sent in the URL
       properties:
         code:
           type: string
@@ -11514,12 +11376,12 @@ components:
           additionalProperties: false
           description: Error details with validation information
           properties:
-            param_name:
-              type: string
-              description: Name of the parameter containing invalid data
-              maxLength: 255
+            resource_path_index:
+              type: integer
+              format: int32
+              description: Index of the resource path segment that contains invalid data
           required:
-          - param_name
+          - resource_path_index
         message:
           type: string
           description: Error message
@@ -11535,33 +11397,27 @@ components:
       - details
       - message
       - status
-      title: Invalid Data Param Error
-    RequiredParamMissingError:
+      title: Invalid Data URL Error
+    InvalidRequestMethodError:
       type: object
       additionalProperties: false
-      description: Error when a mandatory parameter is not given
+      description: Error when the HTTP request method is not supported for the URL
       properties:
         code:
           type: string
           description: Error code
           enum:
-          - REQUIRED_PARAM_MISSING
+          - INVALID_REQUEST_METHOD
         details:
           type: object
           additionalProperties: false
           description: Error details with validation information
-          properties:
-            param_name:
-              type: string
-              description: Name of the missing required parameter
-              maxLength: 255
-          required:
-          - param_name
+          properties: {}
         message:
           type: string
           description: Error message
           enum:
-          - mandatory param missing
+          - The http request method type is not a valid one
         status:
           type: string
           description: Error status
@@ -11572,7 +11428,151 @@ components:
       - details
       - message
       - status
-      title: Required Param Missing Error
+      title: Invalid Request Method Error
+    ExpectedParamMissingError:
+      type: object
+      additionalProperties: false
+      description: Error when one of the expected parameters is missing to process the request
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - EXPECTED_PARAM_MISSING
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            param_names:
+              type: array
+              description: List of expected parameter names, at least one of which must be provided
+              items:
+                type: string
+                description: Expected parameter name
+                maxLength: 255
+              maxItems: 25
+          required:
+          - param_names
+        message:
+          type: string
+          description: Error message
+          enum:
+          - One of the expected parameter is missing
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Expected Param Missing Error
+    DetailsNested1:
+      type: object
+      additionalProperties: false
+      description: Response details for sign mail merge operation.
+      properties:
+        sign_resource_id:
+          type: string
+          description: Unique identifier for the signature request resource
+          maxLength: 255
+        report_link:
+          type: string
+          description: URL link to the signature report
+          format: uri
+          maxLength: 255
+    InvalidDataMaxLengthError:
+      type: object
+      additionalProperties: false
+      description: Error when data exceeds maximum allowed length
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            maximum_length:
+              type: integer
+              format: int32
+              description: Maximum allowed length for the field
+            api_name:
+              type: string
+              description: Name of the API field that failed validation
+              maxLength: 255
+            json_path:
+              type: string
+              description: JSON path to the field that failed validation
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+          - maximum_length
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Invalid data
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Invalid Data Max Length Error
+    RecipientNested:
+      type: object
+      additionalProperties: false
+      description: Recipient details for signature or approval
+      properties:
+        type:
+          type: string
+          description: Type of recipient identifier. Use 'email' for direct email addresses or 'merge_field' for mail merge field references.
+          enum:
+          - email
+          - merge_field
+          maxLength: 11
+        value:
+          type: string
+          description: The email ID of the user or a merge field reference (e.g., ${!Leads.Email}) who has to sign or approve the document.
+          maxLength: 255
+      required:
+      - type
+      - value
+    SignersNested:
+      type: object
+      additionalProperties: false
+      description: The details of the users you want to sign the document.
+      properties:
+        recipient:
+          $ref: '#/components/schemas/RecipientNested'
+          description: Recipient Object (Required)
+        recipient_name:
+          type: string
+          description: The name of the user who has to sign or approve the document.
+          maxLength: 255
+        action_type:
+          type: string
+          description: The type of action you want the user to perform. The possible values are sign to sign the document, and approve to approve the document.
+          enum:
+          - sign
+          - approve
+          maxLength: 7
+      required:
+      - action_type
+      - recipient
+      - recipient_name
     ErrorResponse_3:
       type: object
       description: Standard error response structure containing error code, message, and optional details
@@ -11702,29 +11702,61 @@ components:
           type: integer
           format: int32
           description: The maximum allowed length for a parameter or field.
-    RecordInvalidURLResponse:
-      description: Response schema returned when the requested API endpoint URL pattern is invalid or unsupported.
+    RecordPermissionResponse:
+      description: Response schema returned when a user lacks the necessary permissions to perform a record operation.
       type: object
       additionalProperties: false
       properties:
         data:
           type: array
           maxItems: 100
-          description: List of error objects indicating an invalid or unsupported API endpoint URL.
+          description: List of error objects indicating insufficient user permissions.
           items:
             type: object
-            description: Error object representing an invalid API URL pattern.
+            description: Error object representing a permission denial.
             additionalProperties: false
             properties:
               code:
                 type: string
-                description: Machine-readable error code indicating an invalid endpoint URL pattern.
+                description: Machine-readable error code indicating the user does not have permission.
                 enum:
-                - INVALID_URL_PATTERN
+                - NO_PERMISSION
               message:
                 type: string
                 maxLength: 1024
-                description: Human-readable explanation describing why the requested URL is invalid.
+                description: Human-readable explanation describing the permission denial.
+              status:
+                type: string
+                description: Overall execution status of the request.
+                enum:
+                - error
+            required:
+            - code
+            - message
+            - status
+    RecordUnathorizedResponse:
+      description: Response schema returned when a request is unauthorized due to OAuth scope mismatches.
+      type: object
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          maxItems: 100
+          description: List of error objects indicating that the request is not authorized.
+          items:
+            type: object
+            description: Error object representing an OAuth scope mismatch.
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Machine-readable error code indicating an OAuth scope mismatch.
+                enum:
+                - OAUTH_SCOPE_MISMATCH
+              message:
+                type: string
+                maxLength: 1024
+                description: Human-readable explanation describing why the OAuth token is unauthorized.
               status:
                 type: string
                 description: Overall execution status of the request.
@@ -11868,93 +11900,29 @@ components:
             - blueprint
             - pathfinder
             - orchestration
-    RecordPermissionResponse:
-      description: Response schema returned when a user lacks the necessary permissions to perform a record operation.
+    RecordInvalidURLResponse:
+      description: Response schema returned when the requested API endpoint URL pattern is invalid or unsupported.
       type: object
       additionalProperties: false
       properties:
         data:
           type: array
           maxItems: 100
-          description: List of error objects indicating insufficient user permissions.
+          description: List of error objects indicating an invalid or unsupported API endpoint URL.
           items:
             type: object
-            description: Error object representing a permission denial.
+            description: Error object representing an invalid API URL pattern.
             additionalProperties: false
             properties:
               code:
                 type: string
-                description: Machine-readable error code indicating the user does not have permission.
+                description: Machine-readable error code indicating an invalid endpoint URL pattern.
                 enum:
-                - NO_PERMISSION
+                - INVALID_URL_PATTERN
               message:
                 type: string
                 maxLength: 1024
-                description: Human-readable explanation describing the permission denial.
-              status:
-                type: string
-                description: Overall execution status of the request.
-                enum:
-                - error
-            required:
-            - code
-            - message
-            - status
-    RecordUnathorizedResponse:
-      description: Response schema returned when a request is unauthorized due to OAuth scope mismatches.
-      type: object
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          maxItems: 100
-          description: List of error objects indicating that the request is not authorized.
-          items:
-            type: object
-            description: Error object representing an OAuth scope mismatch.
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Machine-readable error code indicating an OAuth scope mismatch.
-                enum:
-                - OAUTH_SCOPE_MISMATCH
-              message:
-                type: string
-                maxLength: 1024
-                description: Human-readable explanation describing why the OAuth token is unauthorized.
-              status:
-                type: string
-                description: Overall execution status of the request.
-                enum:
-                - error
-            required:
-            - code
-            - message
-            - status
-    RecordInternalErrorResponse:
-      description: Schema for internal server error responses related to record operations.
-      type: object
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          maxItems: 100
-          description: List of error objects describing internal server failures.
-          items:
-            type: object
-            description: Error object representing an unexpected internal server error.
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Machine-readable error code indicating an internal server failure.
-                enum:
-                - INTERNAL_ERROR
-              message:
-                type: string
-                maxLength: 1024
-                description: Human-readable description of the internal server error.
+                description: Human-readable explanation describing why the requested URL is invalid.
               status:
                 type: string
                 description: Overall execution status of the request.
@@ -12059,6 +12027,38 @@ components:
             - details
       required:
       - data
+    RecordInternalErrorResponse:
+      description: Schema for internal server error responses related to record operations.
+      type: object
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          maxItems: 100
+          description: List of error objects describing internal server failures.
+          items:
+            type: object
+            description: Error object representing an unexpected internal server error.
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Machine-readable error code indicating an internal server failure.
+                enum:
+                - INTERNAL_ERROR
+              message:
+                type: string
+                maxLength: 1024
+                description: Human-readable description of the internal server error.
+              status:
+                type: string
+                description: Overall execution status of the request.
+                enum:
+                - error
+            required:
+            - code
+            - message
+            - status
     EmailUser:
       type: object
       description: User email and name details.
@@ -12074,30 +12074,6 @@ components:
           type: string
           description: Email address
           maxLength: 255
-    FlatErrorResponse:
-      type: object
-      description: Flat error object.
-      additionalProperties: false
-      required:
-      - code
-      - message
-      properties:
-        code:
-          type: string
-          description: Error code
-          maxLength: 100
-        details:
-          type: object
-          description: Details
-          additionalProperties: true
-        message:
-          type: string
-          description: Message
-          maxLength: 1000
-        status:
-          type: string
-          description: Status
-          maxLength: 100
     SendMailRequest:
       type: object
       description: Root object for the send mail request.
@@ -12232,6 +12208,19 @@ components:
                       type: string
                       description: File ID
                       maxLength: 255
+    StandardErrorResponse:
+      type: object
+      description: Error data wrapper.
+      additionalProperties: false
+      required:
+      - data
+      properties:
+        data:
+          type: array
+          description: Errors list
+          maxItems: 10
+          items:
+            $ref: '#/components/schemas/ErrorDetail'
     ErrorDetail:
       type: object
       description: Individual error item.
@@ -12253,19 +12242,6 @@ components:
           type: string
           description: Status
           maxLength: 100
-    StandardErrorResponse:
-      type: object
-      description: Error data wrapper.
-      additionalProperties: false
-      required:
-      - data
-      properties:
-        data:
-          type: array
-          description: Errors list
-          maxItems: 10
-          items:
-            $ref: '#/components/schemas/ErrorDetail'
     SuccessResponse:
       type: object
       description: Successful operation response.
@@ -12303,516 +12279,30 @@ components:
                     type: string
                     description: Message ID
                     maxLength: 255
-    ActivityModuleRelatedIssueErrorResponse:
-      description: Activity Module Related Issue Error Response - POST and PUT API
+    FlatErrorResponse:
       type: object
-      properties:
-        share:
-          type: array
-          description: list of share record creation error responses
-          maxItems: 20
-          items:
-            type: object
-            description: share record creation error response details
-            properties:
-              code:
-                type: string
-                description: response code
-                enum:
-                - INVALID_DATA
-              details:
-                type: object
-                description: additional information
-                additionalProperties: false
-                properties:
-                  api_name:
-                    type: string
-                    description: name of the parameter which caused the error
-                    maxLength: 50
-                  json_path:
-                    type: string
-                    description: JSON path of the parameter which caused the error
-                    maxLength: 100
-                required:
-                - api_name
-                - json_path
-              message:
-                type: string
-                description: response message
-                enum:
-                - cannot share the related records
-              status:
-                type: string
-                description: response status
-                enum:
-                - error
-            additionalProperties: false
-            required:
-            - code
-            - details
-            - message
-            - status
-      additionalProperties: false
-      required:
-      - share
-    InvalidRecordIdErrorResponse:
-      description: Invalid Record Id Error Response - GET, DELETE API
-      type: object
-      properties:
-        code:
-          type: string
-          description: response code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          description: additional information
-          properties:
-            resource_path_index:
-              type: integer
-              description: index of the resource path which caused the error
-              format: int32
-              default: 1
-          additionalProperties: false
-          required:
-          - resource_path_index
-        message:
-          type: string
-          description: response message
-          enum:
-          - ENTITY_ID_INVALID
-        status:
-          type: string
-          description: response status
-          enum:
-          - error
+      description: Flat error object.
       additionalProperties: false
       required:
       - code
-      - details
       - message
-      - status
-    ViewParamWithManageValueErrorResponse:
-      description: View Param With Manage Value Error Response - GET API
-      type: object
       properties:
         code:
           type: string
-          description: response code
-          enum:
-          - PATTERN_NOT_MATCHED
+          description: Error code
+          maxLength: 100
         details:
           type: object
-          description: additional information
-          properties:
-            api_name:
-              type: string
-              description: name of the parameter which caused the error(view)
-              enum:
-              - view
-          additionalProperties: false
-          required:
-          - api_name
+          description: Details
+          additionalProperties: true
         message:
           type: string
-          description: response message
-          enum:
-          - Please check whether the input values are correct
+          description: Message
+          maxLength: 1000
         status:
           type: string
-          description: response status
-          enum:
-          - error
-      additionalProperties: false
-      required:
-      - code
-      - details
-      - message
-      - status
-    RecordForbiddenErrorResponse:
-      description: Record Forbidden Error Response
-      type: object
-      properties:
-        code:
-          type: string
-          description: response code
-          enum:
-          - NO_PERMISSION
-        details:
-          type: object
-          description: additional information
-          properties:
-            permissions:
-              type: array
-              description: list of permissions that are missing
-              maxItems: 1
-              items:
-                type: string
-                description: permission which is missing
-                maxLength: 200
-          additionalProperties: false
-          required:
-          - permissions
-        message:
-          type: string
-          description: response message
-          enum:
-          - permission denied
-        status:
-          type: string
-          description: response status
-          enum:
-          - error
-      additionalProperties: false
-      required:
-      - code
-      - details
-      - message
-      - status
-    InvalidModuleNameErrorResponse:
-      description: Invalid Module Name Error Response - GET, DELETE API
-      type: object
-      properties:
-        code:
-          type: string
-          description: response code
-          enum:
-          - INVALID_MODULE
-        details:
-          type: object
-          description: additional information
-          properties:
-            resource_path_index:
-              type: integer
-              description: index of the resource path which caused the error
-              format: int32
-              default: 0
-          additionalProperties: false
-          required:
-          - resource_path_index
-        message:
-          type: string
-          description: response message
-          enum:
-          - the module name given seems to be invalid
-        status:
-          type: string
-          description: response status
-          enum:
-          - error
-      additionalProperties: false
-      required:
-      - code
-      - details
-      - message
-      - status
-    SharingSharedRecordErrorResponse:
-      description: Sharing Shared Record Error Response - POST and PUT API
-      type: object
-      properties:
-        code:
-          type: string
-          description: response code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          description: additional information
-          additionalProperties: false
-        message:
-          type: string
-          description: response message
-          enum:
-          - Shared record cannot be shared to other users
-        status:
-          type: string
-          description: response status
-          enum:
-          - error
-      additionalProperties: false
-      required:
-      - code
-      - details
-      - message
-      - status
-    UnsupportedModule:
-      description: Invalid Module - POST and PUT API
-      type: object
-      properties:
-        code:
-          type: string
-          description: response code
-          enum:
-          - NOT_ALLOWED
-        details:
-          type: object
-          description: additional information
-          properties:
-            resource_path_index:
-              type: integer
-              description: API name related to the share record limit
-              format: int32
-          additionalProperties: false
-        message:
-          type: string
-          description: response message
-          maxLength: 200
-        status:
-          type: string
-          description: response status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      additionalProperties: false
-    NoSharingAvailableToRevokeErrorResponse:
-      description: No Sharing Available To Revoke Error Response - DELETE API
-      type: object
-      properties:
-        code:
-          type: string
-          description: response code
-          enum:
-          - CANNOT_PROCESS
-        details:
-          type: object
-          description: additional information
-          additionalProperties: false
-        message:
-          type: string
-          description: response message
-          enum:
-          - No sharing through this record is available to revoke
-        status:
-          type: string
-          description: response status
-          enum:
-          - error
-      additionalProperties: false
-      required:
-      - code
-      - details
-      - message
-      - status
-    ShareLimitExceedErrorResponse:
-      description: Share Limit Exceed Error Response - POST and PUT API
-      type: object
-      properties:
-        share:
-          type: array
-          description: list of share record creation error responses
-          maxItems: 20
-          items:
-            type: object
-            description: share record creation error response details
-            properties:
-              code:
-                type: string
-                description: response code
-                enum:
-                - LIMIT_EXCEEDED
-              details:
-                type: object
-                description: additional information
-                properties:
-                  limit:
-                    type: integer
-                    description: maximum number of share records allowed
-                    format: int32
-                  api_name:
-                    type: string
-                    description: API name related to the share record limit
-                    enum:
-                    - type
-                  json_path:
-                    type: string
-                    description: JSON path of the parameter which caused the error
-                    maxLength: 100
-                additionalProperties: false
-              message:
-                type: string
-                description: response message
-                maxLength: 100
-              status:
-                type: string
-                description: response status
-                enum:
-                - error
-            additionalProperties: false
-            required:
-            - code
-            - details
-            - message
-            - status
-      additionalProperties: false
-      required:
-      - share
-    RecordLevelSharingNotSupportedForModuleErrorResponse:
-      description: Record Level Sharing Not Supported For Module Error Response - POST and PUT API
-      type: object
-      properties:
-        code:
-          type: string
-          description: response code
-          enum:
-          - NOT_ALLOWED
-        details:
-          type: object
-          description: additional information
-          additionalProperties: false
-        message:
-          type: string
-          description: response message
-          enum:
-          - Record Level Sharing is not supported for this module
-        status:
-          type: string
-          description: response status
-          enum:
-          - error
-      additionalProperties: false
-      required:
-      - code
-      - details
-      - message
-      - status
-    MaximumLengthErrorResponse:
-      description: Maximum Length Error Response - POST and PUT API
-      type: object
-      properties:
-        code:
-          type: string
-          description: response code
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          description: additional information
-          properties:
-            api_name:
-              type: string
-              description: name of the parameter which caused the error
-              enum:
-              - share
-            json_path:
-              type: string
-              description: JSON path of the parameter which caused the error
-              enum:
-              - $.share
-            maximum_length:
-              type: integer
-              description: maximum allowed length
-              format: int32
-          additionalProperties: false
-          required:
-          - api_name
-          - json_path
-          - maximum_length
-        message:
-          type: string
-          description: response message
-          enum:
-          - invalid data
-        status:
-          type: string
-          description: response status
-          enum:
-          - error
-      additionalProperties: false
-      required:
-      - code
-      - details
-      - message
-      - status
-    CommonForbiddenErrorResponse:
-      description: Common Forbidden Error Response
-      type: object
-      properties:
-        code:
-          type: string
-          description: response code
-          enum:
-          - NO_PERMISSION
-        details:
-          type: object
-          description: additional information
-          additionalProperties: false
-        message:
-          type: string
-          description: response message
-          enum:
-          - permission denied - access the api
-          - permission denied
-        status:
-          type: string
-          description: response status
-          enum:
-          - error
-      additionalProperties: false
-      required:
-      - code
-      - details
-      - message
-      - status
-    InvalidShareWithIdErrorResponse:
-      description: Invalid Share With User Id Error Response - POST and PUT API
-      type: object
-      properties:
-        share:
-          type: array
-          description: list of share record creation error responses
-          maxItems: 20
-          items:
-            type: object
-            description: share record creation error response details
-            properties:
-              code:
-                type: string
-                description: response code
-                enum:
-                - INVALID_DATA
-              details:
-                type: object
-                description: additional information
-                additionalProperties: false
-                properties:
-                  api_name:
-                    type: string
-                    description: name of the parameter which caused the error
-                    maxLength: 50
-                  json_path:
-                    type: string
-                    description: JSON path of the parameter which caused the error
-                    maxLength: 100
-                required:
-                - api_name
-                - json_path
-              message:
-                type: string
-                description: response message
-                enum:
-                - invalid data
-                - invalid user Id
-                - invalid role Id
-                - invalid group Id
-                - cannot share to the user
-              status:
-                type: string
-                description: response status
-                enum:
-                - error
-            additionalProperties: false
-            required:
-            - code
-            - details
-            - message
-            - status
-      additionalProperties: false
-      required:
-      - share
+          description: Status
+          maxLength: 100
     InvalidShareWithValueErrorResponse:
       description: Invalid Share With Value Error Response - POST and PUT API
       type: object
@@ -12882,85 +12372,6 @@ components:
       additionalProperties: false
       required:
       - share
-    SchedularAlreadyRunningErrorResponse:
-      description: Schedular Already Running Error Response - POST and PUT API
-      type: object
-      properties:
-        code:
-          type: string
-          description: response code
-          enum:
-          - CANNOT_PROCESS
-        details:
-          type: object
-          description: additional information
-          additionalProperties: false
-        message:
-          type: string
-          description: response message
-          enum:
-          - Scheduler is running
-        status:
-          type: string
-          description: response status
-          enum:
-          - error
-      additionalProperties: false
-      required:
-      - code
-      - details
-      - message
-      - status
-    MandatoryNotFound:
-      description: Mandatory Not Found Error Response - POST and PUT API
-      type: object
-      properties:
-        share:
-          type: array
-          description: list of share record creation error responses
-          maxItems: 20
-          items:
-            type: object
-            description: share record creation error response details
-            properties:
-              code:
-                type: string
-                description: response code
-                enum:
-                - MANDATORY_NOT_FOUND
-              details:
-                type: object
-                description: additional information
-                additionalProperties: false
-                properties:
-                  api_name:
-                    type: string
-                    description: name of the parameter which caused the error
-                    maxLength: 50
-                  json_path:
-                    type: string
-                    description: JSON path of the parameter which caused the error
-                    maxLength: 100
-                required:
-                - api_name
-                - json_path
-              message:
-                type: string
-                description: response message
-                enum:
-                - required field not found
-              status:
-                type: string
-                description: response status
-                enum:
-                - error
-            additionalProperties: false
-            required:
-            - code
-            - details
-            - message
-            - status
-      additionalProperties: false
     InvalidTypeErrorResponse:
       description: Invalid Type Error Response - GET API
       type: object
@@ -13022,6 +12433,65 @@ components:
       required:
       - share
       additionalProperties: false
+    CommonForbiddenErrorResponse:
+      description: Common Forbidden Error Response
+      type: object
+      properties:
+        code:
+          type: string
+          description: response code
+          enum:
+          - NO_PERMISSION
+        details:
+          type: object
+          description: additional information
+          additionalProperties: false
+        message:
+          type: string
+          description: response message
+          enum:
+          - permission denied - access the api
+          - permission denied
+        status:
+          type: string
+          description: response status
+          enum:
+          - error
+      additionalProperties: false
+      required:
+      - code
+      - details
+      - message
+      - status
+    SharingSharedRecordErrorResponse:
+      description: Sharing Shared Record Error Response - POST and PUT API
+      type: object
+      properties:
+        code:
+          type: string
+          description: response code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          description: additional information
+          additionalProperties: false
+        message:
+          type: string
+          description: response message
+          enum:
+          - Shared record cannot be shared to other users
+        status:
+          type: string
+          description: response status
+          enum:
+          - error
+      additionalProperties: false
+      required:
+      - code
+      - details
+      - message
+      - status
     AmbiguousShareErrorResponse:
       description: Ambiguous Share Error Response - POST and PUT API
       type: object
@@ -13064,6 +12534,120 @@ components:
           enum:
           - error
       additionalProperties: false
+    ActivityModuleRelatedIssueErrorResponse:
+      description: Activity Module Related Issue Error Response - POST and PUT API
+      type: object
+      properties:
+        share:
+          type: array
+          description: list of share record creation error responses
+          maxItems: 20
+          items:
+            type: object
+            description: share record creation error response details
+            properties:
+              code:
+                type: string
+                description: response code
+                enum:
+                - INVALID_DATA
+              details:
+                type: object
+                description: additional information
+                additionalProperties: false
+                properties:
+                  api_name:
+                    type: string
+                    description: name of the parameter which caused the error
+                    maxLength: 50
+                  json_path:
+                    type: string
+                    description: JSON path of the parameter which caused the error
+                    maxLength: 100
+                required:
+                - api_name
+                - json_path
+              message:
+                type: string
+                description: response message
+                enum:
+                - cannot share the related records
+              status:
+                type: string
+                description: response status
+                enum:
+                - error
+            additionalProperties: false
+            required:
+            - code
+            - details
+            - message
+            - status
+      additionalProperties: false
+      required:
+      - share
+    UnsupportedModule:
+      description: Invalid Module - POST and PUT API
+      type: object
+      properties:
+        code:
+          type: string
+          description: response code
+          enum:
+          - NOT_ALLOWED
+        details:
+          type: object
+          description: additional information
+          properties:
+            resource_path_index:
+              type: integer
+              description: API name related to the share record limit
+              format: int32
+          additionalProperties: false
+        message:
+          type: string
+          description: response message
+          maxLength: 200
+        status:
+          type: string
+          description: response status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      additionalProperties: false
+    RecordLevelSharingNotSupportedForModuleErrorResponse:
+      description: Record Level Sharing Not Supported For Module Error Response - POST and PUT API
+      type: object
+      properties:
+        code:
+          type: string
+          description: response code
+          enum:
+          - NOT_ALLOWED
+        details:
+          type: object
+          description: additional information
+          additionalProperties: false
+        message:
+          type: string
+          description: response message
+          enum:
+          - Record Level Sharing is not supported for this module
+        status:
+          type: string
+          description: response status
+          enum:
+          - error
+      additionalProperties: false
+      required:
+      - code
+      - details
+      - message
+      - status
     NotifyMembersWithoutFeeds:
       description: Notify Members Without Feeds - POST and PUT API
       type: object
@@ -13105,26 +12689,465 @@ components:
       - message
       - status
       additionalProperties: false
-    ErrorResponseCore1875045219:
+    RecordForbiddenErrorResponse:
+      description: Record Forbidden Error Response
+      type: object
+      properties:
+        code:
+          type: string
+          description: response code
+          enum:
+          - NO_PERMISSION
+        details:
+          type: object
+          description: additional information
+          properties:
+            permissions:
+              type: array
+              description: list of permissions that are missing
+              maxItems: 1
+              items:
+                type: string
+                description: permission which is missing
+                maxLength: 200
+          additionalProperties: false
+          required:
+          - permissions
+        message:
+          type: string
+          description: response message
+          enum:
+          - permission denied
+        status:
+          type: string
+          description: response status
+          enum:
+          - error
+      additionalProperties: false
+      required:
+      - code
+      - details
+      - message
+      - status
+    InvalidShareWithIdErrorResponse:
+      description: Invalid Share With User Id Error Response - POST and PUT API
+      type: object
+      properties:
+        share:
+          type: array
+          description: list of share record creation error responses
+          maxItems: 20
+          items:
+            type: object
+            description: share record creation error response details
+            properties:
+              code:
+                type: string
+                description: response code
+                enum:
+                - INVALID_DATA
+              details:
+                type: object
+                description: additional information
+                additionalProperties: false
+                properties:
+                  api_name:
+                    type: string
+                    description: name of the parameter which caused the error
+                    maxLength: 50
+                  json_path:
+                    type: string
+                    description: JSON path of the parameter which caused the error
+                    maxLength: 100
+                required:
+                - api_name
+                - json_path
+              message:
+                type: string
+                description: response message
+                enum:
+                - invalid data
+                - invalid user Id
+                - invalid role Id
+                - invalid group Id
+                - cannot share to the user
+              status:
+                type: string
+                description: response status
+                enum:
+                - error
+            additionalProperties: false
+            required:
+            - code
+            - details
+            - message
+            - status
+      additionalProperties: false
+      required:
+      - share
+    MandatoryNotFound:
+      description: Mandatory Not Found Error Response - POST and PUT API
+      type: object
+      properties:
+        share:
+          type: array
+          description: list of share record creation error responses
+          maxItems: 20
+          items:
+            type: object
+            description: share record creation error response details
+            properties:
+              code:
+                type: string
+                description: response code
+                enum:
+                - MANDATORY_NOT_FOUND
+              details:
+                type: object
+                description: additional information
+                additionalProperties: false
+                properties:
+                  api_name:
+                    type: string
+                    description: name of the parameter which caused the error
+                    maxLength: 50
+                  json_path:
+                    type: string
+                    description: JSON path of the parameter which caused the error
+                    maxLength: 100
+                required:
+                - api_name
+                - json_path
+              message:
+                type: string
+                description: response message
+                enum:
+                - required field not found
+              status:
+                type: string
+                description: response status
+                enum:
+                - error
+            additionalProperties: false
+            required:
+            - code
+            - details
+            - message
+            - status
+      additionalProperties: false
+    ViewParamWithManageValueErrorResponse:
+      description: View Param With Manage Value Error Response - GET API
+      type: object
+      properties:
+        code:
+          type: string
+          description: response code
+          enum:
+          - PATTERN_NOT_MATCHED
+        details:
+          type: object
+          description: additional information
+          properties:
+            api_name:
+              type: string
+              description: name of the parameter which caused the error(view)
+              enum:
+              - view
+          additionalProperties: false
+          required:
+          - api_name
+        message:
+          type: string
+          description: response message
+          enum:
+          - Please check whether the input values are correct
+        status:
+          type: string
+          description: response status
+          enum:
+          - error
+      additionalProperties: false
+      required:
+      - code
+      - details
+      - message
+      - status
+    MaximumLengthErrorResponse:
+      description: Maximum Length Error Response - POST and PUT API
+      type: object
+      properties:
+        code:
+          type: string
+          description: response code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          description: additional information
+          properties:
+            api_name:
+              type: string
+              description: name of the parameter which caused the error
+              enum:
+              - share
+            json_path:
+              type: string
+              description: JSON path of the parameter which caused the error
+              enum:
+              - $.share
+            maximum_length:
+              type: integer
+              description: maximum allowed length
+              format: int32
+          additionalProperties: false
+          required:
+          - api_name
+          - json_path
+          - maximum_length
+        message:
+          type: string
+          description: response message
+          enum:
+          - invalid data
+        status:
+          type: string
+          description: response status
+          enum:
+          - error
+      additionalProperties: false
+      required:
+      - code
+      - details
+      - message
+      - status
+    ShareLimitExceedErrorResponse:
+      description: Share Limit Exceed Error Response - POST and PUT API
+      type: object
+      properties:
+        share:
+          type: array
+          description: list of share record creation error responses
+          maxItems: 20
+          items:
+            type: object
+            description: share record creation error response details
+            properties:
+              code:
+                type: string
+                description: response code
+                enum:
+                - LIMIT_EXCEEDED
+              details:
+                type: object
+                description: additional information
+                properties:
+                  limit:
+                    type: integer
+                    description: maximum number of share records allowed
+                    format: int32
+                  api_name:
+                    type: string
+                    description: API name related to the share record limit
+                    enum:
+                    - type
+                  json_path:
+                    type: string
+                    description: JSON path of the parameter which caused the error
+                    maxLength: 100
+                additionalProperties: false
+              message:
+                type: string
+                description: response message
+                maxLength: 100
+              status:
+                type: string
+                description: response status
+                enum:
+                - error
+            additionalProperties: false
+            required:
+            - code
+            - details
+            - message
+            - status
+      additionalProperties: false
+      required:
+      - share
+    InvalidRecordIdErrorResponse:
+      description: Invalid Record Id Error Response - GET, DELETE API
+      type: object
+      properties:
+        code:
+          type: string
+          description: response code
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          description: additional information
+          properties:
+            resource_path_index:
+              type: integer
+              description: index of the resource path which caused the error
+              format: int32
+              default: 1
+          additionalProperties: false
+          required:
+          - resource_path_index
+        message:
+          type: string
+          description: response message
+          enum:
+          - ENTITY_ID_INVALID
+        status:
+          type: string
+          description: response status
+          enum:
+          - error
+      additionalProperties: false
+      required:
+      - code
+      - details
+      - message
+      - status
+    SchedularAlreadyRunningErrorResponse:
+      description: Schedular Already Running Error Response - POST and PUT API
+      type: object
+      properties:
+        code:
+          type: string
+          description: response code
+          enum:
+          - CANNOT_PROCESS
+        details:
+          type: object
+          description: additional information
+          additionalProperties: false
+        message:
+          type: string
+          description: response message
+          enum:
+          - Scheduler is running
+        status:
+          type: string
+          description: response status
+          enum:
+          - error
+      additionalProperties: false
+      required:
+      - code
+      - details
+      - message
+      - status
+    InvalidModuleNameErrorResponse:
+      description: Invalid Module Name Error Response - GET, DELETE API
+      type: object
+      properties:
+        code:
+          type: string
+          description: response code
+          enum:
+          - INVALID_MODULE
+        details:
+          type: object
+          description: additional information
+          properties:
+            resource_path_index:
+              type: integer
+              description: index of the resource path which caused the error
+              format: int32
+              default: 0
+          additionalProperties: false
+          required:
+          - resource_path_index
+        message:
+          type: string
+          description: response message
+          enum:
+          - the module name given seems to be invalid
+        status:
+          type: string
+          description: response status
+          enum:
+          - error
+      additionalProperties: false
+      required:
+      - code
+      - details
+      - message
+      - status
+    NoSharingAvailableToRevokeErrorResponse:
+      description: No Sharing Available To Revoke Error Response - DELETE API
+      type: object
+      properties:
+        code:
+          type: string
+          description: response code
+          enum:
+          - CANNOT_PROCESS
+        details:
+          type: object
+          description: additional information
+          additionalProperties: false
+        message:
+          type: string
+          description: response message
+          enum:
+          - No sharing through this record is available to revoke
+        status:
+          type: string
+          description: response status
+          enum:
+          - error
+      additionalProperties: false
+      required:
+      - code
+      - details
+      - message
+      - status
+    MappingMismatchErrorResponse:
       type: object
       additionalProperties: false
-      description: When invalid request method is given
+      description: When tag given in invalid data type
       properties:
         code:
           type: string
           description: Error code
           enum:
-          - INVALID_REQUEST_METHOD
+          - MAPPING_MISMATCH
         details:
           type: object
           additionalProperties: false
           description: Error details with validation information
-          properties: {}
+          properties:
+            mapped_field:
+              type: object
+              additionalProperties: false
+              description: Error mapped_field with validation information
+              properties:
+                api_name:
+                  type: string
+                  description: 'mapped_field field: api_name'
+                  maxLength: 255
+                json_path:
+                  type: string
+                  description: 'mapped_field field: json_path'
+                  maxLength: 1000
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
         message:
           type: string
           description: Error message
-          enum:
-          - The http request method type is not a valid one
+          maxLength: 255
         status:
           type: string
           description: Error status
@@ -13136,18 +13159,11 @@ components:
       - message
       - status
       title: Error Response Core
-    PostaddtagsResponse200:
+    PostremovetagsResponse200:
       type: object
       additionalProperties: false
-      description: success response when tags associated successfully to records
+      description: success response when tags removed from records successfully
       properties:
-        ids:
-          maxLength: 102
-          type: string
-          description: record ids
-        over_write:
-          type: boolean
-          description: over write tags value
         data:
           type: array
           description: 'Field: data'
@@ -13158,14 +13174,47 @@ components:
           type: string
           description: 'Field: locked_count'
           maxLength: 255
-        success_count:
+    ErrorResponseCore1161913208:
+      type: object
+      additionalProperties: false
+      description: When permission doesn't exists
+      properties:
+        code:
           type: string
-          description: 'Field: success_count'
-          maxLength: 255
-        tags:
-          maxLength: 255
+          description: Error code
+          enum:
+          - NO_PERMISSION
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            permissions:
+              type: array
+              description: 'Detail field: permissions'
+              items:
+                type: string
+                description: 'Detail Field: permissions'
+                maxLength: 255
+              maxItems: 25
+          required:
+          - permissions
+        message:
           type: string
-          description: root key
+          description: Error message
+          enum:
+          - permission denied
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
     ErrorResponseCore239878082:
       type: object
       additionalProperties: false
@@ -13202,77 +13251,6 @@ components:
           description: Error message
           enum:
           - Invalid data type
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    TagsNested:
-      type: object
-      additionalProperties: false
-      description: root key
-      properties:
-        name:
-          type:
-          - string
-          - 'null'
-          description: tag name
-          maxLength: 25
-        modified_time:
-          type:
-          - string
-          - 'null'
-          format: date-time
-          description: merged time
-          maxLength: 25
-        color_code:
-          type:
-          - string
-          - 'null'
-          description: tag color
-          maxLength: 7
-        conflict_id:
-          type:
-          - string
-          - 'null'
-          description: merged tag id
-          maxLength: 19
-    ErrorResponseCore1161913208:
-      type: object
-      additionalProperties: false
-      description: When permission doesn't exists
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - NO_PERMISSION
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            permissions:
-              type: array
-              description: 'Detail field: permissions'
-              items:
-                type: string
-                description: 'Detail Field: permissions'
-                maxLength: 255
-              maxItems: 25
-          required:
-          - permissions
-        message:
-          type: string
-          description: Error message
-          enum:
-          - permission denied
         status:
           type: string
           description: Error status
@@ -13357,84 +13335,62 @@ components:
       - message
       - status
       title: Error Response Core
-    ErrorResponseCore356490233:
+    PostaddtagsRequest:
       type: object
       additionalProperties: false
-      description: Auto-generated from ApiDefinition for INVALID_DATA
+      description: Request body schema
       properties:
-        code:
-          type: string
-          description: Error code
+        ids:
+          type:
+          - string
+          - 'null'
+          description: record ids
           enum:
-          - INVALID_DATA
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            maximum_length:
-              type: integer
-              format: int32
-              description: 'Detail field: maximum_length'
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-          - maximum_length
-        message:
-          type: string
-          description: Error message
-          enum:
-          - Invalid data
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
+          - '["3060320000002538026"]'
+          maxLength: 102
+        over_write:
+          type:
+          - boolean
+          - 'null'
+          description: tag over write true false value
+        tags:
+          type: array
+          description: root key (Required)
+          items:
+            $ref: '#/components/schemas/TagsNested'
+          maxItems: 3
       required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    ErrorResponseCore1273605641:
+      - tags
+    TagsNested:
       type: object
       additionalProperties: false
-      description: When the module name is valid but that doesn't have tags support
+      description: root key
       properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - INVALID_MODULE
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties: {}
-        message:
-          type: string
-          description: Error message
-          enum:
-          - the given module is not supported for this api
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
+        name:
+          type:
+          - string
+          - 'null'
+          description: tag name
+          maxLength: 25
+        modified_time:
+          type:
+          - string
+          - 'null'
+          format: date-time
+          description: merged time
+          maxLength: 25
+        color_code:
+          type:
+          - string
+          - 'null'
+          description: tag color
+          maxLength: 7
+        conflict_id:
+          type:
+          - string
+          - 'null'
+          description: merged tag id
+          maxLength: 19
     ErrorResponseCore1335454202:
       type: object
       additionalProperties: false
@@ -13466,172 +13422,27 @@ components:
       - message
       - status
       title: Error Response Core
-    DetailsNested_3:
+    PostremovetagsRequest:
       type: object
       additionalProperties: false
-      description: Nested schema for details
+      description: Request body schema
       properties:
-        modifiedTime:
-          type: string
-          description: Last modified time of the record
-          maxLength: 255
-        id:
-          type: string
-          description: 'Field: id'
-          maxLength: 255
-        affected_data:
-          type: 'null'
-          description: 'Field: affected_data'
-        tags:
-          type: array
-          description: 'Field: tags'
-          items:
-            $ref: '#/components/schemas/TagsNested1'
-          maxItems: 10
-    ErrorResponseCore94581445:
-      type: object
-      additionalProperties: false
-      description: 'Missing required parameter: module'
-      properties:
-        code:
-          type: string
-          description: Error code
-          enum:
-          - REQUIRED_PARAM_MISSING
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            param_name:
-              type: string
-              description: 'Detail field: param_name'
-              maxLength: 255
-          required:
-          - param_name
-        message:
-          type: string
-          description: Error message
-          enum:
-          - One of the expected param is missing
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
-      required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    PostremovetagsResponse200:
-      type: object
-      additionalProperties: false
-      description: success response when tags removed from records successfully
-      properties:
-        data:
-          type: array
-          description: 'Field: data'
-          items:
-            $ref: '#/components/schemas/DataNested'
-          maxItems: 20
-        locked_count:
-          type: string
-          description: 'Field: locked_count'
-          maxLength: 255
-    TagsNested1:
-      type: object
-      additionalProperties: false
-      description: Nested schema for tags
-      properties:
-        name:
-          type: string
-          description: tag name
-          maxLength: 255
-        id:
-          type: string
-          description: 'Field: id'
-          maxLength: 255
-        color_code:
+        ids:
           type:
           - string
           - 'null'
-          description: tag color
-          maxLength: 255
-    MappingMismatchErrorResponse:
-      type: object
-      additionalProperties: false
-      description: When tag given in invalid data type
-      properties:
-        code:
-          type: string
-          description: Error code
+          description: record ids
           enum:
-          - MAPPING_MISMATCH
-        details:
-          type: object
-          additionalProperties: false
-          description: Error details with validation information
-          properties:
-            mapped_field:
-              type: object
-              additionalProperties: false
-              description: Error mapped_field with validation information
-              properties:
-                api_name:
-                  type: string
-                  description: 'mapped_field field: api_name'
-                  maxLength: 255
-                json_path:
-                  type: string
-                  description: 'mapped_field field: json_path'
-                  maxLength: 1000
-            api_name:
-              type: string
-              description: 'Detail field: api_name'
-              maxLength: 255
-            json_path:
-              type: string
-              description: 'Detail field: json_path'
-              maxLength: 1000
-          required:
-          - api_name
-          - json_path
-        message:
-          type: string
-          description: Error message
-          maxLength: 255
-        status:
-          type: string
-          description: Error status
-          enum:
-          - error
+          - '["3060320000002496003"]'
+          maxLength: 99
+        tags:
+          type: array
+          description: root key (Required)
+          items:
+            $ref: '#/components/schemas/TagsNested'
+          maxItems: 1
       required:
-      - code
-      - details
-      - message
-      - status
-      title: Error Response Core
-    DataNested:
-      type: object
-      additionalProperties: false
-      description: Nested schema for data
-      properties:
-        code:
-          type: string
-          description: 'Field: code'
-          maxLength: 255
-        details:
-          $ref: '#/components/schemas/DetailsNested_3'
-        message:
-          type: string
-          description: 'Field: message'
-          maxLength: 255
-        status:
-          type: string
-          description: 'Field: status'
-          maxLength: 255
+      - tags
     ErrorResponseCore1799630392:
       type: object
       additionalProperties: false
@@ -13681,53 +13492,242 @@ components:
       - message
       - status
       title: Error Response Core
-    PostremovetagsRequest:
+    TagsNested1:
       type: object
       additionalProperties: false
-      description: Request body schema
+      description: Nested schema for tags
       properties:
-        ids:
+        name:
+          type: string
+          description: tag name
+          maxLength: 255
+        id:
+          type: string
+          description: 'Field: id'
+          maxLength: 255
+        color_code:
           type:
           - string
           - 'null'
-          description: record ids
+          description: tag color
+          maxLength: 255
+    ErrorResponseCore356490233:
+      type: object
+      additionalProperties: false
+      description: Auto-generated from ApiDefinition for INVALID_DATA
+      properties:
+        code:
+          type: string
+          description: Error code
           enum:
-          - '["3060320000002496003"]'
-          maxLength: 99
+          - INVALID_DATA
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            maximum_length:
+              type: integer
+              format: int32
+              description: 'Detail field: maximum_length'
+            api_name:
+              type: string
+              description: 'Detail field: api_name'
+              maxLength: 255
+            json_path:
+              type: string
+              description: 'Detail field: json_path'
+              maxLength: 1000
+          required:
+          - api_name
+          - json_path
+          - maximum_length
+        message:
+          type: string
+          description: Error message
+          enum:
+          - Invalid data
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    DetailsNested_3:
+      type: object
+      additionalProperties: false
+      description: Nested schema for details
+      properties:
+        modifiedTime:
+          type: string
+          description: Last modified time of the record
+          maxLength: 255
+        id:
+          type: string
+          description: 'Field: id'
+          maxLength: 255
+        affected_data:
+          type: 'null'
+          description: 'Field: affected_data'
         tags:
           type: array
-          description: root key (Required)
+          description: 'Field: tags'
           items:
-            $ref: '#/components/schemas/TagsNested'
-          maxItems: 1
-      required:
-      - tags
-    PostaddtagsRequest:
+            $ref: '#/components/schemas/TagsNested1'
+          maxItems: 10
+    ErrorResponseCore1273605641:
       type: object
       additionalProperties: false
-      description: Request body schema
+      description: When the module name is valid but that doesn't have tags support
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_MODULE
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties: {}
+        message:
+          type: string
+          description: Error message
+          enum:
+          - the given module is not supported for this api
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    DataNested:
+      type: object
+      additionalProperties: false
+      description: Nested schema for data
+      properties:
+        code:
+          type: string
+          description: 'Field: code'
+          maxLength: 255
+        details:
+          $ref: '#/components/schemas/DetailsNested_3'
+        message:
+          type: string
+          description: 'Field: message'
+          maxLength: 255
+        status:
+          type: string
+          description: 'Field: status'
+          maxLength: 255
+    ErrorResponseCore1875045219:
+      type: object
+      additionalProperties: false
+      description: When invalid request method is given
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - INVALID_REQUEST_METHOD
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties: {}
+        message:
+          type: string
+          description: Error message
+          enum:
+          - The http request method type is not a valid one
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
+      required:
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
+    PostaddtagsResponse200:
+      type: object
+      additionalProperties: false
+      description: success response when tags associated successfully to records
       properties:
         ids:
-          type:
-          - string
-          - 'null'
-          description: record ids
-          enum:
-          - '["3060320000002538026"]'
           maxLength: 102
+          type: string
+          description: record ids
         over_write:
-          type:
-          - boolean
-          - 'null'
-          description: tag over write true false value
-        tags:
+          type: boolean
+          description: over write tags value
+        data:
           type: array
-          description: root key (Required)
+          description: 'Field: data'
           items:
-            $ref: '#/components/schemas/TagsNested'
-          maxItems: 3
+            $ref: '#/components/schemas/DataNested'
+          maxItems: 20
+        locked_count:
+          type: string
+          description: 'Field: locked_count'
+          maxLength: 255
+        success_count:
+          type: string
+          description: 'Field: success_count'
+          maxLength: 255
+        tags:
+          maxLength: 255
+          type: string
+          description: root key
+    ErrorResponseCore94581445:
+      type: object
+      additionalProperties: false
+      description: 'Missing required parameter: module'
+      properties:
+        code:
+          type: string
+          description: Error code
+          enum:
+          - REQUIRED_PARAM_MISSING
+        details:
+          type: object
+          additionalProperties: false
+          description: Error details with validation information
+          properties:
+            param_name:
+              type: string
+              description: 'Detail field: param_name'
+              maxLength: 255
+          required:
+          - param_name
+        message:
+          type: string
+          description: Error message
+          enum:
+          - One of the expected param is missing
+        status:
+          type: string
+          description: Error status
+          enum:
+          - error
       required:
-      - tags
+      - code
+      - details
+      - message
+      - status
+      title: Error Response Core
     ErrorResponseCore833637355:
       type: object
       additionalProperties: false
@@ -13775,15 +13775,153 @@ components:
       - message
       - status
       title: Error Response Core
-    TerritoryErrorPermissionDenied:
+    NotSupportedForRemoveTerritoryRecord:
+      title: Territory Error Response
+      description: Schema for error responses returned during territory creation or update.
+      type: object
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: List of territories with their validation or processing status.
+          maxItems: 1
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Error or status code representing the outcome of the request.
+                enum:
+                - NOT_ALLOWED
+              details:
+                type: object
+                description: Additional contextual information about the error or status.
+                additionalProperties: false
+                properties:
+                  api_name:
+                    format: string
+                    type: string
+                    description: The API field name associated with the validation error.
+                    minLength: 1
+                  json_path:
+                    format: string
+                    type: string
+                    description: JSON path pointing to the field that caused the issue.
+                    minLength: 1
+                required:
+                - api_name
+                - json_path
+              message:
+                format: string
+                type: string
+                description: Detailed error message to help fix the validation issue.
+              status:
+                type: string
+                description: Indicates whether the operation failed or succeeded.
+                enum:
+                - error
+                - success
+                - failure
+            required:
+            - code
+            - details
+            - message
+            - status
+            description: Details of each territory error.
+      required:
+      - data
+    InvalidModule:
       type: object
       properties:
         code:
           type: string
           enum:
-          - FEATURE_NOT_ENABLED
-          - TERRITORY_DISABLED
-          - TERRITORY_NOT_ENABLED
+          - INVALID_MODULE
+          description: The `code` property.
+        details:
+          type: object
+          description: The `details` property.
+          properties:
+            resource_path_index:
+              format: int32
+              type: integer
+              description: Index in the resource path where the error occurred.
+          required:
+          - resource_path_index
+          additionalProperties: false
+        message:
+          type: string
+          description: The `message` property.
+          maxLength: 100
+        status:
+          type: string
+          enum:
+          - error
+          description: The `status` property.
+      required:
+      - code
+      - details
+      - message
+      - status
+      description: A `object` value.
+      additionalProperties: false
+    TerritoryAssignInvalidDataOnURL:
+      title: Record - Territory Error Response
+      description: Schema for error responses returned during territory creation or update.
+      type: object
+      additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: List of territories with their validation or processing status.
+          maxItems: 1
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Error or status code representing the outcome of the request.
+                enum:
+                - INVALID_DATA
+              details:
+                type: object
+                description: Additional contextual information about the error or status.
+                additionalProperties: false
+                properties:
+                  resource_path_index:
+                    format: int32
+                    type: integer
+                    description: Index in the resource path where the error occurred.
+                required:
+                - resource_path_index
+              message:
+                format: string
+                type: string
+                description: Detailed error message to help fix the validation issue.
+              status:
+                type: string
+                description: Indicates whether the operation failed or succeeded.
+                enum:
+                - error
+                - success
+                - failure
+            required:
+            - code
+            - details
+            - message
+            - status
+            description: Details of each territory error.
+      required:
+      - data
+    TerritoryInternalServerErrorSchema:
+      type: object
+      properties:
+        code:
+          type: string
+          enum:
+          - INTERNAL_SERVER_ERROR
           description: The `code` property.
         details:
           type: object
@@ -13805,64 +13943,7 @@ components:
       - status
       description: A `object` value.
       additionalProperties: false
-    TerritoryLimitExceededErrorSchema:
-      type: object
-      properties:
-        code:
-          type: string
-          enum:
-          - LIMIT_EXCEEDED
-          description: The `code` property.
-        details:
-          oneOf:
-          - type: object
-            properties:
-              limit:
-                type: integer
-                format: int32
-                description: The `limit` property.
-            required:
-            - limit
-            description: A `object` value.
-            additionalProperties: false
-          - type: object
-            properties:
-              api_name:
-                type: string
-                description: The `api_name` property.
-                maxLength: 100
-              json_path:
-                type: string
-                description: The `json_path` property.
-                maxLength: 100
-              limit:
-                type: integer
-                format: int32
-                description: The `limit` property.
-            required:
-            - api_name
-            - json_path
-            - limit
-            description: A `object` value.
-            additionalProperties: false
-          description: The `details` property.
-        message:
-          type: string
-          description: The `message` property.
-          maxLength: 100
-        status:
-          type: string
-          enum:
-          - error
-          description: The `status` property.
-      required:
-      - code
-      - details
-      - message
-      - status
-      description: A `object` value.
-      additionalProperties: false
-    TerritoryAssignRecordLocked:
+    TerritoryAssignDuplicateData:
       title: Record - Territory Error Response
       description: Schema for error responses returned during territory creation or update.
       type: object
@@ -13880,25 +13961,28 @@ components:
                 type: string
                 description: Error or status code representing the outcome of the request.
                 enum:
-                - RECORD_LOCKED
+                - DUPLICATE_DATA
               details:
                 type: object
                 description: Additional contextual information about the error or status.
                 additionalProperties: false
                 properties:
-                  action:
+                  api_name:
                     format: string
                     type: string
                     description: The API field name associated with the validation error.
-                    enum:
-                    - record_locking
+                    minLength: 1
+                  json_path:
+                    format: string
+                    type: string
+                    description: JSON path pointing to the field that caused the issue.
+                    minLength: 1
                 required:
-                - action
+                - api_name
+                - json_path
               message:
                 format: string
                 type: string
-                enum:
-                - Sorry, you cannot perform this operation as the record is locked.
                 description: Detailed error message to help fix the validation issue.
               status:
                 type: string
@@ -13971,62 +14055,15 @@ components:
             description: Details of each territory error.
       required:
       - data
-    TerritoryAssignNotSupported:
-      title: Record - Territory Error Response
-      description: Schema for error responses returned during territory creation or update.
-      type: object
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: List of territories with their validation or processing status.
-          maxItems: 1
-          items:
-            type: object
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Error or status code representing the outcome of the request.
-                enum:
-                - NOT_SUPPORTED
-              details:
-                type: object
-                description: Additional contextual information about the error or status.
-                additionalProperties: false
-                properties:
-                  resource_path_index:
-                    format: int32
-                    type: integer
-                    description: Index in the resource path where the error occurred.
-                required:
-                - resource_path_index
-              message:
-                format: string
-                type: string
-                description: Detailed error message to help fix the validation issue.
-              status:
-                type: string
-                description: Indicates whether the operation failed or succeeded.
-                enum:
-                - error
-                - success
-                - failure
-            required:
-            - code
-            - details
-            - message
-            - status
-            description: Details of each territory error.
-      required:
-      - data
-    TerritoryInternalServerErrorSchema:
+    TerritoryErrorPermissionDenied:
       type: object
       properties:
         code:
           type: string
           enum:
-          - INTERNAL_SERVER_ERROR
+          - FEATURE_NOT_ENABLED
+          - TERRITORY_DISABLED
+          - TERRITORY_NOT_ENABLED
           description: The `code` property.
         details:
           type: object
@@ -14157,111 +14194,56 @@ components:
       - data
       description: A `object` value.
       additionalProperties: false
-    NotSupportedForRemoveTerritoryRecord:
-      title: Territory Error Response
-      description: Schema for error responses returned during territory creation or update.
-      type: object
-      additionalProperties: false
-      properties:
-        data:
-          type: array
-          description: List of territories with their validation or processing status.
-          maxItems: 1
-          items:
-            type: object
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Error or status code representing the outcome of the request.
-                enum:
-                - NOT_ALLOWED
-              details:
-                type: object
-                description: Additional contextual information about the error or status.
-                additionalProperties: false
-                properties:
-                  api_name:
-                    format: string
-                    type: string
-                    description: The API field name associated with the validation error.
-                    minLength: 1
-                  json_path:
-                    format: string
-                    type: string
-                    description: JSON path pointing to the field that caused the issue.
-                    minLength: 1
-                required:
-                - api_name
-                - json_path
-              message:
-                format: string
-                type: string
-                description: Detailed error message to help fix the validation issue.
-              status:
-                type: string
-                description: Indicates whether the operation failed or succeeded.
-                enum:
-                - error
-                - success
-                - failure
-            required:
-            - code
-            - details
-            - message
-            - status
-            description: Details of each territory error.
-      required:
-      - data
-    TerritoryAssignInvalidDataOnURL:
+    TerritoryAssignInvalidDataMaxLen:
       title: Record - Territory Error Response
       description: Schema for error responses returned during territory creation or update.
       type: object
       additionalProperties: false
       properties:
-        data:
-          type: array
-          description: List of territories with their validation or processing status.
-          maxItems: 1
-          items:
-            type: object
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Error or status code representing the outcome of the request.
-                enum:
-                - INVALID_DATA
-              details:
-                type: object
-                description: Additional contextual information about the error or status.
-                additionalProperties: false
-                properties:
-                  resource_path_index:
-                    format: int32
-                    type: integer
-                    description: Index in the resource path where the error occurred.
-                required:
-                - resource_path_index
-              message:
-                format: string
-                type: string
-                description: Detailed error message to help fix the validation issue.
-              status:
-                type: string
-                description: Indicates whether the operation failed or succeeded.
-                enum:
-                - error
-                - success
-                - failure
-            required:
-            - code
-            - details
-            - message
-            - status
-            description: Details of each territory error.
+        code:
+          type: string
+          description: Error or status code representing the outcome of the request.
+          enum:
+          - INVALID_DATA
+        details:
+          type: object
+          description: Additional contextual information about the error or status.
+          additionalProperties: false
+          properties:
+            api_name:
+              format: string
+              type: string
+              description: The API field name associated with the validation error.
+              minLength: 1
+            json_path:
+              format: string
+              type: string
+              description: JSON path pointing to the field that caused the issue.
+              minLength: 1
+            maximum_length:
+              format: int32
+              type: integer
+              description: Index in the resource path where the error occurred.
+          required:
+          - api_name
+          - json_path
+          - maximum_length
+        message:
+          format: string
+          type: string
+          description: Detailed error message to help fix the validation issue.
+        status:
+          type: string
+          description: Indicates whether the operation failed or succeeded.
+          enum:
+          - error
+          - success
+          - failure
       required:
-      - data
+      - code
+      - message
+      - details
+      - status
     TerritoryAssignInvalidDataTerritoryId:
       title: Record - Territory Error Response
       description: Schema for error responses returned during territory creation or update.
@@ -14318,57 +14300,7 @@ components:
             description: Details of each territory error.
       required:
       - data
-    TerritoryAssignInvalidDataMaxLen:
-      title: Record - Territory Error Response
-      description: Schema for error responses returned during territory creation or update.
-      type: object
-      additionalProperties: false
-      properties:
-        code:
-          type: string
-          description: Error or status code representing the outcome of the request.
-          enum:
-          - INVALID_DATA
-        details:
-          type: object
-          description: Additional contextual information about the error or status.
-          additionalProperties: false
-          properties:
-            api_name:
-              format: string
-              type: string
-              description: The API field name associated with the validation error.
-              minLength: 1
-            json_path:
-              format: string
-              type: string
-              description: JSON path pointing to the field that caused the issue.
-              minLength: 1
-            maximum_length:
-              format: int32
-              type: integer
-              description: Index in the resource path where the error occurred.
-          required:
-          - api_name
-          - json_path
-          - maximum_length
-        message:
-          format: string
-          type: string
-          description: Detailed error message to help fix the validation issue.
-        status:
-          type: string
-          description: Indicates whether the operation failed or succeeded.
-          enum:
-          - error
-          - success
-          - failure
-      required:
-      - code
-      - message
-      - details
-      - status
-    TerritoryAssignDuplicateData:
+    TerritoryAssignNotSupported:
       title: Record - Territory Error Response
       description: Schema for error responses returned during territory creation or update.
       type: object
@@ -14386,25 +14318,18 @@ components:
                 type: string
                 description: Error or status code representing the outcome of the request.
                 enum:
-                - DUPLICATE_DATA
+                - NOT_SUPPORTED
               details:
                 type: object
                 description: Additional contextual information about the error or status.
                 additionalProperties: false
                 properties:
-                  api_name:
-                    format: string
-                    type: string
-                    description: The API field name associated with the validation error.
-                    minLength: 1
-                  json_path:
-                    format: string
-                    type: string
-                    description: JSON path pointing to the field that caused the issue.
-                    minLength: 1
+                  resource_path_index:
+                    format: int32
+                    type: integer
+                    description: Index in the resource path where the error occurred.
                 required:
-                - api_name
-                - json_path
+                - resource_path_index
               message:
                 format: string
                 type: string
@@ -14424,6 +14349,63 @@ components:
             description: Details of each territory error.
       required:
       - data
+    TerritoryLimitExceededErrorSchema:
+      type: object
+      properties:
+        code:
+          type: string
+          enum:
+          - LIMIT_EXCEEDED
+          description: The `code` property.
+        details:
+          oneOf:
+          - type: object
+            properties:
+              limit:
+                type: integer
+                format: int32
+                description: The `limit` property.
+            required:
+            - limit
+            description: A `object` value.
+            additionalProperties: false
+          - type: object
+            properties:
+              api_name:
+                type: string
+                description: The `api_name` property.
+                maxLength: 100
+              json_path:
+                type: string
+                description: The `json_path` property.
+                maxLength: 100
+              limit:
+                type: integer
+                format: int32
+                description: The `limit` property.
+            required:
+            - api_name
+            - json_path
+            - limit
+            description: A `object` value.
+            additionalProperties: false
+          description: The `details` property.
+        message:
+          type: string
+          description: The `message` property.
+          maxLength: 100
+        status:
+          type: string
+          enum:
+          - error
+          description: The `status` property.
+      required:
+      - code
+      - details
+      - message
+      - status
+      description: A `object` value.
+      additionalProperties: false
     TerritoryAssignNoPermission:
       title: Record - Territory Error Response
       description: Schema for error responses returned during territory creation or update.
@@ -14480,41 +14462,59 @@ components:
             description: Details of each territory error.
       required:
       - data
-    InvalidModule:
+    TerritoryAssignRecordLocked:
+      title: Record - Territory Error Response
+      description: Schema for error responses returned during territory creation or update.
       type: object
-      properties:
-        code:
-          type: string
-          enum:
-          - INVALID_MODULE
-          description: The `code` property.
-        details:
-          type: object
-          description: The `details` property.
-          properties:
-            resource_path_index:
-              format: int32
-              type: integer
-              description: Index in the resource path where the error occurred.
-          required:
-          - resource_path_index
-          additionalProperties: false
-        message:
-          type: string
-          description: The `message` property.
-          maxLength: 100
-        status:
-          type: string
-          enum:
-          - error
-          description: The `status` property.
-      required:
-      - code
-      - details
-      - message
-      - status
-      description: A `object` value.
       additionalProperties: false
+      properties:
+        data:
+          type: array
+          description: List of territories with their validation or processing status.
+          maxItems: 1
+          items:
+            type: object
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Error or status code representing the outcome of the request.
+                enum:
+                - RECORD_LOCKED
+              details:
+                type: object
+                description: Additional contextual information about the error or status.
+                additionalProperties: false
+                properties:
+                  action:
+                    format: string
+                    type: string
+                    description: The API field name associated with the validation error.
+                    enum:
+                    - record_locking
+                required:
+                - action
+              message:
+                format: string
+                type: string
+                enum:
+                - Sorry, you cannot perform this operation as the record is locked.
+                description: Detailed error message to help fix the validation issue.
+              status:
+                type: string
+                description: Indicates whether the operation failed or succeeded.
+                enum:
+                - error
+                - success
+                - failure
+            required:
+            - code
+            - details
+            - message
+            - status
+            description: Details of each territory error.
+      required:
+      - data
   parameters:
     Module:
       name: module
@@ -14547,6 +14547,14 @@ components:
         type: string
         maxLength: 1000
       description: A single string containing a comma-separated list of rich text field API names to fetch.
+    ModuleApiName:
+      name: moduleApiName
+      in: path
+      required: true
+      description: The module API name of the record (e.g. Leads, Contacts, Deals, Accounts, Services__s, Price_Books)
+      schema:
+        type: string
+        maxLength: 50
     Id:
       name: id
       in: path
@@ -14557,14 +14565,6 @@ components:
         pattern: ^[0-9]+$
         minLength: 1
         maxLength: 20
-    ModuleApiName:
-      name: moduleApiName
-      in: path
-      required: true
-      description: The module API name of the record (e.g. Leads, Contacts, Deals, Accounts, Services__s, Price_Books)
-      schema:
-        type: string
-        maxLength: 50
     Ids:
       name: ids
       in: query
@@ -14573,6 +14573,16 @@ components:
         type: string
         format: int64
       description: A single string containing a comma-separated list of valid record IDs. The maximum number of IDs allowed is 200.
+    JobId:
+      name: job_id
+      in: query
+      required: false
+      description: Optional job ID to track specific merge operation status
+      schema:
+        type: string
+        description: Unique identifier for merge job
+        pattern: ^[0-9]+$
+        maxLength: 50
     MasterRecordId:
       name: masterRecordId
       in: path
@@ -14598,16 +14608,6 @@ components:
         - Deals
         - Cases
         - Campaigns
-    JobId:
-      name: job_id
-      in: query
-      required: false
-      description: Optional job ID to track specific merge operation status
-      schema:
-        type: string
-        description: Unique identifier for merge job
-        pattern: ^[0-9]+$
-        maxLength: 50
     ModuleApiName_2:
       name: moduleApiName
       in: path
@@ -14628,6 +14628,14 @@ components:
         pattern: ^[0-9a-fA-F-]+$
         minLength: 1
         maxLength: 50
+    Id_2:
+      name: id
+      description: Unique ID of the source module
+      in: path
+      required: true
+      schema:
+        type: string
+        maxLength: 255
     ModuleApiName_3:
       name: moduleApiName
       description: Module API of the source module
@@ -14638,14 +14646,6 @@ components:
         enum:
         - Quotes
         - Sales_Orders
-    Id_2:
-      name: id
-      description: Unique ID of the source module
-      in: path
-      required: true
-      schema:
-        type: string
-        maxLength: 255
     ParamPathRecordId:
       name: recordId
       in: path
@@ -14801,15 +14801,6 @@ components:
         - '1034369001076415228'
         - '1034369001076415230'
         - '1034369001076415231'
-    Id_4:
-      name: id
-      in: path
-      description: The unique ID of the record
-      required: true
-      schema:
-        type: string
-        maxLength: 100
-        description: Record ID
     ModuleName:
       name: moduleName
       in: path
@@ -14819,11 +14810,20 @@ components:
         type: string
         maxLength: 100
         description: Module API name
-    SharedTo:
-      name: sharedTo
-      description: To specify to whom the record is shared
-      in: query
-      required: false
+    Id_4:
+      name: id
+      in: path
+      description: The unique ID of the record
+      required: true
+      schema:
+        type: string
+        maxLength: 100
+        description: Record ID
+    RecordId_3:
+      name: recordId
+      description: ID of the record
+      in: path
+      required: true
       schema:
         type: string
         maxLength: 20
@@ -14835,14 +14835,6 @@ components:
       schema:
         type: string
         maxLength: 100
-    RecordId_3:
-      name: recordId
-      description: ID of the record
-      in: path
-      required: true
-      schema:
-        type: string
-        maxLength: 20
     View:
       name: view
       description: To get the summary of share records
@@ -14853,6 +14845,14 @@ components:
         enum:
         - manage
         - summary
+    SharedTo:
+      name: sharedTo
+      description: To specify to whom the record is shared
+      in: query
+      required: false
+      schema:
+        type: string
+        maxLength: 20
     ParamPathId:
       name: id
       in: path
@@ -14861,23 +14861,6 @@ components:
       schema:
         maxLength: 19
         type: string
-    ParamPathModule:
-      name: module
-      in: path
-      description: 'Path parameter: module'
-      required: true
-      schema:
-        maxLength: 50
-        type: string
-    ParamQueryModule:
-      name: module
-      in: query
-      description: module api name
-      required: true
-      schema:
-        type: string
-        enum:
-        - module_api_name
     ParamQueryModule1:
       name: module
       in: query
@@ -14887,6 +14870,32 @@ components:
         type: string
         enum:
         - module_api_name
+    ParamQueryModule:
+      name: module
+      in: query
+      description: module api name
+      required: true
+      schema:
+        type: string
+        enum:
+        - module_api_name
+    ParamPathModule:
+      name: module
+      in: path
+      description: 'Path parameter: module'
+      required: true
+      schema:
+        maxLength: 50
+        type: string
+    Record_3:
+      name: record
+      in: path
+      required: true
+      schema:
+        type: string
+        description: The `schema` field of type `string`.
+        maxLength: 100
+      description: Parameter `record` in `path`.
     Module_9:
       name: module
       in: path
@@ -14900,15 +14909,14 @@ components:
         - Accounts
         description: The `schema` field of type `string`.
       description: Parameter `module` in `path`.
-    Record_3:
-      name: record
+    Id_5:
+      name: id
       in: path
+      description: The record ID
       required: true
       schema:
         type: string
-        description: The `schema` field of type `string`.
-        maxLength: 100
-      description: Parameter `record` in `path`.
+        maxLength: 50
     Module_10:
       name: module
       in: path
@@ -14918,17 +14926,40 @@ components:
         type: string
         enum:
         - Leads
-    Id_5:
-      name: id
-      in: path
-      description: The record ID
-      required: true
-      schema:
-        type: string
-        maxLength: 50
   responses:
     NoContentResponse:
       description: No record found for the specified record id
+    InternalServerError:
+      description: Internal Server Error
+      content:
+        application/json:
+          schema:
+            type: object
+            description: Internal server error response object containing code, message, details, and status.
+            additionalProperties: false
+            properties:
+              code:
+                type: string
+                description: Error code indicating the type of error.
+                maxLength: 500
+              message:
+                type: string
+                description: Human-readable error message.
+                maxLength: 500
+              details:
+                type: object
+                description: Additional details about the error.
+                additionalProperties: true
+              status:
+                type: string
+                description: Status of the error response.
+                enum:
+                - error
+            required:
+            - code
+            - message
+            - details
+            - status
     UnauthorizedError:
       description: Unauthorized. The request requires valid authentication or a valid OAuth scope.
       content:
@@ -14990,45 +15021,14 @@ components:
               - details
               - message
               - status
-    InternalServerError:
-      description: Internal Server Error
-      content:
-        application/json:
-          schema:
-            type: object
-            description: Internal server error response object containing code, message, details, and status.
-            additionalProperties: false
-            properties:
-              code:
-                type: string
-                description: Error code indicating the type of error.
-                maxLength: 500
-              message:
-                type: string
-                description: Human-readable error message.
-                maxLength: 500
-              details:
-                type: object
-                description: Additional details about the error.
-                additionalProperties: true
-              status:
-                type: string
-                description: Status of the error response.
-                enum:
-                - error
-            required:
-            - code
-            - message
-            - details
-            - status
     TooManyRequests:
       description: Rate limit exceeded.
       content:
         application/json:
           schema:
             $ref: '#/components/schemas/ErrorResponse_3'
-    Unauthorized:
-      description: Unauthorized.
+    InternalServerError_2:
+      description: Unexpected server error.
       content:
         application/json:
           schema:
@@ -15050,12 +15050,6 @@ components:
                   maxItems: 50
                   items:
                     $ref: '#/components/schemas/ErrorResponse_3'
-    InternalServerError_2:
-      description: Unexpected server error.
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/ErrorResponse_3'
     MultiStatus:
       description: Partial success in creating notification channels.
       content:
@@ -15094,6 +15088,12 @@ components:
                         enum:
                         - success
                   - $ref: '#/components/schemas/ErrorResponse_3'
+    Unauthorized:
+      description: Unauthorized.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/ErrorResponse_3'
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

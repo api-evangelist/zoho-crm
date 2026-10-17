@@ -593,65 +593,35 @@ components:
       type: string
       maxLength: 120
       description: Reference value of the picklist field.
-    PickListDisplayValue:
+    ModuleName:
       type: string
-      maxLength: 120
-      description: The picklist display value(translated value if translation enabled).
+      description: Name of the module
+      maxLength: 100
     FieldLabel:
       type: string
       description: Name of the field label.
       maxLength: 100
+    ModulepluralLabel:
+      type: string
+      description: Plural label of the module.
+      maxLength: 25
+    LayoutName:
+      type: string
+      description: Name of the layout
+      maxLength: 50
+    PickListDisplayValue:
+      type: string
+      maxLength: 120
+      description: The picklist display value(translated value if translation enabled).
+    Id:
+      type: string
+      description: Id of the resource.
+      format: int64
     ApiName:
       type: string
       description: API name of the resource. It will start with alphabets and can contain alphanumeric characters and underscores.
       pattern: ^[A-Za-z][A-Za-z0-9_]*$
       maxLength: 50
-    Id:
-      type: string
-      description: Id of the resource.
-      format: int64
-    ModuleName:
-      type: string
-      description: Name of the module
-      maxLength: 100
-    LayoutName:
-      type: string
-      description: Name of the layout
-      maxLength: 50
-    ModulepluralLabel:
-      type: string
-      description: Plural label of the module.
-      maxLength: 25
-  parameters:
-    Page:
-      name: page
-      in: query
-      required: false
-      description: 'Page number (positive integer). Default: 1.'
-      schema:
-        type: integer
-        format: int32
-        minimum: 1
-        default: 1
-    Id:
-      name: id
-      in: path
-      required: true
-      description: Numeric id of the resource.
-      schema:
-        type: string
-        format: int64
-    PerPage:
-      name: per_page
-      in: query
-      required: false
-      description: 'Number of records per page. Default and maximum: 200.'
-      schema:
-        type: integer
-        minimum: 1
-        maximum: 200
-        default: 200
-        format: int64
   responses:
     Forbidden:
       description: Forbidden
@@ -726,6 +696,36 @@ components:
             - details
             - status
             additionalProperties: false
+  parameters:
+    Id:
+      name: id
+      in: path
+      required: true
+      description: Numeric id of the resource.
+      schema:
+        type: string
+        format: int64
+    PerPage:
+      name: per_page
+      in: query
+      required: false
+      description: 'Number of records per page. Default and maximum: 200.'
+      schema:
+        type: integer
+        minimum: 1
+        maximum: 200
+        default: 200
+        format: int64
+    Page:
+      name: page
+      in: query
+      required: false
+      description: 'Page number (positive integer). Default: 1.'
+      schema:
+        type: integer
+        format: int32
+        minimum: 1
+        default: 1
   securitySchemes:
     iam-oauth2-schema:
       type: oauth2

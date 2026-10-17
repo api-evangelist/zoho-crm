@@ -652,17 +652,16 @@ paths:
       - Zia Org Enrichment
 components:
   parameters:
-    Perpage:
-      name: per_page
+    Sortby:
+      name: sort_by
       in: query
       required: false
-      description: Number of records per page.
+      description: Field to sort by.
       schema:
-        type: integer
-        format: int32
+        type: string
         enum:
-        - 100
-        description: Integer specifying the number of records per page.
+        - created_time
+        description: String specifying the field used for sorting.
     Status:
       name: status
       in: query
@@ -676,6 +675,36 @@ components:
         - DATA_NOT_FOUND
         - SCHEDULED
         description: String to filter records by their enrichment status.
+    ZiaOrgEnrichmentId:
+      name: id
+      in: path
+      required: true
+      description: The unique identifier of the Zia Org Enrichment record
+      schema:
+        type: string
+        maxLength: 255
+    Perpage:
+      name: per_page
+      in: query
+      required: false
+      description: Number of records per page.
+      schema:
+        type: integer
+        format: int32
+        enum:
+        - 100
+        description: Integer specifying the number of records per page.
+    Sortorder:
+      name: sort_order
+      in: query
+      required: false
+      description: Sort order (ascending or descending).
+      schema:
+        type: string
+        enum:
+        - asc
+        - desc
+        description: 'String indicating sort order: ''asc'' or ''desc''.'
     Page:
       name: page
       in: query
@@ -688,35 +717,6 @@ components:
         - 1
         - 2
         description: Integer specifying the page number for paginated results.
-    Sortorder:
-      name: sort_order
-      in: query
-      required: false
-      description: Sort order (ascending or descending).
-      schema:
-        type: string
-        enum:
-        - asc
-        - desc
-        description: 'String indicating sort order: ''asc'' or ''desc''.'
-    Sortby:
-      name: sort_by
-      in: query
-      required: false
-      description: Field to sort by.
-      schema:
-        type: string
-        enum:
-        - created_time
-        description: String specifying the field used for sorting.
-    ZiaOrgEnrichmentId:
-      name: id
-      in: path
-      required: true
-      description: The unique identifier of the Zia Org Enrichment record
-      schema:
-        type: string
-        maxLength: 255
   schemas:
     NoPermission:
       type: object
