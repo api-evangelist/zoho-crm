@@ -1507,7 +1507,7 @@
     - alpha
     in_cloud: true
     builder: unknown (community connector; contributor not in the record)
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: zoho-crm-fivetran
   label: Fivetran
@@ -1533,7 +1533,7 @@
     - connectors/applications/zoho-crm
     vendor_link: https://www.zoho.com/crm/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
 - slug: zoho-crm-meltano
   label: Meltano
@@ -1562,5 +1562,5 @@
     quality:
     - silver
     builder: 'community (Meltano Hub variant maintainers: airbyte)'
-  status: pending-partner-spec
+  status: not-a-workflow
   arazzo: null
