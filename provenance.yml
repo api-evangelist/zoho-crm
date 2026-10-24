@@ -39,127 +39,220 @@ artifacts:
   front-door-ai/2026-09-17.yml:
     method: unknown
     evidence: no authorship recorded
-  kin/checks-2026-09-24T161608.yml:
+  hosts/zoho-crm-hosts.yml:
+    method: derived
+    evidence: declared in the artifact
+  integrations/_index.yml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T125852.yml:
+    evidence: carries an API Evangelist house phrase
+  integrations/zoho-crm-calendly-invitee-to-module-entry-phrasing-overlay.yaml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T133943.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-calendly-invitee-to-module-entry.yml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T143147.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-facebook-lead-ads-new-lead-to-contact-phrasing-overlay.yaml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-25T154045.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-facebook-lead-ads-new-lead-to-contact.yml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-26T215308.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-google-ads-contact-offline-conversion-phrasing-overlay.yaml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T094438.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-google-ads-contact-offline-conversion.yml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T103455.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-google-ads-contacts-to-customer-list-phrasing-overlay.yaml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T123021.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-google-ads-contacts-to-customer-list.yml:
+    method: unknown
+    evidence: no authorship recorded
+  integrations/zoho-crm-google-ads-lead-form-to-module-entry-phrasing-overlay.yaml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T132314.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-google-ads-lead-form-to-module-entry.yml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-27T140727.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-google-ads-lead-offline-conversion-phrasing-overlay.yaml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-28T221322.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-google-ads-lead-offline-conversion.yml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T213958.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-google-ads-leads-to-customer-list-phrasing-overlay.yaml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-29T230545.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-google-ads-leads-to-customer-list.yml:
+    method: unknown
+    evidence: no authorship recorded
+  integrations/zoho-crm-integration-edges.yml:
+    method: searched
+    evidence: declared in the artifact
+  integrations/zoho-crm-integration-map.yml:
+    method: unknown
+    evidence: no authorship recorded
+  integrations/zoho-crm-supaglue-integration-overlay.yaml:
+    method: derived
+    evidence: declared in the artifact
+  integrations/zoho-crm-unbounce-form-submission-to-lead-phrasing-overlay.yaml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T203505.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-unbounce-form-submission-to-lead.yml:
     method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-30T220315.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-08-31T223420.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T063623.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T210448.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-01T222808.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-02T224043.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T161828.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-03T174231.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T062714.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T212454.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-04T224856.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T055819.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T072335.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T144739.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T195450.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-05T211839.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T011047.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T211804.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-06T224210.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T200636.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-07T213054.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T214843.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-08T232836.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T204815.yml:
-    method: generated
-    evidence: Kin Score snapshot written by score.rb
-  kin/score-2026-09-10T222408.yml:
+    evidence: declared in the artifact
+  integrations/zoho-crm-zoho-integration-overlay.yaml:
+    method: derived
+    evidence: declared in the artifact
+  json-ld/zoho-crm-context.jsonld:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-action-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-api-name-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-attachment-list-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-attachment-success-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-bulk-operation-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-conversion-request-wrapper-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-conversion-scheduled-wrapper-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-conversion-success-wrapper-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-coql-field-schema-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-data-error-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-delete-relations-success-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-delete207-success-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-error-response-core1168955151-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-error-response-core1544688711-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-error-response-core2137699283-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-error-response-core297287888-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-field-label-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-field-request-body-schema-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-field-schema-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-field-update-request-body-schema-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-getservicess-response200-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-getworkflowconfigurations-response200-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-holidays-success-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-id-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-info-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-moduleplural-label-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-org-details-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-pick-list-display-value-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-pick-list-reference-value-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-post207multistatus-response207-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-postappointmentss-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-postservicess-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-record-getsucess-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-record-success-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-records-input-schema-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-related-list-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-send-mail-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-success-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-territory-get-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-territory-getschema-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-territory-schedueled-success-code-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-update-layout-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-update-layout-success-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-upsert-relations-request-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-upsert-relations-success-response-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-user-details-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-user-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  json-schema/zoho-crm-validation-error-wrapper-schema.json:
+    method: unknown
+    evidence: no authorship recorded
+  kin/checks-2026-10-11T110117.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
   kin/score-2026-09-12T062655.yml:
@@ -243,17 +336,32 @@ artifacts:
   kin/score-2026-09-24T161608.yml:
     method: generated
     evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T210408.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-09-25T232841.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T000835.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-03T024842.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
+  kin/score-2026-10-11T110117.yml:
+    method: generated
+    evidence: Kin Score snapshot written by score.rb
   lifecycle/zoho-crm-lifecycle.yml:
     method: searched
     evidence: declared in the artifact
+  llms/zoho-crm-llms-provenance.yml:
+    method: searched
+    evidence: 'derive-llms-provenance.py: harvested'
   llms/zoho-crm-llms.txt:
-    method: generated
-    evidence: carries an API Evangelist house phrase
+    method: searched
+    evidence: 'derive-llms-provenance.py: harvested'
   mcp/zoho-crm-mcp.yml:
     method: searched
-    evidence: declared in the artifact
-  mcp/zoho-crm-tool-crosswalk.yml:
-    method: derived
     evidence: declared in the artifact
   openapi/_original/zoho-crm-apis-openapi.json:
     method: harvested
@@ -783,319 +891,427 @@ artifacts:
   openapi/zoho-crm-zoho-crm-related-records-api-api-openapi.yml:
     method: derived
     evidence: paths are a subset of openapi/_original/ (split from the harvested spec)
+  overlays/zoho-crm-actions-api-phrasing-overlay.yaml:
+    method: generated
+    evidence: declared in the artifact
+  overlays/zoho-crm-apis-api-phrasing-overlay.yaml:
+    method: generated
+    evidence: declared in the artifact
   overlays/zoho-crm-apis-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-appointment-preference-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-appointments-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-appointments-s-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-assignment-rules-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-associate-email-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-attachments-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-attachments-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-audit-log-export-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-available-currencies-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-bulk-read-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-bulk-write-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-business-hours-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-cadences-execution-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-cadences-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-call-preferences-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-cancel-meetings-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-change-owner-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-composite-requests-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-composite-requests-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-contact-roles-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-contact-roles-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-contacts-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-conversion-option-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-convert-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-coql-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-coql-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-currencies-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-custom-views-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-data-sharing-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-deal-contact-roles-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-deal-link-emails-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-deleted-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-download-attachments-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-download-inline-images-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-duplicate-check-preference-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-email-drafts-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-email-drafts-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-email-templates-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-emails-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
-  overlays/zoho-crm-email-templates-overlay.yaml:
+  overlays/zoho-crm-emails-sharing-details-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-emails-sharing-details-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-events-api-phrasing-overlay.yaml:
+    method: generated
+    evidence: declared in the artifact
+  overlays/zoho-crm-features-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-features-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-fetch-full-data-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-field-updates-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-fields-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-files-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-files-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-find-and-merge-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-fiscal-year-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-from-addresses-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-get-related-records-count-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-global-picklists-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-global-picklists-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-holidays-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-holidays-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-inventory-convert-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-inventory-templates-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-layouts-activate-deactivate-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-layouts-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-layouts-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-leads-api-phrasing-overlay.yaml:
+    method: generated
+    evidence: declared in the artifact
+  overlays/zoho-crm-locking-information-s-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-locking-informations-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-mail-merge-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-map-dependency-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-mass-change-owner-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-mass-convert-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-mass-delete-cvid-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-mass-delete-tags-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-mass-update-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-module-search-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-modules-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-notes-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-notes-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-notifications-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-org-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-org-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-org-photo-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-ownership-history-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-photo-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-pick-list-values-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-pipeline-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-portal-user-type-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-portal-users-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-portals-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-profiles-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-read-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-record-count-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-record-locking-configurations-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-record-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-record-photo-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-record-share-email-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-records-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-recycle-bin-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-related-lists-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-related-notes-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-related-records-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-roles-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-scoring-rules-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-search-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-send-mail-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-service-preference-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-services-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-services-s-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
-  overlays/zoho-crm-services-overlay.yaml:
+  overlays/zoho-crm-settings-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-share-records-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-shift-hours-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-tags-actions-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-tags-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-territories-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-territory-users-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-timeline-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-timelines-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-unblock-email-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-unsubscribe-links-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-upload-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-upload-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-upsert-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-user-groups-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-users-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-users-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-users-territories-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-users-transfer-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-variable-groups-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-variables-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-webhooks-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-wizards-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-workflow-configurations-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-workflow-configurations-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-workflow-rules-overlay.yaml:
-    method: generated
-    evidence: declared in the artifact
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
   overlays/zoho-crm-workflow-tasks-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-write-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-zia-enrichment-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-zia-org-enrichment-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   overlays/zoho-crm-zia-org-enrichment-overlay.yaml:
+    method: derived
+    evidence: an API Evangelist overlay (title) over the provider's contract
+  overlays/zoho-crm-zoho-crm-related-records-api-api-phrasing-overlay.yaml:
     method: generated
     evidence: declared in the artifact
   packages/zoho-crm-packages.yml:
@@ -1107,7 +1323,13 @@ artifacts:
   rate-limits/zoho-crm-rate-limits.yml:
     method: searched
     evidence: declared in the artifact
+  regulatory/zoho-crm-regulatory-posture.yml:
+    method: searched
+    evidence: declared in the artifact
   rules/zoho-crm-asyncapi-spectral-rules.yml:
+    method: generated
+    evidence: declared in the artifact
+  rules/zoho-crm-rules.yml:
     method: generated
     evidence: declared in the artifact
   sandbox/zoho-crm-sandbox.yml:
@@ -1146,6 +1368,12 @@ artifacts:
   skills/zoho-crm-subscribe-to-record-notifications.md:
     method: unknown
     evidence: no authorship recorded
+  vendors/zoho-crm-vendors.yml:
+    method: unknown
+    evidence: no authorship recorded
+  vocabulary/zoho-crm-vocabulary.yml:
+    method: derived
+    evidence: declared in the artifact
   well-known/zoho-crm-openid-configuration.json:
     method: unknown
     evidence: no authorship recorded
