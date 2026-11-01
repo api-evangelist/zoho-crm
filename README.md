@@ -1,4 +1,4 @@
-# Zoho CRM (zoho-crm)
+# Zoho CRM
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,85 +64,278 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Zoho CRM is an AI-powered sales and customer relationship management platform from Zoho that helps businesses manage leads, contacts, accounts, deals, and customer engagement across multiple channels. The Zoho CRM REST API (currently at v8) uses OAuth 2.0 authorization-code flow and provides programmatic access to records, modules, users, workflows, analytics, and bulk data operations, with an OpenAPI specification published for the API.
+Zoho CRM is Zoho Corporation's AI-powered sales and customer relationship management platform, used to manage leads, contacts, accounts, deals, activities and customer engagement across channels. Its REST API is currently at v8 and is published as first-party OpenAPI 3.1.0 — 105 specification files covering 405 operations, hosted by Zoho at github.com/zoho/crm-oas and linked from the developer documentation. Authentication is OAuth 2.0 authorization-code against accounts.zoho.com with 458 distinct scopes, and every specification templates both the data centre and the API version into the server URL (https://zohoapis.{dc}/crm/{version}, dc one of com, eu, in, cn, au). Usage is metered in API credits on a rolling 24-hour window rather than in requests, alongside an org-level concurrency cap. Zoho additionally ships server-side SDKs for Node.js, TypeScript, Python, PHP, C#, Java, Ruby and Scala, a widget/extension CLI (ZET), a documented webhook surface (Instant Notifications), and a hosted MCP product that names Zoho CRM as a supported app.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/apis.yml)
+**Areas:** CRM · Sales · Marketing Automation · Lead Management · Customer Engagement · Sales Automation · Contact Management · Pipeline Management · Software-as-a-Service · OpenAPI · Authentication
 
-## Scope
+## Zoho CRM on APIs.io
 
-- **Type:** Index
+Everything profiled for Zoho CRM is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/zoho-crm/](https://apis.io/providers/zoho-crm/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (36)
 
-- CRM
-- Sales
-- Customer Relationship Management
-- Marketing Automation
-- Lead Management
-- Customer Engagement
+- [Zoho CRM Actions API](https://apis.io/apis/zoho-crm/zoho-crm-actions-api/) — The Actions API from Zoho CRM — 36 operation(s) for actions.
+- [Zoho CRM Appointments S API](https://apis.io/apis/zoho-crm/zoho-crm-appointments-s-api/) — The Appointments S API from Zoho CRM — 2 operation(s) for appointments s.
+- [Zoho CRM Attachments API](https://apis.io/apis/zoho-crm/zoho-crm-attachments-api/) — The Attachments API from Zoho CRM — 2 operation(s) for attachments.
+- [Zoho CRM Composite Requests API](https://apis.io/apis/zoho-crm/zoho-crm-composite-requests-api/) — The Composite Requests API from Zoho CRM — 1 operation(s) for composite requests.
+- [Zoho CRM Contact Roles API](https://apis.io/apis/zoho-crm/zoho-crm-contact-roles-api/) — The Contact Roles API from Zoho CRM — 2 operation(s) for contact roles.
+- [Zoho CRM Contacts API](https://apis.io/apis/zoho-crm/zoho-crm-contacts-api/) — The Contacts API from Zoho CRM — 4 operation(s) for contacts.
+- [Zoho CRM Coql API](https://apis.io/apis/zoho-crm/zoho-crm-coql-api/) — The Coql API from Zoho CRM — 1 operation(s) for coql.
+- [Zoho CRM Deleted API](https://apis.io/apis/zoho-crm/zoho-crm-deleted-api/) — The Deleted API from Zoho CRM — 2 operation(s) for deleted.
+- [Zoho CRM Email Drafts API](https://apis.io/apis/zoho-crm/zoho-crm-email-drafts-api/) — The Email Drafts API from Zoho CRM — 2 operation(s) for email drafts.
+- [Zoho CRM Emails API](https://apis.io/apis/zoho-crm/zoho-crm-emails-api/) — The Emails API from Zoho CRM — 2 operation(s) for emails.
+- [Zoho CRM Emails Sharing Details API](https://apis.io/apis/zoho-crm/zoho-crm-emails-sharing-details-api/) — The Emails Sharing Details API from Zoho CRM — 1 operation(s) for emails sharing details.
+- [Zoho CRM Events API](https://apis.io/apis/zoho-crm/zoho-crm-events-api/) — The Events API from Zoho CRM — 1 operation(s) for events.
+- [Zoho CRM Features API](https://apis.io/apis/zoho-crm/zoho-crm-features-api/) — The Features API from Zoho CRM — 2 operation(s) for features.
+- [Zoho CRM Files API](https://apis.io/apis/zoho-crm/zoho-crm-files-api/) — The Files API from Zoho CRM — 1 operation(s) for files.
+- [Zoho CRM Global Picklists API](https://apis.io/apis/zoho-crm/zoho-crm-global-picklists-api/) — The Global Picklists API from Zoho CRM — 3 operation(s) for global picklists.
+- [Zoho CRM Holidays API](https://apis.io/apis/zoho-crm/zoho-crm-holidays-api/) — Operations for managing holidays that affect business hours and shift schedules
+- [Zoho CRM Layouts API](https://apis.io/apis/zoho-crm/zoho-crm-layouts-api/) — The Layouts API from Zoho CRM — 1 operation(s) for layouts.
+- [Zoho CRM Leads API](https://apis.io/apis/zoho-crm/zoho-crm-leads-api/) — The Leads API from Zoho CRM — 3 operation(s) for leads.
+- [Zoho CRM Locking Information S API](https://apis.io/apis/zoho-crm/zoho-crm-locking-information-s-api/) — The Locking Information S API from Zoho CRM — 2 operation(s) for locking information s.
+- [Zoho CRM Notes API](https://apis.io/apis/zoho-crm/zoho-crm-notes-api/) — The Notes API from Zoho CRM — 4 operation(s) for notes.
+- [Zoho CRM Org API](https://apis.io/apis/zoho-crm/zoho-crm-org-api/) — The Org API from Zoho CRM — 5 operation(s) for org.
+- [Zoho CRM Photo API](https://apis.io/apis/zoho-crm/zoho-crm-photo-api/) — The Photo API from Zoho CRM — 1 operation(s) for photo.
+- [Zoho CRM Read API](https://apis.io/apis/zoho-crm/zoho-crm-read-api/) — The Read API from Zoho CRM — 3 operation(s) for read.
+- [Zoho CRM Records API](https://apis.io/apis/zoho-crm/zoho-crm-records-api/) — The Records API from Zoho CRM — 3 operation(s) for records.
+- [Zoho CRM Search API](https://apis.io/apis/zoho-crm/zoho-crm-search-api/) — The Search API from Zoho CRM — 1 operation(s) for search.
+- [Zoho CRM Services S API](https://apis.io/apis/zoho-crm/zoho-crm-services-s-api/) — The Services S API from Zoho CRM — 2 operation(s) for services s.
+- [Zoho CRM Settings API](https://apis.io/apis/zoho-crm/zoho-crm-settings-api/) — The Settings API from Zoho CRM — 107 operation(s) for settings.
+- [Zoho CRM Timeline API](https://apis.io/apis/zoho-crm/zoho-crm-timeline-api/) — The Timeline API from Zoho CRM — 1 operation(s) for timeline.
+- [Zoho CRM Upload API](https://apis.io/apis/zoho-crm/zoho-crm-upload-api/) — The Upload API from Zoho CRM — 1 operation(s) for upload.
+- [Zoho CRM Upsert API](https://apis.io/apis/zoho-crm/zoho-crm-upsert-api/) — The Upsert API from Zoho CRM — 1 operation(s) for upsert.
+- [Zoho CRM Users API](https://apis.io/apis/zoho-crm/zoho-crm-users-api/) — The Users API from Zoho CRM — 10 operation(s) for users.
+- [Zoho CRM Workflow Configurations API](https://apis.io/apis/zoho-crm/zoho-crm-workflow-configurations-api/) — The Workflow Configurations API from Zoho CRM — 1 operation(s) for workflow configurations.
+- [Zoho CRM Write API](https://apis.io/apis/zoho-crm/zoho-crm-write-api/) — The Write API from Zoho CRM — 2 operation(s) for write.
+- [Zoho CRM Zia Org Enrichment API](https://apis.io/apis/zoho-crm/zoho-crm-zia-org-enrichment-api/) — The Zia Org Enrichment API from Zoho CRM — 2 operation(s) for zia org enrichment.
+- [Zoho CRM Zoho CRM Related Records API](https://apis.io/apis/zoho-crm/zoho-crm-zoho-crm-related-records-api-api/) — The Zoho CRM Related Records API API from Zoho CRM — 2 operation(s) for zoho crm related records api.
+- [Zoho CRM APIS API](https://apis.io/apis/zoho-crm/zoho-crm-apis-api/) — The Apis API from Zoho CRM — 1 operation(s) for apis.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-11
-- **Modified:** 2026-05-30
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### AsyncAPI (1)
 
-### Zoho CRM REST API v8
+Event-driven and webhook contracts.
 
-OAuth 2.0 protected REST API for managing CRM records, modules, users, workflows, notes, attachments, tags, and bulk data operations across the Zoho CRM platform.
+- [Zoho CRM Notifications API](https://apis.io/asyncapis/zoho-crm/zoho-crm-notifications-asyncapi/)
 
-- **Human URL:** [https://www.zoho.com/crm/developer/docs/api/v8/](https://www.zoho.com/crm/developer/docs/api/v8/)
-- **Base URL:** `https://www.zohoapis.com/crm/v8`
+#### Event channels (20)
 
-#### Tags
+Individual events and webhooks the provider emits.
 
-- CRM
-- REST
-- OAuth 2.0
-- Records
-- Modules
+- [Accounts](https://apis.io/channels/zoho-crm/accounts/)
+- [Appointments](https://apis.io/channels/zoho-crm/appointments/)
+- [Calls](https://apis.io/channels/zoho-crm/calls/)
+- [Campaigns](https://apis.io/channels/zoho-crm/campaigns/)
+- [Cases](https://apis.io/channels/zoho-crm/cases/)
+- [Contacts](https://apis.io/channels/zoho-crm/contacts/)
+- [Custom](https://apis.io/channels/zoho-crm/custom/)
+- [Deals](https://apis.io/channels/zoho-crm/deals/)
+- [Invoices](https://apis.io/channels/zoho-crm/invoices/)
+- [Leads](https://apis.io/channels/zoho-crm/leads/)
+- [Meetings](https://apis.io/channels/zoho-crm/meetings/)
+- [Price_Books](https://apis.io/channels/zoho-crm/price-books/)
+- [Products](https://apis.io/channels/zoho-crm/products/)
+- [Purchase_Orders](https://apis.io/channels/zoho-crm/purchase-orders/)
+- [Quotes](https://apis.io/channels/zoho-crm/quotes/)
+- [Sales_Orders](https://apis.io/channels/zoho-crm/sales-orders/)
+- [Services](https://apis.io/channels/zoho-crm/services/)
+- [Solutions](https://apis.io/channels/zoho-crm/solutions/)
+- [Tasks](https://apis.io/channels/zoho-crm/tasks/)
+- [Vendors](https://apis.io/channels/zoho-crm/vendors/)
 
-#### Properties
+#### GraphQL (1)
 
-- [Documentation](https://www.zoho.com/crm/developer/docs/api/v8/)
-- [O Auth  Overview](https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html)
-- [List of  A P Is](https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html)
-- [OpenAPI](https://www.zoho.com/crm/developer/docs/api/v8/openapi-specification.html) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Scopes](https://www.zoho.com/crm/developer/docs/api/v8/scopes.html)
+GraphQL schemas.
 
-### Zoho CRM Notifications API v2
+- [Moved to /providers/zoho-crm/](https://apis.io/graphqls/zoho-crm/zoho-crm-graphql/)
 
-Instant Notifications API for Zoho CRM. Subscribers register a channel via POST /crm/v2/actions/watch with a notify_url and a list of module/operation events (for example Leads.create, Contacts.edit, Deals.delete, Accounts.all). Zoho CRM then POSTs JSON callbacks to the notify_url whenever the subscribed create, edit, delete, or all operations occur on records in the subscribed module.
+#### MCP servers (1)
 
-- **Human URL:** [https://www.zoho.com/crm/developer/docs/api/v2/notifications/](https://www.zoho.com/crm/developer/docs/api/v2/notifications/)
-- **Base URL:** `https://www.zohoapis.com/crm/v2`
+Model Context Protocol servers that expose the API to agents.
 
-#### Tags
+- [Zoho MCP](https://apis.io/servers/zoho-crm/zoho-mcp/)
 
-- CRM
-- Notifications
-- Webhooks
-- Events
-- AsyncAPI
+#### Agentic access (1)
 
-#### Properties
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- [Documentation](https://www.zoho.com/crm/developer/docs/api/v2/notifications/)
-- [AsyncAPI](https://raw.githubusercontent.com/api-evangelist/zoho-crm/refs/heads/main/asyncapi/zoho-crm-notifications-asyncapi.yml) — [AsyncAPI Specification](https://www.asyncapi.com/docs/reference/specification/latest)
+- [Zoho Crm Agentic Access](https://apis.io/agentic-access/zoho-crm/zoho-crm-agentic-access/)
 
-## Common Properties
+#### JSON Schema (48)
 
-- [GitHub Organization](https://github.com/zoho)
-- [LinkedIn](https://www.linkedin.com/showcase/zohocrm)
+The data models the API reads and writes.
+
+- [ActionResponse](https://apis.io/schemas/zoho-crm/zoho-crm-action-response/)
+- [ApiName](https://apis.io/schemas/zoho-crm/zoho-crm-api-name/)
+- [AttachmentListResponse](https://apis.io/schemas/zoho-crm/zoho-crm-attachment-list-response/)
+- [AttachmentSuccessResponse](https://apis.io/schemas/zoho-crm/zoho-crm-attachment-success-response/)
+- [BulkOperationResponse](https://apis.io/schemas/zoho-crm/zoho-crm-bulk-operation-response/)
+- [ConversionRequestWrapper](https://apis.io/schemas/zoho-crm/zoho-crm-conversion-request-wrapper/)
+- [ConversionScheduledWrapper](https://apis.io/schemas/zoho-crm/zoho-crm-conversion-scheduled-wrapper/)
+- [ConversionSuccessWrapper](https://apis.io/schemas/zoho-crm/zoho-crm-conversion-success-wrapper/)
+- [CoqlFieldSchema](https://apis.io/schemas/zoho-crm/zoho-crm-coql-field-schema/)
+- [DataError](https://apis.io/schemas/zoho-crm/zoho-crm-data-error/)
+- [DeleteRelationsSuccessResponse](https://apis.io/schemas/zoho-crm/zoho-crm-delete-relations-success-response/)
+- [Delete207SuccessResponse](https://apis.io/schemas/zoho-crm/zoho-crm-delete207-success-response/)
+- [Error Response Core](https://apis.io/schemas/zoho-crm/zoho-crm-error-response-core1168955151/)
+- [Error Response Core](https://apis.io/schemas/zoho-crm/zoho-crm-error-response-core1544688711/)
+- [Error Response Core](https://apis.io/schemas/zoho-crm/zoho-crm-error-response-core2137699283/)
+- [Error Response Core](https://apis.io/schemas/zoho-crm/zoho-crm-error-response-core297287888/)
+- [FieldLabel](https://apis.io/schemas/zoho-crm/zoho-crm-field-label/)
+- [FieldRequestBodySchema](https://apis.io/schemas/zoho-crm/zoho-crm-field-request-body-schema/)
+- [FieldSchema](https://apis.io/schemas/zoho-crm/zoho-crm-field-schema/)
+- [FieldUpdateRequestBodySchema](https://apis.io/schemas/zoho-crm/zoho-crm-field-update-request-body-schema/)
+- [GetservicessResponse200](https://apis.io/schemas/zoho-crm/zoho-crm-getservicess-response200/)
+- [GetworkflowconfigurationsResponse200](https://apis.io/schemas/zoho-crm/zoho-crm-getworkflowconfigurations-response200/)
+- [HolidaysSuccessResponse](https://apis.io/schemas/zoho-crm/zoho-crm-holidays-success-response/)
+- [Id](https://apis.io/schemas/zoho-crm/zoho-crm-id/)
+- [Info](https://apis.io/schemas/zoho-crm/zoho-crm-info/)
+- …and 23 more published on APIs.io
+
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Zoho Crm Context](https://apis.io/jsonld/zoho-crm/zoho-crm-context/)
+
+#### Overlays (141)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Zoho Crm Actions Api Phrasing Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-actions-api-phrasing-overlay/)
+- [Zoho Crm Apis Api Phrasing Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-apis-api-phrasing-overlay/)
+- [Zoho Crm Apis Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-apis-overlay/)
+- [Zoho Crm Appointment Preference Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-appointment-preference-overlay/)
+- [Zoho Crm Appointments Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-appointments-overlay/)
+- [Zoho Crm Appointments S Api Phrasing Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-appointments-s-api-phrasing-overlay/)
+- [Zoho Crm Assignment Rules Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-assignment-rules-overlay/)
+- [Zoho Crm Associate Email Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-associate-email-overlay/)
+- [Zoho Crm Attachments Api Phrasing Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-attachments-api-phrasing-overlay/)
+- [Zoho Crm Attachments Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-attachments-overlay/)
+- [Zoho Crm Audit Log Export Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-audit-log-export-overlay/)
+- [Zoho Crm Available Currencies Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-available-currencies-overlay/)
+- [Zoho Crm Bulk Read Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-bulk-read-overlay/)
+- [Zoho Crm Bulk Write Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-bulk-write-overlay/)
+- [Zoho Crm Business Hours Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-business-hours-overlay/)
+- [Zoho Crm Cadences Execution Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-cadences-execution-overlay/)
+- [Zoho Crm Cadences Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-cadences-overlay/)
+- [Zoho Crm Call Preferences Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-call-preferences-overlay/)
+- [Zoho Crm Cancel Meetings Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-cancel-meetings-overlay/)
+- [Zoho Crm Change Owner Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-change-owner-overlay/)
+- [Zoho Crm Composite Requests Api Phrasing Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-composite-requests-api-phrasing-overlay/)
+- [Zoho Crm Composite Requests Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-composite-requests-overlay/)
+- [Zoho Crm Contact Roles Api Phrasing Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-contact-roles-api-phrasing-overlay/)
+- [Zoho Crm Contact Roles Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-contact-roles-overlay/)
+- [Zoho Crm Contacts Api Phrasing Overlay](https://apis.io/overlays/zoho-crm/zoho-crm-contacts-api-phrasing-overlay/)
+- …and 116 more published on APIs.io
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Zoho CRM — asyncapi rules](https://apis.io/rules/zoho-crm/zoho-crm-asyncapi-spectral-rules/)
+- [Zoho CRM API Rules](https://apis.io/rules/zoho-crm/zoho-crm-rules/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Zoho Crm Authentication](https://apis.io/security/zoho-crm/zoho-crm-authentication/)
+- [Zoho Crm Domain Security](https://apis.io/security/zoho-crm/zoho-crm-domain-security/)
+- [Zoho Crm Trust Center](https://apis.io/security/zoho-crm/zoho-crm-trust-center/)
+- [Zoho Crm Vulnerability Disclosure](https://apis.io/security/zoho-crm/zoho-crm-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Zoho Crm Scopes](https://apis.io/scopes/zoho-crm/zoho-crm-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Zoho Crm Plans Pricing](https://apis.io/plans/zoho-crm/zoho-crm-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Zoho Crm Rate Limits](https://apis.io/rate-limits/zoho-crm/zoho-crm-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.zoho.com/crm/)
 - [Documentation](https://www.zoho.com/crm/developer/docs/api/v8/)
-- [Developer  Portal](https://www.zoho.com/crm/developer/)
-- [Sign Up](https://www.zoho.com/crm/signup.html)
+- [Getting started](https://www.zoho.com/crm/developer/docs/api/v8/oauth-overview.html)
+- [API reference](https://www.zoho.com/crm/developer/docs/api/v8/list-available-rest-apis.html)
 - [Pricing](https://www.zoho.com/crm/zohocrm-pricing.html)
-- [Postman  Workspace](https://www.postman.com/zohocrmdevelopers/zoho-crm-developers/overview)
+- [Sign up](https://www.zoho.com/crm/signup.html)
+- [Support](https://help.zoho.com/portal/en/community/zoho-crm)
+- [Blog](https://www.zoho.com/crm/blog/feed/)
+- [Security](https://bugbounty.zohocorp.com/bb/info)
+- [Compliance](https://www.zoho.com/compliance.html)
+- [Terms of service](https://www.zoho.com/terms.html)
+- [Privacy policy](https://www.zoho.com/privacy.html)
+- [GitHub](https://github.com/zoho)
+- [Status](https://status.zoho.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 84.4** — exemplar · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 76.7 |
+| Contract quality | 73.8 |
+| Contract governance | 35.6 |
+| Operational transparency | 92.1 |
+| Developer ergonomics | 82.7 |
+| Access clarity | 92.1 |
+
+**Agent readiness 44.2** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | documented (partial credit) |
+| Error Semantics | verified |
+| OpenAPI Examples | partial |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | derived (partial credit) |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | — |
+
+**Regulatory alignment 45.1** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/zoho-crm/](https://apis.io/providers/zoho-crm/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Zoho CRM: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/zoho-crm/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
